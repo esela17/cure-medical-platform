@@ -1485,14 +1485,9 @@ nav.solid{
           </div>
 
           <div class="field" style="margin-top:24px;">
-            <label><span class="req">*</span>السيرة الذاتية (CV)</label>
-            <div class="file-drop" id="file-drop">
-              <input type="file" name="cv" id="cv-input" accept=".pdf,.doc,.docx" onchange="handleFile(this)"/>
-              <div class="file-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-              <p>اسحب ملفك هنا أو انقر للاختيار</p>
-              <span>PDF أو Word · أقصى حجم 5MB</span>
-              <div class="file-name" id="file-name"></div>
-            </div>
+            <label><span class="req">*</span>رابط السيرة الذاتية (CV Link)</label>
+            <input type="url" name="cv_link" id="cv-input" placeholder="https://drive.google.com/..." required/>
+            <div class="field-err">يرجى إدخال رابط صحيح للسيرة الذاتية</div>
           </div>
 
           <div class="field">
@@ -1685,7 +1680,8 @@ function goNext(step){
     const pref=document.querySelector('input[name="work_preference"]:checked');
     const cv=document.getElementById('cv-input');
     if(!pref){shake();showToast('اختر تفضيل العمل');return;}
-    if(!cv.files.length){shake();showToast('أرفق سيرتك الذاتية');return;}
+    if(!cv.value.trim()){cv.classList.add('err');shake();showToast('أضف رابط السيرة الذاتية');return;}
+    else{cv.classList.remove('err');}
   }
   showStep(step+1);
 }
@@ -1713,27 +1709,7 @@ function selectDept(el){
   el.classList.add('selected');
 }
 
-/* File upload */
-function handleFile(input){
-  const name=input.files[0]?.name;
-  const fn=document.getElementById('file-name');
-  if(name && fn){fn.textContent='✓  '+name;fn.classList.add('show');}
-}
-const drop=document.getElementById('file-drop');
-if(drop) {
-  ['dragover','dragleave'].forEach(e=>{
-    drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.toggle('dragover',e==='dragover');});
-  });
-  drop.addEventListener('drop',ev=>{
-    ev.preventDefault();drop.classList.remove('dragover');
-    const f=ev.dataTransfer.files[0];
-    if(f){
-      const dt=new DataTransfer();dt.items.add(f);
-      document.getElementById('cv-input').files=dt.files;
-      handleFile(document.getElementById('cv-input'));
-    }
-  });
-}
+/* CV Link (File upload removed) */
 
 /* Form submit */
 const applyForm = document.getElementById('applyForm');
