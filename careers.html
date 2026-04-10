@@ -458,8 +458,8 @@ nav.solid{
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   opacity:0;visibility:hidden;
   transition:all .4s ease;
-  display:flex;align-items:center;justify-content:center;
-  padding:24px;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:40px 24px;
   overflow-y:auto;
 }
 .overlay.open{opacity:1;visibility:visible;}
@@ -469,8 +469,8 @@ nav.solid{
   border:1px solid rgba(107,92,231,.35);
   border-radius:24px;
   width:100%;max-width:700px;
+  margin:auto;
   box-shadow:0 30px 100px rgba(0,0,0,.7),var(--glow-p);
-  overflow:hidden;
   transform:translateY(30px) scale(.97);
   transition:transform .4s ease;
   position:relative;
@@ -1287,8 +1287,7 @@ nav.solid{
     <!-- Form -->
     <form id="applyForm"
           action="https://api.web3forms.com/submit"
-          method="POST"
-          enctype="multipart/form-data">
+          method="POST">
       
       <input type="hidden" name="access_key" value="78fe75bb-b43b-42f9-b508-64ce61033017" />
       <input type="hidden" name="_subject" id="form-subject" value="طلب تدريب — كيور"/>
