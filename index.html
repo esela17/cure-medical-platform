@@ -2214,6 +2214,36 @@
           bottom: 20px;
         }
       }
+      /* Lang Toggle */
+      .lang-toggle-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--light);
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-family: var(--font-main);
+        font-size: 14px;
+        z-index: 1001;
+      }
+      .lang-toggle-btn:hover {
+        background: rgba(107, 92, 231, 0.15);
+        border-color: var(--purple);
+        color: var(--white);
+      }
+      .mobile-only { display: none; }
+      @media (max-width: 991px) {
+        .mobile-only { display: block; }
+      }
+      
+      /* Hide Google Translate Banner */
+      .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon, #goog-gt-tt { display: none !important; }
+      body { top: 0px !important; }
+      .goog-tooltip { display: none !important; }
+      .goog-tooltip:hover { display: none !important; }
+      .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
     </style>
   </head>
   <body>
@@ -2234,9 +2264,8 @@
     <!-- ═══════════════════════════════════════════════ NAVBAR ════════════════════════════════════════════════ -->
     <nav id="navbar">
       <div class="nav-inner">
-        <a href="#hero" class="nav-logo"
-          ><div class="logo-icon">ك</div>
-          كيور
+        <a href="#hero" class="nav-logo">
+          <img src="assets/png/2.png" alt="كيور" style="height: 45px; width: auto; object-fit: contain;">
         </a>
         <ul class="nav-links">
           <li><a href="#about">من نحن</a></li>
@@ -2247,9 +2276,13 @@
           <li><a href="#contact">تواصل معنا</a></li>
           <li><a href="careers.html" style="color: var(--green)">وظائف</a></li>
           <li><a href="#join" class="nav-cta">سجّل الآن</a></li>
+          <li><button class="lang-toggle-btn" onclick="toggleLanguage()">EN</button></li>
         </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="lang-toggle-btn mobile-only" onclick="toggleLanguage()">EN</button>
+          <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </div>
       <div class="mobile-menu" id="mobileMenu">
@@ -3390,8 +3423,7 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <div class="logo">
-              <div class="logo-icon">ك</div>
-              <span>كيور</span>
+              <img src="assets/png/2.png" alt="كيور" style="height: 40px; width: auto; object-fit: contain;">
             </div>
             <p>
               أول وسيط بين الممرض والمريض في مصر. 15 خدمة طبية منزلية في 15
@@ -3617,6 +3649,57 @@
           }
         });
       });
+      });
+      
+      function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      
+      function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        }
+        return "";
+      }
+      
+      function toggleLanguage() {
+        const currentLang = getCookie('googtrans');
+        if (currentLang && currentLang.includes('/en')) {
+          // Revert to Arabic
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+          location.reload();
+        } else {
+          // Translate to English
+          setCookie("googtrans", "/ar/en", 30);
+          location.reload();
+        }
+      }
+      
+      window.addEventListener("DOMContentLoaded", () => {
+          const lang = getCookie("googtrans");
+          const toggleBtns = document.querySelectorAll(".lang-toggle-btn");
+          if(lang && lang.includes("/en")) {
+              toggleBtns.forEach(btn => btn.textContent = "AR");
+              document.documentElement.dir = "ltr";
+          } else {
+              toggleBtns.forEach(btn => btn.textContent = "EN");
+          }
+      });
+      
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ar', includedLanguages: 'ar,en', autoDisplay: false}, 'google_translate_element');
+      }
     </script>
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
