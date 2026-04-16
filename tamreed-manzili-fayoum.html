@@ -184,15 +184,24 @@
 </head>
 <body>
 
-<nav>
-    <div class="container nav-inner">
-        <a href="index.html" class="nav-logo"><img src="assets/png/logo-cure-new.png" alt="كيور CURE"></a>
-        <ul class="nav-links">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="articles.html">المقالات</a></li>
-            <li><a href="careers.html">الوظائف</a></li>
-        </ul>
+<nav id="navbar">
+  <div class="nav-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
+    <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 10px; font-family: var(--font-main); font-size: 24px; font-weight: 900; color: var(--white); flex-shrink: 0; text-decoration: none;">
+      <img src="assets/png/logo-cure-new.png" alt="شعار كيور للتمريض المنزلي" style="height: 44px; width: auto; object-fit: contain; display: block;">
+    </a>
+    <ul class="nav-links" id="navLinks" style="display: flex; align-items: center; gap: 15px; list-style: none; margin: 0; padding: 0;">
+      <li><a href="index.html#about" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">من نحن</a></li>
+      <li><a href="index.html#services" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">خدماتنا</a></li>
+      <li><a href="index.html#how" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">كيف يعمل</a></li>
+      <li><a href="index.html#why" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">لماذا كيور</a></li>
+      <li><a href="articles.html" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">المقالات</a></li>
+      <li><a href="careers.html" style="color: var(--green); text-decoration: none; font-weight: 600; font-family: var(--font-main);">وظائف</a></li>
+      <li><a href="index.html#join" class="nav-cta" style="background: var(--green); color: #1a1535; font-weight: 700; padding: 9px 22px; border-radius: 12px; text-decoration: none;">سجّل الآن</a></li>
+    </ul>
+    <div style="display: flex; align-items: center; gap: 12px;" class="mobile-only-flex">
+      <a href="index.html" style="color: var(--light); text-decoration: none; font-size: 14px;"><i class="fas fa-home"></i> الرئيسية</a>
     </div>
+  </div>
 </nav>
 
 <div class="container">
