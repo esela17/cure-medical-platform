@@ -5,6 +5,5 @@
 node_modules
 node_modules/**
 *.log
-*.json
 wrangler.jsonc
 .htaccess
