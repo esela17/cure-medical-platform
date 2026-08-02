@@ -47,7 +47,7 @@
 
   <style>
     /* ═══════════════════════════════════════════════════════════════════
-       CURE SPECIFIC STYLES & PATTERN SYSTEM (#6d73ff Light Theme)
+       HAND-CRAFTED HUMAN BACKGROUND COMPOSITIONS (#6d73ff Light Theme)
        ═══════════════════════════════════════════════════════════════════ */
 
     /* ─── LOADER ─────────────────────────────────────────────── */
@@ -230,7 +230,7 @@
       background: var(--c-brand-10);
     }
 
-    /* ─── HERO SECTION ───────────────────────────────────────── */
+    /* ─── HERO SECTION (HUMAN CRAFTED BACKGROUND) ───────────────── */
     #hero {
       position: relative;
       min-height: 92vh;
@@ -238,9 +238,12 @@
       align-items: center;
       padding-top: 130px;
       padding-bottom: 80px;
-      background: radial-gradient(circle at 85% 15%, rgba(109, 115, 255, 0.10) 0%, transparent 60%),
-                  radial-gradient(circle at 15% 85%, rgba(109, 115, 255, 0.06) 0%, transparent 50%),
-                  #ffffff;
+      background-color: #ffffff;
+      background-image: 
+        radial-gradient(circle at 1.5px 1.5px, rgba(109, 115, 255, 0.09) 1.5px, transparent 0),
+        radial-gradient(ellipse at 85% 15%, rgba(109, 115, 255, 0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(109, 115, 255, 0.05) 0%, transparent 45%);
+      background-size: 38px 38px, 100% 100%, 100% 100%;
       overflow: hidden;
     }
 
@@ -249,7 +252,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      opacity: 0.45;
+      opacity: 0.35;
     }
 
     .hero-layout {
@@ -304,7 +307,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      background: var(--c-surface);
+      background: #ffffff;
       border: 1px solid var(--c-border);
       border-radius: var(--r-md);
       padding: 24px 20px;
@@ -374,7 +377,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(109, 115, 255, 0.25) 2px, transparent 2px);
+      background-image: radial-gradient(rgba(109, 115, 255, 0.22) 2px, transparent 2px);
       background-size: 20px 20px;
     }
 
@@ -430,23 +433,12 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* ─── SECTION TRANSITIONS ───────────────────────────────── */
-    .wave-divider {
-      position: absolute;
-      left: 0; right: 0; bottom: -1px;
-      line-height: 0;
-      pointer-events: none;
-      z-index: 2;
-    }
-    .wave-divider svg {
-      width: 100%;
-      height: 48px;
-      fill: var(--c-bg-soft);
-    }
-
-    /* ─── ABOUT SECTION ─────────────────────────────────────── */
+    /* ─── ABOUT SECTION (SOFT LIGHT BACKGROUND) ─────────────── */
     #about {
-      background: var(--c-bg-soft);
+      background-color: var(--c-bg-soft);
+      background-image: 
+        linear-gradient(135deg, rgba(109, 115, 255, 0.03) 25%, transparent 25%, transparent 50%, rgba(109, 115, 255, 0.03) 50%, rgba(109, 115, 255, 0.03) 75%, transparent 75%, transparent);
+      background-size: 48px 48px;
     }
     .about-grid {
       display: grid;
@@ -498,14 +490,15 @@
       margin: 0;
     }
 
-    /* ─── PROBLEM SECTION ───────────────────────────────────── */
+    /* ─── PROBLEM SECTION (SOFT AMBIENT WARMTH) ─────────────── */
     #problem {
-      background: #fff8f9;
+      background-color: #fff8f9;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 82, 119, 0.05) 0%, transparent 70%);
       position: relative;
     }
     .drama-quote {
       background: #ffffff;
-      border: 1px solid rgba(255, 82, 119, 0.25);
+      border: 1px solid rgba(255, 82, 119, 0.22);
       border-radius: var(--r-md);
       padding: 40px 48px;
       margin-bottom: 56px;
@@ -538,7 +531,7 @@
     }
     .problem-card {
       background: #ffffff;
-      border: 1px solid rgba(255, 82, 119, 0.18);
+      border: 1px solid rgba(255, 82, 119, 0.16);
       border-radius: var(--r-md);
       padding: 36px;
       box-shadow: var(--shadow-sm);
@@ -826,15 +819,27 @@
       margin-bottom: 20px;
     }
 
-    /* ─── NUMBERS / IMPACT SECTION ───────────────────────────── */
+    /* ─── NUMBERS / IMPACT SECTION (FINE PATTERN) ─────────────── */
     #numbers {
       background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
       color: #ffffff;
+      position: relative;
     }
+    #numbers::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
     .numbers-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
+      position: relative;
+      z-index: 1;
     }
     .number-item {
       background: rgba(255, 255, 255, 0.12);
@@ -1198,8 +1203,9 @@
   <section id="hero">
     <div class="hero-bg-atoms">
       <svg width="100%" height="100%" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="400" cy="400" r="300" stroke="#6d73ff" stroke-opacity="0.08" stroke-width="2" stroke-dasharray="8 8" />
-        <circle cx="400" cy="400" r="180" stroke="#6d73ff" stroke-opacity="0.1" stroke-width="1.5" />
+        <circle cx="400" cy="400" r="300" stroke="#6d73ff" stroke-opacity="0.08" stroke-width="1.5" stroke-dasharray="6 6" />
+        <circle cx="400" cy="400" r="180" stroke="#6d73ff" stroke-opacity="0.1" stroke-width="1.2" />
+        <path d="M100 200 L700 600" stroke="#6d73ff" stroke-opacity="0.04" stroke-width="1" />
       </svg>
     </div>
 
