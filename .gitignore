@@ -4,3 +4,9 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# scratch extraction files
+old_index_styles.css
+7cfcd51_styles.css
+extracted_sections.css
+
