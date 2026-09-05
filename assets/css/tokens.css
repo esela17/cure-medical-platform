@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════════════════
+   CURE MEDICAL DESIGN SYSTEM · Premium Medical Brand & Clinical UX
+   Primary Color:   #6d73ff (Royal Periwinkle / Medical Indigo)
+   Secondary Color: #aefa7c (Vital Life Green / Electric Mint)
+   ═══════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─── 01. PRIMARY BRAND COLOR (#6d73ff) ────────────────────────── */
+  --c-brand:        #6d73ff;
+  --c-brand-deep:   #565ce6;
+  --c-brand-dark:   #3e43bd;
+  --c-brand-light:  #8b90ff;
+  --c-brand-glow:   rgba(109, 115, 255, 0.35);
+
+  /* Primary Tints */
+  --c-brand-5:      #f5f6ff;
+  --c-brand-10:     #eaebff;
+  --c-brand-15:     #dadaff;
+  --c-brand-25:     #bbbdff;
+  --c-brand-40:     #9094ff;
+
+  /* ─── 02. SECONDARY BRAND COLOR (#aefa7c) ──────────────────────── */
+  --c-secondary:       #aefa7c;
+  --c-secondary-dark:  #8de854;
+  --c-secondary-deep:  #6cc735;
+  --c-secondary-light: #caffaa;
+  --c-secondary-glow:  rgba(174, 250, 124, 0.45);
+  --c-secondary-bg:    rgba(174, 250, 124, 0.15);
+  --c-secondary-text:  #143503;
+
+  /* ─── 03. DEEP MEDICAL CONTRAST SURFACES ──────────────────────── */
+  --c-dark-bg:      #08061a;
+  --c-dark-surface: #100d2b;
+  --c-dark-card:    #18153d;
+  --c-dark-border:  rgba(109, 115, 255, 0.22);
+
+  /* ─── 04. LIGHT SURFACES & NEUTRALS ───────────────────────────── */
+  --c-bg:           #ffffff;
+  --c-bg-soft:      #f8f9ff;
+  --c-bg-alt:       #f1f3ff;
+  --c-surface:      #ffffff;
+  --c-surface-soft: #f7f8ff;
+
+  /* ─── 05. HIGH-CONTRAST TYPOGRAPHY ────────────────────────────── */
+  --c-heading:      #121329;
+  --c-body:         #333552;
+  --c-muted:        #616382;
+  --c-light-muted:  #9496b8;
+  --c-white:        #ffffff;
+
+  /* ─── 06. CLINICAL SEMANTIC ALERTS ────────────────────────────── */
+  --c-success:      #10b981;
+  --c-success-bg:   #ecfdf5;
+  --c-warning:      #f59e0b;
+  --c-warning-bg:   #fffbeb;
+  --c-accent:       #ff5277;
+  --c-border:       rgba(109, 115, 255, 0.15);
+  --c-border-light: rgba(109, 115, 255, 0.08);
+
+  /* ─── 07. SHADOW ELEVATIONS ───────────────────────────────────── */
+  --shadow-xs:     0 2px 8px rgba(109, 115, 255, 0.06);
+  --shadow-sm:     0 4px 16px -2px rgba(109, 115, 255, 0.08);
+  --shadow-card:   0 10px 30px -4px rgba(109, 115, 255, 0.09), 0 4px 12px -2px rgba(18, 19, 41, 0.03);
+  --shadow-hover:  0 20px 45px -6px rgba(109, 115, 255, 0.16), 0 8px 20px -4px rgba(18, 19, 41, 0.04);
+  --shadow-glow:   0 0 30px var(--c-secondary-glow);
+
+  /* ─── 08. BORDER RADIUS ───────────────────────────────────────── */
+  --r-xs:   8px;
+  --r-sm:   14px;
+  --r-md:   22px;
+  --r-lg:   32px;
+  --r-xl:   48px;
+  --r-pill: 999px;
+
+  /* ─── 09. TYPOGRAPHY HIERARCHY ─────────────────────────────────── */
+  --ff-head: 'Cairo', sans-serif;
+  --ff-body: 'Tajawal', sans-serif;
+
+  /* ─── 10. MOTION & TIMING ──────────────────────────────────────── */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:      0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --t-base:      0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+

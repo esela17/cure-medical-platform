@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
+Allow: /
 
 Sitemap: https://cureztyx.com/sitemap.xml

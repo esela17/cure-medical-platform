@@ -1,0 +1,155 @@
+/* ─────────────────────────────────────────────────────────────────
+   RESET & BASE STYLES
+   ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  direction: rtl;
+}
+
+body {
+  background-color: var(--c-bg);
+  color: var(--c-body);
+  font-family: var(--ff-body);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--t-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--c-bg-soft);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--c-brand-40);
+  border-radius: var(--r-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-brand);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   LAYOUT CONTAINERS & UTILITIES
+   ───────────────────────────────────────────────────────────────── */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.container-sm {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-sm {
+  padding: 65px 0;
+  position: relative;
+}
+
+.text-center { text-align: center; }
+.text-brand { color: var(--c-brand); }
+.text-secondary { color: var(--c-secondary); }
+
+/* Pulse Status Dot */
+.pulse-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-secondary);
+  display: inline-block;
+  box-shadow: 0 0 10px var(--c-secondary);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(174, 250, 124, 0.7); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 8px rgba(174, 250, 124, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(174, 250, 124, 0); }
+}
+
+/* Section Header Typography */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--c-brand-5);
+  border: 1.5px solid var(--c-brand-25);
+  color: var(--c-brand-deep);
+  padding: 6px 18px;
+  border-radius: var(--r-pill);
+  font-size: 13.5px;
+  font-weight: 800;
+  font-family: var(--ff-head);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(109, 115, 255, 0.08);
+}
+
+.section-badge.secondary {
+  background: var(--c-secondary-bg);
+  border-color: rgba(174, 250, 124, 0.4);
+  color: var(--c-secondary-text);
+}
+
+.section-title {
+  font-family: var(--ff-head);
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--c-heading);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.section-title span.highlight {
+  color: var(--c-brand);
+  background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-sub {
+  font-size: 17.5px;
+  color: var(--c-muted);
+  max-width: 640px;
+  margin: 0 auto 50px;
+  line-height: 1.85;
+}
+

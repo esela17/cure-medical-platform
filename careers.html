@@ -1,2251 +1,902 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" /><title>وظائف وتدريب — كيور CURE | الفيوم، مصر</title><meta name="description" content="انضم لفريق كيور — أول منصة تمريض منزلي في مصر. فرص تدريب وعمل في التكنولوجيا، التسويق، التصميم، والمزيد." /><link rel="icon" type="image/png" href="assets/png/logo-cure-new.png" /><meta property="og:title" content="وظائف وتدريب — كيور CURE" /><meta property="og:description" content="انضم لفريق كيور وابنِ مستقبلك المهني في أول منصة تمريض منزلي في مصر." /><meta property="og:image" content="https://cureztyx.com/assets/png/logo-cure-new.png" /><meta property="og:url" content="https://cureztyx.com/careers.html" /><meta property="og:type" content="website" /><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /><style>
-
-/* ══════════════════════════════════════════════════════
-   TOKENS
-══════════════════════════════════════════════════════ */
-:root {
-  --bg: #ffffff;
-  --bg2: #f8f9ff;
-  --surface: #ffffff;
-  --glass: rgba(255, 255, 255, 0.9);
-  --glass2: rgba(109, 115, 255, 0.04);
-  --border: rgba(109, 115, 255, 0.16);
-  --border2: rgba(109, 115, 255, 0.08);
-
-  --purple: #6d73ff;
-  --purple2: #565ce6;
-  --green: #6d73ff;
-  --green2: #565ce6;
-  --gold: #f59e0b;
-  --teal: #00C9B1;
-  --coral: #ff5277;
-  --white: #16172e;
-  --off: #f1f3ff;
-  --light: #393a5a;
-  --muted: #68698c;
-
-  --r: 28px;
-  --r-sm: 18px;
-  --shadow: 0 12px 32px -4px rgba(109, 115, 255, 0.08);
-  --glow-p: 0 8px 24px rgba(109, 115, 255, 0.15);
-  --glow-g: 0 8px 24px rgba(109, 115, 255, 0.12);
-
-  --font-ar: 'Cairo', sans-serif;
-  --font-body: 'Tajawal', sans-serif;
-}
-
-/* ══════════════════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════════════════ */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--light);
-  font-family: var(--font-ar);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  top: 0 !important;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--purple);
-  border-radius: 3px;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-  font-family: var(--font-ar);
-}
-
-/* ══════════════════════════════════════════════════════
-   ANIMATED BG MESH
-══════════════════════════════════════════════════════ */
-.mesh {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.mesh-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  animation: float-orb linear infinite;
-}
-
-.mesh-orb:nth-child(1) {
-  width: 600px;
-  height: 600px;
-  background: rgba(107, 92, 231, 0.12);
-  top: -200px;
-  right: -100px;
-  animation-duration: 20s;
-}
-
-.mesh-orb:nth-child(2) {
-  width: 500px;
-  height: 500px;
-  background: rgba(126, 217, 87, 0.08);
-  bottom: -150px;
-  left: -100px;
-  animation-duration: 25s;
-  animation-delay: -10s;
-}
-
-.mesh-orb:nth-child(3) {
-  width: 300px;
-  height: 300px;
-  background: rgba(0, 201, 177, 0.07);
-  top: 40%;
-  left: 40%;
-  animation-duration: 18s;
-  animation-delay: -5s;
-}
-
-@keyframes float-orb {
-
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -40px) scale(1.05);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
-
-/* Dot grid */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: radial-gradient(rgba(107, 92, 231, 0.12) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
-}
-
-/* ══════════════════════════════════════════════════════
-   NAV
-══════════════════════════════════════════════════════ */
-#navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 0;
-  transition: all 0.4s ease;
-}
-
-#navbar.scrolled {
-  background: rgba(12, 11, 26, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-}
-
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-ar);
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--white);
-  flex-shrink: 0;
-}
-
-.nav-logo img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-  max-width: 160px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  list-style: none;
-}
-
-.nav-links a {
-  padding: 8px 14px;
-  border-radius: var(--r-sm);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--light);
-  transition: all 0.25s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--white);
-  background: var(--glass2);
-}
-
-.nav-cta {
-  background: var(--green) !important;
-  color: #0C0B1A !important;
-  font-weight: 800 !important;
-  padding: 10px 24px !important;
-  box-shadow: 0 4px 20px rgba(126, 217, 87, .3) !important;
-}
-
-.nav-cta:hover {
-  background: var(--green2) !important;
-  transform: translateY(-2px);
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 1001;
-}
-
-.hamburger span {
-  width: 26px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: all .35s;
-  display: block;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Mobile menu */
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 82%;
-  height: 100vh;
-  background: var(--bg);
-  z-index: 999;
-  padding: 96px 32px 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: left .4s cubic-bezier(.175, .885, .32, 1.275);
-  box-shadow: 20px 0 60px rgba(0, 0, 0, .5);
-  overflow-y: auto;
-}
-
-.mobile-nav.open {
-  left: 0;
-}
-
-.mobile-nav a {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--light);
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border2);
-  transition: color .2s;
-}
-
-.mobile-nav a:hover {
-  color: var(--green);
-}
-
-/* Lang Toggle */
-.lang-btn {
-  background: var(--glass2);
-  border: 1px solid var(--border);
-  color: var(--light);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: 700;
-  font-family: var(--font-ar);
-  font-size: 13px;
-  transition: all .3s;
-}
-
-.lang-btn:hover {
-  background: rgba(107, 92, 231, .15);
-  border-color: var(--purple);
-  color: var(--white);
-}
-
-/* ══════════════════════════════════════════════════════
-   HERO
-══════════════════════════════════════════════════════ */
-#hero {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 120px 32px 80px;
-  overflow: hidden;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(107, 92, 231, .12);
-  border: 1px solid rgba(107, 92, 231, .3);
-  padding: 8px 20px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--purple2);
-  margin-bottom: 32px;
-  animation: fadeUp .8s both;
-}
-
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(126, 217, 87, .5);
-  }
-
-  50% {
-    box-shadow: 0 0 0 6px rgba(126, 217, 87, 0);
-  }
-}
-
-.hero-title {
-  font-family: var(--font-ar);
-  font-size: clamp(38px, 6.5vw, 80px);
-  font-weight: 900;
-  line-height: 1.12;
-  margin-bottom: 28px;
-  animation: fadeUp .8s .1s both;
-}
-
-.hero-title em {
-  font-style: normal;
-  background: linear-gradient(135deg, var(--purple2), var(--green));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-sub {
-  max-width: 600px;
-  font-size: 18px;
-  color: var(--light);
-  line-height: 1.8;
-  margin-bottom: 48px;
-  animation: fadeUp .8s .2s both;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  animation: fadeUp .8s .3s both;
-  margin-bottom: 72px;
-}
-
-.btn-primary {
-  background: var(--green);
-  color: #0C0B1A;
-  padding: 16px 36px;
-  border-radius: var(--r-sm);
-  font-size: 16px;
-  font-weight: 800;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all .3s;
-  box-shadow: 0 4px 24px rgba(126, 217, 87, .3);
-}
-
-.btn-primary:hover {
-  background: var(--green2);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 36px rgba(126, 217, 87, .4);
-}
-
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  padding: 15px 36px;
-  border-radius: var(--r-sm);
-  font-size: 16px;
-  font-weight: 700;
-  border: 1px solid var(--border);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all .3s;
-}
-
-.btn-outline:hover {
-  background: var(--glass2);
-  border-color: var(--purple);
-  transform: translateY(-3px);
-}
-
-/* Hero stats strip */
-.hero-stats {
-  display: flex;
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  overflow: hidden;
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  animation: fadeUp .8s .4s both;
-}
-
-.hstat {
-  padding: 24px 40px;
-  text-align: center;
-  border-left: 1px solid var(--border);
-  transition: background .3s;
-}
-
-.hstat:last-child {
-  border-left: none;
-}
-
-.hstat:hover {
-  background: rgba(107, 92, 231, .1);
-}
-
-.hstat-num {
-  font-family: var(--font-ar);
-  font-size: 36px;
-  font-weight: 900;
-  color: var(--green);
-  display: block;
-  line-height: 1;
-}
-
-.hstat-lbl {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 6px;
-  display: block;
-}
-
-/* Scroll line */
-.scroll-line {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 2px;
-  animation: fadeIn 1s 1.2s both;
-}
-
-.scroll-line .line {
-  width: 1px;
-  height: 50px;
-  background: linear-gradient(180deg, transparent, var(--purple));
-  animation: grow-line 1.5s 1.5s ease-out both;
-}
-
-@keyframes grow-line {
-  from {
-    height: 0;
-  }
-
-  to {
-    height: 50px;
-  }
-}
-
-/* ══════════════════════════════════════════════════════
-   CULTURE STRIP
-══════════════════════════════════════════════════════ */
-.culture-strip {
-  position: relative;
-  z-index: 1;
-  padding: 80px 32px;
-  background: var(--bg2);
-  border-top: 1px solid var(--border2);
-  border-bottom: 1px solid var(--border2);
-}
-
-.culture-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.cult-card {
-  background: var(--glass);
-  border: 1px solid var(--border2);
-  border-radius: var(--r);
-  padding: 32px 28px;
-  transition: all .35s;
-  position: relative;
-  overflow: hidden;
-}
-
-.cult-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--purple), var(--green));
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform .35s;
-}
-
-.cult-card:hover::before {
-  transform: scaleX(1);
-}
-
-.cult-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--glow-p);
-  border-color: rgba(107, 92, 231, .4);
-}
-
-.cult-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(107, 92, 231, .15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 18px;
-}
-
-.cult-card h3 {
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: var(--white);
-}
-
-.cult-card p {
-  font-size: 13.5px;
-  color: var(--light);
-  line-height: 1.75;
-}
-
-/* ══════════════════════════════════════════════════════
-   POSITIONS SECTION
-══════════════════════════════════════════════════════ */
-#positions {
-  position: relative;
-  z-index: 1;
-  padding: 100px 32px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--purple2);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-family: var(--font-ar);
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 900;
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.section-sub {
-  font-size: 17px;
-  color: var(--light);
-  max-width: 560px;
-  line-height: 1.8;
-  margin-bottom: 56px;
-}
-
-/* Filter bar */
-.filter-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.filter-btn {
-  padding: 9px 20px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  background: var(--glass);
-  border: 1px solid var(--border2);
-  color: var(--light);
-  transition: all .25s;
-}
-
-.filter-btn:hover {
-  background: rgba(107, 92, 231, .2);
-  border-color: var(--purple);
-  color: var(--white);
-}
-
-.filter-btn.active {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: #fff;
-}
-
-/* Department groups */
-.dept-group {
-  margin-bottom: 48px;
-}
-
-.dept-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border2);
-}
-
-.dept-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
-.dept-tech .dept-icon {
-  background: rgba(107, 92, 231, .2);
-}
-
-.dept-growth .dept-icon {
-  background: rgba(232, 184, 75, .15);
-}
-
-.dept-creative .dept-icon {
-  background: rgba(0, 201, 177, .15);
-}
-
-.dept-ops .dept-icon {
-  background: rgba(255, 107, 107, .15);
-}
-
-.dept-name {
-  font-family: var(--font-ar);
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--white);
-}
-
-.dept-count {
-  margin-right: auto;
-  background: rgba(107, 92, 231, .15);
-  border: 1px solid var(--border);
-  color: var(--purple2);
-  padding: 3px 12px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* Job cards */
-.jobs-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.job-card {
-  background: var(--glass);
-  border: 1px solid var(--border2);
-  border-radius: var(--r);
-  padding: 24px 28px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 24px;
-  transition: all .3s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.job-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(107, 92, 231, .06), transparent);
-  opacity: 0;
-  transition: opacity .3s;
-}
-
-.job-card:hover {
-  border-color: rgba(107, 92, 231, .4);
-  transform: translateX(-4px);
-  box-shadow: var(--glow-p);
-}
-
-.job-card:hover::after {
-  opacity: 1;
-}
-
-.job-title {
-  font-family: var(--font-ar);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 10px;
-}
-
-.job-meta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.job-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--light);
-}
-
-.job-tag i {
-  font-size: 11px;
-  color: var(--purple2);
-}
-
-.tag-badge {
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-
-.tag-intern {
-  background: rgba(126, 217, 87, .12);
-  color: var(--green);
-  border: 1px solid rgba(126, 217, 87, .2);
-}
-
-.tag-remote {
-  background: rgba(107, 92, 231, .12);
-  color: var(--purple2);
-  border: 1px solid rgba(107, 92, 231, .2);
-}
-
-.tag-hybrid {
-  background: rgba(232, 184, 75, .12);
-  color: var(--gold);
-  border: 1px solid rgba(232, 184, 75, .2);
-}
-
-.tag-onsite {
-  background: rgba(0, 201, 177, .12);
-  color: var(--teal);
-  border: 1px solid rgba(0, 201, 177, .2);
-}
-
-.apply-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(107, 92, 231, .15);
-  border: 1px solid var(--border);
-  color: var(--purple2);
-  font-size: 18px;
-  flex-shrink: 0;
-  transition: transform .3s, background .3s;
-}
-
-.job-card:hover .apply-arrow {
-  background: var(--purple);
-  color: #fff;
-  transform: translateX(-4px);
-}
-
-/* ══════════════════════════════════════════════════════
-   WHY JOIN
-══════════════════════════════════════════════════════ */
-#why {
-  position: relative;
-  z-index: 1;
-  padding: 100px 32px;
-  background: var(--bg2);
-  border-top: 1px solid var(--border2);
-}
-
-.why-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.why-card {
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: var(--r);
-  padding: 36px 28px;
-  transition: all .35s;
-  position: relative;
-  overflow: hidden;
-}
-
-.why-card:hover {
-  border-color: rgba(107, 92, 231, .4);
-  transform: translateY(-6px);
-  box-shadow: var(--glow-p);
-}
-
-.why-num {
-  font-family: var(--font-ar);
-  font-size: 64px;
-  font-weight: 800;
-  color: rgba(107, 92, 231, .12);
-  position: absolute;
-  top: 16px;
-  left: 24px;
-  line-height: 1;
-  transition: color .3s;
-}
-
-.why-card:hover .why-num {
-  color: rgba(107, 92, 231, .22);
-}
-
-.why-card-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  background: rgba(107, 92, 231, .15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.why-card h3 {
-  font-size: 17px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
-}
-
-.why-card p {
-  font-size: 14px;
-  color: var(--light);
-  line-height: 1.8;
-  position: relative;
-  z-index: 1;
-}
-
-/* ══════════════════════════════════════════════════════
-   APPLICATION MODAL
-══════════════════════════════════════════════════════ */
-.overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(8, 7, 20, .88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  opacity: 0;
-  visibility: hidden;
-  transition: all .4s ease;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 40px 24px;
-  overflow-y: auto;
-}
-
-.overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-
-.modal {
-  background: var(--surface);
-  border: 1px solid rgba(107, 92, 231, .35);
-  border-radius: 24px;
-  width: 100%;
-  max-width: 700px;
-  margin: auto;
-  box-shadow: 0 30px 100px rgba(0, 0, 0, .7), var(--glow-p);
-  transform: translateY(30px) scale(.97);
-  transition: transform .4s ease;
-  position: relative;
-}
-
-.overlay.open .modal {
-  transform: translateY(0) scale(1);
-}
-
-/* Modal header */
-.modal-header {
-  padding: 32px 40px 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.modal-close {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid var(--border2);
-  color: var(--light);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all .25s;
-  flex-shrink: 0;
-}
-
-.modal-close:hover {
-  background: rgba(255, 107, 107, .15);
-  border-color: var(--coral);
-  color: var(--coral);
-}
-
-/* Progress */
-.progress-wrap {
-  padding: 24px 40px 0;
-}
-
-.progress-steps {
-  display: flex;
-  gap: 0;
-  margin-bottom: 24px;
-}
-
-.prog-step {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-}
-
-.prog-step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: calc(-50% + 20px);
-  right: calc(50% + 20px);
-  height: 2px;
-  background: var(--border2);
-  transition: background .4s;
-}
-
-.prog-step.done:not(:last-child)::after,
-.prog-step.active:not(:last-child)::after {
-  background: linear-gradient(90deg, var(--purple), rgba(107, 92, 231, .3));
-}
-
-.prog-circle {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 800;
-  background: var(--bg2);
-  border: 2px solid var(--border);
-  color: var(--muted);
-  transition: all .4s;
-  position: relative;
-  z-index: 1;
-}
-
-.prog-step.active .prog-circle {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(107, 92, 231, .5);
-}
-
-.prog-step.done .prog-circle {
-  background: var(--green);
-  border-color: var(--green);
-  color: #0C0B1A;
-}
-
-.prog-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--muted);
-  transition: color .4s;
-}
-
-.prog-step.active .prog-label {
-  color: var(--purple2);
-}
-
-.prog-step.done .prog-label {
-  color: var(--green);
-}
-
-/* Modal body */
-.modal-body {
-  padding: 0 40px 40px;
-}
-
-.step-panel {
-  display: none;
-}
-
-.step-panel.active {
-  display: block;
-  animation: fadeUp .3s ease;
-}
-
-.step-title {
-  font-family: var(--font-ar);
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-
-.step-sub {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-
-/* Fields */
-.field {
-  margin-bottom: 20px;
-}
-
-.field label {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--light);
-  margin-bottom: 8px;
-}
-
-.field label .req {
-  color: var(--coral);
-  margin-right: 3px;
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, .05);
-  border: 1.5px solid var(--border2);
-  border-radius: var(--r-sm);
-  padding: 14px 18px;
-  font-size: 14.5px;
-  color: var(--white);
-  font-family: var(--font-ar);
-  transition: all .3s;
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
-  color: var(--muted);
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  border-color: var(--purple);
-  background: rgba(107, 92, 231, .08);
-  box-shadow: 0 0 0 4px rgba(107, 92, 231, .1);
-}
-
-.field input.err,
-.field select.err,
-.field textarea.err {
-  border-color: var(--coral);
-}
-
-.field-err {
-  font-size: 12px;
-  color: var(--coral);
-  margin-top: 5px;
-  display: none;
-}
-
-.field input.err~.field-err,
-.field select.err~.field-err,
-.field textarea.err~.field-err {
-  display: block;
-}
-
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.field textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.field select option {
-  background: var(--surface);
-  color: var(--white);
-}
-
-/* Radio / Check cards */
-.radio-cards,
-.check-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.radio-card,
-.check-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: rgba(255, 255, 255, .04);
-  border: 1.5px solid var(--border2);
-  border-radius: var(--r-sm);
-  padding: 14px 18px;
-  cursor: pointer;
-  transition: all .25s;
-}
-
-.radio-card:hover,
-.check-card:hover {
-  border-color: rgba(107, 92, 231, .4);
-  background: rgba(107, 92, 231, .06);
-}
-
-.radio-card input,
-.check-card input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--purple);
-  flex-shrink: 0;
-}
-
-.radio-card.selected,
-.check-card.selected {
-  border-color: var(--purple);
-  background: rgba(107, 92, 231, .12);
-}
-
-.radio-card .rc-icon {
-  font-size: 18px;
-}
-
-.radio-card .rc-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.radio-card .rc-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--white);
-}
-
-.radio-card .rc-sub {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* Dept picker */
-.dept-picker {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.dept-pill {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255, 255, 255, .04);
-  border: 1.5px solid var(--border2);
-  border-radius: var(--r-sm);
-  padding: 12px 16px;
-  cursor: pointer;
-  transition: all .25s;
-}
-
-.dept-pill:hover {
-  border-color: rgba(107, 92, 231, .4);
-}
-
-.dept-pill input {
-  width: 16px;
-  height: 16px;
-  accent-color: var(--purple);
-  flex-shrink: 0;
-}
-
-.dept-pill .dp-icon {
-  font-size: 18px;
-}
-
-.dept-pill .dp-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--light);
-}
-
-.dept-pill.selected {
-  border-color: var(--purple);
-  background: rgba(107, 92, 231, .1);
-}
-
-.dept-pill.selected .dp-label {
-  color: var(--white);
-}
-
-/* Step nav */
-.step-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 32px;
-  gap: 12px;
-}
-
-.btn-back {
-  background: transparent;
-  color: var(--light);
-  border: 1px solid var(--border2);
-  padding: 13px 28px;
-  border-radius: var(--r-sm);
-  font-size: 15px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all .3s;
-}
-
-.btn-back:hover {
-  border-color: var(--purple);
-  color: var(--white);
-}
-
-.btn-next {
-  background: var(--purple);
-  color: #fff;
-  border: none;
-  padding: 13px 32px;
-  border-radius: var(--r-sm);
-  font-size: 15px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all .3s;
-  flex: 1;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(107, 92, 231, .3);
-}
-
-.btn-next:hover {
-  background: var(--purple2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(107, 92, 231, .4);
-}
-
-.btn-next:disabled {
-  opacity: .6;
-  transform: none;
-  cursor: not-allowed;
-}
-
-.btn-submit {
-  background: linear-gradient(135deg, var(--green), var(--teal));
-  color: #0C0B1A;
-}
-
-.btn-submit:hover {
-  filter: brightness(1.08);
-  background: linear-gradient(135deg, var(--green), var(--teal));
-}
-
-/* Job info view */
-.job-info-view {
-  display: none;
-  padding: 24px 40px;
-}
-
-.job-info-view .info-header {
-  background: rgba(107, 92, 231, .1);
-  border: 1px solid rgba(107, 92, 231, .2);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.job-info-view h4 {
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-
-.job-info-view p,
-.job-info-view li {
-  font-size: 14px;
-  color: var(--light);
-  line-height: 1.7;
-}
-
-.job-info-view ul {
-  padding-inline-start: 20px;
-  list-style: disc;
-  margin-bottom: 8px;
-}
-
-.job-info-view .ben-list {
-  list-style: none;
-  padding: 0;
-}
-
-.job-info-view .ben-list li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.job-info-view .ben-list li::before {
-  content: '✓';
-  color: var(--green);
-  font-weight: 800;
-}
-
-/* Success */
-.success-state {
-  display: none;
-  text-align: center;
-  padding: 40px 20px 56px;
-  animation: fadeUp .5s ease;
-}
-
-.success-state.show {
-  display: block;
-}
-
-.success-lottie {
-  font-size: 80px;
-  margin-bottom: 24px;
-  animation: pop .5s .2s both;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  60% {
-    transform: scale(1.15);
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.success-state h2 {
-  font-family: var(--font-ar);
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--white);
-  margin-bottom: 12px;
-}
-
-.success-state p {
-  font-size: 16px;
-  color: var(--light);
-  line-height: 1.8;
-  max-width: 420px;
-  margin: 0 auto 32px;
-}
-
-.success-detail {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(126, 217, 87, .1);
-  border: 1px solid rgba(126, 217, 87, .2);
-  padding: 12px 24px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--green);
-  margin-bottom: 32px;
-}
-
-/* ══════════════════════════════════════════════════════
-   FAQ
-══════════════════════════════════════════════════════ */
-#faq {
-  position: relative;
-  z-index: 1;
-  padding: 100px 32px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--border2);
-  overflow: hidden;
-}
-
-.faq-q {
-  width: 100%;
-  text-align: right;
-  background: transparent;
-  border: none;
-  padding: 22px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  font-family: var(--font-ar);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--white);
-  cursor: pointer;
-  transition: color .25s;
-}
-
-.faq-q:hover {
-  color: var(--green);
-}
-
-.faq-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(107, 92, 231, .15);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  color: var(--purple2);
-  flex-shrink: 0;
-  transition: all .3s;
-}
-
-.faq-item.open .faq-icon {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: #fff;
-  transform: rotate(45deg);
-}
-
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .4s ease, padding .4s;
-  font-size: 14.5px;
-  color: var(--light);
-  line-height: 1.85;
-}
-
-.faq-item.open .faq-a {
-  max-height: 300px;
-  padding-bottom: 20px;
-}
-
-/* ══════════════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════════════ */
-.site-footer {
-  position: relative;
-  z-index: 1;
-  background: var(--bg2);
-  border-top: 1px solid var(--border2);
-  padding: 48px 32px 32px;
-  text-align: center;
-}
-
-.site-footer img {
-  height: 42px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  margin-bottom: 20px;
-}
-
-.site-footer .footer-desc {
-  font-size: 14px;
-  color: var(--light);
-  max-width: 560px;
-  margin: 0 auto 28px;
-  line-height: 1.8;
-}
-
-.site-footer .footer-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
-}
-
-.site-footer .footer-links a {
-  font-size: 14px;
-  color: var(--muted);
-  transition: color .2s;
-}
-
-.site-footer .footer-links a:hover {
-  color: var(--green);
-}
-
-.site-footer .footer-copy {
-  font-size: 13px;
-  color: var(--muted);
-  padding-top: 24px;
-  border-top: 1px solid var(--border2);
-}
-
-.site-footer .footer-copy .heart {
-  color: var(--coral);
-}
-
-/* ══════════════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal.d1 {
-  transition-delay: .1s;
-}
-
-.reveal.d2 {
-  transition-delay: .18s;
-}
-
-.reveal.d3 {
-  transition-delay: .26s;
-}
-
-.reveal.d4 {
-  transition-delay: .34s;
-}
-
-/* ══════════════════════════════════════════════════════
-   HIDE GOOGLE TRANSLATE ELEMENTS
-══════════════════════════════════════════════════════ */
-.goog-te-banner-frame.skiptranslate,
-.goog-te-gadget-icon,
-#goog-gt-tt,
-.goog-te-balloon-frame {
-  display: none !important;
-}
-
-.goog-tooltip,
-.goog-tooltip:hover {
-  display: none !important;
-}
-
-.goog-text-highlight {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* ══════════════════════════════════════════════════════
-   ANIMATIONS
-══════════════════════════════════════════════════════ */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes shake {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  20% {
-    transform: translateX(-6px);
-  }
-
-  40% {
-    transform: translateX(6px);
-  }
-
-  60% {
-    transform: translateX(-4px);
-  }
-
-  80% {
-    transform: translateX(4px);
-  }
-}
-
-/* ══════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════ */
-@media (max-width: 1024px) {
-
-  .culture-inner,
-  .why-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .hero-stats {
-    flex-wrap: wrap;
-  }
-
-  .hstat {
-    flex: 1 1 45%;
-    border-left: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .culture-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .two-col,
-  .dept-picker {
-    grid-template-columns: 1fr;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .modal {
-    border-radius: 16px;
-  }
-
-  .modal-header,
-  .progress-wrap,
-  .modal-body,
-  .job-info-view {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .hero-stats {
-    flex-direction: column;
-  }
-
-  .hstat {
-    border-left: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-outline {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-</style></head><body><!-- BG MESH --><div class="mesh"><div class="mesh-orb"></div><div class="mesh-orb"></div><div class="mesh-orb"></div></div><!-- NAV --><nav id="navbar"><div class="nav-inner"><a href="index.html" class="nav-logo"><img src="assets/png/logo-cure-new.png" alt="شعار كيور للتمريض المنزلي" width="160" height="44" style="height:44px;width:auto;max-width:160px;object-fit:contain;"></a><ul class="nav-links"><li><a href="index.html#about">من نحن</a></li><li><a href="index.html#services">خدماتنا</a></li><li><a href="articles.html">المقالات</a></li><li><a href="careers.html" class="active">وظائف</a></li><li><a href="index.html#join" class="nav-cta">سجّل الآن</a></li><li><button class="lang-btn" id="langBtn" aria-label="تغيير اللغة" onclick="toggleLanguage()">EN</button></li></ul><div style="display:flex;align-items:center;gap:12px;"><button class="lang-btn" id="langBtnMobile" aria-label="تغيير اللغة" onclick="toggleLanguage()" style="display:none;">EN</button><button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="القائمة"><span></span><span></span><span></span></button></div></div><!-- Mobile nav --><div class="mobile-nav" id="mobileNav"><a href="index.html#about">من نحن</a><a href="index.html#services">خدماتنا</a><a href="articles.html">المقالات</a><a href="careers.html">وظائف</a><a href="index.html#contact">تواصل معنا</a><a href="index.html#join" style="color:var(--green)">سجّل الآن</a></div></nav><!-- ═══════════ HERO ═══════════ --><section id="hero"><div class="hero-eyebrow"><span class="live-dot"></span>نقبل طلبات التدريب الآن · 2025 </div><h1 class="hero-title">ابنِ <em>مستقبلك المهني</em><br />مع كيور </h1><p class="hero-sub">انضم لأول منصة تمريض منزلي في مصر — فرصة حقيقية لتطوير مهاراتك، بناء نفسك مهنياً، والمساهمة في مشروع يغيّر حياة الناس. </p><div class="hero-actions"><a href="#positions" class="btn-primary"><i class="fas fa-briefcase"></i>استعرض الوظائف</a><a href="#why" class="btn-outline"><i class="fas fa-users"></i>لماذا كيور؟</a></div><div class="hero-stats"><div class="hstat"><span class="hstat-num">15+</span><span class="hstat-lbl">وظيفة ومجال تدريب</span></div><div class="hstat"><span class="hstat-num">4</span><span class="hstat-lbl">أقسام متاحة</span></div><div class="hstat"><span class="hstat-num">100%</span><span class="hstat-lbl">مشروع حقيقي وأثر فعلي</span></div><div class="hstat"><span class="hstat-num">48h</span><span class="hstat-lbl">وقت الرد على الطلبات</span></div></div><div class="scroll-line"><span>تمرير</span><div class="line"></div></div></section><!-- ═══════════ CULTURE STRIP ═══════════ --><div class="culture-strip"><div class="culture-inner"><div class="cult-card reveal"><div class="cult-icon">🚀</div><h3>تأثير حقيقي</h3><p>كل شيء تبنيه هنا يصل لأناس حقيقيين في الفيوم — عملك ليس مجرد تدريب، هو قطعة من منظومة تغيير فعلي.</p></div><div class="cult-card reveal d1"><div class="cult-icon">🤝</div><h3>فريق صغير وأثر كبير</h3><p>مش هتكون رقم في شركة كبيرة. هنا صوتك مسموع، أفكارك تُطبَّق، ومجهودك يُقدَّر بشكل مباشر.</p></div><div class="cult-card reveal d2"><div class="cult-icon">📈</div><h3>تعلّم وأنت تبني</h3><p>بيئة startup حقيقية تعلّمك في أسابيع ما تتعلمه في سنوات من العمل التقليدي.</p></div><div class="cult-card reveal d3"><div class="cult-icon">🌍</div><h3>مرونة وحرية</h3><p>خيارات العمل عن بُعد متاحة — نقيّم على النتائج، مش على ساعات الحضور.</p></div></div></div><!-- ═══════════ POSITIONS ═══════════ --><section id="positions"><div class="reveal"><div class="section-label"><i class="fas fa-circle" style="font-size:8px"></i>الوظائف المتاحة</div><h2 class="section-title">فرص التدريب والعمل<br /><span style="color:var(--green)">لكل التخصصات</span></h2><p class="section-sub">اختر المجال الذي يشعلك ويناسب طموحك — كلنا بنبني كيور مع بعض.</p></div><!-- Filter --><div class="filter-bar reveal"><button class="filter-btn active" data-filter="all">🔍 الكل</button><button class="filter-btn" data-filter="tech">💻 التكنولوجيا</button><button class="filter-btn" data-filter="growth">📈 النمو والأعمال</button><button class="filter-btn" data-filter="creative">🎨 الإبداع والميديا</button><button class="filter-btn" data-filter="ops">🧾 العمليات</button></div><!-- TECH --><div class="dept-group reveal" data-dept="tech"><div class="dept-header dept-tech"><div class="dept-icon">💻</div><span class="dept-name">التكنولوجيا</span><span class="dept-count">4 وظائف</span></div><div class="jobs-grid"><div class="job-card" data-dept="tech" onclick="openModal('مطور تطبيقات الجوال — Flutter')"><div><div class="job-title">تطوير تطبيقات الجوال — Flutter</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد / مقر الشركة</span><span class="job-tag"><i class="fas fa-map-marker-alt"></i>الفيوم</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="tech" onclick="openModal('هندسة الباك إند — Backend Engineering')"><div><div class="job-title">هندسة الباك إند — Backend Engineering</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="tech" onclick="openModal('هندسة البرمجيات — Software Engineering')"><div><div class="job-title">هندسة البرمجيات — Software Engineering</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-building"></i>مقر الشركة</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-hybrid">Hybrid</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="tech" onclick="openModal('Cloud & DevOps — AWS')"><div><div class="job-title">Cloud & DevOps — AWS</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div></div></div><!-- GROWTH --><div class="dept-group reveal" data-dept="growth"><div class="dept-header dept-growth"><div class="dept-icon">📈</div><span class="dept-name">النمو والأعمال</span><span class="dept-count">3 وظائف</span></div><div class="jobs-grid"><div class="job-card" data-dept="growth" onclick="openModal('المبيعات وتطوير الأعمال — Sales')"><div><div class="job-title">المبيعات وتطوير الأعمال — Sales</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-map-marker-alt"></i>الفيوم · حضوري</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-onsite">On-site</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="growth" onclick="openModal('العلاقات العامة — Public Relations')"><div><div class="job-title">العلاقات العامة — Public Relations</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-map-marker-alt"></i>الفيوم</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-onsite">On-site</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="growth" onclick="openModal('التسويق والنمو — Marketing & Growth')"><div><div class="job-title">التسويق والنمو — Marketing & Growth</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد / حضوري</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-hybrid">Hybrid</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div></div></div><!-- CREATIVE --><div class="dept-group reveal" data-dept="creative"><div class="dept-header dept-creative"><div class="dept-icon">🎨</div><span class="dept-name">الإبداع والميديا</span><span class="dept-count">4 وظائف</span></div><div class="jobs-grid"><div class="job-card" data-dept="creative" onclick="openModal('كتابة المحتوى — Content Creation')"><div><div class="job-title">كتابة المحتوى — Content Creation</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="creative" onclick="openModal('التصميم الجرافيكي — Graphic Design')"><div><div class="job-title">التصميم الجرافيكي — Graphic Design</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="creative" onclick="openModal('مونتاج الفيديو — Video Editing')"><div><div class="job-title">مونتاج الفيديو — Video Editing</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="creative" onclick="openModal('التعليق الصوتي — Voice Over')"><div><div class="job-title">التعليق الصوتي — Voice Over</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-remote">Remote</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div></div></div><!-- OPS --><div class="dept-group reveal" data-dept="ops"><div class="dept-header dept-ops"><div class="dept-icon">🧾</div><span class="dept-name">العمليات والدعم</span><span class="dept-count">2 وظائف</span></div><div class="jobs-grid"><div class="job-card" data-dept="ops" onclick="openModal('إدارة العمليات — Operations Management')"><div><div class="job-title">إدارة العمليات — Operations Management</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-map-marker-alt"></i>الفيوم · حضوري</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-onsite">On-site</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div><div class="job-card" data-dept="ops" onclick="openModal('دعم العملاء — Customer Support')"><div><div class="job-title">دعم العملاء والمودريشن — Customer Support</div><div class="job-meta"><span class="job-tag"><i class="fas fa-graduation-cap"></i>تدريب داخلي</span><span class="job-tag"><i class="fas fa-wifi"></i>عن بُعد / حضوري</span><span class="tag-badge tag-intern">Intern</span><span class="tag-badge tag-hybrid">Hybrid</span></div></div><div class="apply-arrow"><i class="fas fa-arrow-left"></i></div></div></div></div></section><!-- ═══════════ WHY JOIN ═══════════ --><section id="why"><div class="why-inner"><div class="reveal" style="text-align:center;margin-bottom:56px;"><div class="section-label" style="justify-content:center;"><i class="fas fa-circle" style="font-size:8px"></i>لماذا تختار كيور</div><h2 class="section-title">أكثر من مجرد تدريب</h2><p class="section-sub" style="margin:0 auto;">نقدم تجربة مهنية حقيقية في بيئة startup ناشئة بأثر اجتماعي فعلي</p></div><div class="why-grid"><div class="why-card reveal"><span class="why-num">01</span><div class="why-card-icon"><i class="fas fa-rocket" style="color:var(--purple2)"></i></div><h3>تجربة Startup حقيقية</h3><p>ستعمل مباشرة على منتج حقيقي يُستخدم من ناس حقيقيين — مش مشروع وهمي لمجرد التدريب.</p></div><div class="why-card reveal d1"><span class="why-num">02</span><div class="why-card-icon"><i class="fas fa-certificate" style="color:var(--green)"></i></div><h3>شهادة خبرة معتمدة</h3><p>في نهاية التدريب ستحصل على شهادة خبرة رسمية من كيور تضيف قيمة حقيقية لملفك المهني.</p></div><div class="why-card reveal d2"><span class="why-num">03</span><div class="why-card-icon"><i class="fas fa-user-friends" style="color:var(--gold)"></i></div><h3>مرشد مهني مباشر</h3><p>كل متدرب يحصل على مرشد مباشر من الفريق يوجّهه ويساعده في تطوير مهاراته أسبوعياً.</p></div><div class="why-card reveal"><span class="why-num">04</span><div class="why-card-icon"><i class="fas fa-chart-line" style="color:var(--teal)"></i></div><h3>مسار واضح للتطور</h3><p>أداؤك المتميز يفتح باب الانضمام للفريق الدائم — كثير من قياداتنا المستقبلية ستأتي من المتدربين الحاليين.</p></div><div class="why-card reveal d1"><span class="why-num">05</span><div class="why-card-icon"><i class="fas fa-heart" style="color:var(--coral)"></i></div><h3>أثر اجتماعي حقيقي</h3><p>عملك في كيور يساهم مباشرة في تحسين جودة الرعاية الصحية لكبار السن والمرضى في الفيوم.</p></div><div class="why-card reveal d2"><span class="why-num">06</span><div class="why-card-icon"><i class="fas fa-laptop-house" style="color:var(--purple2)"></i></div><h3>مرونة كاملة</h3><p>كثير من الوظائف متاحة بالكامل عن بُعد — اعمل من مكانك وأنت تبني مستقبلك.</p></div></div></div></section><!-- ═══════════ FAQ ═══════════ --><section id="faq"><div class="reveal" style="text-align:center;margin-bottom:48px;"><div class="section-label" style="justify-content:center;"><i class="fas fa-circle" style="font-size:8px"></i>أسئلة شائعة</div><h2 class="section-title">عندك سؤال؟</h2></div><div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span>هل التدريب مدفوع؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">التدريب في المرحلة الحالية غير مدفوع مالياً، لكنه يوفر خبرة عملية حقيقية وشهادة معتمدة. للمتميزين إمكانية الانضمام للفريق الدائم مستقبلاً.</div></div><div class="faq-item reveal d1"><button class="faq-q" onclick="toggleFaq(this)"><span>ما هي مدة برنامج التدريب؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">مدة التدريب من 2 إلى 3 أشهر حسب التخصص والأداء. يبدأ بتقييم مهاري أسبوعين، ثم مشاريع حقيقية على منصة كيور.</div></div><div class="faq-item reveal d2"><button class="faq-q" onclick="toggleFaq(this)"><span>هل يجب أن أكون من الفيوم؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">معظم الوظائف متاحة لأبناء الفيوم وخارجها. الوظائف الحضورية محددة بوضوح في الإعلانات. وظائف التكنولوجيا والميديا والمحتوى متاحة بالكامل عن بُعد.</div></div><div class="faq-item reveal"><button class="faq-q" onclick="toggleFaq(this)"><span>ما هي المراحل الدراسية المقبولة؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">نرحب بطلاب الثانوية الموهوبين، طلاب الجامعة بكل مراحلهم، والخريجين الجدد. ما يهمنا هو الموهبة والرغبة الحقيقية في التعلم.</div></div><div class="faq-item reveal d1"><button class="faq-q" onclick="toggleFaq(this)"><span>كم تستغرق مراجعة الطلب؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">نراجع كل الطلبات خلال 48 ساعة من الاستلام. المرشحون المختارون يُتواصل معهم للمقابلة خلال أسبوع.</div></div><div class="faq-item reveal d2"><button class="faq-q" onclick="toggleFaq(this)"><span>ماذا أحضر في المقابلة؟</span><div class="faq-icon"><i class="fas fa-plus"></i></div></button><div class="faq-a">CV محدّث، أي أعمال سابقة أو مشاريع (portfolio)، وشغف واضح بمجالك والرغبة في المساهمة في رحلة كيور.</div></div></section><!-- ═══════════ FOOTER ═══════════ --><footer class="site-footer"><img src="assets/png/logo-cure-new.png" alt="كيور للتمريض المنزلي" /><p class="footer-desc">كيور هي أول منصة تدعم التمريض المنزلي المهني وتوفر فرص نمو حقيقية للشباب المبدع في مصر.</p><div class="footer-links"><a href="index.html">الرئيسية</a><a href="index.html#about">من نحن</a><a href="index.html#services">خدماتنا</a><a href="articles.html">المقالات</a><a href="index.html#contact">تواصل معنا</a><a href="privacy.html">سياسة الخصوصية</a></div><p class="footer-copy">© 2024 كيور — جميع الحقوق محفوظة. صُنع بـ <span class="heart">♥</span>في الفيوم، مصر</p></footer><!-- ═══════════ APPLICATION MODAL ═══════════ --><div class="overlay" id="overlay" onclick="handleOverlayClick(event)"><div class="modal" id="modal"><!-- Modal header --><div class="modal-header"><div><h3 id="modal-job-title" style="font-family:var(--font-ar);font-size:20px;font-weight:900;color:var(--white);"></h3><p style="font-size:13px;color:var(--muted);margin-top:4px;">تدريب داخلي · كيور · الفيوم، مصر</p></div><button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button></div><!-- Progress bar --><div class="progress-wrap" id="progressWrap"><div class="progress-steps"><div class="prog-step active" id="ps1"><div class="prog-circle" id="pc1">1</div><span class="prog-label">معلوماتك</span></div><div class="prog-step" id="ps2"><div class="prog-circle" id="pc2">2</div><span class="prog-label">التخصص</span></div><div class="prog-step" id="ps3"><div class="prog-circle" id="pc3">3</div><span class="prog-label">ملفك</span></div><div class="prog-step" id="ps4"><div class="prog-circle" id="pc4">4</div><span class="prog-label">أسئلة</span></div></div></div><!-- Job info view (shown before form) --><div class="job-info-view" id="jobInfoView"><div class="info-header"><h3 id="info-title" style="color:var(--white);font-size:20px;font-weight:800;margin-bottom:8px;"></h3><span id="info-type" style="display:inline-block;background:var(--purple);color:#fff;padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;"></span></div><h4>عن الوظيفة</h4><p id="info-about"></p><h4>المسؤوليات الرئيسية</h4><ul id="info-resp"></ul><h4>المتطلبات</h4><ul id="info-req"></ul><h4>المميزات</h4><ul class="ben-list" id="info-ben"></ul><div style="margin-top:28px;"><button class="btn-primary" style="width:100%;justify-content:center;" onclick="startApplication()">قدّم الآن <i class="fas fa-arrow-left"></i></button></div></div><!-- Multi-step form --><form id="applyForm" action="https://api.web3forms.com/submit" method="POST" novalidate><input type="hidden" name="access_key" value="78fe75bb-b43b-42f9-b508-64ce61033017" /><input type="hidden" name="_subject" id="form-subject" value="طلب تدريب — كيور" /><input type="hidden" name="position" id="form-position" /><div class="modal-body"><!-- STEP 1 --><div class="step-panel" id="step1"><h4 class="step-title">معلوماتك الأساسية</h4><p class="step-sub">أخبرنا عن نفسك — جميع الحقول المميزة بـ (*) مطلوبة</p><div class="field"><label><span class="req">*</span>عنوان البريد الإلكتروني</label><input type="email" name="email" id="f-email" placeholder="example@gmail.com" required /><div class="field-err">بريد إلكتروني غير صحيح</div></div><div class="two-col"><div class="field"><label><span class="req">*</span>الاسم الكامل</label><input type="text" name="name" id="f-name" placeholder="اسمك الكامل" required /></div><div class="field"><label><span class="req">*</span>السن</label><input type="number" name="age" id="f-age" placeholder="مثال: 22" min="14" max="40" required /></div></div><div class="field"><label><span class="req">*</span>العنوان / مكان السكن</label><input type="text" name="address" id="f-address" placeholder="مثال: الفيوم — مدينة الفيوم" required /></div><div class="field"><label><span class="req">*</span>رقم الهاتف</label><input type="tel" name="phone" id="f-phone" placeholder="01xxxxxxxxx" required /><div class="field-err">يرجى إدخال رقم هاتف صحيح</div></div><div class="step-nav"><div></div><button type="button" class="btn-next" onclick="goNext(1)">التالي <i class="fas fa-arrow-left"></i></button></div></div><!-- STEP 2 --><div class="step-panel" id="step2"><h4 class="step-title">مرحلتك الدراسية ومجال التدريب</h4><p class="step-sub">اختر مرحلتك الدراسية الحالية ومجال التدريب الذي تريده</p><div class="field"><label><span class="req">*</span>المرحلة الدراسية</label><div class="radio-cards"><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="study_level" value="ثانوية" required /><span class="rc-icon">🏫</span><div class="rc-text"><span class="rc-title">الثانوية</span><span class="rc-sub">طالب ثانوي موهوب</span></div></label><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="study_level" value="جامعية" /><span class="rc-icon">🎓</span><div class="rc-text"><span class="rc-title">جامعية</span><span class="rc-sub">طالب جامعي (أي سنة)</span></div></label><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="study_level" value="خريج" /><span class="rc-icon">💼</span><div class="rc-text"><span class="rc-title">خريج</span><span class="rc-sub">خريج جديد أو يبحث عن فرصة</span></div></label></div></div><div class="field" style="margin-top:28px;"><label><span class="req">*</span>مجال التدريب المطلوب</label><div class="dept-picker"><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="مطور تطبيقات جوال (Flutter)" required /><span class="dp-icon">📱</span><span class="dp-label">مطور تطبيقات (Flutter)</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="علاقات عامة (PR)" /><span class="dp-icon">📢</span><span class="dp-label">علاقات عامة (PR)</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="المبيعات (Sales)" /><span class="dp-icon">💹</span><span class="dp-label">المبيعات (Sales)</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="كتابة محتوى (Content Creation)" /><span class="dp-icon">✍️</span><span class="dp-label">كتابة محتوى</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="تصميم جرافيكي (Graphic Design)" /><span class="dp-icon">🎨</span><span class="dp-label">تصميم جرافيكي</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="تعليق صوتي (Voice Over)" /><span class="dp-icon">🎙️</span><span class="dp-label">تعليق صوتي</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="مونتاج فيديو (Video Editing)" /><span class="dp-icon">🎬</span><span class="dp-label">مونتاج فيديو</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="مودريتور (Moderator)" /><span class="dp-icon">🛡️</span><span class="dp-label">مودريتور</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="هندسة باك إند (Backend)" /><span class="dp-icon">⚙️</span><span class="dp-label">هندسة باك إند</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="هندسة برمجيات (Software Engineering)" /><span class="dp-icon">💻</span><span class="dp-label">هندسة برمجيات</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="Cloud / DevOps (AWS)" /><span class="dp-icon">☁️</span><span class="dp-label">Cloud / DevOps</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="التسويق (Marketing & Growth)" /><span class="dp-icon">📈</span><span class="dp-label">التسويق والنمو</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="إدارة عمليات (Operations)" /><span class="dp-icon">📋</span><span class="dp-label">إدارة العمليات</span></label><label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="دعم عملاء (Customer Support)" /><span class="dp-icon">🎧</span><span class="dp-label">دعم العملاء</span></label></div></div><div class="step-nav"><button type="button" class="btn-back" onclick="goBack(2)"><i class="fas fa-arrow-right"></i>رجوع</button><button type="button" class="btn-next" onclick="goNext(2)">التالي <i class="fas fa-arrow-left"></i></button></div></div><!-- STEP 3 --><div class="step-panel" id="step3"><h4 class="step-title">تفضيل العمل والسيرة الذاتية</h4><p class="step-sub">اختر طريقة العمل المفضلة لديك وأرفق رابط سيرتك الذاتية</p><div class="field"><label><span class="req">*</span>تفضّل العمل عن بُعد أم من مقر الشركة؟</label><div class="radio-cards"><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="work_preference" value="عن بُعد (Remote)" required /><span class="rc-icon">🏠</span><div class="rc-text"><span class="rc-title">العمل عن بُعد</span><span class="rc-sub">أعمل من أي مكان بشكل مرن</span></div></label><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="work_preference" value="مقر الشركة (On-site)" /><span class="rc-icon">🏢</span><div class="rc-text"><span class="rc-title">مقر الشركة</span><span class="rc-sub">أفضل بيئة العمل الحضورية</span></div></label></div></div><div class="field" style="margin-top:24px;"><label><span class="req">*</span>رابط السيرة الذاتية (CV Link)</label><div style="font-size:12.5px;color:var(--light);margin-bottom:10px;background:rgba(107,92,231,.1);padding:8px 12px;border-radius:8px;border:1px solid rgba(107,92,231,.2);"><i class="fas fa-info-circle" style="color:var(--purple);margin-inline-end:6px;"></i>تأكد من أن رابط الملف في <strong>وضع العام (Public)</strong>وإلا لن نتمكن من مراجعته. </div><input type="url" name="cv_link" id="cv-input" placeholder="https://drive.google.com/..." required /><div class="field-err">يرجى إدخال رابط صحيح للسيرة الذاتية</div></div><div class="field"><label>رابط Portfolio أو LinkedIn (اختياري)</label><input type="url" name="portfolio" placeholder="https://linkedin.com/in/yourname" /></div><div class="step-nav"><button type="button" class="btn-back" onclick="goBack(3)"><i class="fas fa-arrow-right"></i>رجوع</button><button type="button" class="btn-next" onclick="goNext(3)">التالي <i class="fas fa-arrow-left"></i></button></div></div><!-- STEP 4 --><div class="step-panel" id="step4"><h4 class="step-title">سؤال أخير</h4><p class="step-sub">سؤال مهم يساعدنا في فهم تجربتك مع خدمات التمريض المنزلي</p><div class="field"><label style="font-size:15px;color:var(--white);font-weight:800;line-height:1.7;margin-bottom:20px;display:block;">هل سبق وكان أحد أقاربك أو معارفك في حاجة إلى خدمة <span style="color:var(--green)">CURE</span>(التمريض المنزلي)؟ </label><div class="radio-cards"><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="cure_need_experience" value="نعم — مررت أو أعرف شخصاً مرّ بهذه الحاجة" required /><span class="rc-icon">✅</span><div class="rc-text"><span class="rc-title">نعم</span><span class="rc-sub">مررت أو أعرف شخصاً مرّ بهذه الحاجة</span></div></label><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="cure_need_experience" value="لا" /><span class="rc-icon">❌</span><div class="rc-text"><span class="rc-title">لا</span><span class="rc-sub">لم أمر بهذه التجربة شخصياً</span></div></label><label class="radio-card" onclick="selectRadioCard(this)"><input type="radio" name="cure_need_experience" value="ربما / لست متأكداً" /><span class="rc-icon">🤔</span><div class="rc-text"><span class="rc-title">ربما / لست متأكداً</span><span class="rc-sub">لا أعلم بدقة</span></div></label></div></div><div class="field" style="margin-top:24px;"><label>لماذا تريد الانضمام لكيور؟ (اختياري — لكنه يرفع فرصتك)</label><textarea name="motivation" placeholder="أخبرنا بكلمات بسيطة لماذا تريد العمل مع كيور..."></textarea></div><div style="background:rgba(126,217,87,.07);border:1px solid rgba(126,217,87,.15);border-radius:var(--r-sm);padding:16px 20px;margin-bottom:24px;"><p style="font-size:13px;color:var(--light);display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-shield-alt" style="color:var(--green);margin-top:3px;flex-shrink:0;"></i>بياناتك محمية تماماً وتُستخدم فقط لأغراض التوظيف في كيور. لن تُشارك مع أي جهة خارجية. </p></div><div class="step-nav"><button type="button" class="btn-back" onclick="goBack(4)"><i class="fas fa-arrow-right"></i>رجوع</button><button type="submit" class="btn-next btn-submit" id="submit-btn"><i class="fas fa-paper-plane"></i>أرسل الطلب الآن </button></div></div></div><!-- /modal-body --></form><!-- Success state --><div class="success-state" id="success-state"><div class="success-lottie">🎉</div><h2>تم استلام طلبك بنجاح !</h2><p>شكراً لاهتمامك بالانضمام لفريق كيور. سيراجع فريقنا طلبك ويتواصل معك خلال <strong style="color:var(--green)">48 ساعة</strong>.</p><div class="success-detail"><i class="fas fa-check-circle"></i>تم الإرسال · راجع بريدك الإلكتروني</div><br /><button class="btn-outline" onclick="closeModal()" style="margin:0 auto;display:inline-flex;">العودة للوظائف <i class="fas fa-arrow-left"></i></button></div></div><!-- /modal --></div><!-- /overlay --><!-- Google Translate (hidden) --><div id="google_translate_element" style="display:none;"></div><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><script>
-
-/* ══════════════════════════════════════════════════════
-   GOOGLE TRANSLATE
-══════════════════════════════════════════════════════ */
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'ar',
-    includedLanguages: 'ar,en',
-    autoDisplay: false
-  }
-
-  , 'google_translate_element');
-}
-
-function getCookie(name) {
-  const val=`;
-
-  $ {
-    document.cookie
-  }
-
-  `;
-
-  const parts=val.split(`; $ {
-      name
-    }
-
-    =`);
-  if (parts.length===2) return parts.pop().split(';').shift();
-  return '';
-}
-
-function toggleLanguage() {
-  const lang=getCookie('googtrans');
-
-  if (lang && lang.includes('/en')) {
-    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    document.cookie='googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain='+location.hostname+'; path=/;';
-  }
-
-  else {
-    const d=new Date();
-    d.setTime(d.getTime() + 30*24*60*60*1000);
-    document.cookie='googtrans=/ar/en; expires='+d.toUTCString()+'; path=/';
-  }
-
-  location.reload();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const lang=getCookie('googtrans');
-    const isEn=lang && lang.includes('/en');
-
-    document.querySelectorAll('#langBtn,#langBtnMobile').forEach(function (b) {
-        b.textContent=isEn ? 'AR' : 'EN';
-      });
-  });
-
-/* ══════════════════════════════════════════════════════
-   NAV SCROLL + HAMBURGER
-══════════════════════════════════════════════════════ */
-window.addEventListener('scroll', function () {
-    const navbar=document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-const hamburger=document.getElementById('hamburgerBtn');
-const mobileNav=document.getElementById('mobileNav');
-const langBtnMobile=document.getElementById('langBtnMobile');
-
-// Show mobile lang btn
-if (window.innerWidth <=768) langBtnMobile.style.display='block';
-
-window.addEventListener('resize', function () {
-    langBtnMobile.style.display=window.innerWidth <=768 ? 'block' : 'none';
-  });
-
-hamburger.addEventListener('click', function () {
-    const open=mobileNav.classList.toggle('open');
-    hamburger.classList.toggle('active', open);
-    hamburger.setAttribute('aria-expanded', open);
-    document.body.style.overflow=open ? 'hidden' : '';
-  });
-
-mobileNav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('active');
-        document.body.style.overflow='';
-      });
-  });
-
-/* ══════════════════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════════════════ */
-const ro=new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-        if (e.isIntersecting) e.target.classList.add('in');
-      });
-  }
-
-  , {
-  threshold: 0.1
-});
-
-document.querySelectorAll('.reveal').forEach(function (el) {
-    ro.observe(el);
-  });
-
-/* ══════════════════════════════════════════════════════
-   FILTER
-══════════════════════════════════════════════════════ */
-document.querySelectorAll('.filter-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-        document.querySelectorAll('.filter-btn').forEach(function (b) {
-            b.classList.remove('active');
-          });
-        btn.classList.add('active');
-        const f=btn.dataset.filter;
-
-        document.querySelectorAll('.dept-group').forEach(function (g) {
-            g.style.display=(f==='all' || g.dataset.dept===f) ? 'block' : 'none';
-          });
-      });
-  });
-
-/* ══════════════════════════════════════════════════════
-   MODAL
-══════════════════════════════════════════════════════ */
-let currentStep=1;
-
-// Default job descriptions (fallback when no external data)
-const jobDescriptions= {
-  default: {
-    type: 'تدريب داخلي',
-      about: 'انضم لفريق كيور وكن جزءاً من أول منصة تمريض منزلي في مصر. ستعمل على منتج حقيقي ومؤثر في حياة الناس.',
-      responsibilities: ['العمل ضمن فريق متكامل على منتج حقيقي', 'المساهمة في بناء منصة كيور وتطويرها', 'تطبيق مهاراتك في بيئة startup حقيقية', 'التواصل المستمر مع المرشد المهني وأعضاء الفريق'],
-      requirements: ['الشغف الحقيقي بالمجال', 'القدرة على التعلم السريع والعمل باستقلالية', 'الالتزام بمواعيد التسليم والاجتماعات', 'روح الفريق والرغبة في المساهمة'],
-      benefits: ['شهادة خبرة معتمدة من كيور', 'مرشد مهني مباشر', 'خبرة عملية في بيئة startup', 'إمكانية الانضمام للفريق الدائم للمتميزين']
-  }
-}
-
-;
-
-function openModal(title) {
-  document.getElementById('modal-job-title').textContent=title;
-  document.getElementById('form-position').value=title;
-  document.getElementById('form-subject').value='طلب تدريب — '+title+' — كيور';
-
-  // Get job data (from external file or fallback)
-  const jobData=(window.jobsData && window.jobsData[title]) ? window.jobsData[title]: jobDescriptions.default;
-
-  document.getElementById('info-title').textContent=title;
-  document.getElementById('info-type').textContent=jobData.type || 'تدريب داخلي';
-  document.getElementById('info-about').textContent=jobData.about;
-
-  document.getElementById('info-resp').innerHTML=jobData.responsibilities.map(function (r) {
-      return '<li>' + r + '</li>';
-    }).join('');
-
-  document.getElementById('info-req').innerHTML=jobData.requirements.map(function (r) {
-      return '<li>' + r + '</li>';
-    }).join('');
-
-  document.getElementById('info-ben').innerHTML=jobData.benefits.map(function (b) {
-      return '<li>' + b + '</li>';
-    }).join('');
-
-  // Show info view, hide form progress
-  document.getElementById('jobInfoView').style.display='block';
-  document.getElementById('progressWrap').style.display='none';
-  document.getElementById('applyForm').style.display='none';
-  document.getElementById('success-state').classList.remove('show');
-
-  document.getElementById('overlay').classList.add('open');
-  document.body.style.overflow='hidden';
-}
-
-function startApplication() {
-  document.getElementById('jobInfoView').style.display='none';
-  document.getElementById('progressWrap').style.display='block';
-  document.getElementById('applyForm').style.display='block';
-  currentStep=1;
-  showStep(1);
-}
-
-function closeModal() {
-  document.getElementById('overlay').classList.remove('open');
-  document.body.style.overflow='';
-}
-
-function handleOverlayClick(e) {
-  if (e.target===document.getElementById('overlay')) closeModal();
-}
-
-function showStep(n) {
-  for (var i=1; i <=4; i++) {
-    var panel=document.getElementById('step' + i);
-    var pstep=document.getElementById('ps' + i);
-    var pcircle=document.getElementById('pc' + i);
-    if (panel) panel.classList.toggle('active', i===n);
-
-    if (pstep) {
-      pstep.classList.remove('active', 'done');
-    }
-
-    if (i < n && pstep) {
-      pstep.classList.add('done');
-      if (pcircle) pcircle.innerHTML='<i class="fas fa-check"></i>';
-    }
-
-    if (i===n && pstep) {
-      pstep.classList.add('active');
-      if (pcircle) pcircle.textContent=i;
-    }
-
-    if (i > n && pcircle) pcircle.textContent=i;
-  }
-
-  currentStep=n;
-  var m=document.querySelector('.modal');
-  if (m) m.scrollTop=0;
-}
-
-function goNext(step) {
-  if (step===1) {
-    var email=document.getElementById('f-email');
-    var name=document.getElementById('f-name');
-    var age=document.getElementById('f-age');
-    var address=document.getElementById('f-address');
-    var phone=document.getElementById('f-phone');
-    var ok=true;
-
-    [email,
-    name,
-    age,
-    address,
-    phone].forEach(function (el) {
-        if ( !el.value.trim()) {
-          el.classList.add('err'); ok=false;
-        }
-
-        else el.classList.remove('err');
-      });
-
-    if ( !ok) {
-      shake();
-      showToast('يرجى تعبئة جميع الحقول المطلوبة');
-      return;
-    }
-  }
-
-  if (step===2) {
-    var selStudy=document.querySelector('input[name="study_level"]:checked');
-    var selDept=document.querySelector('input[name="internship_field"]:checked');
-
-    if ( !selStudy || !selDept) {
-      shake();
-      showToast('اختر المرحلة الدراسية ومجال التدريب');
-      return;
-    }
-  }
-
-  if (step===3) {
-    var pref=document.querySelector('input[name="work_preference"]:checked');
-    var cv=document.getElementById('cv-input');
-
-    if ( !pref) {
-      shake();
-      showToast('اختر تفضيل العمل');
-      return;
-    }
-
-    if ( !cv.value.trim()) {
-      cv.classList.add('err');
-      shake();
-      showToast('أضف رابط السيرة الذاتية');
-      return;
-    }
-
-    else cv.classList.remove('err');
-  }
-
-  showStep(step + 1);
-}
-
-function goBack(step) {
-  showStep(step - 1);
-}
-
-function selectRadioCard(el) {
-  var radio=el.querySelector('input[type="radio"]');
-  if ( !radio) return;
-  radio.checked=true;
-  var name=radio.name;
-
-  document.querySelectorAll('input[name="' + name + '"]').forEach(function (inp) {
-      var parent=inp.closest('.radio-card');
-      if (parent) parent.classList.remove('selected');
-    });
-  el.classList.add('selected');
-}
-
-function selectDept(el) {
-  var radio=el.querySelector('input[type="radio"]');
-  if (radio) radio.checked=true;
-
-  document.querySelectorAll('.dept-pill').forEach(function (p) {
-      p.classList.remove('selected');
-    });
-  el.classList.add('selected');
-}
-
-/* Form submit */
-var applyForm=document.getElementById('applyForm');
-
-if (applyForm) {
-  applyForm.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      var q=document.querySelector('input[name="cure_need_experience"]:checked');
-
-      if ( !q) {
-        shake(); showToast('أجب على السؤال الأخير'); return;
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الوظائف والتدريب وانضمام الكوادر الطبية — كيور CURE | الفيوم</title>
+  <meta name="description" content="انضم لمنظومة كيور — أول منصة ذكية للتمريض المنزلي في مصر. فرص عمل للكوادر التمريضية بعائد 80%، وفرص تدريب ووظائف في التكنولوجيا، التسويق، والعمليات." />
+  <meta property="og:title" content="الوظائف وانضمام الكوادر — كيور CURE" />
+  <meta property="og:description" content="ابنِ مستقبلك المهني مع منصة كيور. انضم كأخصائي تمريض معتمد أو موهبة تقنية وإدارية." />
+  <meta property="og:image" content="https://cureztyx.com/assets/images/CURE-premium-launch-hero.png" />
+  <meta property="og:url" content="https://cureztyx.com/careers.html" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/careers.css" />
+
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CUREZTYX26');
+  </script>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-announcement-inner">
+      <div class="top-announcement-left">
+        <span class="live-status-pulse"></span>
+        <span class="announcement-text">🌟 باب الانضمام مفتوح للكوادر الطبية والتمريضية في الفيوم | طوارئ: <strong>01070203636</strong></span>
+      </div>
+      <div class="top-announcement-right">
+        <a href="https://wa.me/201070203636?text=مرحباً،+أرغب+في+الانضمام+لفريق+تمريض+كيور" target="_blank" rel="noopener" class="top-link">
+          <i class="fab fa-whatsapp"></i> واتساب الكوادر
+        </a>
+        <a href="tel:01070203636" class="top-link">
+          <i class="fas fa-phone-alt"></i> اتصل بنا
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav id="navbar" class="header-cure">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img loading="lazy" src="assets/images/icon.png" alt="شعار تطبيق كيور" class="nav-app-icon" width="42" height="42">
+        <div class="nav-brand-text">
+          <span class="brand-title">كيور <span>CURE</span></span>
+          <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="pricing.html">الأسعار الرسمية</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="articles.html">المقالات الطبية</a></li>
+        <li><a href="careers.html" class="active">الوظائف والتدريب</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+            <i class="fab fa-google-play"></i> حمّل التطبيق
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-play-header" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i>
+          <span>حمّل الآن</span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="pricing.html">الأسعار الرسمية</a>
+      <a href="faq.html">الأسئلة الشائعة</a>
+      <a href="articles.html">المقالات الطبية</a>
+      <a href="careers.html" class="active">الوظائف والتدريب</a>
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-nav-cta">
+        <i class="fab fa-google-play"></i> تحميل تطبيق كيور مجاناً
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="careers-hero">
+    <div class="container">
+      <span class="badge" style="margin-bottom: 18px;">
+        <span class="live-dot"></span> نقبل طلبات الانضمام والتدريب لعام 2025 - 2026
+      </span>
+      <h1 class="careers-hero-title">
+        ابنِ <em>مستقبلك المهني</em><br />مع منظومة كيور CURE
+      </h1>
+      <p class="careers-hero-sub">
+        انضم لأول منصة تمريض منزلي ورعاية صحية ذكية في مصر — فرصة حقيقية للأطباء والتمريض لتحقيق دخل عادل ومستقل، وللمواهب التقنية والإدارية لبناء مسيرة استثنائية.
+      </p>
+
+      <!-- Stats Strip -->
+      <div class="hero-stats-row">
+        <div class="stat-box">
+          <span class="stat-num">80%</span>
+          <span class="stat-lbl">عائد الكادر التمريضي</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">15+</span>
+          <span class="stat-lbl">تخصص ووظيفة متاحة</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">100%</span>
+          <span class="stat-lbl">مرونة في اختيار المواعيد</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">48h</span>
+          <span class="stat-lbl">أقصى وقت لمراجعة الطلب</span>
+        </div>
+      </div>
+
+      <!-- Dual Path Decision Grid -->
+      <div class="dual-path-grid">
+        <!-- Path 1: Nurses & Medical Staff -->
+        <div class="path-card featured">
+          <div>
+            <span class="path-tag nurse-tag"><i class="fas fa-user-nurse"></i> للكوادر التمريضية والطبية</span>
+            <h2 class="path-title">انضم كأخصائي تمريض منزلي معتمد</h2>
+            <p class="path-desc">
+              إذا كنت ممرضاً أو أخصائياً حاصلاً على كارنيه مزاولة المهنة ونقابة التمريض، كيور توفر لك نظام طلبات ذكي في الفيوم يضمن لك أعلى عائد وحماية كاملة.
+            </p>
+            <ul class="path-perks">
+              <li><i class="fas fa-check-double"></i> عائد يصل إلى 80% من قيمة كل زيارة منزلية</li>
+              <li><i class="fas fa-check-double"></i> حرية تامة في قبول أو رفض الزيارات حسب جدولك</li>
+              <li><i class="fas fa-check-double"></i> استقبال الطلبات القريبة من مكان سكنك عبر التطبيق</li>
+              <li><i class="fas fa-check-double"></i> دعم وحماية ومتابعة من غرفة العمليات الطبية 24/7</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً،+أنا+أخصائي+تمريض+وأرغب+في+الانضمام+لشبكة+كيور+بالفيوم" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center; background:#1e6e02; border-color:#1e6e02; color:#ffffff;">
+            <i class="fab fa-whatsapp"></i> قدّم كأخصائي تمريض الآن
+          </a>
+        </div>
+
+        <!-- Path 2: Internships & Tech Jobs -->
+        <div class="path-card">
+          <div>
+            <span class="path-tag"><i class="fas fa-laptop-code"></i> للتقنية والإدارة والميديا</span>
+            <h2 class="path-title">برنامج التدريب والوظائف التقنية</h2>
+            <p class="path-desc">
+              تعلّم وابنِ مشاريع حقيقية تمس حياة آلاف العائلات. فرص للطلاب والخريجين في تطوير التطبيقات، التسويق الرقمي، التصميم، وخدمة العملاء.
+            </p>
+            <ul class="path-perks">
+              <li><i class="fas fa-check"></i> العمل مباشرة على منصة رقمية نشطة</li>
+              <li><i class="fas fa-check"></i> شهادة خبرة رسمية معتمدة من كيور</li>
+              <li><i class="fas fa-check"></i> مرشد مهني وتوجيه أسبوعي مباشر</li>
+              <li><i class="fas fa-check"></i> خيارات عمل مرنة وعن بُعد (Remote / Hybrid)</li>
+            </ul>
+          </div>
+          <a href="#positions" class="btn-primary" style="justify-content:center;">
+            <i class="fas fa-briefcase"></i> استعرض 15 وظيفة شاغرة
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Culture Strip -->
+  <section class="culture-section">
+    <div class="container">
+      <div class="section-heading text-center" style="margin-bottom: 40px;">
+        <span class="badge">ثقافة العمل في كيور</span>
+        <h2 class="section-title">بيئة تمكّنك من التفوّق</h2>
+      </div>
+      <div class="culture-grid">
+        <div class="cult-card">
+          <span class="cult-icon">🚀</span>
+          <h3>تأثير إنساني ملموس</h3>
+          <p>كل ميزة برمجية تكتبها أو زيارة تمريضية تؤديها تنقذ مريضاً وتخفف ألماً عن أسرة حقيقية في الفيوم.</p>
+        </div>
+        <div class="cult-card">
+          <span class="cult-icon">🤝</span>
+          <h3>فريق متكاتف ومرن</h3>
+          <p>لا توجد بيروقراطية معقدة — صوتك مسموع، أفكارك تُطبّق في غضون أيام، والتقدير دائم وفوري.</p>
+        </div>
+        <div class="cult-card">
+          <span class="cult-icon">📈</span>
+          <h3>نمو سريع وخبرة مضاعفة</h3>
+          <p>العمل في بيئة ذكية متسارعة يمنحك خبرة سنوات في عدة أشهر بفضل التحديات الحقيقية المباشرة.</p>
+        </div>
+        <div class="cult-card">
+          <span class="cult-icon">🌍</span>
+          <h3>احترام المواعيد والاستقلالية</h3>
+          <p>سواء كنت في المنزل أو الميدان، نقيس النجاح بالإنجاز والنتائج ورضا المريض، لا بساعات الجلوس.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Positions Section -->
+  <section id="positions" class="positions-section">
+    <div class="container">
+      <div class="section-heading text-center">
+        <span class="badge"><i class="fas fa-briefcase"></i> الفرص المتاحة</span>
+        <h2 class="section-title">الوظائف وبرامج التدريب</h2>
+        <p class="section-subtitle">اختر المجال الأنسب لشغفك وخبرتك وقدّم طلبك في 3 خطوات بسيطة</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">🔍 جميع التخصصات</button>
+        <button class="filter-btn" data-filter="tech">💻 التكنولوجيا والتطوير</button>
+        <button class="filter-btn" data-filter="growth">📈 التسويق والأعمال</button>
+        <button class="filter-btn" data-filter="creative">🎨 التصميم والميديا</button>
+        <button class="filter-btn" data-filter="ops">🧾 العمليات والدعم</button>
+      </div>
+
+      <!-- TECH -->
+      <div class="dept-group" data-dept="tech">
+        <div class="dept-header">
+          <span class="dept-icon">💻</span>
+          <span class="dept-name">التكنولوجيا وهندسة البرمجيات</span>
+          <span class="dept-count">4 شواغر</span>
+        </div>
+        <div class="jobs-grid">
+          <div class="job-card" onclick="openModal('مطور تطبيقات الجوال — Flutter')">
+            <div>
+              <div class="job-title">تطوير تطبيقات الجوال — Flutter</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-graduation-cap"></i> تدريب داخلي / توظيف</span>
+                <span class="job-tag"><i class="fas fa-map-marker-alt"></i> الفيوم</span>
+                <span class="tag-badge tag-intern">Intern</span>
+                <span class="tag-badge tag-remote">Remote / Hybrid</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('هندسة الباك إند — Backend Engineering')">
+            <div>
+              <div class="job-title">هندسة الباك إند — Node.js & Go</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-graduation-cap"></i> تدريب متقدم</span>
+                <span class="tag-badge tag-intern">Intern</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('هندسة البرمجيات — Frontend Web')">
+            <div>
+              <div class="job-title">هندسة الويب والواجهات — UI/UX Web</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-laptop-code"></i> دوام جزئي / تدريب</span>
+                <span class="tag-badge tag-hybrid">Hybrid</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('Cloud & DevOps — AWS Infrastructure')">
+            <div>
+              <div class="job-title">الحوسبة السحابية — Cloud & DevOps</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-server"></i> تدريب تقني</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROWTH -->
+      <div class="dept-group" data-dept="growth">
+        <div class="dept-header">
+          <span class="dept-icon">📈</span>
+          <span class="dept-name">النمو، التسويق وتطوير الأعمال</span>
+          <span class="dept-count">3 شواغر</span>
+        </div>
+        <div class="jobs-grid">
+          <div class="job-card" onclick="openModal('التسويق الرقمي وإدارة الحملات — Digital Marketing')">
+            <div>
+              <div class="job-title">التسويق الرقمي ونمو المستخدمين — Growth</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-chart-line"></i> تدريب داخلي</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('العلاقات العامة والشراكات الطبية — PR')">
+            <div>
+              <div class="job-title">العلاقات العامة والشراكات مع العيادات والمستشفيات</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-handshake"></i> الفيوم · ميداني</span>
+                <span class="tag-badge tag-onsite">On-site</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('المبيعات وتطوير الأعمال الطبية — Sales')">
+            <div>
+              <div class="job-title">المبيعات وتطوير الأعمال — Medical Sales</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-briefcase"></i> دوام كامل / جزئي</span>
+                <span class="tag-badge tag-hybrid">Hybrid</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CREATIVE -->
+      <div class="dept-group" data-dept="creative">
+        <div class="dept-header">
+          <span class="dept-icon">🎨</span>
+          <span class="dept-name">الإبداع والمحتوى والميديا</span>
+          <span class="dept-count">3 شواغر</span>
+        </div>
+        <div class="jobs-grid">
+          <div class="job-card" onclick="openModal('كتابة المحتوى الطبي والتوعوي — Medical Content')">
+            <div>
+              <div class="job-title">كتابة المحتوى الطبي والتوعوي للمرضى</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-pen-nib"></i> عن بُعد</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('التصميم الجرافيكي وسوشيال ميديا — Graphic Design')">
+            <div>
+              <div class="job-title">التصميم الجرافيكي والهوية البصرية</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-palette"></i> تدريب عملي</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('مونتاج الفيديو والموشن جرافيك — Video Editing')">
+            <div>
+              <div class="job-title">صناعة الفيديو والمونتاج الإعلاني الطبي</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-video"></i> عن بُعد</span>
+                <span class="tag-badge tag-remote">Remote</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPS -->
+      <div class="dept-group" data-dept="ops">
+        <div class="dept-header">
+          <span class="dept-icon">🧾</span>
+          <span class="dept-name">العمليات وخدمة المرضى</span>
+          <span class="dept-count">2 شواغر</span>
+        </div>
+        <div class="jobs-grid">
+          <div class="job-card" onclick="openModal('إدارة العمليات والتوجيه الميداني — Dispatch Ops')">
+            <div>
+              <div class="job-title">إدارة العمليات وتوجيه طاقم التمريض الميداني</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-headset"></i> مقر الفيوم</span>
+                <span class="tag-badge tag-onsite">On-site</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+          <div class="job-card" onclick="openModal('خدمة العملاء ورعاية المرضى — Patient Support')">
+            <div>
+              <div class="job-title">خدمة العملاء ورعاية المرضى ومتابعة الحالات</div>
+              <div class="job-meta">
+                <span class="job-tag"><i class="fas fa-comments"></i> دوام شفتات</span>
+                <span class="tag-badge tag-hybrid">Hybrid</span>
+              </div>
+            </div>
+            <div class="apply-arrow"><i class="fas fa-arrow-left"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Modal -->
+  <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div>
+          <h3 id="modal-job-title" style="font-size: 19px; font-weight: 800; color: var(--c-heading); margin-bottom: 2px;">تقديم طلب انضمام</h3>
+          <p style="font-size: 13px; color: var(--c-muted); margin: 0;">منصة كيور CURE · الفيوم، مصر</p>
+        </div>
+        <button class="modal-close" onclick="closeModal()" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-wrap" id="progressWrap">
+        <div class="progress-steps">
+          <div class="prog-step active" id="ps1">
+            <div class="prog-circle" id="pc1">1</div>
+            <span class="prog-label">البيانات</span>
+          </div>
+          <div class="prog-step" id="ps2">
+            <div class="prog-circle" id="pc2">2</div>
+            <span class="prog-label">التخصص</span>
+          </div>
+          <div class="prog-step" id="ps3">
+            <div class="prog-circle" id="pc3">3</div>
+            <span class="prog-label">السيرة الذاتية</span>
+          </div>
+          <div class="prog-step" id="ps4">
+            <div class="prog-circle" id="pc4">4</div>
+            <span class="prog-label">التأكيد</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Info Preview View -->
+      <div class="job-info-view" id="jobInfoView">
+        <div style="margin-bottom: 16px;">
+          <h3 id="info-title" style="font-size: 20px; font-weight: 800; color: var(--c-heading); margin-bottom: 6px;"></h3>
+          <span id="info-type" style="display:inline-block; background:var(--c-brand-5); color:var(--c-brand-deep); padding:4px 12px; border-radius:var(--r-pill); font-size:12px; font-weight:800;"></span>
+        </div>
+        <h4>عن الوظيفة / البرنامج التدريبي</h4>
+        <p id="info-about" style="font-size:14px; color:var(--c-body); line-height:1.75;"></p>
+        <h4>المهام والمسؤوليات</h4>
+        <ul id="info-resp"></ul>
+        <h4>المتطلبات الأساسية</h4>
+        <ul id="info-req"></ul>
+        <h4>ما نقدمه لك</h4>
+        <ul id="info-ben"></ul>
+        <div style="margin-top: 28px;">
+          <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="startApplication()">
+            ابدأ التقديم الآن <i class="fas fa-arrow-left"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Multi-step Form -->
+      <form id="applyForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="78fe75bb-b43b-42f9-b508-64ce61033017" />
+        <input type="hidden" name="_subject" id="form-subject" value="طلب تقديم — كيور" />
+        <input type="hidden" name="position" id="form-position" />
+
+        <div class="modal-body">
+          <!-- STEP 1 -->
+          <div class="step-panel" id="step1">
+            <h4 class="step-title">المعلومات الشخصية والاتصال</h4>
+            <p class="step-sub">يرجى ملء البيانات بدقة لنتواصل معك خلال 48 ساعة</p>
+            <div class="field">
+              <label><span class="req">*</span>الاسم الكامل ثلاثي</label>
+              <input type="text" name="name" id="f-name" placeholder="أدخل اسمك كاملاً" required />
+            </div>
+            <div class="two-col">
+              <div class="field">
+                <label><span class="req">*</span>البريد الإلكتروني</label>
+                <input type="email" name="email" id="f-email" placeholder="example@gmail.com" required />
+              </div>
+              <div class="field">
+                <label><span class="req">*</span>رقم الهاتف (واتساب)</label>
+                <input type="tel" name="phone" id="f-phone" placeholder="01xxxxxxxxx" required />
+              </div>
+            </div>
+            <div class="two-col">
+              <div class="field">
+                <label><span class="req">*</span>السن</label>
+                <input type="number" name="age" id="f-age" placeholder="مثال: 22" min="16" max="50" required />
+              </div>
+              <div class="field">
+                <label><span class="req">*</span>محل السكن / المدينة</label>
+                <input type="text" name="address" id="f-address" placeholder="الفيوم، سنورس، إطسا..." required />
+              </div>
+            </div>
+            <div class="step-nav">
+              <div></div>
+              <button type="button" class="btn-next" onclick="goNext(1)">المتابعة للتخصص <i class="fas fa-arrow-left"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="step-panel" id="step2">
+            <h4 class="step-title">المرحلة الدراسية والتخصص</h4>
+            <p class="step-sub">اختر مرحلتك ومجال رغبتك الأساسي</p>
+            <div class="field">
+              <label><span class="req">*</span>المرحلة الأكاديمية</label>
+              <div class="radio-cards">
+                <label class="radio-card" onclick="selectRadioCard(this)">
+                  <input type="radio" name="study_level" value="طالب جامعي" required />
+                  <span style="font-size:20px;">🎓</span>
+                  <div>
+                    <span class="rc-title">طالب جامعي</span>
+                    <span class="rc-sub">أي مرحلة دراسية</span>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="selectRadioCard(this)">
+                  <input type="radio" name="study_level" value="خريج جديد" />
+                  <span style="font-size:20px;">💼</span>
+                  <div>
+                    <span class="rc-title">خريج</span>
+                    <span class="rc-sub">حديث تخرج أو باحث عن عمل</span>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="selectRadioCard(this)">
+                  <input type="radio" name="study_level" value="طالب موهوب" />
+                  <span style="font-size:20px;">⚡</span>
+                  <div>
+                    <span class="rc-title">موهبة شابة</span>
+                    <span class="rc-sub">ثانوية أو تعليم فني</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top: 20px;">
+              <label><span class="req">*</span>تأكيد مجال الاهتمام</label>
+              <div class="dept-picker">
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="تطوير تطبيقات Flutter" required />📱 Flutter Mobile</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="باك إند Node.js" />⚙️ Backend Node.js</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="واجهات Web Frontend" />💻 Web Frontend</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="تسويق رقمي Growth" />📈 Digital Marketing</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="تصميم وميديا" />🎨 Graphic Design</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="كتابة محتوى طبي" />✍️ Content Creation</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="عمليات ودعم فني" />🎧 Customer Support</label>
+                <label class="dept-pill" onclick="selectDept(this)"><input type="radio" name="internship_field" value="مبيعات وعلاقات عامة" />🤝 PR & Sales</label>
+              </div>
+            </div>
+
+            <div class="step-nav">
+              <button type="button" class="btn-back" onclick="goBack(2)"><i class="fas fa-arrow-right"></i> رجوع</button>
+              <button type="button" class="btn-next" onclick="goNext(2)">التالي <i class="fas fa-arrow-left"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="step-panel" id="step3">
+            <h4 class="step-title">تفضيل العمل والسيرة الذاتية</h4>
+            <p class="step-sub">طبيعة الحضور التي تناسبك مع رابط سيرتك أو أعمالك</p>
+            <div class="field">
+              <label><span class="req">*</span>نظام العمل المفضل</label>
+              <div class="radio-cards">
+                <label class="radio-card" onclick="selectRadioCard(this)">
+                  <input type="radio" name="work_preference" value="عن بُعد (Remote)" required />
+                  <span style="font-size:20px;">🏠</span>
+                  <div>
+                    <span class="rc-title">عن بُعد (Remote)</span>
+                    <span class="rc-sub">إنجاز المهام بمرونة</span>
+                  </div>
+                </label>
+                <label class="radio-card" onclick="selectRadioCard(this)">
+                  <input type="radio" name="work_preference" value="مقر الشركة / هجين" />
+                  <span style="font-size:20px;">🏢</span>
+                  <div>
+                    <span class="rc-title">ميداني / هجين</span>
+                    <span class="rc-sub">حضور لقاءات ومقر</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top: 18px;">
+              <label><span class="req">*</span>رابط السيرة الذاتية أو معرض الأعمال (CV Link)</label>
+              <input type="url" name="cv_link" id="cv-input" placeholder="https://drive.google.com/... أو رابط LinkedIn" required />
+              <div style="font-size: 11.5px; color: var(--c-muted); margin-top: 4px;">تأكد أن الرابط متاح للعرض (Anyone with the link can view)</div>
+            </div>
+
+            <div class="step-nav">
+              <button type="button" class="btn-back" onclick="goBack(3)"><i class="fas fa-arrow-right"></i> رجوع</button>
+              <button type="button" class="btn-next" onclick="goNext(3)">التالي <i class="fas fa-arrow-left"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="step-panel" id="step4">
+            <h4 class="step-title">لماذا كيور؟ والتأكيد النهائي</h4>
+            <p class="step-sub">كلمات بسيطة تشرح دوافعك ومشاريعك السابقة</p>
+            <div class="field">
+              <label>أخبرنا لماذا تحب الانضمام لمنظومة كيور؟</label>
+              <textarea name="motivation" rows="3" placeholder="ما الذي يجعلك متحمساً لكيور وما الذي تتمنى إنجازه معنا؟"></textarea>
+            </div>
+
+            <div style="background: rgba(174, 250, 124, 0.15); border: 1px solid rgba(109, 115, 255, 0.2); border-radius: var(--r-sm); padding: 14px 16px; margin-bottom: 20px;">
+              <p style="font-size: 12.5px; color: var(--c-heading); margin: 0; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-shield-alt" style="color: #16a34a;"></i>
+                بياناتك مؤمنة بالكامل وتُستخدم فقط لإجراءات التقييم والتوظيف بمنصة كيور.
+              </p>
+            </div>
+
+            <div class="step-nav">
+              <button type="button" class="btn-back" onclick="goBack(4)"><i class="fas fa-arrow-right"></i> رجوع</button>
+              <button type="submit" class="btn-next btn-submit" id="submit-btn">
+                <i class="fas fa-paper-plane"></i> تأكيد وإرسال الطلب
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Success State -->
+      <div class="success-state" id="success-state">
+        <div style="font-size: 48px; margin-bottom: 12px;">🎉</div>
+        <h2 style="font-size: 22px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">تم استلام طلبك بنجاح!</h2>
+        <p style="color: var(--c-muted); font-size: 14px; max-width: 440px; margin: 0 auto 20px; line-height: 1.7;">
+          شكراً لاهتمامك بالانضمام لكيور. سيقوم فريق الموارد البشرية بمراجعة ملفك والتواصل معك عبر الواتساب أو البريد الإلكتروني خلال 48 ساعة.
+        </p>
+        <button class="btn-primary" onclick="closeModal()" style="margin: 0 auto;">إغلاق والعودة للموقع</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Unified Footer -->
+  <footer class="footer-cure">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <img loading="lazy" src="assets/images/icon.png" alt="شعار كيور" width="46" height="46">
+          <div class="brand-text">
+            <span class="brand-title">كيور <span>CURE</span></span>
+            <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          أول منصة ذكية متخصصة في توفير خدمات التمريض المنزلي المعتمد والرعاية الطبية المنزلية المتكاملة في محافظة الفيوم ومصر، بأعلى معايير الأمان الطبي والشفافية.
+        </p>
+        <div class="footer-badges">
+          <span class="badge-f"><i class="fas fa-certificate"></i> أخصائيون معتمدون ونقابيون</span>
+          <span class="badge-f"><i class="fas fa-user-shield"></i> تسعيرة رسمية عادلة ومثبتة</span>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">قائمة الأسعار الرسمية</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة والمكررة</a></li>
+          <li><a href="articles.html">الموسوعة الطبية</a></li>
+          <li><a href="careers.html">الوظائف والتدريب</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-title">التواصل السريع والحجز</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <span>طوارئ التمريض والخط الساخن:</span>
+            <strong>01070203636</strong>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <span>واتساب الحجز والمتابعة:</span>
+            <strong>01070203636</strong>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <span>نطاق الخدمة الحالي:</span>
+            <strong>محافظة الفيوم وجميع المراكز</strong>
+          </div>
+        </div>
+        <div class="footer-app-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="footer-google-play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <small>حمّل تطبيق كيور من</small>
+              <span>Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 منصة كيور CURE للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="terms.html">الشروط والأحكام</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Quick Bar -->
+  <div class="mobile-quick-bar" aria-label="شريط الوصول السريع">
+    <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="quick-btn app-highlight" target="_blank" rel="noopener">
+      <i class="fab fa-google-play"></i>
+      <span>تحميل التطبيق</span>
+    </a>
+    <a href="tel:01070203636" class="quick-btn call-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>اتصال فوري</span>
+    </a>
+    <a href="https://wa.me/201070203636?text=مرحباً،+أرغب+في+الانضمام+لفريق+تمريض+كيور" class="quick-btn whatsapp-btn" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>واتساب</span>
+    </a>
+  </div>
+
+  <script>
+    // Careers Application Modal Logic
+    let currentStep = 1;
+    const jobDescriptions = {
+      default: {
+        type: 'تدريب داخلي / فرصة عمل',
+        about: 'انضم لفريق عمل كيور CURE وكن جزءاً من منصة رعاية صحية رقمية تغيّر حياة آلاف المرضى في مصر.',
+        responsibilities: ['العمل ضمن فريق تخصصي متكامل على منتج حي ومباشر', 'تطبيق أفضل الممارسات في مجالك مع تحديثات أسبوعية', 'التواصل الفعّال مع أعضاء الفريق والمرشدين المباشرين'],
+        requirements: ['الشغف الحقيقي والرغبة في التعلّم والتطوير السريع', 'الالتزام بمواعيد التسليم والاجتماعات الدورية', 'روح المبادرة وتحمل المسؤولية في بيئة Startup'],
+        benefits: ['شهادة خبرة رسمية معتمدة من إدارة كيور', 'توجيه مهني وتدريب عملي على مشاريع حقيقية', 'فرصة التثبيت والترقي في الفريق الأساسي للمتميزين']
       }
+    };
 
-      var btn=document.getElementById('submit-btn');
+    function openModal(title) {
+      document.getElementById('modal-job-title').textContent = title;
+      document.getElementById('form-position').value = title;
+      document.getElementById('form-subject').value = 'طلب تقديم — ' + title + ' — منصة كيور';
 
-      if (btn) {
-        btn.disabled=true; btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
-      }
+      const jobData = jobDescriptions.default;
+      document.getElementById('info-title').textContent = title;
+      document.getElementById('info-type').textContent = jobData.type;
+      document.getElementById('info-about').textContent = jobData.about;
 
-      try {
-        var res=await fetch(e.target.action, {
+      document.getElementById('info-resp').innerHTML = jobData.responsibilities.map(r => `<li>${r}</li>`).join('');
+      document.getElementById('info-req').innerHTML = jobData.requirements.map(r => `<li>${r}</li>`).join('');
+      document.getElementById('info-ben').innerHTML = jobData.benefits.map(b => `<li>${b}</li>`).join('');
 
-          method: 'POST',
-          body: new FormData(e.target),
-          headers: {
-            'Accept': 'application/json'
+      document.getElementById('jobInfoView').style.display = 'block';
+      document.getElementById('progressWrap').style.display = 'none';
+      document.getElementById('applyForm').style.display = 'none';
+      document.getElementById('success-state').classList.remove('show');
+
+      document.getElementById('overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function startApplication() {
+      document.getElementById('jobInfoView').style.display = 'none';
+      document.getElementById('progressWrap').style.display = 'block';
+      document.getElementById('applyForm').style.display = 'block';
+      showStep(1);
+    }
+
+    function closeModal() {
+      document.getElementById('overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('overlay')) closeModal();
+    }
+
+    function showStep(n) {
+      for (let i = 1; i <= 4; i++) {
+        const panel = document.getElementById('step' + i);
+        const pstep = document.getElementById('ps' + i);
+        const pcircle = document.getElementById('pc' + i);
+        if (panel) panel.classList.toggle('active', i === n);
+        if (pstep) {
+          pstep.classList.remove('active', 'done');
+          if (i < n) {
+            pstep.classList.add('done');
+            if (pcircle) pcircle.innerHTML = '<i class="fas fa-check"></i>';
+          } else if (i === n) {
+            pstep.classList.add('active');
+            if (pcircle) pcircle.textContent = i;
+          } else {
+            if (pcircle) pcircle.textContent = i;
           }
+        }
+      }
+      currentStep = n;
+      const m = document.querySelector('.modal');
+      if (m) m.scrollTop = 0;
+    }
+
+    function goNext(step) {
+      if (step === 1) {
+        const name = document.getElementById('f-name');
+        const email = document.getElementById('f-email');
+        const phone = document.getElementById('f-phone');
+        const age = document.getElementById('f-age');
+        const address = document.getElementById('f-address');
+        let ok = true;
+        [name, email, phone, age, address].forEach(el => {
+          if (!el.value.trim()) { el.classList.add('err'); ok = false; }
+          else { el.classList.remove('err'); }
         });
-
-      if (res.ok) {
-        applyForm.style.display='none';
-        document.getElementById('progressWrap').style.display='none';
-        document.getElementById('success-state').classList.add('show');
+        if (!ok) { alert('يرجى ملء جميع الحقول المطلوبة للمتابعة.'); return; }
       }
 
-      else throw new Error();
-    }
-
-    catch (err) {
-      if (btn) {
-        btn.disabled=false; btn.innerHTML='<i class="fas fa-paper-plane"></i> أرسل الطلب الآن';
+      if (step === 2) {
+        const study = document.querySelector('input[name="study_level"]:checked');
+        const dept = document.querySelector('input[name="internship_field"]:checked');
+        if (!study || !dept) { alert('يرجى تحديد المرحلة الدراسية ومجال الاهتمام.'); return; }
       }
 
-      showToast('حدث خطأ — حاول مرة أخرى');
-    }
-  });
-}
+      if (step === 3) {
+        const pref = document.querySelector('input[name="work_preference"]:checked');
+        const cv = document.getElementById('cv-input');
+        if (!pref) { alert('يرجى اختيار نظام العمل المفضل.'); return; }
+        if (!cv.value.trim()) { cv.classList.add('err'); alert('يرجى إضافة رابط السيرة الذاتية أو الأعمال.'); return; }
+        else { cv.classList.remove('err'); }
+      }
 
-/* Helpers */
-function shake() {
-  var m=document.querySelector('.modal');
-  if ( !m) return;
-  m.style.animation='shake .4s ease';
-
-  setTimeout(function () {
-      m.style.animation='';
+      showStep(step + 1);
     }
 
-    , 400);
-}
-
-var toastTimer;
-
-function showToast(msg) {
-  var t=document.getElementById('toast-msg');
-
-  if ( !t) {
-    t=document.createElement('div');
-    t.id='toast-msg';
-    t.style.cssText='position:fixed;bottom:32px;right:50%;transform:translateX(50%);background:#1E1A3D;border:1px solid rgba(107,92,231,.4);color:#fff;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:700;font-family:var(--font-ar);z-index:9999;transition:opacity .3s;box-shadow:0 8px 30px rgba(0,0,0,.4);';
-    document.body.appendChild(t);
-  }
-
-  t.textContent=msg;
-  t.style.opacity='1';
-  clearTimeout(toastTimer);
-
-  toastTimer=setTimeout(function () {
-      t.style.opacity='0';
+    function goBack(step) {
+      showStep(step - 1);
     }
 
-    , 3000);
-}
+    function selectRadioCard(el) {
+      const radio = el.querySelector('input[type="radio"]');
+      if (!radio) return;
+      radio.checked = true;
+      const name = radio.name;
+      document.querySelectorAll(`input[name="${name}"]`).forEach(inp => {
+        const parent = inp.closest('.radio-card');
+        if (parent) parent.classList.remove('selected');
+      });
+      el.classList.add('selected');
+    }
 
-/* FAQ */
-function toggleFaq(btn) {
-  var item=btn.parentElement;
-  var wasOpen=item.classList.contains('open');
+    function selectDept(el) {
+      const radio = el.querySelector('input[type="radio"]');
+      if (radio) radio.checked = true;
+      document.querySelectorAll('.dept-pill').forEach(p => p.classList.remove('selected'));
+      el.classList.add('selected');
+    }
 
-  document.querySelectorAll('.faq-item.open').forEach(function (i) {
-      i.classList.remove('open');
+    // Filter Buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.dept-group').forEach(group => {
+          group.style.display = (filter === 'all' || group.dataset.dept === filter) ? 'block' : 'none';
+        });
+      });
     });
-  if ( !wasOpen) item.classList.add('open');
-}
 
-/* Smooth scroll */
-document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-        var id=a.getAttribute('href');
-        if (id==='#') return;
-        var t=document.querySelector(id);
+    // Form submission
+    const applyForm = document.getElementById('applyForm');
+    if (applyForm) {
+      applyForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submit-btn');
+        if (btn) { btn.disabled = true; btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...'; }
 
-        if (t) {
-          e.preventDefault(); window.scrollTo({
-            top: t.getBoundingClientRect().top + scrollY - 80, behavior: 'smooth'
+        try {
+          const res = await fetch(e.target.action, {
+            method: 'POST',
+            body: new FormData(e.target),
+            headers: { 'Accept': 'application/json' }
           });
-      }
-    });
-});
-</script></body></html>
+          if (res.ok) {
+            applyForm.style.display = 'none';
+            document.getElementById('progressWrap').style.display = 'none';
+            document.getElementById('success-state').classList.add('show');
+          } else {
+            throw new Error();
+          }
+        } catch (err) {
+          if (btn) { btn.disabled = false; btn.innerHTML = '<i class="fas fa-paper-plane"></i> تأكيد وإرسال الطلب'; }
+          alert('حدث خطأ أثناء الإرسال — يمكنك أيضاً مراسلتنا مباشرة عبر واتساب.');
+        }
+      });
+    }
+
+    // Hamburger Mobile Navigation
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburgerBtn && mobileNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
+</body>
+</html>

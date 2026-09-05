@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>أعراض قصور الغدة الدرقية — 12 علامة شائعة تُشير إليه | كيور CURE</title>
@@ -14,148 +17,247 @@
     <meta property="og:url" content="https://cureztyx.com/arad-qosour-alghudda-aldaraqiyya.html" />
     <meta property="og:image" content="https://cureztyx.com/assets/img/articles/article2.png" />
     
-    <link rel="icon" type="image/png" href="icon.png" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     
-    <style>
-        :root {
-            --bg: #0F0C29;
-            --bg-gradient: linear-gradient(135deg, #0F0C29 0%, #302B63 50%, #24243E 100%);
-            --card-bg: rgba(30, 26, 61, 0.6);
-            --purple: #6B5CE7;
-            --green: #7ED957;
-            --white: #FFFFFF;
-            --light: #C8C4E0;
-            --muted: #94A3B8;
-            --border: rgba(107, 92, 231, 0.2);
-            --radius: 24px;
-            --font-main: 'Cairo', sans-serif;
-            --font-body: 'Tajawal', sans-serif;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: var(--bg);
-            background-image: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--white);
-            font-family: var(--font-body);
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-        
-        /* Navigation */
-        nav {
-            position: sticky; top: 0; z-index: 1000;
-            background: rgba(15, 12, 41, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px 0;
-        }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo img { height: 45px; }
-        .nav-links { display: flex; gap: 20px; list-style: none; }
-        .nav-links a { color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main); transition: 0.3s; }
-        .nav-links a:hover { color: var(--green); }
-
-        /* Article Hero */
-        .article-hero { padding: 80px 0 60px; text-align: center; }
-        .badge {
-            display: inline-block; padding: 6px 16px; background: rgba(107, 92, 231, 0.15);
-            border: 1px solid var(--purple); color: var(--green); border-radius: 100px;
-            font-size: 13px; font-weight: 700; margin-bottom: 20px;
-        }
-        h1 { font-family: var(--font-main); font-size: clamp(28px, 5vw, 48px); font-weight: 900; margin-bottom: 25px; line-height: 1.3; }
-        .meta-info { color: var(--muted); font-size: 14px; display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
-
-        /* Featured Image */
-        .featured-image-container { position: relative; margin-bottom: 50px; }
-        .featured-image {
-            width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid var(--border);
-        }
-        @media (max-width: 768px) { .featured-image { height: 280px; } }
-
-        /* Article Content */
-        .content { 
-            background: var(--card-bg); backdrop-filter: blur(10px);
-            padding: 40px; border-radius: var(--radius); border: 1px solid var(--border);
-            margin-bottom: 60px;
-        }
-        .content p { margin-bottom: 25px; font-size: 18px; color: var(--light); }
-        .content h2 { font-family: var(--font-main); font-size: 28px; font-weight: 800; margin: 45px 0 25px; color: var(--white); border-right: 5px solid var(--green); padding-right: 15px; }
-        .content h3 { font-family: var(--font-main); font-size: 22px; font-weight: 700; margin: 35px 0 20px; color: var(--green); }
-        
-        /* Tables */
-        .table-wrapper { overflow-x: auto; margin: 30px 0; border-radius: 12px; border: 1px solid var(--border); }
-        table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.03); }
-        th { background: rgba(107, 92, 231, 0.2); color: var(--white); padding: 15px; text-align: right; font-family: var(--font-main); }
-        td { padding: 15px; border-top: 1px solid var(--border); color: var(--light); }
-        tr:hover { background: rgba(255,255,255,0.05); }
-
-        /* Quotes */
-        blockquote {
-            background: rgba(126, 217, 87, 0.05); border-right: 5px solid var(--green);
-            padding: 25px; margin: 40px 0; border-radius: 12px; font-style: italic; color: var(--white);
-        }
-
-        /* FAQ */
-        .faq-item { margin-bottom: 20px; border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: 0.3s; }
-        .faq-item:hover { border-color: var(--green); background: rgba(126, 217, 87, 0.05); }
-        .faq-q { font-weight: 800; color: var(--white); margin-bottom: 10px; display: flex; gap: 10px; }
-        .faq-a { color: var(--light); }
-
-        /* CTA Box */
-        .cta-card {
-            background: linear-gradient(135deg, #6B5CE7 0%, #4834D4 100%);
-            padding: 40px; border-radius: var(--radius); text-align: center;
-            box-shadow: 0 15px 35px rgba(107, 92, 231, 0.4); margin-bottom: 60px;
-        }
-        .cta-card h2 { border: none; padding: 0; margin-top: 0; margin-bottom: 15px; }
-        .cta-card p { color: rgba(255,255,255,0.9); margin-bottom: 30px; }
-        .cta-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn {
-            padding: 14px 32px; border-radius: 50px; font-weight: 800; font-family: var(--font-main);
-            text-decoration: none; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px;
-        }
-        .btn-green { background: var(--green); color: #0F0C29; }
-        .btn-green:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(126, 217, 87, 0.4); }
-        .btn-outline { border: 2px solid var(--white); color: var(--white); }
-        .btn-outline:hover { background: var(--white); color: #6B5CE7; }
-
-        footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
-        .footer-links { margin-bottom: 20px; }
-        .footer-links a { color: var(--light); margin: 0 15px; text-decoration: none; font-size: 14px; }
-    </style>
+      <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/articles.css" />
+  <style>
+    .article-container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .article-hero {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .article-hero h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 900;
+      color: var(--c-heading);
+      line-height: 1.35;
+      margin: 18px 0;
+    }
+    .meta-info {
+      color: var(--c-muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .featured-image-container {
+      margin-bottom: 40px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--c-border);
+    }
+    .featured-image {
+      width: 100%;
+      height: auto;
+      max-height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+    .content {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: var(--r-lg);
+      border: 1px solid var(--c-border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 50px;
+      font-size: 16.5px;
+      line-height: 1.85;
+      color: var(--c-body);
+    }
+    .content p { margin-bottom: 22px; }
+    .content h2 {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--c-heading);
+      margin: 40px 0 20px;
+      border-right: 4px solid var(--c-brand);
+      padding-right: 14px;
+    }
+    .content h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--c-brand-deep);
+      margin: 30px 0 16px;
+    }
+    .content ul, .content ol { padding-right: 24px; margin-bottom: 24px; }
+    .content li { margin-bottom: 10px; }
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--c-border);
+    }
+    table { width: 100%; border-collapse: collapse; text-align: right; }
+    th { background: var(--c-brand-5); color: var(--c-heading); font-weight: 800; padding: 14px 18px; border-bottom: 2px solid var(--c-border); }
+    td { padding: 14px 18px; border-bottom: 1px solid var(--c-border-light); }
+    tr:nth-child(even) { background: #fafbff; }
+    blockquote {
+      background: rgba(109, 115, 255, 0.05);
+      border-right: 4px solid var(--c-brand);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      color: var(--c-heading);
+    }
+    .cta-card {
+      background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
+      color: #ffffff;
+      padding: 40px 30px;
+      border-radius: var(--r-lg);
+      text-align: center;
+      margin-bottom: 50px;
+      box-shadow: 0 12px 30px rgba(109, 115, 255, 0.3);
+    }
+    .cta-card h2 { color: #ffffff; font-size: 24px; font-weight: 900; margin-bottom: 12px; border: none; padding: 0; }
+    .cta-card p { color: rgba(255, 255, 255, 0.9); font-size: 15px; max-width: 580px; margin: 0 auto 28px; line-height: 1.7; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-green-cta {
+      background: #22c55e;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: var(--r-pill);
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-green-cta:hover { background: #16a34a; transform: translateY(-3px); }
+    .btn-white-cta {
+      background: #ffffff;
+      color: var(--c-brand-deep);
+      padding: 14px 28px;
+      border-radius: var(--r-pill);
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-white-cta:hover { background: #f1f3ff; transform: translateY(-3px); }
+  </style>
     
     
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "headline": "أعراض قصور الغدة الدرقية — 12 علامة شائعة تُشير إليه",
+  "description": "هل تعاني من تعب دائم وزيادة وزن غير مبررة؟ قد تكون أعراض قصور الغدة الدرقية. تعرف على 12 علامة وكيف تُشخصها.",
+  "url": "https://cureztyx.com/arad-qosour-alghudda-aldaraqiyya.html",
+  "image": "https://cureztyx.com/assets/img/articles/article2.png",
+  "inLanguage": "ar",
+  "author": {
+    "@type": "Organization",
+    "name": "كيور CURE",
+    "url": "https://cureztyx.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "منصة كيور للتمريض المنزلي",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cureztyx.com/assets/png/logo-cure-new.png"
+    }
+  },
+  "datePublished": "2025-04-01",
+  "dateModified": "2026-09-04"
+}
+    </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CUREZTYX26');
+  </script>
 </head>
 <body>
 
-<nav id="navbar">
-  <div class="nav-inner" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 24px;">
-    <a href="index.html" class="nav-logo" style="display: flex; align-items: center; gap: 10px; font-family: var(--font-main); font-size: 24px; font-weight: 900; color: var(--white); flex-shrink: 0; text-decoration: none;">
-      <img src="assets/png/logo-cure-new.png" alt="شعار كيور للتمريض المنزلي" style="height: 44px; width: auto; object-fit: contain; display: block;">
-    </a>
-    <ul class="nav-links" id="navLinks" style="display: flex; align-items: center; gap: 15px; list-style: none; margin: 0; padding: 0;">
-      <li><a href="index.html#about" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">من نحن</a></li>
-      <li><a href="index.html#services" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">خدماتنا</a></li>
-      <li><a href="index.html#how" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">كيف يعمل</a></li>
-      <li><a href="index.html#why" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">لماذا كيور</a></li>
-      <li><a href="articles.html" style="color: var(--light); text-decoration: none; font-weight: 600; font-family: var(--font-main);">المقالات</a></li>
-      <li><a href="careers.html" style="color: var(--green); text-decoration: none; font-weight: 600; font-family: var(--font-main);">وظائف</a></li>
-      <li><a href="index.html#join" class="nav-cta" style="background: var(--green); color: #1a1535; font-weight: 700; padding: 9px 22px; border-radius: 12px; text-decoration: none;">سجّل الآن</a></li>
-    </ul>
-    <div style="display: flex; align-items: center; gap: 12px;" class="mobile-only-flex">
-      <a href="index.html" style="color: var(--light); text-decoration: none; font-size: 14px;"><i class="fas fa-home"></i> الرئيسية</a>
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-announcement-inner">
+      <div class="top-announcement-left">
+        <span class="live-status-pulse"></span>
+        <span class="announcement-text">💡 موسوعة كيور الصحية — نصائح طبية موثوقة لحماية أسرتك | طوارئ: <strong>01070203636</strong></span>
+      </div>
+      <div class="top-announcement-right">
+        <a href="https://wa.me/201070203636" target="_blank" rel="noopener" class="top-link">
+          <i class="fab fa-whatsapp"></i> استشارة واتساب
+        </a>
+        <a href="tel:01070203636" class="top-link">
+          <i class="fas fa-phone-alt"></i> اتصل بنا
+        </a>
+      </div>
     </div>
   </div>
-</nav>
+
+  <!-- Main Navbar -->
+  <nav id="navbar" class="header-cure">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img loading="lazy" src="assets/images/icon.png" alt="شعار تطبيق كيور" class="nav-app-icon" width="42" height="42">
+        <div class="nav-brand-text">
+          <span class="brand-title">كيور <span>CURE</span></span>
+          <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="pricing.html">الأسعار الرسمية</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="articles.html" class="active">المقالات الطبية</a></li>
+        <li><a href="careers.html">الوظائف والتدريب</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+            <i class="fab fa-google-play"></i> حمّل التطبيق
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-play-header" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i>
+          <span>حمّل الآن</span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="pricing.html">الأسعار الرسمية</a>
+      <a href="faq.html">الأسئلة الشائعة</a>
+      <a href="articles.html" class="active">المقالات الطبية</a>
+      <a href="careers.html">الوظائف والتدريب</a>
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-nav-cta">
+        <i class="fab fa-google-play"></i> تحميل تطبيق كيور مجاناً
+      </a>
+    </div>
+  </nav>
 
 <div class="container">
     <div class="article-hero">
@@ -169,7 +271,7 @@
     </div>
 
     <div class="featured-image-container">
-        <img src="assets/img/articles/article2.png" alt="أعراض قصور الغدة الدرقية — 12 علامة شائعة تُشير إليه" class="featured-image" />
+        <img src="assets/img/articles/article2.png" alt="أعراض قصور الغدة الدرقية — 12 علامة شائعة تُشير إليه" class="featured-image" / loading="lazy" decoding="async">
     </div>
 
     <article class="content">
@@ -236,51 +338,107 @@
 <hr />
     </article>
 
-    <div class="cta-card">
-        <h2>هل تحتاج إلى رعاية طبية في المنزل؟</h2>
-        <p>فريق كيور متاح على مدار 24 ساعة في الفيوم لتلبية جميع احتياجاتك الطبية والتمريضية بأسعار ثابتة.</p>
-        <div class="cta-btns">
-            <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز خدمة تمريض منزلي" class="btn btn-green">
-                <i class="fab fa-whatsapp"></i> احجز الآن عبر واتساب
-            </a>
-            <a href="index.html#services" class="btn btn-outline">استكشف خدماتنا</a>
-        </div>
+        <div class="cta-card">
+      <h2>هل تحتاج إلى ممرض منزلي معتمد في الفيوم الآن؟</h2>
+      <p>فريق كيور الطبي متاح على مدار 24 ساعة في الفيوم لتلبية جميع الاحتياجات التمريضية العاجلة والمجدولة بأعلى معايير الأمان الطبي.</p>
+      <div class="cta-btns">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-white-cta" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i> تحميل تطبيق كيور مجاناً
+        </a>
+        <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+في+الفيوم" class="btn-green-cta" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> حجز سريع عبر واتساب
+        </a>
+      </div>
     </div>
 </div>
+</div>
 
-<footer>
-    <div class="container">
-        <div class="footer-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="articles.html">مقالات مفيدة</a>
-            <a href="privacy.html">سياسة الخصوصية</a>
-            <a href="terms.html">شروط الاستخدام</a>
+  <!-- Unified Footer -->
+  <footer class="footer-cure">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <img loading="lazy" src="assets/images/icon.png" alt="شعار كيور" width="46" height="46">
+          <div class="brand-text">
+            <span class="brand-title">كيور <span>CURE</span></span>
+            <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+          </div>
         </div>
-        <p>© 2025 جميع الحقوق محفوظة لمنصة كيور CURE — شريكك في الرعاية المنزلية</p>
+        <p class="footer-desc">
+          أول منصة ذكية متخصصة في توفير خدمات التمريض المنزلي المعتمد والرعاية الطبية المنزلية المتكاملة في محافظة الفيوم ومصر، بأعلى معايير الأمان الطبي والشفافية.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">قائمة الأسعار الرسمية</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة والمكررة</a></li>
+          <li><a href="articles.html">الموسوعة الطبية</a></li>
+          <li><a href="careers.html">الوظائف والتدريب</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-title">التواصل السريع والحجز</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div><span>طوارئ التمريض:</span> <strong>01070203636</strong></div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div><span>واتساب الحجز:</span> <strong>01070203636</strong></div>
+        </div>
+        <div class="footer-app-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="footer-google-play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <small>حمّل تطبيق كيور من</small>
+              <span>Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-</footer>
 
-<script>
-    // Smooth appearance for sections
-    document.addEventListener('DOMContentLoaded', () => {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 منصة كيور CURE للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="terms.html">الشروط والأحكام</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        document.querySelectorAll('h2, h3, p, table').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
-    });
-</script>
+  <!-- Sticky Mobile Quick Bar -->
+  <div class="mobile-quick-bar" aria-label="شريط الوصول السريع">
+    <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="quick-btn app-highlight" target="_blank" rel="noopener">
+      <i class="fab fa-google-play"></i>
+      <span>تحميل التطبيق</span>
+    </a>
+    <a href="tel:01070203636" class="quick-btn call-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>اتصال فوري</span>
+    </a>
+    <a href="https://wa.me/201070203636" class="quick-btn whatsapp-btn" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>واتساب</span>
+    </a>
+  </div>
 
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburgerBtn && mobileNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

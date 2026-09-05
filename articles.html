@@ -1,298 +1,113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>المقالات الطبية والموسوعة الصحية | كيور CURE</title>
-  <meta name="description" content="مقالات طبية متخصصة من أطباء وممرضين معتمدين — نصائح صحية عملية تخص رعاية المرضى في المنزل، السيطرة على الأمراض المزمنة، وأهمية التمريض المنزلي المحترف." />
-  <link rel="icon" type="image/png" href="assets/png/logo-cure-new.png" />
+  <title>المقالات الطبية والموسوعة الصحية المنزلية | كيور CURE</title>
+  <meta name="description" content="مقالات طبية متخصصة وموثوقة من أطباء وتمريض معتمدين — إرشادات الرعاية المنزلية، التعامل مع الأمراض المزمنة، قرح الفراش، والعناية بكبار السن بالفيوم." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/articles.css" />
 
-  <style>
-    /* Articles Page Custom Styles (Light #6d73ff Theme) */
-    body {
-      background-color: var(--c-bg);
-      color: var(--c-body);
-    }
-
-    #navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--c-border-light);
-      padding: 14px 0;
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-logo img {
-      height: 44px;
-      width: auto;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 12px;
-      list-style: none;
-      align-items: center;
-      background: var(--c-brand-5);
-      padding: 6px 16px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--c-border-light);
-    }
-
-    .nav-links a {
-      color: var(--c-body);
-      text-decoration: none;
-      font-weight: 700;
-      font-family: var(--ff-head);
-      font-size: 14.5px;
-      padding: 6px 14px;
-      border-radius: var(--r-pill);
-      transition: all 0.25s var(--ease-spring);
-    }
-
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--c-brand-deep);
-      background: rgba(109, 115, 255, 0.1);
-    }
-
-    .nav-cta {
-      background: var(--c-brand) !important;
-      color: #ffffff !important;
-      font-weight: 800 !important;
-      box-shadow: 0 4px 14px rgba(109, 115, 255, 0.28);
-    }
-
-    .hero-articles {
-      padding: 80px 0 40px;
-      text-align: center;
-    }
-
-    .search-box {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto 50px;
-      width: 100%;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 18px 54px 18px 24px;
-      border-radius: var(--r-pill);
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      color: var(--c-heading);
-      font-family: var(--ff-body);
-      font-size: 16px;
-      outline: none;
-      transition: all 0.3s;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .search-box input:focus {
-      border-color: var(--c-brand);
-      background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(109, 115, 255, 0.16);
-    }
-
-    .search-box i {
-      position: absolute;
-      right: 22px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--c-brand);
-      font-size: 18px;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 32px;
-      margin-bottom: 80px;
-    }
-
-    .art-card {
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.35s var(--ease-spring);
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .art-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--c-brand);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .art-img {
-      position: relative;
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      background: var(--c-brand-5);
-    }
-
-    .art-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s var(--ease-out);
-    }
-
-    .art-card:hover .art-img img {
-      transform: scale(1.06);
-    }
-
-    .art-body {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .art-body h3 {
-      font-family: var(--ff-head);
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 14px;
-      line-height: 1.4;
-      color: var(--c-heading);
-      transition: color 0.25s;
-    }
-
-    .art-card:hover h3 {
-      color: var(--c-brand);
-    }
-
-    .art-body p {
-      font-size: 14.5px;
-      color: var(--c-muted);
-      margin-bottom: 20px;
-      flex-grow: 1;
-      line-height: 1.75;
-    }
-
-    .art-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 16px;
-      border-top: 1px solid var(--c-border-light);
-    }
-
-    .read-more {
-      color: var(--c-brand-deep);
-      font-weight: 800;
-      font-family: var(--ff-head);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      transition: all 0.3s;
-    }
-
-    .art-card:hover .read-more {
-      gap: 12px;
-      color: var(--c-brand);
-    }
-
-    footer {
-      padding: 70px 0 36px;
-      background: var(--c-bg-soft);
-      border-top: 1px solid var(--c-border);
-      text-align: center;
-    }
-
-    .footer-logo {
-      height: 44px;
-      margin-bottom: 20px;
-    }
-
-    .footer-text {
-      color: var(--c-muted);
-      max-width: 580px;
-      margin: 0 auto 30px;
-      font-size: 15px;
-    }
-
-    .copyright {
-      color: var(--c-muted);
-      font-size: 13.5px;
-      border-top: 1px solid var(--c-border-light);
-      padding-top: 28px;
-    }
-
-    .empty-state {
-      text-align: center;
-      padding: 90px 0;
-      display: none;
-    }
-
-    .empty-state i {
-      font-size: 54px;
-      color: var(--c-brand-40);
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .articles-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-  </style>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CUREZTYX26');
+  </script>
 </head>
 <body>
 
-  <nav id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img src="assets/png/logo-cure-new.png" alt="شعار كيور للتمريض المنزلي">
-        </a>
-        <ul class="nav-links">
-          <li><a href="index.html#about">من نحن</a></li>
-          <li><a href="index.html#services">خدماتنا</a></li>
-          <li><a href="articles.html" class="active">المقالات</a></li>
-          <li><a href="careers.html" style="color: var(--c-brand-deep);">وظائف</a></li>
-          <li><a href="index.html#join" class="nav-cta">سجّل الآن</a></li>
-        </ul>
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-announcement-inner">
+      <div class="top-announcement-left">
+        <span class="live-status-pulse"></span>
+        <span class="announcement-text">💡 موسوعة كيور الصحية — نصائح طبية موثوقة لحماية أسرتك | طوارئ: <strong>01070203636</strong></span>
       </div>
+      <div class="top-announcement-right">
+        <a href="https://wa.me/201070203636?text=مرحباً،+أحتاج+استشارة+تمريضية+عاجلة" target="_blank" rel="noopener" class="top-link">
+          <i class="fab fa-whatsapp"></i> استشارة واتساب
+        </a>
+        <a href="tel:01070203636" class="top-link">
+          <i class="fas fa-phone-alt"></i> اتصل بنا
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav id="navbar" class="header-cure">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img loading="lazy" src="assets/images/icon.png" alt="شعار تطبيق كيور" class="nav-app-icon" width="42" height="42">
+        <div class="nav-brand-text">
+          <span class="brand-title">كيور <span>CURE</span></span>
+          <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="pricing.html">الأسعار الرسمية</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="articles.html" class="active">المقالات الطبية</a></li>
+        <li><a href="careers.html">الوظائف والتدريب</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+            <i class="fab fa-google-play"></i> حمّل التطبيق
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-play-header" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i>
+          <span>حمّل الآن</span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="pricing.html">الأسعار الرسمية</a>
+      <a href="faq.html">الأسئلة الشائعة</a>
+      <a href="articles.html" class="active">المقالات الطبية</a>
+      <a href="careers.html">الوظائف والتدريب</a>
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-nav-cta">
+        <i class="fab fa-google-play"></i> تحميل تطبيق كيور مجاناً
+      </a>
     </div>
   </nav>
 
+  <!-- Hero Articles -->
   <div class="container">
     <div class="hero-articles">
-      <span class="badge" style="margin-bottom: 20px;">
-        <i class="fas fa-book-medical"></i>
-        موسوعة كيور المعرفية
+      <span class="badge" style="margin-bottom: 18px;">
+        <i class="fas fa-book-medical"></i> موسوعة كيور المعرفية
       </span>
       <h1 class="section-title">الثقافة الصحية <span class="text-brand">المتكاملة</span></h1>
-      <p style="font-size: 18px; color: var(--c-muted); max-width: 680px; margin: 0 auto 36px; line-height: 1.8;">
-        معلومات طبية موثوقة ومبسطة من خبراء كيور لمساعدتك في العناية بصحتك وبمن تحب في المنزل.
+      <p style="font-size: 17px; color: var(--c-muted); max-width: 680px; margin: 0 auto 36px; line-height: 1.8;">
+        معلومات طبية موثوقة ومبسطة من أخصائيي كيور لمساعدتك في العناية بصحتك وبمن تحب من كبار السن والمرضى في المنزل.
       </p>
       
       <div class="search-box">
-        <input type="text" id="articleSearch" placeholder="ابحث عن موضوع طبي (مثلاً: سكري، جروح، ضغط...)" />
+        <input type="text" id="articleSearch" placeholder="ابحث عن موضوع طبي (مثلاً: سكري، جروح، ضغط، حقن...)" aria-label="البحث في المقالات" />
         <i class="fas fa-search"></i>
       </div>
     </div>
@@ -304,19 +119,118 @@
     <div class="empty-state" id="emptyState">
       <i class="fas fa-search"></i>
       <h3 style="font-family: var(--ff-head); font-size: 22px; color: var(--c-heading); margin-bottom: 8px;">عذراً، لم نجد مقالات تطابق بحثك</h3>
-      <p style="color: var(--c-muted);">حاول البحث بكلمات أخرى أو تصفح جميع المقالات.</p>
+      <p style="color: var(--c-muted);">حاول البحث بكلمات أخرى أو تصفح جميع المقالات المتاحة.</p>
+    </div>
+
+    <!-- App CTA Box -->
+    <div class="article-cta-box">
+      <div class="cta-box-text">
+        <h3>هل تحتاج لممرض معتمد لزيارة منزلك الآن؟</h3>
+        <p>لا تنتظر — حمّل تطبيق كيور CURE واطلب أخصائي تمريض نقابي مرخص يصلك أينما كنت في الفيوم خلال دقائق معدودة.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-play-header" target="_blank" rel="noopener" style="padding:14px 24px; font-size:15px;">
+          <i class="fab fa-google-play"></i> تحميل تطبيق كيور
+        </a>
+        <a href="https://wa.me/201070203636?text=مرحباً،+أريد+طلب+زيارة+تمريضية+منزلية" target="_blank" rel="noopener" class="btn-primary" style="background:#15803d; border-color:#15803d; color:#ffffff;">
+          <i class="fab fa-whatsapp"></i> حجز عبر واتساب
+        </a>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <div class="container">
-      <img src="assets/png/logo-cure-new.png" alt="كيور للتمريض المنزلي" class="footer-logo">
-      <p class="footer-text">كيور منصة ذكية تهدف لرفع الوعي الصحي وتسهيل الوصول لخدمات التمريض المنزلي بجودة عالية وسعر عادل في مصر والفيوم.</p>
-      <div class="copyright">
-        <p>© 2026 كيور — نظام الرعاية الصحية المتكامل. صُنع بـ <span style="color: var(--c-brand);">♥</span> في الفيوم، مصر.</p>
+  <!-- Unified Footer -->
+  <footer class="footer-cure">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <img loading="lazy" src="assets/images/icon.png" alt="شعار كيور" width="46" height="46">
+          <div class="brand-text">
+            <span class="brand-title">كيور <span>CURE</span></span>
+            <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          أول منصة ذكية متخصصة في توفير خدمات التمريض المنزلي المعتمد والرعاية الطبية المنزلية المتكاملة في محافظة الفيوم ومصر، بأعلى معايير الأمان الطبي والشفافية.
+        </p>
+        <div class="footer-badges">
+          <span class="badge-f"><i class="fas fa-certificate"></i> أخصائيون معتمدون ونقابيون</span>
+          <span class="badge-f"><i class="fas fa-user-shield"></i> تسعيرة رسمية عادلة ومثبتة</span>
+        </div>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">قائمة الأسعار الرسمية</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة والمكررة</a></li>
+          <li><a href="articles.html">الموسوعة الطبية</a></li>
+          <li><a href="careers.html">الوظائف والتدريب</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-title">التواصل السريع والحجز</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <span>طوارئ التمريض والخط الساخن:</span>
+            <strong>01070203636</strong>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <span>واتساب الحجز والمتابعة:</span>
+            <strong>01070203636</strong>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <span>نطاق الخدمة الحالي:</span>
+            <strong>محافظة الفيوم وجميع المراكز</strong>
+          </div>
+        </div>
+        <div class="footer-app-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="footer-google-play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <small>حمّل تطبيق كيور من</small>
+              <span>Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 منصة كيور CURE للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="terms.html">الشروط والأحكام</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- Sticky Mobile Quick Bar -->
+  <div class="mobile-quick-bar" aria-label="شريط الوصول السريع">
+    <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="quick-btn app-highlight" target="_blank" rel="noopener">
+      <i class="fab fa-google-play"></i>
+      <span>تحميل التطبيق</span>
+    </a>
+    <a href="tel:01070203636" class="quick-btn call-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>اتصال فوري</span>
+    </a>
+    <a href="https://wa.me/201070203636?text=مرحباً،+أريد+استفساراً+طبياً" class="quick-btn whatsapp-btn" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>واتساب</span>
+    </a>
+  </div>
 
   <script>
     let articles = [];
@@ -329,8 +243,10 @@
       } catch (error) {
         console.error("Error loading articles:", error);
         articles = [
-          { title: "تمريض منزلي في الفيوم", slug: "tamreed-manzili-fayoum", desc: "دليل شامل لأفضل خدمات التمريض المنزلي في الفيوم لعام 2026.", image: "article1.png" },
-          { title: "أعراض السكري النوع الثاني", slug: "arad-marad-alsukkar-annoa-althani", desc: "كيف تتعرف على أعراض السكري المبكرة وكيفية المتابعة بالمنزل.", image: "article2.png" }
+          { title: "تمريض منزلي في الفيوم: دليلك الشامل لأفضل رعاية صحية", slug: "tamreed-manzili-fayoum", desc: "دليل شامل لأفضل خدمات التمريض المنزلي في الفيوم لعام 2026 وأهم المعايير لاختيار ممرض مرخص.", image: "article1.png" },
+          { title: "أعراض السكري النوع الثاني وكيفية السيطرة عليه منزلياً", slug: "arad-marad-alsukkar-annoa-althani", desc: "كيف تتعرف على أعراض السكري المبكرة وخطة المتابعة المنزلية لقياس السكر وضبط الجرعات.", image: "article2.png" },
+          { title: "تمريض منزلي في سنورس: سرعة استجابة ورعاية متكاملة", slug: "tamreed-manzili-senouris", desc: "خدمات التمريض المنزلي المعتمد في مركز وقرى سنورس بالفيوم بأسرع وقت.", image: "article1.png" },
+          { title: "تمريض منزلي في إبشواي: رعاية كبار السن ومرضى العمليات", slug: "tamreed-manzili-ebshaway", desc: "دليل التمريض المنزلي المحترف في مركز إبشواي والقرى التابعة لها على مدار الساعة.", image: "article2.png" }
         ];
         renderArticles(articles);
       }
@@ -355,11 +271,11 @@
         card.href = `${art.slug}.html`;
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
-        card.style.transitionDelay = `${index * 0.08}s`;
+        card.style.transitionDelay = `${index * 0.06}s`;
         
         card.innerHTML = `
           <div class="art-img">
-            <img src="assets/img/articles/${art.image}" alt="${art.title}" onerror="this.src='assets/png/logo-cure-new.png'; this.style.objectFit='contain'; this.style.padding='20px';">
+            <img src="assets/img/articles/${art.image}" alt="${art.title}" onerror="this.src='assets/images/icon.png'; this.style.objectFit='contain'; this.style.padding='30px';" loading="lazy" decoding="async">
           </div>
           <div class="art-body">
             <h3>${art.title}</h3>
@@ -375,7 +291,7 @@
         setTimeout(() => {
           card.style.opacity = '1';
           card.style.transform = 'translateY(0)';
-        }, 50);
+        }, 40);
       });
     }
 
@@ -389,7 +305,17 @@
     });
 
     window.onload = loadArticles;
-  </script>
 
+    // Mobile nav toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburgerBtn && mobileNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

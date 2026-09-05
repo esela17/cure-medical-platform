@@ -28,28 +28,31 @@ function getCookie(cname) {
 }
 
 /* ─────────────────────────────────────
-   2. PAGE LOADER
+   2. PAGE LOADER (Instant Presentation)
    ───────────────────────────────────── */
-window.addEventListener('load', () => {
+function dismissLoader() {
   const loader = document.getElementById('loader') || document.getElementById('page-loader');
-  if (loader) {
-    setTimeout(() => loader.classList.add('hidden', 'is-hidden'), 1000); // Support both class names used in different versions
+  if (loader && !loader.classList.contains('hidden')) {
+    loader.classList.add('hidden', 'is-hidden');
   }
-});
+}
+window.addEventListener('load', () => setTimeout(dismissLoader, 150));
+document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 600));
 
 /* ─────────────────────────────────────
    3. NAVBAR & MOBILE MENU
    ───────────────────────────────────── */
 (function initNavigation() {
+  const header = document.getElementById('site-header');
   const nav = document.getElementById('navbar');
   const btn = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
 
-  if (nav) {
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-  }
+  window.addEventListener('scroll', () => {
+    const isScrolled = window.scrollY > 30;
+    if (header) header.classList.toggle('scrolled', isScrolled);
+    if (nav) nav.classList.toggle('scrolled', isScrolled);
+  }, { passive: true });
 
   if (btn && menu) {
     const toggleMenu = () => {
@@ -220,3 +223,129 @@ function switchTab(id, btn) {
     btn.setAttribute('aria-selected', 'true');
   }
 }
+
+/* ─────────────────────────────────────
+   9. CONVERSION EVENTS TRACKING (GA4 / Custom)
+   ───────────────────────────────────── */
+function trackEvent(eventName, params = {}) {
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, params);
+    }
+    // Also dispatch a custom event for any analytics listeners
+    window.dispatchEvent(new CustomEvent('cure_track_event', { detail: { eventName, params } }));
+    console.debug(`[Cure Analytics] Tracked: ${eventName}`, params);
+  } catch (e) {
+    // Fail silently so user experience is never blocked
+  }
+}
+
+// Global click event delegation for automated conversion tracking
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (!link || !link.href) return;
+
+  const href = link.href;
+
+  // 1. Google Play app download clicks
+  if (href.includes('play.google.com/store/apps/details?id=com.cureztyx.app')) {
+    trackEvent('app_download_click', {
+      platform: 'android',
+      link_text: link.innerText?.trim() || 'icon',
+      location: window.location.pathname
+    });
+  }
+  // 2. WhatsApp bookings
+  else if (href.includes('wa.me') || href.includes('whatsapp.com')) {
+    trackEvent('whatsapp_contact', {
+      source: link.closest('section')?.id || link.closest('nav') ? 'navbar' : 'footer_or_float',
+      location: window.location.pathname
+    });
+  }
+  // 3. Direct Phone Calls
+  else if (href.startsWith('tel:')) {
+    trackEvent('phone_call_click', {
+      phone: href.replace('tel:', ''),
+      location: window.location.pathname
+    });
+  }
+}, { passive: true });
+
+/* ─────────────────────────────────────
+   10. FAQ ACCORDION HANDLER
+   ───────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const faqButtons = document.querySelectorAll('.faq-question');
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('active');
+      // Close all items in the same faq-grid
+      const grid = item.closest('.faq-grid');
+      if (grid) {
+        grid.querySelectorAll('.faq-item').forEach(other => other.classList.remove('active'));
+      }
+      if (!isOpen) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  /* ─────────────────────────────────────
+     11. SMART CARE & DISPATCH MATCHER WIDGET
+     ───────────────────────────────────── */
+  const serviceSelect = document.getElementById('matcherService');
+  const areaSelect = document.getElementById('matcherArea');
+  const nurseNameEl = document.getElementById('matcherNurseName');
+  const specialtyEl = document.getElementById('matcherSpecialty');
+  const etaEl = document.getElementById('matcherEta');
+  const priceEl = document.getElementById('matcherPrice');
+  const dispatchBtn = document.getElementById('matcherDispatchBtn');
+
+  function updateSmartMatcher() {
+    if (!serviceSelect || !areaSelect) return;
+
+    const selectedServiceOpt = serviceSelect.options[serviceSelect.selectedIndex];
+    const selectedAreaOpt = areaSelect.options[areaSelect.selectedIndex];
+
+    const serviceName = selectedServiceOpt.getAttribute('data-name') || selectedServiceOpt.text;
+    const priceText = selectedServiceOpt.getAttribute('data-price') || 'حسب التقييم';
+
+    const areaName = selectedAreaOpt.text.split('(')[0].trim();
+    const timeText = selectedAreaOpt.getAttribute('data-time') || '15 دقيقة';
+    const nurseName = selectedAreaOpt.getAttribute('data-nurse') || 'ممرض معتمد';
+    const specialty = selectedAreaOpt.getAttribute('data-specialty') || 'أخصائي تمريض منزلي';
+
+    if (priceEl) priceEl.innerHTML = `<span style="font-size: 15px; color: var(--c-secondary); font-weight: 800;"><i class="fas fa-certificate"></i> مسعّرة ومحددة بالتطبيق</span>`;
+    if (etaEl) etaEl.textContent = timeText;
+    if (nurseNameEl) {
+      nurseNameEl.innerHTML = `${nurseName} <span style="font-size: 11px; background: rgba(174, 250, 124, 0.18); color: var(--c-secondary); border: 1px solid var(--c-secondary); padding: 2px 8px; border-radius: 12px; font-weight: 800;"><i class="fas fa-certificate"></i> ترخيص ساري</span>`;
+    }
+    if (specialtyEl) specialtyEl.textContent = `${specialty} · نطاق ${areaName}`;
+
+    if (dispatchBtn) {
+      const waText = encodeURIComponent(`مرحباً كيور، قمت بمطابقة الخدمة الذكية وأريد تأكيد طلب:\n- الخدمة: ${serviceName}\n- المركز: ${areaName}\n- الممرض المقترح: ${nurseName}\n- التسعيرة: رسمية ومحددة بالتطبيق`);
+      dispatchBtn.href = `https://wa.me/201070203636?text=${waText}`;
+      dispatchBtn.setAttribute('title', `طلب فوري لـ ${serviceName} في ${areaName}`);
+    }
+
+    // Micro animation on result box
+    const resultBox = document.querySelector('.matcher-result-box');
+    if (resultBox) {
+      resultBox.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+      resultBox.style.transform = 'scale(1.01)';
+      resultBox.style.boxShadow = '0 0 25px rgba(174, 250, 124, 0.35)';
+      setTimeout(() => {
+        resultBox.style.transform = 'scale(1)';
+        resultBox.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+      }, 200);
+    }
+  }
+
+  if (serviceSelect && areaSelect) {
+    serviceSelect.addEventListener('change', updateSmartMatcher);
+    areaSelect.addEventListener('change', updateSmartMatcher);
+    updateSmartMatcher(); // Initialize on page load
+  }
+});

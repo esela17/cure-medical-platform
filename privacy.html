@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سياسة الخصوصية وحماية البيانات | منصة CURE للتمريض المنزلي</title>
   <meta name="description" content="سياسة الخصوصية وحماية البيانات لمنصة CURE للتمريض والرعاية المنزلية — التزام تام بحماية البيانات الشخصية والطبية وفق أعلى معايير الأمان." />
   <link rel="canonical" href="https://cureztyx.com/privacy.html" />
-  <link rel="icon" type="image/png" href="assets/png/logo-cure-new.png" />
+  
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +20,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Main External Design System -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/index.css" />
 
   <style>
     /* Privacy Policy Specific Styling (#6d73ff Light Theme) */
@@ -236,21 +242,81 @@
       .data-grid { grid-template-columns: 1fr; }
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CUREZTYX26');
+  </script>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img src="assets/png/logo-cure-new.png" alt="شعار منصة كيور">
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar">
+    <div class="container top-announcement-inner">
+      <div class="top-announcement-left">
+        <span class="live-status-pulse"></span>
+        <span class="announcement-text">🔒 سياسة الخصوصية وحماية البيانات الطبية لمنظومة كيور CURE | طوارئ: <strong>01070203636</strong></span>
+      </div>
+      <div class="top-announcement-right">
+        <a href="https://wa.me/201070203636" target="_blank" rel="noopener" class="top-link">
+          <i class="fab fa-whatsapp"></i> خدمة العملاء
         </a>
-        <a href="index.html" class="nav-back-link">
-          <i class="fas fa-arrow-right"></i>
-          العودة للرئيسية
+        <a href="tel:01070203636" class="top-link">
+          <i class="fas fa-phone-alt"></i> اتصل بنا
         </a>
       </div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav id="navbar" class="header-cure">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img loading="lazy" src="assets/images/icon.png" alt="شعار تطبيق كيور" class="nav-app-icon" width="42" height="42">
+        <div class="nav-brand-text">
+          <span class="brand-title">كيور <span>CURE</span></span>
+          <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+        </div>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="pricing.html">الأسعار الرسمية</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="articles.html">المقالات الطبية</a></li>
+        <li><a href="careers.html">الوظائف والتدريب</a></li>
+        <li>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+            <i class="fab fa-google-play"></i> حمّل التطبيق
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="btn-play-header" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i>
+          <span>حمّل الآن</span>
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="فتح القائمة">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">الرئيسية</a>
+      <a href="pricing.html">الأسعار الرسمية</a>
+      <a href="faq.html">الأسئلة الشائعة</a>
+      <a href="articles.html">المقالات الطبية</a>
+      <a href="careers.html">الوظائف والتدريب</a>
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-nav-cta">
+        <i class="fab fa-google-play"></i> تحميل تطبيق كيور مجاناً
+      </a>
     </div>
   </nav>
 
@@ -537,15 +603,92 @@
 
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <img src="assets/png/logo-cure-new.png" alt="كيور للتمريض المنزلي" style="height: 44px; margin-bottom: 16px;">
-      <p style="font-size: 13.5px; color: var(--c-muted); margin: 0;">
-        جميع الحقوق محفوظة © 2026 منصة CURE للتمريض والرعاية المنزلية.
-      </p>
+  <!-- Unified Footer -->
+  <footer class="footer-cure">
+    <div class="container footer-inner">
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <img loading="lazy" src="assets/images/icon.png" alt="شعار كيور" width="46" height="46">
+          <div class="brand-text">
+            <span class="brand-title">كيور <span>CURE</span></span>
+            <span class="brand-sub">رعاية صحية آمنة في بيتك</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          أول منصة ذكية متخصصة في توفير خدمات التمريض المنزلي المعتمد والرعاية الطبية المنزلية المتكاملة في محافظة الفيوم ومصر، بأعلى معايير الأمان الطبي والشفافية.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h4 class="footer-title">روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="pricing.html">قائمة الأسعار الرسمية</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة والمكررة</a></li>
+          <li><a href="articles.html">الموسوعة الطبية</a></li>
+          <li><a href="careers.html">الوظائف والتدريب</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4 class="footer-title">التواصل السريع والحجز</h4>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <div><span>طوارئ التمريض:</span> <strong>01070203636</strong></div>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div><span>واتساب الحجز:</span> <strong>01070203636</strong></div>
+        </div>
+        <div class="footer-app-cta">
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="footer-google-play">
+            <i class="fab fa-google-play"></i>
+            <div>
+              <small>حمّل تطبيق كيور من</small>
+              <span>Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 منصة كيور CURE للتمريض المنزلي. جميع الحقوق محفوظة.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html">سياسة الخصوصية</a>
+          <a href="terms.html">الشروط والأحكام</a>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Sticky Mobile Quick Bar -->
+  <div class="mobile-quick-bar" aria-label="شريط الوصول السريع">
+    <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="quick-btn app-highlight" target="_blank" rel="noopener">
+      <i class="fab fa-google-play"></i>
+      <span>تحميل التطبيق</span>
+    </a>
+    <a href="tel:01070203636" class="quick-btn call-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>اتصال فوري</span>
+    </a>
+    <a href="https://wa.me/201070203636" class="quick-btn whatsapp-btn" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>واتساب</span>
+    </a>
+  </div>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburgerBtn && mobileNav) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburgerBtn.classList.toggle('active', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
+      });
+    }
+  </script>
 </body>
 </html>

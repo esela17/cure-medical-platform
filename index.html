@@ -4,1309 +4,274 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>كيور CURE — أول وأفضل تمريض منزلي ورعاية صحية آمنة في مصر والفيوم</title>
-  <meta name="description" content="كيور (CURE) أول وأفضل منصة للتمريض المنزلي والرعاية الصحية الآمنة في مصر والفيوم. نقدم خدمات التمريض المنزلي، ورعاية المسنين بأسعار صريحة. اطلب ممرض الآن." />
-  <meta name="keywords" content="تمريض منزلي في مصر, تمريض في مصر, مكتب تمريض منزلي, تمريض منزلي بالفيوم, رعاية كبار السن في مصر, منصة طبية, كيور, CURE" />
-  <link rel="icon" type="image/png" href="assets/png/logo-cure-new.png" />
+  <meta name="description" content="كيور (CURE) أول منصة ذكية معتمدة للتمريض المنزلي والرعاية الصحية الآمنة في مصر والفيوم. نصلك خلال 15 دقيقة بنخبة من الممرضين المرخصين وبأسعار صريحة 100%. احجز الآن." />
+  <meta name="keywords" content="تمريض منزلي في مصر, تمريض في مصر, تمريض منزلي بالفيوم, رعاية كبار السن, محاليل وريدية منزلية, غيار جروح معقم, قسطرة منزلية, منصة كيور, CURE" />
+
+  <!-- App Icon & Favicons -->
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
 
   <!-- Open Graph / Meta -->
-  <meta property="og:title" content="كيور CURE — تمريض منزلي ورعاية صحية في مصر والفيوم" />
-  <meta property="og:description" content="أول منصة تمريض منزلي ورعاية طبيّة في مصر. نربطك بأفضل الممرضين في 15 دقيقة بأسعار ثابتة." />
-  <meta property="og:image" content="https://cureztyx.com/assets/png/logo-cure-new.png" />
+  <meta property="og:title" content="كيور CURE — أول تمريض منزلي معتمد في مصر والفيوم" />
+  <meta property="og:description" content="احجز ممرضك المرخص في أقل من 15 دقيقة بأسعار ثابتة ومعلنة. رعاية طبية موثوقة حتى باب بيتك." />
+  <meta property="og:image" content="assets/images/CURE-premium-launch-hero.png" />
   <meta property="og:url" content="https://cureztyx.com/" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Structured Data -->
+  <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
-    "name": "كيور للتمريض المنزلي (CURE)",
+    "name": "منصة كيور للتمريض المنزلي (CURE Medical)",
     "url": "https://cureztyx.com/",
-    "logo": "https://cureztyx.com/assets/png/logo-cure-new.png",
+    "logo": "https://cureztyx.com/assets/images/icon.png",
+    "image": "https://cureztyx.com/assets/images/CURE-premium-launch-hero.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+201070203636",
       "contactType": "customer service",
-      "areaServed": "EG"
+      "areaServed": "EG",
+      "availableLanguage": ["Arabic", "English"]
     },
-    "description": "أول وأسرع منصة لخدمات التمريض المنزلي في مصر."
+    "description": "أول وأسرع منصة ذكية معتمدة لخدمات التمريض المنزلي والرعاية الطبية الفورية في مصر والفيوم."
   }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Cairo & Tajawal -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Main External Design System -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Master Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages/index.css" />
 
-  <style>
-    /* ═══════════════════════════════════════════════════════════════════
-       HAND-CRAFTED HUMAN BACKGROUND COMPOSITIONS (#6d73ff Light Theme)
-       ═══════════════════════════════════════════════════════════════════ */
-
-    /* ─── LOADER ─────────────────────────────────────────────── */
-    #loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      transition: opacity 0.5s var(--ease-out), visibility 0.5s;
-    }
-    #loader.hidden, #loader.is-hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .loader-logo {
-      font-family: var(--ff-head);
-      font-size: 40px;
-      font-weight: 900;
-      color: var(--c-heading);
-      letter-spacing: -1px;
-    }
-    .loader-logo span { color: var(--c-brand); }
-    .loader-bar {
-      width: 220px;
-      height: 4px;
-      background: var(--c-brand-10);
-      border-radius: var(--r-pill);
-      overflow: hidden;
-    }
-    .loader-bar-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--c-brand), var(--c-brand-light));
-      border-radius: var(--r-pill);
-      animation: loadFill 1.2s ease forwards;
-    }
-    @keyframes loadFill {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    /* ─── NAVIGATION ─────────────────────────────────────────── */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 16px 0;
-      transition: all 0.4s var(--ease-out);
-    }
-    #navbar.scrolled {
-      padding: 10px 0;
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border-bottom: 1px solid var(--c-border-light);
-      box-shadow: 0 8px 30px rgba(109, 115, 255, 0.08);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav-logo img {
-      height: 44px;
-      width: auto;
-      object-fit: contain;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-      background: var(--c-brand-5);
-      padding: 6px 12px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--c-border-light);
-    }
-    .nav-links a {
-      padding: 8px 18px;
-      border-radius: var(--r-pill);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--c-body);
-      font-family: var(--ff-head);
-      transition: all 0.25s var(--ease-spring);
-    }
-    .nav-links a:hover {
-      color: var(--c-brand-deep);
-      background: rgba(109, 115, 255, 0.1);
-    }
-    .nav-cta {
-      background: var(--c-brand) !important;
-      color: var(--c-white) !important;
-      padding: 9px 24px !important;
-      border-radius: var(--r-pill) !important;
-      box-shadow: 0 6px 18px rgba(109, 115, 255, 0.28);
-    }
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(109, 115, 255, 0.38) !important;
-    }
-
-    /* Mobile Hamburger & Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 8px;
-      background: var(--c-brand-5);
-      border: 1px solid var(--c-border-light);
-      border-radius: var(--r-sm);
-    }
-    .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--c-heading);
-      border-radius: 2px;
-      transition: all 0.3s var(--ease-out);
-    }
-    .hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.is-open span:nth-child(2) { opacity: 0; }
-    .hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    .mobile-menu {
-      position: fixed;
-      top: 0; left: -100%;
-      width: 85%; max-width: 380px;
-      height: 100vh;
-      background: #ffffff;
-      padding: 90px 28px 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      transition: left 0.4s var(--ease-out);
-      z-index: 999;
-      box-shadow: 20px 0 60px rgba(109, 115, 255, 0.15);
-      overflow-y: auto;
-    }
-    .mobile-menu.open, .mobile-menu.is-open { left: 0; }
-    .mobile-menu a {
-      font-family: var(--ff-head);
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--c-heading);
-      padding: 12px 16px;
-      border-radius: var(--r-sm);
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border-light);
-    }
-    .mobile-menu a:hover {
-      background: var(--c-brand-10);
-      color: var(--c-brand);
-    }
-
-    .lang-toggle-btn {
-      background: var(--c-brand-5);
-      border: 1px solid var(--c-border-light);
-      color: var(--c-brand-deep);
-      padding: 7px 14px;
-      border-radius: var(--r-pill);
-      font-weight: 800;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.25s;
-    }
-    .lang-toggle-btn:hover {
-      background: var(--c-brand-10);
-    }
-
-    /* ─── HERO SECTION (HUMAN CRAFTED BACKGROUND) ───────────────── */
-    #hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      padding-top: 130px;
-      padding-bottom: 80px;
-      background-color: #ffffff;
-      background-image: 
-        radial-gradient(circle at 1.5px 1.5px, rgba(109, 115, 255, 0.09) 1.5px, transparent 0),
-        radial-gradient(ellipse at 85% 15%, rgba(109, 115, 255, 0.08) 0%, transparent 55%),
-        radial-gradient(ellipse at 15% 85%, rgba(109, 115, 255, 0.05) 0%, transparent 45%);
-      background-size: 38px 38px, 100% 100%, 100% 100%;
-      overflow: hidden;
-    }
-
-    .hero-bg-atoms {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.35;
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-text {
-      text-align: right;
-    }
-
-    .hero-title {
-      font-family: var(--ff-head);
-      font-size: clamp(38px, 5.2vw, 68px);
-      font-weight: 900;
-      line-height: 1.16;
-      color: var(--c-heading);
-      margin-bottom: 24px;
-      letter-spacing: -1px;
-    }
-
-    .hero-title .highlight {
-      color: var(--c-brand);
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      font-size: clamp(17px, 1.8vw, 21px);
-      color: var(--c-muted);
-      max-width: 580px;
-      line-height: 1.85;
-      margin-bottom: 40px;
-    }
-
-    .hero-btns {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 54px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 24px 20px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .stat-item {
-      text-align: center;
-      border-inline-end: 1px solid var(--c-border-light);
-      padding: 0 8px;
-    }
-    .stat-item:last-child {
-      border-inline-end: none;
-    }
-    .stat-num {
-      font-family: var(--ff-head);
-      font-size: 34px;
-      font-weight: 900;
-      color: var(--c-brand);
-      line-height: 1;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .stat-lbl {
-      font-size: 13px;
-      color: var(--c-muted);
-      font-weight: 600;
-    }
-
-    /* Hero Visual Card */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-card-frame {
-      width: 100%;
-      max-width: 440px;
-      background: #ffffff;
-      border-radius: var(--r-lg);
-      border: 1px solid var(--c-border);
-      padding: 28px;
-      box-shadow: var(--shadow-float);
-      position: relative;
-      transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-      transition: transform 0.5s var(--ease-spring);
-    }
-    .hero-card-frame:hover {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
-
-    .hero-mock-map {
-      height: 220px;
-      background: var(--c-brand-5);
-      border-radius: var(--r-md);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--c-border-light);
-      margin-bottom: 20px;
-    }
-    .hero-mock-map::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(109, 115, 255, 0.22) 2px, transparent 2px);
-      background-size: 20px 20px;
-    }
-
-    .live-pulse-badge {
-      position: absolute;
-      top: 16px; right: 16px;
-      background: #ffffff;
-      padding: 8px 14px;
-      border-radius: var(--r-pill);
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--c-heading);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .pulse-dot {
-      width: 8px; height: 8px;
-      background: var(--c-success);
-      border-radius: 50%;
-      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-      animation: pulseGreen 2s infinite;
-    }
-    @keyframes pulseGreen {
-      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-    }
-
-    .float-card-tag {
-      position: absolute;
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      padding: 14px 20px;
-      border-radius: var(--r-sm);
-      box-shadow: var(--shadow-hover);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 3;
-    }
-    .float-card-tag.tag-top {
-      top: -20px; left: -20px;
-      animation: floatAnim 6s ease-in-out infinite;
-    }
-    .float-card-tag.tag-bottom {
-      bottom: -20px; right: -20px;
-      animation: floatAnim 6s ease-in-out infinite 1.5s;
-    }
-    @keyframes floatAnim {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* ─── ABOUT SECTION (SOFT LIGHT BACKGROUND) ─────────────── */
-    #about {
-      background-color: var(--c-bg-soft);
-      background-image: 
-        linear-gradient(135deg, rgba(109, 115, 255, 0.03) 25%, transparent 25%, transparent 50%, rgba(109, 115, 255, 0.03) 50%, rgba(109, 115, 255, 0.03) 75%, transparent 75%, transparent);
-      background-size: 48px 48px;
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about-highlights {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 36px;
-    }
-    .highlight-card {
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-sm);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s var(--ease-spring);
-    }
-    .highlight-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--c-brand-40);
-    }
-    .highlight-card .h-icon {
-      width: 48px; height: 48px;
-      background: var(--c-brand-5);
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 14px;
-      color: var(--c-brand);
-    }
-    .highlight-card h4 {
-      font-family: var(--ff-head);
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--c-heading);
-      margin-bottom: 6px;
-    }
-    .highlight-card p {
-      font-size: 13px;
-      color: var(--c-muted);
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* ─── PROBLEM SECTION (SOFT AMBIENT WARMTH) ─────────────── */
-    #problem {
-      background-color: #fff8f9;
-      background-image: radial-gradient(ellipse at 50% 0%, rgba(255, 82, 119, 0.05) 0%, transparent 70%);
-      position: relative;
-    }
-    .drama-quote {
-      background: #ffffff;
-      border: 1px solid rgba(255, 82, 119, 0.22);
-      border-radius: var(--r-md);
-      padding: 40px 48px;
-      margin-bottom: 56px;
-      text-align: center;
-      position: relative;
-      box-shadow: var(--shadow-card);
-    }
-    .drama-quote p {
-      font-size: 21px;
-      font-style: italic;
-      color: var(--c-heading);
-      font-family: var(--ff-head);
-      line-height: 1.75;
-    }
-    .drama-quote span {
-      color: var(--c-accent);
-      font-weight: 800;
-    }
-    .drama-quote cite {
-      display: block;
-      margin-top: 14px;
-      font-size: 14px;
-      color: var(--c-muted);
-    }
-
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .problem-card {
-      background: #ffffff;
-      border: 1px solid rgba(255, 82, 119, 0.16);
-      border-radius: var(--r-md);
-      padding: 36px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s var(--ease-spring);
-    }
-    .problem-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--c-accent);
-    }
-    .pc-stat {
-      font-family: var(--ff-head);
-      font-size: 38px;
-      font-weight: 900;
-      color: var(--c-accent);
-      line-height: 1;
-      margin-top: 16px;
-    }
-
-    /* ─── SOLUTION SECTION ──────────────────────────────────── */
-    #solution {
-      background: #ffffff;
-    }
-    .solution-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-bottom: 64px;
-    }
-    .solution-side {
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 40px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s var(--ease-spring);
-    }
-    .solution-side:hover {
-      border-color: var(--c-brand);
-      box-shadow: var(--shadow-card);
-      transform: translateY(-4px);
-    }
-    .solution-side h3 {
-      font-family: var(--ff-head);
-      font-size: 20px;
-      font-weight: 900;
-      color: var(--c-heading);
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .solution-side h3 .tag {
-      background: var(--c-brand-10);
-      border: 1px solid var(--c-brand-25);
-      color: var(--c-brand-deep);
-      padding: 4px 14px;
-      border-radius: var(--r-pill);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-    .feature-item .check {
-      width: 24px; height: 24px;
-      min-width: 24px;
-      background: var(--c-success-bg);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      color: var(--c-success);
-      margin-top: 3px;
-    }
-    .feature-item p {
-      font-size: 15px;
-      color: var(--c-body);
-      line-height: 1.7;
-    }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .pillar {
-      background: #ffffff;
-      border-radius: var(--r-md);
-      padding: 40px 32px;
-      text-align: center;
-      border: 1px solid var(--c-border);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.35s var(--ease-spring);
-    }
-    .pillar:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--c-brand);
-    }
-    .pillar-icon {
-      width: 64px; height: 64px;
-      background: var(--c-brand-5);
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      margin: 0 auto 20px;
-      color: var(--c-brand);
-    }
-    .pillar h3 {
-      font-family: var(--ff-head);
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--c-heading);
-      margin-bottom: 12px;
-    }
-
-    /* ─── SERVICES SECTION ──────────────────────────────────── */
-    #services {
-      background: var(--c-bg-soft);
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 28px;
-    }
-    .service-card {
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 36px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.35s var(--ease-spring);
-      position: relative;
-      overflow: hidden;
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--c-brand);
-      box-shadow: var(--shadow-hover);
-    }
-    .service-card h3 {
-      color: var(--c-brand-deep);
-      font-family: var(--ff-head);
-      font-size: 19px;
-      font-weight: 800;
-      margin-bottom: 18px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--c-border-light);
-    }
-    .service-card ul {
-      list-style: none;
-    }
-    .service-card ul li {
-      font-size: 14.5px;
-      color: var(--c-body);
-      line-height: 2.1;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* ─── HOW IT WORKS SECTION ──────────────────────────────── */
-    #how {
-      background: #ffffff;
-    }
-    .how-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 60px;
-      background: var(--c-brand-5);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-pill);
-      padding: 6px;
-      width: fit-content;
-      margin-left: auto; margin-right: auto;
-    }
-    .tab-btn {
-      padding: 12px 34px;
-      border-radius: var(--r-pill);
-      font-family: var(--ff-head);
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--c-muted);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s var(--ease-spring);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .tab-btn.active {
-      background: var(--c-brand);
-      color: var(--c-white);
-      box-shadow: 0 6px 20px rgba(109, 115, 255, 0.3);
-    }
-
-    .tab-content { display: none; }
-    .tab-content.active { display: block; }
-
-    .steps-list {
-      max-width: 760px;
-      margin: 0 auto;
-      position: relative;
-    }
-    .steps-list::before {
-      content: '';
-      position: absolute;
-      top: 35px; bottom: 35px;
-      right: 27px;
-      width: 3px;
-      background: linear-gradient(180deg, var(--c-brand), var(--c-brand-light));
-      border-radius: 2px;
-    }
-    .step-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 28px;
-      padding: 24px 0;
-    }
-    .step-num {
-      width: 56px; height: 56px;
-      min-width: 56px;
-      border-radius: 50%;
-      background: var(--c-brand);
-      color: var(--c-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--ff-head);
-      font-size: 20px;
-      font-weight: 900;
-      box-shadow: 0 8px 20px rgba(109, 115, 255, 0.3);
-      position: relative;
-      z-index: 1;
-    }
-    .step-body h4 {
-      font-family: var(--ff-head);
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--c-heading);
-      margin-bottom: 6px;
-    }
-
-    /* ─── WHY CURE SECTION ───────────────────────────────────── */
-    #why {
-      background: var(--c-bg-soft);
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .why-card {
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 36px 30px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.35s var(--ease-spring);
-    }
-    .why-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--c-brand);
-    }
-    .why-icon {
-      width: 56px; height: 56px;
-      background: var(--c-brand-10);
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--c-brand);
-      margin-bottom: 20px;
-    }
-
-    /* ─── NUMBERS / IMPACT SECTION (FINE PATTERN) ─────────────── */
-    #numbers {
-      background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
-      color: #ffffff;
-      position: relative;
-    }
-    #numbers::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
-      background-size: 24px 24px;
-      pointer-events: none;
-    }
-
-    .numbers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      position: relative;
-      z-index: 1;
-    }
-    .number-item {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--r-md);
-      padding: 44px 20px;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      transition: all 0.3s;
-    }
-    .number-item:hover {
-      background: rgba(255, 255, 255, 0.18);
-      transform: translateY(-4px);
-    }
-    .num-val {
-      font-family: var(--ff-head);
-      font-size: 52px;
-      font-weight: 900;
-      color: #ffffff;
-      line-height: 1;
-      display: block;
-      margin-bottom: 8px;
-    }
-    .num-lbl {
-      font-size: 15px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.95);
-      display: block;
-    }
-    .num-sub {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    /* ─── TESTIMONIALS SECTION ───────────────────────────────── */
-    #testimonials {
-      background: #ffffff;
-    }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .testi-card {
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 36px;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s var(--ease-spring);
-    }
-    .testi-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--c-brand);
-      box-shadow: var(--shadow-card);
-    }
-    .testi-stars {
-      color: #f59e0b;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-    .testi-card p {
-      font-size: 15px;
-      color: var(--c-body);
-      line-height: 1.8;
-      font-style: italic;
-      margin-bottom: 24px;
-    }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .testi-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--c-brand), var(--c-brand-light));
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--ff-head);
-      font-weight: 800;
-    }
-
-    /* ─── JOIN SECTION ───────────────────────────────────────── */
-    #join {
-      background: var(--c-bg-soft);
-    }
-    .join-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .benefit-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-sm);
-      padding: 18px 24px;
-      margin-bottom: 14px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .join-form {
-      background: #ffffff;
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 40px;
-      box-shadow: var(--shadow-card);
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--c-heading);
-      margin-bottom: 8px;
-      font-family: var(--ff-head);
-    }
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-sm);
-      padding: 14px 18px;
-      font-size: 14.5px;
-      color: var(--c-heading);
-      transition: all 0.3s;
-      outline: none;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      border-color: var(--c-brand);
-      background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(109, 115, 255, 0.15);
-    }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-submit {
-      width: 100%;
-      background: linear-gradient(135deg, var(--c-brand), var(--c-brand-deep));
-      color: #ffffff;
-      padding: 16px;
-      border-radius: var(--r-pill);
-      font-size: 16.5px;
-      font-weight: 800;
-      font-family: var(--ff-head);
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s var(--ease-spring);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 8px 24px rgba(109, 115, 255, 0.3);
-    }
-    .form-submit:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(109, 115, 255, 0.4);
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 32px;
-    }
-    .form-success.is-visible { display: block; }
-
-    /* ─── CONTACT SECTION ────────────────────────────────────── */
-    #contact {
-      background: #ffffff;
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-    }
-    .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-sm);
-      padding: 20px 24px;
-      margin-bottom: 16px;
-    }
-    .contact-card .c-icon {
-      width: 48px; height: 48px;
-      background: var(--c-brand-10);
-      border-radius: var(--r-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: var(--c-brand);
-    }
-    .contact-form {
-      background: var(--c-bg-soft);
-      border: 1px solid var(--c-border);
-      border-radius: var(--r-md);
-      padding: 40px;
-    }
-
-    /* ─── CTA BANNER ─────────────────────────────────────────── */
-    #cta {
-      background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
-      color: #ffffff;
-      padding: 90px 0;
-      text-align: center;
-    }
-    #cta h2 { color: #ffffff; }
-    #cta p { color: rgba(255, 255, 255, 0.88); }
-
-    /* ─── FOOTER ─────────────────────────────────────────────── */
-    footer {
-      background: var(--c-bg-soft);
-      border-top: 1px solid var(--c-border);
-      padding: 70px 0 36px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer-col h4 {
-      font-family: var(--ff-head);
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--c-heading);
-      margin-bottom: 20px;
-    }
-    .footer-col ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .footer-col ul li a {
-      font-size: 14px;
-      color: var(--c-muted);
-    }
-    .footer-col ul li a:hover {
-      color: var(--c-brand);
-    }
-
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 28px;
-      border-top: 1px solid var(--c-border-light);
-      font-size: 13.5px;
-      color: var(--c-muted);
-    }
-
-    /* WhatsApp Float */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px; left: 30px;
-      z-index: 999;
-      width: 60px; height: 60px;
-      background: #25d366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      color: white;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      transition: all 0.3s var(--ease-spring);
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1) rotate(8deg);
-    }
-
-    /* ─── RESPONSIVE DESIGN ─────────────────────────────────── */
-    @media (max-width: 991px) {
-      .hero-layout, .about-grid, .solution-top, .join-grid, .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .pillars, .why-grid, .testi-grid, .numbers-grid, .problem-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 600px) {
-      .pillars, .why-grid, .testi-grid, .numbers-grid, .problem-grid, .form-row, .about-highlights {
-        grid-template-columns: 1fr;
-      }
-      .hero-stats { grid-template-columns: 1fr 1fr; }
-      .stat-item { border-inline-end: none; border-bottom: 1px solid var(--c-border-light); padding: 12px 0; }
-      .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; gap: 12px; }
-    }
-  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CUREZTYX26');
+  </script>
 </head>
 <body>
 
-  <!-- Loading Screen -->
+  <!-- Instant Loader Screen -->
   <div id="loader">
     <div class="loader-logo">كيور <span>.</span></div>
     <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-    <p style="font-size: 13.5px; color: var(--c-muted); font-family: var(--ff-head);">أول منصة تمريض منزلي آمنة في مصر والفيوم</p>
+    <p style="font-size: 13.5px; color: var(--c-muted); font-family: var(--ff-head); font-weight: 700;">أول منصة تمريض منزلي معتمدة وآمنة في مصر والفيوم</p>
   </div>
 
-  <!-- Navigation Bar -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">
-        <img src="assets/png/logo-cure-new.png" alt="شعار كيور للتمريض المنزلي" width="160" height="44" />
-      </a>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#services">خدماتنا</a></li>
-        <li><a href="#how">كيف يعمل</a></li>
-        <li><a href="#why">لماذا كيور</a></li>
-        <li><a href="articles.html">المقالات</a></li>
-        <li><a href="careers.html" style="color: var(--c-brand-deep);">وظائف</a></li>
-        <li><a href="#join" class="nav-cta">سجّل الآن</a></li>
-        <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
-      </ul>
-
-      <div style="display: flex; align-items: center; gap: 12px;">
-        <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة" style="display: none;">EN</button>
-        <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- Unified Site Header (Fixed Top Bar + Modern Navbar) -->
+  <header id="site-header" class="site-header">
+    <!-- Top Announcement Bar (Direct Google Play Access) -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-bar-cta">
+          <span class="top-bar-badge"><span class="pulse-dot"></span> حـمّـل التـطـبـيـق الآن</span>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" id="topBarGpBtn" title="تحميل تطبيق كيور من متجر جوجل بلاي">
+            <i class="fab fa-google-play"></i>
+            <span>زر جوجل بلاي (Google Play)</span>
+          </a>
+        </div>
+        <div class="top-bar-contact">
+          <a href="tel:01070203636" class="top-contact-link"><i class="fas fa-phone-alt"></i> طوارئ التمريض: 01070203636</a>
+          <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز خدمة تمريض منزلي عاجلة" target="_blank" rel="noopener" class="top-contact-link wa"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
+        </div>
       </div>
     </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">من نحن</a>
-      <a href="#services">خدماتنا</a>
-      <a href="#how">كيف يعمل</a>
-      <a href="#why">لماذا كيور</a>
-      <a href="#join">انضم إلينا</a>
-      <a href="#contact">تواصل معنا</a>
-      <a href="articles.html">مقالات طبية</a>
-      <a href="careers.html" style="color: var(--c-brand)">وظائف</a>
-    </div>
-  </nav>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" title="كيور — تمريض منزلي آمن">
+          <img src="assets/images/icon.png" alt="شعار كيور للتمريض المنزلي" width="38" height="38" loading="eager" />
+          <span class="nav-logo-text">كيور<span>.</span></span>
+        </a>
 
-  <!-- Hero Section -->
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#needs">احتياجاتك</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#comparison">معايير الأمان</a></li>
+          <li><a href="#how">كيف يعمل</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+          <li><a href="#faq">الأسئلة</a></li>
+          <li><a href="careers.html" style="color: var(--c-brand-deep);">وظائف</a></li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+              <i class="fab fa-google-play" style="margin-left: 5px;"></i> حمّل التطبيق
+            </a>
+          </li>
+          <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة" style="display: none;">EN</button>
+          <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" style="background: linear-gradient(135deg, var(--c-secondary) 0%, #00e676 100%); color: #070617 !important; font-weight: 900; text-align: center; font-size: 16px; border: 2px solid #ffffff; box-shadow: 0 6px 18px var(--c-secondary-glow);">
+          <i class="fab fa-google-play"></i> حمّل التطبيق الآن (Google Play)
+        </a>
+        <a href="#needs"><i class="fas fa-stethoscope"></i> ماذا تحتاج اليوم؟</a>
+        <a href="#services"><i class="fas fa-list-check"></i> خدماتنا وأسعارنا</a>
+        <a href="pricing.html"><i class="fas fa-file-invoice-dollar"></i> جدول الأسعار الكامل</a>
+        <a href="#comparison"><i class="fas fa-shield-halved"></i> معايير الأمان والمقارنة</a>
+        <a href="#about"><i class="fas fa-heartbeat"></i> عن كيور وفريق العمل</a>
+        <a href="#how"><i class="fas fa-tasks"></i> كيف يعمل التطبيق</a>
+        <a href="#faq"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</a>
+        <a href="careers.html" style="color: var(--c-brand)"><i class="fas fa-briefcase"></i> وظائف الممرضين</a>
+        <a href="#join"><i class="fas fa-user-nurse"></i> انضم كممرض معتمد</a>
+        <a href="tel:01070203636" style="background: var(--c-brand-5); color: var(--c-brand-deep); text-align: center; font-weight: 800;">
+          <i class="fas fa-phone-alt"></i> اتصل بالطوارئ: 01070203636
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO SECTION — High-Conversion Patient Centerpiece
+       ═══════════════════════════════════════════════════════════════ -->
   <section id="hero">
-    <div class="hero-bg-atoms">
-      <svg width="100%" height="100%" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="400" cy="400" r="300" stroke="#6d73ff" stroke-opacity="0.08" stroke-width="1.5" stroke-dasharray="6 6" />
-        <circle cx="400" cy="400" r="180" stroke="#6d73ff" stroke-opacity="0.1" stroke-width="1.2" />
-        <path d="M100 200 L700 600" stroke="#6d73ff" stroke-opacity="0.04" stroke-width="1" />
-      </svg>
-    </div>
-
     <div class="container">
       <div class="hero-layout">
-        
+
+        <!-- Right Side: Content & Action Hierarchy -->
         <div class="hero-text reveal">
-          <div style="margin-bottom: 20px;">
-            <span class="badge">
-              <span class="pulse-dot"></span>
-              متاح الآن في الفيوم
-            </span>
+          <div style="margin-bottom: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <div class="hero-slogan-pill">
+              <span class="pulse-dot"></span> الرعاية الطبية... لحد باب بيتك
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(109, 115, 255, 0.1); border: 1.5px solid var(--c-brand); border-radius: 30px; padding: 4px 14px; text-decoration: none; color: var(--c-heading); font-size: 12.5px; font-weight: 800;">
+              <span>حـمّـل التـطـبـيـق الآن</span>
+              <span style="background: var(--c-brand); color: #fff; padding: 2px 10px; border-radius: 20px; font-size: 11px; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fab fa-google-play"></i> Google Play
+              </span>
+            </a>
           </div>
 
           <h1 class="hero-title">
-            أول وسيط بين<br />
+            أول وسيط معتمد بين<br />
             <span class="highlight">الممرض والمريض</span><br />
             في مصر
           </h1>
 
           <p class="hero-sub">
-            كيور — منصة ذكية تربط المرضى بممرضين معتمدين لتقديم <strong style="color: var(--c-heading);">15 خدمة طبية منزلية</strong> في أقل من 15 دقيقة، بأسعار ثابتة وشفافة 100%.
+            <strong>CURE — رعاية صحية في البيت، أسهل وأسرع وأقرب.</strong> نربطك بنخبة من أفضل الممرضين المرخصين لتقديم <strong style="color: var(--c-heading);">15 خدمة طبية منزلية</strong> تصلك خلال 15 دقيقة، بأسعار صريحة وثابتة 100%.
           </p>
 
-          <div class="hero-btns">
-            <a href="#join" class="btn-primary">
-              <i class="fas fa-user-nurse"></i>
-              سجّل كممرض
-            </a>
-            <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز خدمة تمريض منزلي" class="btn-secondary" target="_blank" rel="noopener">
-              <i class="fas fa-hand-holding-medical"></i>
-              احجز خدمة الآن
+          <!-- The Centerpiece: HERO APP DOWNLOAD CARD (#6d73ff & #aefa7c) -->
+          <div class="hero-download-card">
+            <div class="hero-download-info">
+              <img src="assets/images/icon.png" alt="أيقونة تطبيق كيور" class="hero-download-icon" />
+              <div>
+                <div class="hero-download-badge"><span class="pulse-dot" style="background: var(--c-secondary);"></span> تطبيق كيور الرسمي · متاح مجاناً</div>
+                <h2 class="hero-download-heading">حـمّـل التـطـبـيـق الآن</h2>
+                <div class="hero-download-sub">احجز ممرضك المرخص في الفيوم خلال 15 دقيقة بلمسة واحدة</div>
+              </div>
+            </div>
+
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="hero-download-btn" id="heroGpBtn" title="تنزيل تطبيق كيور من Google Play">
+              <i class="fab fa-google-play"></i>
+              <div class="hero-btn-lines">
+                <span class="hero-btn-sub">زر جوجل بلاي الرسمي</span>
+                <span class="hero-btn-main">Google Play</span>
+              </div>
             </a>
           </div>
 
+          <!-- Secondary Actions -->
+          <div class="hero-btns">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="btn-cure-glow">
+              <i class="fas fa-hand-holding-medical"></i>
+              <span>اطلب خدمتك الآن</span>
+            </a>
+            <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز خدمة تمريض منزلي الآن" class="btn-secondary wa" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
+              حجز عبر الواتساب
+            </a>
+            <a href="pricing.html" class="btn-secondary">
+              <i class="fas fa-file-invoice-dollar" style="color: var(--c-brand);"></i>
+              جدول الأسعار
+            </a>
+          </div>
+
+          <!-- Proof Metrics Bar -->
           <div class="hero-stats">
             <div class="stat-item">
               <span class="stat-num">15+</span>
-              <span class="stat-lbl">خدمة منزلية</span>
+              <span class="stat-lbl">خدمة طبية متخصصة</span>
             </div>
             <div class="stat-item">
               <span class="stat-num">15د</span>
-              <span class="stat-lbl">زمن الاستجابة</span>
+              <span class="stat-lbl">متوسط زمن الاستجابة</span>
             </div>
             <div class="stat-item">
               <span class="stat-num">100%</span>
-              <span class="stat-lbl">ممرضون معتمدون</span>
+              <span class="stat-lbl">ممرضون مرخصون ومفحوصون</span>
             </div>
             <div class="stat-item">
               <span class="stat-num">24/7</span>
-              <span class="stat-lbl">دعم مستمر</span>
+              <span class="stat-lbl">جاهزية طبية مستمرة</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Visual Element -->
+        <!-- Left Side: Centerpiece Nurse Model Visual (Ref: CURE-premium-launch-hero.png) -->
         <div class="hero-visual reveal reveal-delay-2">
-          <div class="hero-card-frame">
-            <div class="live-pulse-badge">
-              <span class="pulse-dot"></span>
-              ممرض قريب متاح
-            </div>
-
-            <div class="hero-mock-map">
-              <div style="text-align: center; position: relative; z-index: 1;">
-                <i class="fas fa-map-marker-alt" style="font-size: 38px; color: var(--c-brand); margin-bottom: 8px;"></i>
-                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">الفيوم، مصر</div>
-                <div style="font-size: 12px; color: var(--c-muted);">تتبع فوري في 15 دقيقة</div>
+          <div class="hero-visual-frame">
+            <!-- 3D Floating Glass Badge: Top Right -->
+            <div class="hero-glass-badge glass-badge-top">
+              <img src="assets/images/cure-nurse-avatar.png" alt="ممرضة كيور" style="width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--c-secondary); object-fit: cover;" />
+              <div>
+                <div class="glass-badge-title">ممرضة منزلية</div>
+                <div class="glass-badge-sub"><span class="pulse-dot"></span> متاحة الآن <span style="color: #eab308;">★★★★★</span></div>
               </div>
             </div>
 
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: var(--c-brand-5); border-radius: var(--r-sm);">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="width: 36px; height: 36px; background: var(--c-brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
-                  <i class="fas fa-stethoscope"></i>
-                </div>
+            <!-- 3D Floating Glass Badge: Mid Left -->
+            <div class="hero-glass-badge glass-badge-mid">
+              <div class="glass-badge-icon pulse-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <div class="glass-badge-title">نطاق الفيوم ومصر</div>
+                <div class="glass-badge-sub">وصول في 15 دقيقة</div>
+              </div>
+            </div>
+
+            <!-- Main Image Wrapper -->
+            <div class="hero-img-wrapper">
+              <img src="assets/images/CURE-premium-launch-hero.png" alt="ممرضة كيور المعتمدة — الرعاية الطبية لحد باب بيتك" class="hero-visual-img" loading="eager" />
+            </div>
+
+            <!-- 3D Floating Glass Badge: Bottom -->
+            <div class="hero-glass-badge glass-badge-bottom">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="glass-badge-icon"><i class="fas fa-shield-heart"></i></div>
                 <div>
-                  <div style="font-weight: 800; font-size: 14px; color: var(--c-heading);">تمريض آمن ومعتمد</div>
-                  <div style="font-size: 11.5px; color: var(--c-muted);">أعلى معايير الرعاية</div>
+                  <div class="glass-badge-title">رعاية طبية معتمدة ومفحوصة</div>
+                  <div class="glass-badge-sub"><span class="pulse-dot"></span> ترخيص نقابة ساري 100% · فيش وتشبيه</div>
                 </div>
               </div>
-              <span style="font-weight: 900; color: var(--c-brand-deep); font-size: 14px;">100% صريح</span>
+              <span style="font-family: var(--ff-head); font-weight: 900; color: var(--c-brand-deep); font-size: 13.5px; background: var(--c-brand-5); padding: 4px 12px; border-radius: var(--r-pill); border: 1px solid var(--c-brand-15);">
+                حجز آمن
+              </span>
             </div>
-
-            <!-- Floating Badges -->
-            <div class="float-card-tag tag-top">
-              <span style="font-size: 22px;">⭐</span>
-              <div>
-                <div style="font-weight: 900; font-size: 18px; color: var(--c-brand);">87%</div>
-                <div style="font-size: 11px; color: var(--c-muted);">يفضلون كيور</div>
-              </div>
-            </div>
-
-            <div class="float-card-tag tag-bottom">
-              <span style="font-size: 22px;">🩺</span>
-              <div>
-                <div style="font-weight: 900; font-size: 18px; color: var(--c-brand);">150+</div>
-                <div style="font-size: 11px; color: var(--c-muted);">ممرض تحت الطلب</div>
-              </div>
-            </div>
-
           </div>
         </div>
 
@@ -1314,414 +279,920 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       CLINICAL TRUST & AUTHORITY RIBBON (4 Pillars)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="trust-ribbon">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-card reveal">
+          <div class="trust-icon"><i class="fas fa-id-card-clip"></i></div>
+          <div>
+            <div class="trust-title">فحص أمني ونقابي 100%</div>
+            <div class="trust-desc">كل ممرض مسجل بنقابة التمريض ومفحوص جنائياً قبل دخوله منزلك.</div>
+          </div>
+        </div>
+
+        <div class="trust-card reveal reveal-delay-1">
+          <div class="trust-icon"><i class="fas fa-bolt-lightning"></i></div>
+          <div>
+            <div class="trust-title">وصول في 15 دقيقة</div>
+            <div class="trust-desc">نظام ربط جغرافي ذكي يوجه أقرب ممرض متواجد في محيطك فوراً.</div>
+          </div>
+        </div>
+
+        <div class="trust-card reveal reveal-delay-2">
+          <div class="trust-icon"><i class="fas fa-receipt"></i></div>
+          <div>
+            <div class="trust-title">تسعير صريح ومعلن</div>
+            <div class="trust-desc">أسعار محددة وموحدة مسبقاً في التطبيق بدون مساومة أو استغلال طارئ.</div>
+          </div>
+        </div>
+
+        <div class="trust-card reveal reveal-delay-3">
+          <div class="trust-icon"><i class="fas fa-shield-virus"></i></div>
+          <div>
+            <div class="trust-title">بروتوكول تعقيم معتمد</div>
+            <div class="trust-desc">أدوات معقمة ذات استخدام فردي وارتداء كامل لمستلزمات الحماية الطبية.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SMART AI DISPATCH MATCHER & PRECISION CARE WIDGET
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="smart-matcher" class="smart-matcher-section">
+    <div class="container">
+      <div class="smart-matcher-card reveal">
+        <div class="matcher-top-row">
+          <div>
+            <span class="matcher-ai-badge">
+              <i class="fas fa-wand-magic-sparkles"></i> خوارزمية التوزيع والمطابقة الذكية
+            </span>
+            <h2 style="font-family: var(--ff-head); font-size: clamp(24px, 3.2vw, 38px); font-weight: 900; margin-top: 12px; color: #ffffff;">
+              طابق احتياجك الطبي في <span style="color: var(--c-secondary); text-shadow: 0 0 20px var(--c-secondary-glow);">3 ثوانٍ فقط</span>
+            </h2>
+            <p style="color: #cbd5e1; font-size: 15px; margin-top: 6px;">
+              حدد نوع الخدمة التمريضية ومركزك بالفيوم، لتقوم المنصة الذكية بحساب أقرب ممرض معتمد وزمن الوصول المتوقع والتكلفة الرسمية فوراً.
+            </p>
+          </div>
+          <div style="background: rgba(109, 115, 255, 0.12); border: 1px solid rgba(109, 115, 255, 0.35); padding: 12px 20px; border-radius: var(--r-md); text-align: center;">
+            <div style="font-size: 11px; color: #a0a5c4; font-weight: 700;">جاهزية الشبكة الحالية</div>
+            <div style="font-family: var(--ff-head); font-size: 20px; font-weight: 900; color: var(--c-secondary);"><span class="pulse-dot"></span> 100% تغطية نشطة</div>
+          </div>
+        </div>
+
+        <div class="matcher-inputs-grid">
+          <div class="matcher-input-group">
+            <label for="matcherService"><i class="fas fa-stethoscope" style="color: var(--c-brand);"></i> اختر نوع الخدمة الطبية المطلوبة:</label>
+            <select id="matcherService" class="matcher-select">
+              <option value="cannula" data-price="مسعّرة ومحددة بالتطبيق" data-name="تركيب كانيولا ومحاليل وريدية عاجلة">تركيب كانيولا ومحاليل وريدية عاجلة</option>
+              <option value="wound" data-price="مسعّرة ومحددة بالتطبيق" data-name="غيار جروح متقدم وقدم سكري">غيار جروح متقدم وقدم سكري</option>
+              <option value="elderly" data-price="مسعّرة ومحددة بالتطبيق" data-name="رعاية كبار السن وطريحي الفراش (شيفت 6 ساعات)">رعاية كبار السن وطريحي الفراش - شيفت 6 ساعات</option>
+              <option value="catheter" data-price="مسعّرة ومحددة بالتطبيق" data-name="تركيب وتغيير قسطرة بولية معقمة">تركيب وتغيير قسطرة بولية معقمة</option>
+              <option value="nebulizer" data-price="مسعّرة ومحددة بالتطبيق" data-name="جلسة بخار ورعاية تنفسية (نيبولايزر)">جلسة بخار ورعاية تنفسية - نيبولايزر</option>
+              <option value="injection" data-price="مسعّرة ومحددة بالتطبيق" data-name="إعطاء حقن عضل/وريد وقياس علامات حيوية">إعطاء حقن عضل/وريد وقياس علامات حيوية</option>
+            </select>
+          </div>
+
+          <div class="matcher-input-group">
+            <label for="matcherArea"><i class="fas fa-location-dot" style="color: var(--c-secondary);"></i> اختر المركز السكني بمحافظة الفيوم:</label>
+            <select id="matcherArea" class="matcher-select">
+              <option value="fayoum_city" data-time="10 - 15 دقيقة" data-nurse="أ. أحمد محمود" data-specialty="أخصائي تمريض عناية مركزة">مدينة الفيوم (المركز الرئيسي · وصول 10-15 دقيقة)</option>
+              <option value="senouris" data-time="12 - 18 دقيقة" data-nurse="أ. سارة يوسف" data-specialty="أخصائية رعاية تمريضية منزلية">سنورس (متأهب الآن · وصول 12-18 دقيقة)</option>
+              <option value="ebshaway" data-time="15 - 20 دقيقة" data-nurse="أ. محمود فوزي" data-specialty="أخصائي تمريض جراحة وطوارئ">إبشواي (متأهب الآن · وصول 15-20 دقيقة)</option>
+              <option value="tamiya" data-time="15 - 22 دقيقة" data-nurse="أ. فاطمة كمال" data-specialty="أخصائية تمريض كبار السن ومحاليل">طامية (متأهب الآن · وصول 15-22 دقيقة)</option>
+              <option value="atsa" data-time="15 - 20 دقيقة" data-nurse="أ. إسلام حسام" data-specialty="أخصائي تمريض باطنة وقسطرة">إطسا (متأهب الآن · وصول 15-20 دقيقة)</option>
+              <option value="youssef" data-time="18 - 25 دقيقة" data-nurse="أ. نورهان علي" data-specialty="أخصائية رعاية حرجة وقدم سكري">يوسف الصديق (متأهب الآن · وصول 18-25 دقيقة)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Calculated Live Result Box -->
+        <div class="matcher-result-box">
+          <div class="matcher-result-content">
+            <div class="matcher-nurse-info">
+              <img loading="lazy" src="assets/images/cure-nurse-avatar.png" alt="أقرب ممرض مرخص" class="matcher-nurse-avatar" id="matcherAvatar" />
+              <div>
+                <div style="font-size: 12px; color: #a0a5c4;">أقرب ممرض معتمد متاح في نطاقك الجغرافي:</div>
+                <div style="font-family: var(--ff-head); font-size: 18px; font-weight: 900; color: #ffffff; display: flex; align-items: center; gap: 8px;" id="matcherNurseName">
+                  أ. أحمد محمود
+                  <span style="font-size: 11px; background: rgba(174, 250, 124, 0.18); color: var(--c-secondary); border: 1px solid var(--c-secondary); padding: 2px 8px; border-radius: 12px; font-weight: 800;">
+                    <i class="fas fa-certificate"></i> ترخيص ساري
+                  </span>
+                </div>
+                <div style="font-size: 13px; color: #cbd5e1;" id="matcherSpecialty">أخصائي تمريض عناية مركزة</div>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+              <div>
+                <div style="font-size: 12px; color: #a0a5c4; margin-bottom: 4px;">زمن الوصول التقديري:</div>
+                <div class="matcher-eta-pill">
+                  <span class="pulse-dot"></span>
+                  <span id="matcherEta">10 - 15 دقيقة</span>
+                </div>
+              </div>
+
+              <div>
+                <div style="font-size: 12px; color: #a0a5c4; margin-bottom: 4px;">حالة التسعيرة:</div>
+                <div class="matcher-price-val" id="matcherPrice"><span style="font-size: 15px; color: var(--c-secondary); font-weight: 800;"><i class="fas fa-certificate"></i> مسعّرة بالتطبيق</span></div>
+              </div>
+
+              <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="matcher-dispatch-btn" id="matcherDispatchBtn">
+                <i class="fab fa-google-play"></i> تأكيد الطلب الفوري
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HUMAN BEDSIDE PLEDGE & MEDICAL SOUL SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="human-pledge" class="human-pledge-section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-hand-holding-heart"></i> ميثاق الشرف الأخلاقي</span>
+        <h2 class="section-title">الإنسان أولاً.. <span class="highlight">والتكنولوجيا في خدمتك</span></h2>
+        <p class="section-sub">
+          لسنا مجرد تطبيق وسيط.. بل فريق تمريضي يفهم مشاعر الخوف والقلق لدى المريض وأسرته، ويرعى كرامة المريض قبل كل إجراء طبي
+        </p>
+      </div>
+
+      <div class="pledge-visual-grid">
+        <div class="pledge-image-showcase reveal">
+          <img src="assets/images/cure-nurse-home-care.jpg" alt="ممرضة كيور المعتمدة تقدم رعاية المحاليل وقياس الضغط لكبار السن بالمنزل" loading="lazy" />
+          <div class="pledge-floating-caption">
+            <strong><i class="fas fa-heart-pulse"></i> رفق وطمأنينة عند السرير</strong>
+            <p>ممرضونا يتعاملون مع المريض كأب أو أم، بأعلى درجات الصبر والرحمة وحفظ الكرامة الإنسانية في كل خطوة.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="pledge-card reveal">
+            <div>
+              <div class="pledge-icon-wrap"><i class="fas fa-heart-pulse"></i></div>
+              <h3 class="pledge-title">رعاية تحفظ كرامة المريض</h3>
+              <p class="pledge-desc">
+                ندرك جيداً أن المريض المسن أو طريح الفراش يمر بلحظات ضعف إنساني حرجة. ممرضونا مدربون على أعلى مستويات الصبر، وحفظ الخصوصية، والتعامل برفق يطمئن قلبه وقلب عائلته.
+              </p>
+            </div>
+            <div class="pledge-seal">
+              <i class="fas fa-shield-heart"></i> رعاية بالقلب والضمير المهني
+            </div>
+          </div>
+
+          <div class="pledge-card reveal reveal-delay-1">
+            <div>
+              <div class="pledge-icon-wrap"><i class="fas fa-user-shield"></i></div>
+              <h3 class="pledge-title">أمانك الأسري خط أحمر</h3>
+              <p class="pledge-desc">
+                لن يدخل بيتك ممرض إلا بعد اجتياز تدقيق أمني وجنائي صارم ومطابقة رسمية لترخيص نقابة التمريض المصرية وبطاقة الرقم القومي، مع تسجيل كامل لبيانات الزيارة في المنظومة الطبية.
+              </p>
+            </div>
+            <div class="pledge-seal">
+              <i class="fas fa-check-double"></i> تدقيق أمني ونقابي بنسبة 100%
+            </div>
+          </div>
+
+          <div class="pledge-card reveal reveal-delay-2">
+            <div>
+              <div class="pledge-icon-wrap"><i class="fas fa-comments-dollar"></i></div>
+              <h3 class="pledge-title">لا استغلال ولا مساومة أبداً</h3>
+              <p class="pledge-desc">
+                نعلم مرارة أن يفاجئك أحد بطلب مبالغ مضاعفة أثناء لحظة الطوارئ في منتصف الليل. في كيور، السعر معلن ومحدد مسبقاً بالتطبيق، ولا مساومة ولا بقشيش إلزامي.
+              </p>
+            </div>
+            <div class="pledge-seal">
+              <i class="fas fa-scale-balanced"></i> عدالة وشفافية مطلقة
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       LIVE FAYOUM RADAR & REGIONAL TELEMETRY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="fayoum-radar" class="section" style="background: var(--c-dark-bg); color: #ffffff; border-top: 1px solid rgba(109, 115, 255, 0.25);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="matcher-ai-badge" style="margin-bottom: 16px;"><span class="pulse-dot"></span> رادار التغطية الحية</span>
+        <h2 class="section-title" style="color: #ffffff;">رادار مراكز الفيوم <span style="color: var(--c-secondary);">على مدار 24 ساعة</span></h2>
+        <p class="section-sub" style="color: #cbd5e1;">تغطية ميدانية فورية وموثقة تربط كافة أحياء وقرى محافظة الفيوم بشبكة التمريض المعتمدة</p>
+      </div>
+
+      <div class="radar-grid">
+        <div class="radar-hub-card reveal">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">مدينة الفيوم</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">المسلة، الحادقة، كيمان فارس، البارودية، دله، الجون، وكافة الأحياء.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>10 - 15 د</strong></span>
+            <span style="color: var(--c-secondary);">6 ممرضين متاحين</span>
+          </div>
+        </div>
+
+        <div class="radar-hub-card reveal reveal-delay-1">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">مركز سنورس</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">مدينة سنورس، جرفس، بيهمو، مطرطارس، فيديمين، وسائر القرى المجاورة.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>12 - 18 د</strong></span>
+            <span style="color: var(--c-secondary);">4 ممرضين متاحين</span>
+          </div>
+        </div>
+
+        <div class="radar-hub-card reveal reveal-delay-2">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">مركز إبشواي</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">إبشواي المركز، سنرو، أبو جنشو، طبهار، قصر بياض، وكافة القرى.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>15 - 20 د</strong></span>
+            <span style="color: var(--c-secondary);">3 ممرضين متاحين</span>
+          </div>
+        </div>
+
+        <div class="radar-hub-card reveal">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">مركز طامية</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">مدينة طامية، الروضة، سرسنا، العزيزية، منشأة الجمال، والقرى المحيطة.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>15 - 22 د</strong></span>
+            <span style="color: var(--c-secondary);">3 ممرضين متاحين</span>
+          </div>
+        </div>
+
+        <div class="radar-hub-card reveal reveal-delay-1">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">مركز إطسا</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">إطسا المدينة، قصر الباسل، الغرق، دفنو، مطول، وكافة قرى المركز.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>15 - 20 د</strong></span>
+            <span style="color: var(--c-secondary);">3 ممرضين متاحين</span>
+          </div>
+        </div>
+
+        <div class="radar-hub-card reveal reveal-delay-2">
+          <div class="radar-hub-top">
+            <span class="radar-hub-name">يوسف الصديق وقارون</span>
+            <span class="radar-pulse-tag"><span class="pulse-dot"></span> متصل نشط</span>
+          </div>
+          <p style="font-size: 13px; color: #a0a5c4; margin-bottom: 12px;">الشواشنة، النزلة، قارون، وادي الريان، وكافة التجمعات السكنية.</p>
+          <div class="radar-hub-meta">
+            <span>متوسط الوصول: <strong>18 - 25 د</strong></span>
+            <span style="color: var(--c-secondary);">2 ممرضين متاحين</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       PATIENT NEED NAVIGATOR ("ماذا تحتاج اليوم؟")
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="needs" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-stethoscope"></i> فرز سريع</span>
+        <h2 class="section-title">ماذا تحتاج <span class="highlight">اليوم؟</span></h2>
+        <p class="section-sub">اختر الإجراء الطبي المطلوب لتصلك المساعدة التمريضية المتخصصة في أسرع وقت</p>
+      </div>
+
+      <div class="needs-grid">
+        <!-- Need 1 -->
+        <div class="need-card reveal">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-syringe"></i></div>
+              <h3 class="need-title">محاليل وكانيولا عاجلة</h3>
+            </div>
+            <p class="need-desc">تركيب كانيولا وريدية بأعلى درجات الدقة، وتعليق المحاليل ومتابعة تدفقها وعلامات المريض الحيوية بالمنزل.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أحتاج تركيب كانيولا أو تعليق محاليل وريدية" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Need 2 -->
+        <div class="need-card reveal reveal-delay-1">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-bandage"></i></div>
+              <h3 class="need-title">غيار جروح وقدم سكري</h3>
+            </div>
+            <p class="need-desc">غيار معقم للجروح الجراحية والعميقة، رعاية قرح الفراش، وعناية خاصة بقدم السكري لتفادي أي مضاعفات خطيرة.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أحتاج غيار جروح معقم أو رعاية قدم سكري" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Need 3 -->
+        <div class="need-card reveal reveal-delay-2">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-wheelchair"></i></div>
+              <h3 class="need-title">رعاية كبار السن</h3>
+            </div>
+            <p class="need-desc">تمريض يومي كامل للمسنين وطريحي الفراش، تغيير الوضعيات، النظافة الشخصية، وتنظيم مواعيد الأدوية بدقة وإنسانية.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أستفسر عن خدمة رعاية كبار السن" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Need 4 -->
+        <div class="need-card reveal">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-toilet"></i></div>
+              <h3 class="need-title">قسطرة بولية وأنابيب</h3>
+            </div>
+            <p class="need-desc">تركيب وتغيير القسطرة البولية المعقمة، تركيب أنبوبة التغذية الأنفية (Ryle)، والعناية الفائقة لمنع حدوث التهابات.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أحتاج تركيب أو تغيير قسطرة بولية" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Need 5 -->
+        <div class="need-card reveal reveal-delay-1">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-lungs"></i></div>
+              <h3 class="need-title">جلسات تنفس ورعاية صدرية</h3>
+            </div>
+            <p class="need-desc">جلسات استنشاق وبخار (نيبولايزر)، شفط بلغم (Suction) منزلي، ومتابعة مستوى تشبع الأكسجين لمرضى الجهاز التنفسي.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أحتاج جلسات تنفس أو شفط بلغم منزلي" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+
+        <!-- Need 6 -->
+        <div class="need-card reveal reveal-delay-2">
+          <div>
+            <div class="need-head">
+              <div class="need-icon"><i class="fas fa-heart-pulse"></i></div>
+              <h3 class="need-title">قياس السكر والضغط والحرارة</h3>
+            </div>
+            <p class="need-desc">فحص دوري شامل للعلامات الحيوية، قياس السكر العشوائي والتراكمي، وتسجيل القراءات اليومية لمتابعة استقرار الحالة.</p>
+          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً، أحتاج قياس ومتابعة العلامات الحيوية والسكر" target="_blank" rel="noopener" class="need-action">
+            طلب الخدمة فوراً <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       15 SERVICES GRID WITH TRANSPARENT PRICING
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="services" class="section" style="background: var(--c-bg-soft); border-top: 1px solid var(--c-border-light); border-bottom: 1px solid var(--c-border-light);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-list-check"></i> خدمات شاملة</span>
+        <h2 class="section-title">15 خدمة طبية منزلية <span class="highlight">بتسعيرة رسمية معتمدة</span></h2>
+        <p class="section-sub">تسعيرة عادلة وموحدة مسبقاً بالتطبيق. لا مساومة، ولا زيادة في حالات الطوارئ، مع توثيق كامل للخدمة</p>
+      </div>
+
+      <!-- Services Visual Storytelling Banner -->
+      <div class="services-visual-banner reveal">
+        <div class="services-visual-banner-img">
+          <img src="assets/images/cure-sterile-kit.jpg" alt="حقيبة المستلزمات التمريضية المعقمة 100% وأجهزة التشخيص الخاصة بمنصة كيور" loading="lazy" />
+        </div>
+        <div>
+          <span class="section-badge" style="margin-bottom: 12px;"><i class="fas fa-shield-virus"></i> أمان وسرعة</span>
+          <h3 style="font-family: var(--ff-head); font-size: 24px; font-weight: 900; color: var(--c-heading); margin-bottom: 12px;">
+            أدوات معقمة واستخدام فردي <span style="color: var(--c-brand);">100%</span>
+          </h3>
+          <p style="color: var(--c-body); font-size: 15px; line-height: 1.8; margin-bottom: 18px;">
+            يصلك ممرض كيور مجهزاً بحقيبة مستلزمات طبية معقمة تُفتح مباشرة أمام عينيك. السعر محدد بدقة داخل التطبيق قبل تأكيد الطلب شاملاً كل الإجراءات الطبية دون أي تكاليف خفية.
+          </p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" style="display: inline-flex;">
+              <i class="fab fa-google-play"></i>
+              <span>احسب تكلفة الخدمة بالتطبيق</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card reveal">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-syringe"></i></div>
+            <h3 class="service-name">إعطاء الحقن (عضل / وريد)</h3>
+            <p class="service-desc">حقن عضل، تحت الجلد، أو بالوريد بأعلى معايير التعقيم لتجنب الألم والتورم.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: إعطاء حقنة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-flask-vial"></i></div>
+            <h3 class="service-name">تركيب كانيولا وريدية (IV)</h3>
+            <p class="service-desc">تثبيت كانيولا وريدية آمنة مناسبة لأوردة المريض بدون ألم متكرر أو تسريب.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب كانيولا وريدية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-water"></i></div>
+            <h3 class="service-name">تركيب ومتابعة المحاليل الوريدية</h3>
+            <p class="service-desc">تعليق المحاليل الوريدية (جلوكوز، ملح، رينجر)، وضبط معدل التنقيط طوال الجلسة.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب محاليل وريدية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card reveal">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-bandage"></i></div>
+            <h3 class="service-name">غيار الجروح البسيطة والمعقمة</h3>
+            <p class="service-desc">تنظيف وتطهير الجروح السطحية والخدوش وتغيير الشاش المعقم لمنع أي تلوث.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: غيار جروح بسيطة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-socks"></i></div>
+            <h3 class="service-name">غيار العمليات وقدم السكري</h3>
+            <p class="service-desc">غيار جراحي متقدم للعمليات الكبرى وقدم السكري باستخدام ضمادات متطورة معقمة.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: غيار قدم السكري أو جروح عمليات" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-bed"></i></div>
+            <h3 class="service-name">علاج ورعاية قرح الفراش</h3>
+            <p class="service-desc">تطهير وتفريغ القرح الجلدية للمرضى طريحي الفراش واستخدام مراهم التئام متخصصة.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: علاج قرح الفراش" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="service-card reveal">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-heart-pulse"></i></div>
+            <h3 class="service-name">قياس السكر والضغط والحرارة</h3>
+            <p class="service-desc">متابعة دقيقة للعلامات الحيوية بأجهزة رقمية معايرة مع توثيق القراءات بالسجل الطبي.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: قياس سكر وضغط" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-toilet"></i></div>
+            <h3 class="service-name">تركيب وتغيير القسطرة البولية</h3>
+            <p class="service-desc">إدخال واستبدال القسطرة البولية المعقمة (Foley Catheter) وتفريغ كيس جمع البول بأمان.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب وتغيير قسطرة بولية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 9 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-lungs"></i></div>
+            <h3 class="service-name">جلسات البخار والنيبولايزر</h3>
+            <p class="service-desc">جلسات استنشاق موسعات الشعب الهوائية ومذيبات البلغم لمرضى الربو وحساسية الصدر.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: جلسة نيبولايزر" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 10 -->
+        <div class="service-card reveal">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-head-side-mask"></i></div>
+            <h3 class="service-name">شفط البلغم المنزلي (Suction)</h3>
+            <p class="service-desc">تنظيف مجرى التنفس وشفط الإفرازات الصدرية للمرضى المصابين بصعوبة البلع والتنفس.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: شفط بلغم منزلي" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 11 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-stethoscope"></i></div>
+            <h3 class="service-name">تركيب أنبوبة التغذية الأنفية (Ryle)</h3>
+            <p class="service-desc">تركيب أنبوبة الرايل للتغذية وإعطاء الأدوية للمرضى غير القادرين على البلع بطريقة آمنة.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب أنبوبة رايل" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 12 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-vial"></i></div>
+            <h3 class="service-name">سحب عينات التحاليل المنزلية</h3>
+            <p class="service-desc">سحب عينات الدم والبول منزلياً وحفظها في أنابيب معقمة مخصصة للنقل للمعمل.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: سحب عينات تحاليل" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 13 -->
+        <div class="service-card reveal">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-user-clock"></i></div>
+            <h3 class="service-name">رعاية كبار السن (شيفت 6 ساعات)</h3>
+            <p class="service-desc">مرافقة تمريضية نصف يومية، مساعدة في الحركة، التغذية، ومتابعة الأدوية والعلامات الحيوية.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: شيفت رعاية 6 ساعات" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 14 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-clock"></i></div>
+            <h3 class="service-name">تمريض منزلي (شيفت 12 ساعة)</h3>
+            <p class="service-desc">رعاية تمريضية مكثفة نهارية أو ليلية تشمل كافة الإجراءات الطبية ومتابعة الطبيب المعالج.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: شيفت تمريض 12 ساعة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+
+        <!-- Service 15 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div>
+            <div class="service-icon-wrap"><i class="fas fa-hospital-user"></i></div>
+            <h3 class="service-name">إقامة تمريضية كاملة (24 ساعة)</h3>
+            <p class="service-desc">مرافقة تمريضية دائمة على مدار الساعة للحالات الحرجة وما بعد العمليات الدقيقة والعناية المركزة.</p>
+          </div>
+          <div class="service-meta-row">
+            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
+            <a href="https://wa.me/201070203636?text=حجز خدمة: تمريض كامل 24 ساعة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;" class="reveal">
+        <a href="pricing.html" class="btn-primary" style="padding: 16px 38px; font-size: 17px;">
+          <i class="fas fa-table-list"></i> عرض دليل الخدمات والتسعير الشفاف بالتطبيق
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CLINICAL PROTOCOL COMPARISON TABLE
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="comparison" class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-shield-halved"></i> معايير السلامة</span>
+        <h2 class="section-title">لماذا لا تختار <span class="highlight">التمريض العشوائي؟</span></h2>
+        <p class="section-sub">مقارنة صريحة بين منظومة كيور الطبية المعتمدة وبين البحث عن تمريض عشوائي عبر المعارف</p>
+      </div>
+
+      <div class="comparison-card reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 38%;">المعيار الطبي والأمني</th>
+              <th style="width: 31%; color: var(--c-brand-deep);"><i class="fas fa-certificate"></i> منظومة كيور المعتمدة</th>
+              <th style="width: 31%; color: #dc2626;"><i class="fas fa-triangle-exclamation"></i> التمريض العشوائي غير الموثق</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>التحقق الجنائي وفحص الهوية</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> فحص أمني وفيش وتشبيه معتمد</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> مجهول الهوية وبدون أي ضمانات</span></td>
+            </tr>
+            <tr>
+              <td><strong>ترخيص مزاولة المهنة والنقابة</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> ترخيص ساري ومطابق للقانون 100%</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> احتمالية انتحال صفة أو دخلاء مهنة</span></td>
+            </tr>
+            <tr>
+              <td><strong>شفافية الأسعار وعدم الاستغلال</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> سعر ثابت ومعلن بالتطبيق مسبقاً</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> تلاعب ومساومة بأسعار مضاعفة بالطوارئ</span></td>
+            </tr>
+            <tr>
+              <td><strong>سرعة الوصول وتتبع الـ GPS</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> وصول خلال 15 دقيقة مع تتبع حي</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> انتظار من ساعتين لـ 6 ساعات أو عدم قدوم</span></td>
+            </tr>
+            <tr>
+              <td><strong>بروتوكول التعقيم ومكافحة العدوى</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> مستلزمات أحادية الاستخدام معقمة طبياً</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> غياب الرقابة وخطر نقل العدوى للمريض</span></td>
+            </tr>
+            <tr>
+              <td><strong>الدعم والمسؤولية الطبية المستمرة</strong></td>
+              <td><span class="check-cure"><i class="fas fa-circle-check"></i> فريق دعم ومتابعة طبية 24/7 للمريض</span></td>
+              <td><span class="cross-random"><i class="fas fa-circle-xmark"></i> ينتهي التواصل بانتهاء الزيارة دون مسؤول</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       APP SHOWCASE & DOWNLOAD CALL-TO-ACTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="app-showcase-section" id="app-showcase">
+    <div class="container">
+      <div class="app-showcase-grid">
+        <div class="reveal">
+          <span class="section-badge secondary"><i class="fab fa-google-play"></i> التطبيق الذكي الأول</span>
+          <h2 style="font-family: var(--ff-head); font-size: clamp(28px, 3.8vw, 44px); font-weight: 900; line-height: 1.25; margin-bottom: 18px;">
+            تطبيق كيور — الرعاية الطبية<br />
+            <span style="color: var(--c-secondary);">بين يديك بلمسة واحدة</span>
+          </h2>
+          <p style="font-size: 17px; color: #cbd5e1; line-height: 1.8;">
+            حمّل تطبيق كيور الآن واستمتع بأسهل وأسرع تجربة حجز تمريض منزلي في مصر. اختر الخدمة، حدد موقعك، وتابع حركة الممرض المعتمد لحظة بلحظة حتى باب منزلك.
+          </p>
+
+          <ul class="app-feature-list">
+            <li class="app-feature-item">
+              <span class="app-feature-num">1</span>
+              <span>طلب الخدمة التمريضية في أقل من 60 ثانية بدون أي تعقيد.</span>
+            </li>
+            <li class="app-feature-item">
+              <span class="app-feature-num">2</span>
+              <span>عرض تفاصيل الخدمة والتسعيرة المعتمدة وسجل تاريخي بكل الزيارات الطبية.</span>
+            </li>
+            <li class="app-feature-item">
+              <span class="app-feature-num">3</span>
+              <span>نظام تقييم ومراجعات واقعية لكل ممرض وممرضة بالشبكة.</span>
+            </li>
+          </ul>
+
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="hero-download-btn" style="background: var(--c-secondary); color: var(--c-secondary-text) !important; border-color: #ffffff;">
+              <i class="fab fa-google-play" style="color: var(--c-secondary-text);"></i>
+              <div class="hero-btn-lines">
+                <span class="hero-btn-sub" style="color: #194005;">تحميل فوري مجاني</span>
+                <span class="hero-btn-main" style="color: #0d2902;">Google Play</span>
+              </div>
+            </a>
+            <a href="https://wa.me/201070203636" class="btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff !important; border-color: rgba(255,255,255,0.25);" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> تواصل مع فريق المساعدة
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2" style="text-align: center;">
+          <div style="position: relative; display: inline-block; border-radius: var(--r-xl); overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.5); border: 4px solid rgba(174, 250, 124, 0.4);">
+            <img src="assets/images/cure-glassmorphism-features.jpg" alt="تطبيق كيور الرسمي ومميزات الرعاية الطبية وحجز الممرض المنزلي" style="max-height: 480px; width: 100%; object-fit: cover; display: block;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       ABOUT CURE & FIELD RESEARCH EVIDENCE
+       ═══════════════════════════════════════════════════════════════ -->
   <section id="about" class="section">
     <div class="container">
       <div class="about-grid">
         <div class="about-text reveal">
-          <span class="badge" style="margin-bottom: 20px;">
-            <i class="fas fa-heartbeat"></i>
-            من نحن
-          </span>
-          <h2 class="section-title">كيور — الرعاية الصحية <span class="text-brand">حق للجميع</span></h2>
+          <span class="section-badge"><i class="fas fa-heartbeat"></i> هويتنا ورسالتنا</span>
+          <h2 class="section-title">كيور — الرعاية الصحية الآمنة <span class="highlight">حق للجميع</span></h2>
           <p style="font-size: 17px; color: var(--c-body); line-height: 1.85; margin-bottom: 16px;">
-            كيور منصة ذكية تربط المرضى بمقدمي خدمات التمريض المنزلي بطريقة آمنة وسريعة ومنظمة، بهدف تسهيل الوصول للرعاية الصحية في المنزل بجودة عالية وسعر عادل.
+            انطلقت كيور من واقع المعاناة اليومية لأهالينا بالفيوم في البحث عن تمريض موثوق وأسعار عادلة. نحن لسنا مجرد مكتب تمريض، بل منصة تقنية طبية متكاملة تضمن للمريض الرعاية السريعة وللممرض التقدير المهني المستحق.
           </p>
-          <p style="font-size: 16px; color: var(--c-muted); line-height: 1.8;">
-            نؤمن أن الرعاية الصحية حق للجميع... ولذلك صممنا كيور ليكون الحل الأسهل والأسرع للحصول على الخدمة الطبية أينما كنت في الفيوم.
+          <p style="font-size: 15.5px; color: var(--c-muted); line-height: 1.8; margin-bottom: 24px;">
+            نطبق نظاماً صارماً لاختيار الكوادر التمريضية يرتكز على التحقق من صحة ترخيص مزاولة المهنة، والمطابقة الجنائية، والتدريب المستمر على بروتوكولات الأمان السريري.
           </p>
 
           <div class="about-highlights">
             <div class="highlight-card">
               <div class="h-icon"><i class="fas fa-user-check"></i></div>
               <h4>ممرضون معتمدون</h4>
-              <p>تحقق كامل من الهوية والمؤهلات المهنية قبل الانضمام</p>
+              <p>تحقق كامل من الهوية والمؤهلات المهنية والنقابية قبل القبول</p>
             </div>
 
             <div class="highlight-card">
               <div class="h-icon"><i class="fas fa-tags"></i></div>
-              <h4>أسعار شفافة</h4>
-              <p>سعر ثابت ومعلن لكل خدمة — بدون مفاجآت مادية</p>
+              <h4>تسعيرة عادلة وشفافة</h4>
+              <p>تسعيرة محددة وموحدة مسبقاً بالتطبيق — بدون مفاجآت مادية</p>
             </div>
 
             <div class="highlight-card">
               <div class="h-icon"><i class="fas fa-bolt"></i></div>
-              <h4>استجابة سريعة</h4>
+              <h4>استجابة قياسية</h4>
               <p>ربط جغرافي ذكي يضمن وصول الممرض في أقل من 15 دقيقة</p>
             </div>
 
             <div class="highlight-card">
-              <div class="h-icon"><i class="fas fa-shield-alt"></i></div>
-              <h4>ضمان الجودة</h4>
+              <div class="h-icon"><i class="fas fa-shield-heart"></i></div>
+              <h4>إشراف طبي وضمان جودة</h4>
               <p>نظام تقييم شفاف بعد كل خدمة للحفاظ على أعلى معايير الأمان</p>
             </div>
           </div>
         </div>
 
         <div class="reveal reveal-delay-2" style="text-align: center;">
-          <div style="background: #ffffff; border-radius: var(--r-xl); padding: 40px; border: 1px solid var(--c-border); box-shadow: var(--shadow-hover);">
-            <i class="fas fa-notes-medical" style="font-size: 54px; color: var(--c-brand); margin-bottom: 20px;"></i>
-            <h3 style="font-family: var(--ff-head); font-size: 24px; font-weight: 900; color: var(--c-heading); margin-bottom: 12px;">منظومة رعاية منزلية آمنة</h3>
-            <p style="color: var(--c-muted); font-size: 15px; max-width: 380px; margin: 0 auto 24px;">صُممت المنصة لتوفير أقصى درجات الراحة النفسية للمريض وعائلته أثناء تلقي العلاج بالمنزل.</p>
-            <a href="#services" class="btn-secondary" style="font-size: 14.5px;">استكشف كافة الخدمات</a>
+          <div style="background: #ffffff; border-radius: var(--r-xl); padding: 24px; border: 1.5px solid var(--c-border); box-shadow: var(--shadow-card);">
+            <div style="border-radius: var(--r-md); overflow: hidden; margin-bottom: 20px;">
+              <img src="assets/images/cure-family-care.jpg" alt="ممرضة كيور تشرح الخطة الطبية لأسرة المريض في المنزل" style="width: 100%; height: 260px; object-fit: cover;" loading="lazy" />
+            </div>
+            <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 900; color: var(--c-heading); margin-bottom: 10px;">رعاية أسرية وطبية متكاملة</h3>
+            <p style="color: var(--c-muted); font-size: 14.5px; line-height: 1.7; margin-bottom: 20px;">
+              فريق متفانٍ يجمع بين الخبرة التمريضية والتطوير التكنولوجي لخدمة آلاف الأسر المصرية بكل أمانة واطمئنان.
+            </p>
+            <a href="#services" class="btn-secondary" style="font-size: 14px;">استكشف قائمة الخدمات الطبية</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section id="problem" class="section">
+  <!-- ═══════════════════════════════════════════════════════════════
+       NUMBERS & EMPIRICAL EVIDENCE SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="numbers" class="section-sm" style="background: var(--c-dark-bg); color: #fff; border-top: 1px solid rgba(109, 115, 255, 0.2);">
     <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="background: var(--c-accent-bg); border-color: rgba(255, 82, 119, 0.25); color: var(--c-accent); margin-bottom: 20px;">
-          <i class="fas fa-exclamation-circle"></i>
-          المشكلة
-        </span>
-        <h2 class="section-title">كل يوم في الفيوم <span class="text-accent">يعاني الناس</span> في صمت</h2>
-      </div>
-
-      <div class="drama-quote reveal reveal-delay-1">
-        <p>
-          "في الساعة 11:30 مساءً، مريض مصاب بالسكري كان يحتاج <span>محلول وريدي عاجل</span>... استغرق الأمر 4 ساعات من البحث والتعب، ولم تصل الممرضة."
-        </p>
-        <cite>— واقع حقيقي، بحث ميداني بالفيوم 2024</cite>
-      </div>
-
-      <div class="problem-grid">
-        <div class="problem-card reveal">
-          <div style="font-size: 32px; margin-bottom: 12px;">⏳</div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">ساعات من الانتظار</h3>
-          <p style="font-size: 14px; color: var(--c-muted); margin: 0;">المرضى ينتظرون من 2 إلى 6 ساعات لممرض قد لا يأتي أصلاً</p>
-          <div class="pc-stat">73%</div>
-          <span style="font-size: 12px; color: var(--c-muted);">عانوا من الانتظار الطويل</span>
+      <div class="numbers-grid">
+        <div class="number-item reveal">
+          <span class="num-val">150+</span>
+          <span class="num-lbl" style="color: #ffffff;">مشارك بالبحث الميداني</span>
+          <span class="num-sub" style="color: #a0a5c4;">مرضى وممرضون بمحافظة الفيوم</span>
         </div>
 
-        <div class="problem-card reveal reveal-delay-1">
-          <div style="font-size: 32px; margin-bottom: 12px;">💸</div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">التلاعب بالأسعار</h3>
-          <p style="font-size: 14px; color: var(--c-muted); margin: 0;">نفس الخدمة بـ 50 جنيه في شارع، و500 جنيه في الشارع المجاور — بدون مبرر</p>
-          <div class="pc-stat">68%</div>
-          <span style="font-size: 12px; color: var(--c-muted);">دفعوا أسعاراً غير عادلة</span>
+        <div class="number-item reveal reveal-delay-1">
+          <span class="num-val">87%</span>
+          <span class="num-lbl" style="color: #ffffff;">نسبة تفضيل المرضى</span>
+          <span class="num-sub" style="color: #a0a5c4;">يفضلون كيور على التمريض العشوائي</span>
         </div>
 
-        <div class="problem-card reveal reveal-delay-2">
-          <div style="font-size: 32px; margin-bottom: 12px;">❓</div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">غياب التحقق والضمان</h3>
-          <p style="font-size: 14px; color: var(--c-muted); margin: 0;">صعوبة التحقق من مؤهلات الممرض أو خلفيته المهنية قبل استقباله بالمنزل</p>
-          <div class="pc-stat">81%</div>
-          <span style="font-size: 12px; color: var(--c-muted);">شعروا بعدم الأمان</span>
+        <div class="number-item reveal reveal-delay-2">
+          <span class="num-val">91%</span>
+          <span class="num-lbl" style="color: #ffffff;">رغبة انضمام الممرضين</span>
+          <span class="num-sub" style="color: #a0a5c4;">لزيادة الدخل وتنظيم العمل التمريضي</span>
         </div>
 
-        <div class="problem-card reveal reveal-delay-3">
-          <div style="font-size: 32px; margin-bottom: 12px;">📱</div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">عدم وجود منصة منظمة</h3>
-          <p style="font-size: 14px; color: var(--c-muted); margin: 0;">الحجز يتم عبر مجموعات غير رسمية والمعارف الشخصية — بدون متابعة</p>
-          <div class="pc-stat">100%</div>
-          <span style="font-size: 12px; color: var(--c-muted);">لا توجد منصة موحدة بالفيوم</span>
+        <div class="number-item reveal reveal-delay-3">
+          <span class="num-val">15د</span>
+          <span class="num-lbl" style="color: #ffffff;">معدل الاستجابة والوصول</span>
+          <span class="num-sub" style="color: #a0a5c4;">أسرع منظومة تمريض في مصر</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Solution Section -->
-  <section id="solution" class="section">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom: 20px;">
-          <i class="fas fa-lightbulb"></i>
-          الحل
-        </span>
-        <h2 class="section-title">كيور: الرعاية الصحية <span class="text-brand">على بابك</span> في 15 دقيقة</h2>
-        <p class="section-sub">منصة منظمة تربط المرضى بممرضين معتمدين بنظام يضمن السرعة والأمان والشفافية الكاملة</p>
-      </div>
-
-      <div class="solution-top">
-        <div class="solution-side reveal">
-          <h3>
-            <i class="fas fa-user-injured" style="color: var(--c-brand);"></i>
-            للمرضى
-            <span class="tag">مريض</span>
-          </h3>
-
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>احجز في 60 ثانية</strong> — اختر الخدمة، حدد موقعك، واستلم الممرض</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>أسعار ثابتة وشفافة</strong> — لا تفاوض، لا مفاجآت، السعر معلوم مسبقاً</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>ملفات معتمدة</strong> — بيانات كل ممرض محققة ومعتمدة قانونياً</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>تتبع فوري</strong> — اعرف موقع الممرض في الوقت الحقيقي حتى وصوله</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>تقييم بعد الخدمة</strong> — ضمان الجودة عبر تقييمات شفافة</p>
-          </div>
-        </div>
-
-        <div class="solution-side reveal reveal-delay-2">
-          <h3>
-            <i class="fas fa-user-nurse" style="color: var(--c-brand-deep);"></i>
-            للممرضين
-            <span class="tag">ممرض</span>
-          </h3>
-
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>لوحة تحكم منظمة</strong> — عرض الطلبات والقروض والجدول الزمني</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>عائد عادل مضمون</strong> — 80% من قيمة الخدمة مباشرة لك</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>ملف مهني موثّق</strong> — ابنِ سمعتك وزد دخلك بالتقييمات</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>جدول مرن</strong> — اعمل متى تريد وفي أي منطقة تختارها</p>
-          </div>
-          <div class="feature-item">
-            <div class="check"><i class="fas fa-check"></i></div>
-            <p><strong>نمو وتدريب</strong> — فرص دورية لتطوير المهارات التمريضية</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3 Pillars -->
-      <div class="pillars">
-        <div class="pillar reveal">
-          <div class="pillar-icon"><i class="fas fa-user-shield"></i></div>
-          <h3>الثقة</h3>
-          <p>كل ممرض يخضع للتحقق من مؤهلاته والاطلاع على خلفيته المهنية قبل القبول — لأن أمانك هو الأهم</p>
-        </div>
-
-        <div class="pillar reveal reveal-delay-1">
-          <div class="pillar-icon"><i class="fas fa-bolt"></i></div>
-          <h3>السرعة</h3>
-          <p>التوزيع الجغرافي الذكي يربطك بأقرب ممرض معتمد في 15 دقيقة — لأن الوقت في الصحة حاسم</p>
-        </div>
-
-        <div class="pillar reveal reveal-delay-2">
-          <div class="pillar-icon"><i class="fas fa-gem"></i></div>
-          <h3>الإتاحة</h3>
-          <p>أسعار ثابتة ومعلنة مسبقاً — لأن الرعاية الصحية الجيدة يجب أن تكون في متناول الجميع</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="section">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom: 20px;">
-          <i class="fas fa-list-check"></i>
-          خدماتنا
-        </span>
-        <h2 class="section-title">تغطية طبية شاملة <span class="text-brand">لكل احتياجاتك</span></h2>
-        <p class="section-sub">نوفر مجموعة واسعة من خدمات التمريض المنزلي المخصصة لتناسب جميع الحالات</p>
-      </div>
-
-      <div class="services-grid">
-        
-        <div class="service-card reveal">
-          <h3>📋 الخدمات الأساسية (Basic Care)</h3>
-          <ul>
-            <li>💉 إعطاء الحقن (عضل / تحت الجلد / وريد)</li>
-            <li>🩸 قياس السكر العشوائي والتراكمي</li>
-            <li>❤️ قياس ضغط الدم والنقاط الحيوية</li>
-            <li>🌡️ قياس الحرارة ومتابعة المريض</li>
-            <li>🧪 تركيب كانيولا (IV Cannula)</li>
-            <li>💧 تركيب المحاليل الوريدية</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-1">
-          <h3>🩹 الجروح والرعاية الجلدية</h3>
-          <ul>
-            <li>🩹 غيار الجروح البسيطة والعميقة</li>
-            <li>🧬 تنظيف الجروح وتعقيمها بشكل معقم</li>
-            <li>🦶 غيار قدم السكري بعناية خاصة</li>
-            <li>🧴 علاج قرح الفراش (Bed Sores)</li>
-            <li>🧷 إزالة الغرز والتغيير الجراحي</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-2">
-          <h3>🧓 رعاية كبار السن (Elderly Care)</h3>
-          <ul>
-            <li>🛏️ رعاية كاملة للمريض طريح الفراش</li>
-            <li>🚿 استحمام وتنظيف المريض غير القادر</li>
-            <li>🔄 تغيير وضعية المريض لمنع القرح</li>
-            <li>🍽️ المساعدة في التغذية وتنظيم الأدوية</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <h3>🫀 الأمراض المزمنة (Chronic Care)</h3>
-          <ul>
-            <li>🫀 متابعة مرضى القلب والضغط</li>
-            <li>🩸 متابعة مرضى السكر والسكري</li>
-            <li>🫁 متابعة مرضى الربو وضيق التنفس</li>
-            <li>📊 تسجيل قراءات يومية وتحليلها</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-1">
-          <h3>🚑 خدمات ما بعد العمليات</h3>
-          <ul>
-            <li>🏥 متابعة ما بعد العمليات الجراحية</li>
-            <li>🩹 تغيير الضمادات الجراحية المعقمة</li>
-            <li>💉 إعطاء المضادات الحيوية والمحاليل</li>
-            <li>🛏️ مساعدة المريض في الحركة التدريجية</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-2">
-          <h3>🫁 الرعاية التنفسية المنزلية</h3>
-          <ul>
-            <li>💨 جلسات نيبولايزر (بخار)</li>
-            <li>🫁 شفط بلغم (Suction)</li>
-            <li>😮‍💨 متابعة الأكسجين المنزلي وضبطه</li>
-            <li>🧴 تعليم استخدام أجهزة التنفس</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal">
-          <h3>🚿 القسطرة والإجراءات الخاصة</h3>
-          <ul>
-            <li>🚿 تركيب وتغيير القسطرة البولية</li>
-            <li>🧼 العناية بمريض القسطرة وتعقيمها</li>
-            <li>🧪 متابعة البول ومضاعفات القسطرة</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-1">
-          <h3>🧠 الدعم النفسي والتأهيلي</h3>
-          <ul>
-            <li>🧠 دعم نفسي وتأهيل بسيط للمريض</li>
-            <li>👨‍👩‍👧 توجيه الأسرة للتعامل مع الحالة</li>
-            <li>🧘 تمارين تأهيل حركي خفيف بالمنزل</li>
-          </ul>
-        </div>
-
-        <div class="service-card reveal reveal-delay-2">
-          <h3>🚨 خدمات طوارئ وتقييم سريع</h3>
-          <ul>
-            <li>🚨 تقييم الحالة الصحية الطارئة بالمنزل</li>
-            <li>📉 قياس سريع للعلامات الحيوية</li>
-            <li>🏥 تجهيز المريض للنقل إن لزم الأمر</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div style="text-align: center; margin-top: 50px;" class="reveal">
-        <a href="https://wa.me/201070203636?text=مرحباً، أريد الاستفسار عن خدمات التمريض المنزلي" class="btn-primary" target="_blank" rel="noopener">
-          <i class="fab fa-whatsapp"></i>
-          احجز الخدمة عبر الواتساب الآن
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works Section -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       HOW IT WORKS SECTION (Patient vs Nurse Tabs)
+       ═══════════════════════════════════════════════════════════════ -->
   <section id="how" class="section">
     <div class="container">
       <div class="text-center reveal">
-        <span class="badge" style="margin-bottom: 20px;">
-          <i class="fas fa-tasks"></i>
-          كيف يعمل
-        </span>
-        <h2 class="section-title">خطوات بسيطة <span class="text-brand">للرعاية المنزلية</span></h2>
-        <p class="section-sub">سواء كنت مريضاً يحتاج رعاية أو ممرضاً يريد عمل منظم — كيور صُمم ليكون سهلاً وسريعاً</p>
+        <span class="section-badge"><i class="fas fa-tasks"></i> خطوات بسيطة</span>
+        <h2 class="section-title">كيف تعمل <span class="highlight">منظومة كيور؟</span></h2>
+        <p class="section-sub">سواء كنت مريضاً يحتاج رعاية فورية أو ممرضاً يبحث عن عمل عادل ومنظم</p>
       </div>
 
       <div class="how-tabs">
         <button class="tab-btn active" onclick="switchTab('patient', this)">
-          <i class="fas fa-user"></i> للمريض
+          <i class="fas fa-user-injured"></i> للمريض والأسرة
         </button>
         <button class="tab-btn" onclick="switchTab('nurse', this)">
-          <i class="fas fa-user-nurse"></i> للممرض
+          <i class="fas fa-user-nurse"></i> للممرض المرخص
         </button>
       </div>
 
+      <!-- Patient Tab -->
       <div class="tab-content active" id="patient">
         <div class="steps-list">
           <div class="step-item reveal">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>اختر الخدمة الطبية</h4>
-              <p>تصفّح قائمة الـ 15 خدمة منزلية مع الأسعار الثابتة المعلنة. ما تراه هو ما تدفعه فقط.</p>
+              <h4>اختر الخدمة الطبية المطلوبة</h4>
+              <p>تصفح قائمة الـ 15 خدمة منزلية مع الأسعار الثابتة المعلنة مسبقاً، واعرف كل التفاصيل بوضوح تام.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-1">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h4>حدد الموقع والموعد</h4>
-              <p>حدد عنوانك وسيقوم النظام بتحديد موقعك تلقائياً واختيار الموعد المناسب لك.</p>
+              <h4>حدد عنوانك وموقعك</h4>
+              <p>حدد موقعك الجغرافي بالفيوم وسيقوم نظام كيور الذكي بالبحث عن أقرب ممرض مرخص متاح فوراً.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-2">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>استلم الممرض المعتمد</h4>
-              <p>يتم اختيار أقرب ممرض معتمد وموثق إليك لصلته بك في أقل من 15 دقيقة.</p>
+              <h4>وصول الممرض في 15 دقيقة</h4>
+              <p>تابع مسار وصول الممرض على الخريطة مباشرة حتى يقرع باب منزلك حاملاً كافة الأدوات المعقمة.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-3">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>تلقّ الخدمة وقيّم</h4>
-              <p>بعد الإتمام، ادفع بسهولة وأعطِ تقييمك للممرض للمساعدة في حفظ جودة الخدمة.</p>
+              <h4>تلقّ الرعاية وقيّم التجربة</h4>
+              <p>يتلقى المريض الرعاية باحترافية، ويدفع السعر المعلن فقط، ثم يشارك تقييمه لدعم جودة المنظومة.</p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Nurse Tab -->
       <div class="tab-content" id="nurse">
         <div class="steps-list">
           <div class="step-item reveal">
             <div class="step-num">1</div>
             <div class="step-body">
-              <h4>سجّل بياناتك</h4>
-              <p>أرسل بياناتك ومؤهلاتك للمراجعة. يتأكد فريقنا من صحة الترخيص والمستندات قبل القبول.</p>
+              <h4>سجّل بياناتك ومؤهلاتك</h4>
+              <p>أرسل بيانات ترخيص مزاولة المهنة والمؤهل الدراسي، ويقوم فريق كيور بمراجعة المستندات والتحقق الأمني.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-1">
             <div class="step-num">2</div>
             <div class="step-body">
-              <h4>حدد أوقات إتاحتك</h4>
-              <p>اختر الأيام والساعات والمنطقة التي تفضل تقديم الخدمة فيها بكل حرية.</p>
+              <h4>حدد مواعيد ونطاق عملك</h4>
+              <p>اختر الأوقات والمناطق السكنية التي تفضل تقديم الخدمة فيها بحرية ومرونة كاملة تلائم ظروفك.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-2">
             <div class="step-num">3</div>
             <div class="step-body">
-              <h4>استلم الطلبات القريبة</h4>
-              <p>تصلك إشعارات بالطلبات في نطاقك. اقبل الطلب المناسب لك بنقرة واحدة.</p>
+              <h4>استقبل الطلبات القريبة</h4>
+              <p>تصلك إشعارات بالطلبات التمريضية القريبة منك جغرافياً. وافق على الطلب بنقرة زر واحدة عبر التطبيق.</p>
             </div>
           </div>
 
           <div class="step-item reveal reveal-delay-3">
             <div class="step-num">4</div>
             <div class="step-body">
-              <h4>أكمل واكسب</h4>
-              <p>تحصل على 80% من قيمة الخدمة مباشرة مع بناء سمعتك المهنية عبر تقييمات المرضى.</p>
+              <h4>قدّم الخدمة واحصل على 80%</h4>
+              <p>احصل على 80% من قيمة الخدمة فوراً، وابنِ سمعتك المهنية وتقييماتك في سوق الرعاية الصحية.</p>
             </div>
           </div>
         </div>
@@ -1729,134 +1200,50 @@
     </div>
   </section>
 
-  <!-- Why CURE Section -->
-  <section id="why" class="section">
+  <!-- ═══════════════════════════════════════════════════════════════
+       TESTIMONIALS & COMMUNITY VOICES (Fayoum)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="testimonials" class="section" style="background: var(--c-bg-soft);">
     <div class="container">
       <div class="text-center reveal">
-        <span class="badge" style="margin-bottom: 20px;">
-          <i class="fas fa-award"></i>
-          لماذا كيور
-        </span>
-        <h2 class="section-title">لماذا اختيار <span class="text-brand">كيور؟</span></h2>
-        <p class="section-sub">أسباب تجعل كيور الخيار الأول للرعاية الصحية المنزلية في الفيوم ومصر</p>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">أمان وثقة 100%</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">فحص كامل للهوية والمؤهلات المهنية لكل ممرض وممرضة قبل الانضمام لشبكتنا.</p>
-        </div>
-
-        <div class="why-card reveal reveal-delay-1">
-          <div class="why-icon"><i class="fas fa-stopwatch"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">استجابة قياسية</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">نظام توزيع جغرافي ذكي يضمن وصول الممرض في أقل من 15 دقيقة للحالات العاجلة.</p>
-        </div>
-
-        <div class="why-card reveal reveal-delay-2">
-          <div class="why-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">أسعار صريحة</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">لا تفاوض ولا استغلال في أوقات الطوارئ. التسعير ثابت ومحدد مسبقاً.</p>
-        </div>
-
-        <div class="why-card reveal">
-          <div class="why-icon"><i class="fas fa-star"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">جودة جليّة</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">نظام تقييم ومتابعة مستمرة يضمن الالتزام بأعلى معايير التمريض والسلامة.</p>
-        </div>
-
-        <div class="why-card reveal reveal-delay-1">
-          <div class="why-icon"><i class="fas fa-headset"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">دعم 24 ساعة</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">فريق دعم متواجد على مدار اليوم لمساعدتك والإجابة على أي استفسار.</p>
-        </div>
-
-        <div class="why-card reveal reveal-delay-2">
-          <div class="why-icon"><i class="fas fa-map-marked-alt"></i></div>
-          <h3 style="font-family: var(--ff-head); font-size: 18px; font-weight: 800; color: var(--c-heading); margin-bottom: 8px;">تغطية بالفيوم وتوسع</h3>
-          <p style="font-size: 14px; color: var(--c-muted);">انطلقنا من الفيوم بخدمة مجتمعية واعدة مع خطة انتشار سريعة لكافة المحافظات.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Numbers & Impact Section -->
-  <section id="numbers" class="section-sm">
-    <div class="container">
-      <div class="numbers-grid">
-        <div class="number-item reveal">
-          <span class="num-val">150+</span>
-          <span class="num-lbl">مشارك بالبحث الميداني</span>
-          <span class="num-sub">مرضى وممرضون بالفيوم</span>
-        </div>
-
-        <div class="number-item reveal reveal-delay-1">
-          <span class="num-val">87%</span>
-          <span class="num-lbl">نسبة تفضيل المرضى</span>
-          <span class="num-sub">يريدون استخدام كيور</span>
-        </div>
-
-        <div class="number-item reveal reveal-delay-2">
-          <span class="num-val">91%</span>
-          <span class="num-lbl">رغبة انضمام الممرضين</span>
-          <span class="num-sub">لزيادة دخلهم وتنظيم عملهم</span>
-        </div>
-
-        <div class="number-item reveal reveal-delay-3">
-          <span class="num-val">15د</span>
-          <span class="num-lbl">معدل الاستجابة</span>
-          <span class="num-sub">أسرع خدمة بالمنطقة</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="badge" style="margin-bottom: 20px;">
-          <i class="fas fa-comments"></i>
-          آراء المجتمع
-        </span>
-        <h2 class="section-title">صوت <span class="text-brand">المرضى والممرضين</span></h2>
-        <p class="section-sub">شهادات حقيقية استمعنا إليها أثناء أبحاثنا الميدانية بالفيوم</p>
+        <span class="section-badge"><i class="fas fa-comments"></i> تجارب حقيقية</span>
+        <h2 class="section-title">صوت المرضى والممرضين <span class="highlight">بالفيوم</span></h2>
+        <p class="section-sub">شهادات واقعية جمعناها أثناء أبحاثنا الميدانية مع أهالي الفيوم والكوادر الطبية</p>
       </div>
 
       <div class="testi-grid">
         <div class="testi-card reveal">
           <div class="testi-stars">★★★★★</div>
-          <p>"اتصلت بأكثر من 7 معارف لم أجد ممرضة لأمي المسنة بسرعة. لو كان كيور موجوداً لوفر ساعات من القلق والتعب."</p>
+          <p>"اتصلت بأكثر من 7 معارف لم أجد ممرضة لأمي المسنة بسرعة. لو كان كيور موجوداً لوفر علينا 4 ساعات من القلق والتعب."</p>
           <div class="testi-author">
             <div class="testi-avatar">م.أ</div>
             <div>
               <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">محمد أحمد</div>
-              <div style="font-size: 12px; color: var(--c-muted);">ابن مريضة بالفيوم</div>
+              <div style="font-size: 12px; color: var(--c-muted);">ابن مريضة — مدينة الفيوم</div>
             </div>
           </div>
         </div>
 
         <div class="testi-card reveal reveal-delay-1">
           <div class="testi-stars">★★★★★</div>
-          <p>"تطبيق يضمن لي ممرضاً معتمداً بسعر معلن قبل الوصول هو تماماً ما نحتاجه في حالات الطوارئ."</p>
+          <p>"تطبيق يضمن لي ممرضاً معتمداً بسعر معلن ومحدد مسبقاً قبل وصوله هو تماماً ما نحتاجه في مواقف الطوارئ الحرجة."</p>
           <div class="testi-author">
             <div class="testi-avatar">ن.س</div>
             <div>
               <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">نهى سامي</div>
-              <div style="font-size: 12px; color: var(--c-muted);">ربّة منزل بالفيوم</div>
+              <div style="font-size: 12px; color: var(--c-muted);">ربة منزل — سنورس، الفيوم</div>
             </div>
           </div>
         </div>
 
         <div class="testi-card reveal reveal-delay-2">
           <div class="testi-stars">★★★★★</div>
-          <p>"كيور سيمنحنا التقدير المادي السليم والسهولة في الوصول للعمل القريب من منازلنا بشكل منظم."</p>
+          <p>"كيور يمنحنا التقدير المادي السليم والعمل المنظم القريب من بيوتنا بدون سماسرة، مع الحفاظ على سمعة المهنة."</p>
           <div class="testi-author">
             <div class="testi-avatar">ع.م</div>
             <div>
               <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">أحمد محمود</div>
-              <div style="font-size: 12px; color: var(--c-muted);">ممرض معتمد — 4 سنوات خبرة</div>
+              <div style="font-size: 12px; color: var(--c-muted);">أخصائي تمريض — إبشواي</div>
             </div>
           </div>
         </div>
@@ -1864,63 +1251,260 @@
     </div>
   </section>
 
-  <!-- Join / Nurse Recruitment Section -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       JOIN AS A NURSE SECTION
+       ═══════════════════════════════════════════════════════════════ -->
   <section id="join" class="section">
     <div class="container">
       <div class="join-grid">
-        
         <div class="join-info reveal">
-          <span class="badge" style="margin-bottom: 20px;">
-            <i class="fas fa-user-plus"></i>
-            انضم إلينا
-          </span>
-          <h2 class="section-title">هل أنت ممرض؟<br /><span class="text-brand">انضم لكيور الآن</span></h2>
-          <p style="font-size: 16px; color: var(--c-muted); line-height: 1.8; margin-bottom: 30px;">
-            نوفر لك فرصة عمل مرنة وعادلة. اعمل في الأوقات والمناطق التي تناسبك، واحصل على عائد عادل يقدّر مهاراتك التمريضية.
+          <span class="section-badge"><i class="fas fa-user-plus"></i> انضم لفريقنا</span>
+          <h2 class="section-title">هل أنت ممرض مرخص؟<br /><span class="highlight">انضم لكيور الآن</span></h2>
+          <p style="font-size: 16px; color: var(--c-muted); line-height: 1.8; margin-bottom: 28px;">
+            نوفر لك بيئة عمل مرنة وعادلة تضمن كرامتك المهنية وتزيد دخلك الشهري بصورة منتظمة في محافظتك.
           </p>
 
           <div>
             <div class="benefit-item">
-              <span style="font-size: 22px;">💰</span>
+              <span style="font-size: 24px;">💰</span>
               <div>
-                <strong style="color: var(--c-heading);">80% من قيمة الخدمة</strong> يذهب إليك مباشرة
+                <strong style="color: var(--c-heading);">80% من قيمة كل خدمة</strong> تعود إليك مباشرة دون استقطاعات غير مبررة.
               </div>
             </div>
 
             <div class="benefit-item">
-              <span style="font-size: 22px;">📅</span>
+              <span style="font-size: 24px;">⏰</span>
               <div>
-                <strong style="color: var(--c-heading);">مرونة كاملة</strong> في تحديد جدول عملك ونطاقك
+                <strong style="color: var(--c-heading);">حرية تحديد المواعيد</strong> والنطاق الجغرافي الذي ترغب في العمل به.
               </div>
             </div>
 
             <div class="benefit-item">
-              <span style="font-size: 22px;">⭐</span>
+              <span style="font-size: 24px;">🌟</span>
               <div>
-                <strong style="color: var(--c-heading);">بناء سمعة مهنية</strong> بالتقييمات الشفافة
+                <strong style="color: var(--c-heading);">بناء ملف مهني موثق</strong> وتقييمات من المرضى ترفع من مكانتك ودخلك.
               </div>
             </div>
 
             <div class="benefit-item">
-              <span style="font-size: 22px;">🔒</span>
+              <span style="font-size: 24px;">🛡️</span>
               <div>
-                <strong style="color: var(--c-heading);">تعاقد واضح</strong> يضمن كافة حقوقك
+                <strong style="color: var(--c-heading);">حماية حقوقك القانونية</strong> والمالية بتعاقد شفاف ومحدد.
               </div>
             </div>
           </div>
         </div>
 
         <div class="join-form reveal reveal-delay-2">
-          <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 900; color: var(--c-heading); margin-bottom: 6px;">سجّل كممرض مع كيور</h3>
-          <p style="font-size: 13.5px; color: var(--c-muted); margin-bottom: 24px;">أكمل بياناتك وسيتواصل معك فريقنا خلال 48 ساعة للمراجعة</p>
+          <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 900; color: var(--c-heading); margin-bottom: 6px;">استمارة تسجيل ممرض معتمد</h3>
+          <p style="font-size: 13.5px; color: var(--c-muted); margin-bottom: 24px;">أدخل بياناتك وسيتواصل معك الفريق الطبي للمراجعة خلال 48 ساعة</p>
 
           <form id="nurseForm" action="https://formspree.io/f/xreodypz" method="POST" onsubmit="handleFormSubmit(event, 'nurseForm', 'nurseSuccess')">
-            <input type="hidden" name="_subject" value="طلب انضمام ممرض جديد — كيور" />
+            <input type="hidden" name="_subject" value="طلب انضمام ممرض جديد — منصة كيور" />
 
             <div class="form-row">
               <div class="form-group">
-                <label>الاسم الكامل *</label>
-                <input type="text" name="name" placeholder="اسمك الثلاثي" required />
+                <label>الاسم بالكامل *</label>
+                <input type="text" name="name" placeholder="اسمك الثلاثي كما بالبطاقة" required />
+              </div>
+              <div class="form-group">
+                <label>رقم الهاتف المحمول *</label>
+                <input type="tel" name="phone" placeholder="01xxxxxxxxx" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>البريد الإلكتروني</label>
+              <input type="email" name="email" placeholder="name@example.com" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>سنوات الخبرة العملية *</label>
+                <select name="experience" required>
+                  <option value="">اختر سنوات الخبرة...</option>
+                  <option value="أقل من سنة">أقل من سنة</option>
+                  <option value="1-3 سنوات">من سنة إلى 3 سنوات</option>
+                  <option value="3-5 سنوات">من 3 إلى 5 سنوات</option>
+                  <option value="أكثر من 5 سنوات">أكثر من 5 سنوات</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>المركز السكني بالمحافظة *</label>
+                <select name="area" required>
+                  <option value="">اختر المركز...</option>
+                  <option value="مدينة الفيوم">مدينة الفيوم</option>
+                  <option value="إبشواي">إبشواي</option>
+                  <option value="طامية">طامية</option>
+                  <option value="سنورس">سنورس</option>
+                  <option value="إطسا">إطسا</option>
+                  <option value="يوسف الصديق">يوسف الصديق</option>
+                  <option value="محافظة أخرى">محافظة أخرى</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>التخصصات والمهارات التمريضية</label>
+              <input type="text" name="specialties" placeholder="مثال: محاليل، عناية مركزة، غيار جروح، قسطرة..." />
+            </div>
+
+            <button type="submit" class="form-submit">
+              <i class="fas fa-paper-plane"></i> إرسال طلب الانضمام
+            </button>
+          </form>
+
+          <div class="form-success" id="nurseSuccess">
+            <div style="font-size: 48px; margin-bottom: 12px;">🎉</div>
+            <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 800; color: var(--c-brand);">تم استلام طلبك بنجاح!</h3>
+            <p style="font-size: 14px; color: var(--c-muted);">شكراً لاهتمامك بالانضمام لمنظومة كيور. سيتواصل معك فريقنا الطبي للتحقق من المستندات.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CLINICAL FAQ ACCORDION SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="faq" class="section" style="background: var(--c-bg-soft);">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-circle-question"></i> إجابات شافية</span>
+        <h2 class="section-title">الأسئلة الشائعة حول <span class="highlight">كيور</span></h2>
+        <p class="section-sub">كل ما تحتاج معرفته عن معايير الأمان، الأسعار، وطريقة حجز الممرض المنزلي</p>
+      </div>
+
+      <div class="faq-grid">
+        <!-- FAQ 1 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>كيف تضمن كيور أمان الممرض داخل منزلي؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            تطبق كيور فحصاً ثلاثياً صارماً يشمل: التأكد من ترخيص مزاولة المهنة من نقابة التمريض المصرية، فحص الصحيفة الجنائية (الفيش والتشبيه)، ومطابقة بطاقة الرقم القومي. كما يتتبع التطبيق مسار الزيارة بالـ GPS لضمان أقصى درجات الأمان لعائلتك.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question">
+            <span>كم يستغرق وصول الممرض إلى المنزل بعد الطلب؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            متوسط زمن وصول الممرض في الفيوم هو 15 إلى 25 دقيقة فقط، بفضل نظام التوزيع الجغرافي الذكي الذي يربطك بأقرب ممرض متواجد في محيطك السكني.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question">
+            <span>هل الأسعار المعلنة نهائية أم قابلة للتفاوض مع الممرض؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            الأسعار معلنة وثابتة ومحددة مسبقاً في التطبيق وفي جدول الأسعار، ولا يُطلب منك دفع أي مبالغ إضافية أو بقشيش. ما تراه في التطبيق هو ما تدفعه بالضبط.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item reveal">
+          <button class="faq-question">
+            <span>هل يوفر الممرض المستلزمات الطبية (كانيولا، سرنجات، محاليل)؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            يحمل ممرضو كيور أدوات التعقيم والتثبيت القياسية. في حال لم تكن الأدوية أو المحاليل متوفرة في منزلك بتذكرة الطبيب، يمكنك تحديد ذلك عبر التطبيق وسيقوم الممرض بإحضارها من أقرب صيدلية مع تقديم الفاتورة الرسمية.
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question">
+            <span>هل يمكنني حجز ممرض أو ممرضة لفترة طويلة (شيفت 12 أو 24 ساعة)؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            نعم، توفر كيور باقات رعاية كبار السن والحالات الحرجة وما بعد العمليات الجراحية بشيفتات تمريضية تبدأ من 6 ساعات، 12 ساعة، وحتى إقامة كاملة 24 ساعة مع ممرضين متخصصين في الرعاية المركزة.
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question">
+            <span>كيف يمكنني تحميل التطبيق واستخدامه؟</span>
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            يمكنك تحميل تطبيق كيور مجاناً وبنقرة واحدة من متجر Google Play عبر الرابط المباشر الموجود بأعلى الصفحة، أو التواصل مع فريقنا مباشرة عبر الواتساب على 01070203636.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CONTACT & EMERGENCY CENTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <span class="section-badge"><i class="fas fa-headset"></i> تواصل دائم</span>
+          <h2 class="section-title">نحن هنا لمساعدتك <span class="highlight">24 ساعة</span></h2>
+          <p style="font-size: 16px; color: var(--c-muted); line-height: 1.8; margin-bottom: 30px;">
+            يسعدنا التجاوب مع جميع استفسارات المرضى والأسر والكوادر التمريضية على مدار الساعة طوال أيام الأسبوع.
+          </p>
+
+          <div>
+            <div class="contact-card">
+              <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <div style="font-size: 13px; color: var(--c-muted);">خط الطوارئ والحجز السريع</div>
+                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 18px; color: var(--c-heading);" dir="ltr">01070203636</div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <div style="font-size: 13px; color: var(--c-muted);">خدمة العملاء عبر واتساب</div>
+                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 16px; color: #16a34a;" dir="ltr">01070203636</div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="c-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div style="font-size: 13px; color: var(--c-muted);">البريد الإلكتروني للإدارة</div>
+                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">eslam.hamada@cureztyx.com</div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="c-icon"><i class="fas fa-map-location-dot"></i></div>
+              <div>
+                <div style="font-size: 13px; color: var(--c-muted);">المقر الرئيسي</div>
+                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">الفيوم، جمهورية مصر العربية</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form reveal reveal-delay-2">
+          <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 900; color: var(--c-heading); margin-bottom: 6px;">أرسل استفسارك الطبي</h3>
+          <p style="font-size: 13.5px; color: var(--c-muted); margin-bottom: 24px;">سنقوم بالرد عليك خلال دقائق معدودة</p>
+
+          <form id="contactForm" action="https://formspree.io/f/xreodypz" method="POST" onsubmit="handleFormSubmit(event, 'contactForm', 'contactSuccess')">
+            <input type="hidden" name="_subject" value="رسالة جديدة من موقع كيور الطبي" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>الاسم الكريم *</label>
+                <input type="text" name="name" placeholder="اسمك" required />
               </div>
               <div class="form-group">
                 <label>رقم الهاتف *</label>
@@ -1933,217 +1517,114 @@
               <input type="email" name="email" placeholder="name@example.com" />
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label>سنوات الخبرة *</label>
-                <select name="experience" required>
-                  <option value="">اختر...</option>
-                  <option value="أقل من سنة">أقل من سنة</option>
-                  <option value="1-3 سنوات">1-3 سنوات</option>
-                  <option value="3-5 سنوات">3-5 سنوات</option>
-                  <option value="أكثر من 5 سنوات">أكثر من 5 سنوات</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label>المنطقة السكنية *</label>
-                <select name="area" required>
-                  <option value="">اختر...</option>
-                  <option value="مدينة الفيوم">مدينة الفيوم</option>
-                  <option value="إبشواي">إبشواي</option>
-                  <option value="طامية">طامية</option>
-                  <option value="سنورس">سنورس</option>
-                  <option value="أخرى">أخرى</option>
-                </select>
-              </div>
-            </div>
-
             <div class="form-group">
-              <label>التخصصات والمهارات</label>
-              <input type="text" name="specialties" placeholder="مثال: محاليل، ضمادات، كبار السن..." />
+              <label>تفاصيل الاستفسار أو الحالة *</label>
+              <textarea name="message" style="min-height: 110px;" placeholder="اكتب تفاصيل الخدمة أو الحالة التمريضية المطلوبة..." required></textarea>
             </div>
 
             <button type="submit" class="form-submit">
-              <i class="fas fa-paper-plane"></i> أرسل طلب الانضمام
-            </button>
-          </form>
-
-          <div class="form-success" id="nurseSuccess">
-            <div style="font-size: 48px; margin-bottom: 12px;">🎉</div>
-            <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 800; color: var(--c-brand);">تم استلام طلبك بنجاح!</h3>
-            <p style="font-size: 14px; color: var(--c-muted);">شكراً لاهتمامك بالانضمام. سيتواصل معك فريقنا خلال 48 ساعة.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <div class="contact-grid">
-        
-        <div class="contact-info reveal">
-          <span class="badge" style="margin-bottom: 20px;">
-            <i class="fas fa-envelope"></i>
-            تواصل معنا
-          </span>
-          <h2 class="section-title">نحن هنا <span class="text-brand">لمساعدتك</span></h2>
-          <p style="font-size: 16px; color: var(--c-muted); line-height: 1.8; margin-bottom: 30px;">
-            يسعدنا التواصل معك والتجاوب مع جميع استفساراتك سواء كنت مريضاً، ممرضاً، أو شريكاً.
-          </p>
-
-          <div>
-            <div class="contact-card">
-              <div class="c-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <div style="font-size: 13px; color: var(--c-muted);">الهاتف</div>
-                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 16px; color: var(--c-heading);" dir="ltr">01070203636</div>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="c-icon"><i class="fas fa-envelope"></i></div>
-              <div>
-                <div style="font-size: 13px; color: var(--c-muted);">البريد الإلكتروني</div>
-                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">eslam.hamada@cureztyx.com</div>
-              </div>
-            </div>
-
-            <div class="contact-card">
-              <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
-              <div>
-                <div style="font-size: 13px; color: var(--c-muted);">الموقع</div>
-                <div style="font-family: var(--ff-head); font-weight: 800; font-size: 15px; color: var(--c-heading);">الفيوم، مصر</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form reveal reveal-delay-2">
-          <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 900; color: var(--c-heading); margin-bottom: 6px;">أرسل رسالة</h3>
-          <p style="font-size: 13.5px; color: var(--c-muted); margin-bottom: 24px;">سنرد عليك خلال 24 ساعة</p>
-
-          <form id="contactForm" action="https://formspree.io/f/xreodypz" method="POST" onsubmit="handleFormSubmit(event, 'contactForm', 'contactSuccess')">
-            <input type="hidden" name="_subject" value="رسالة جديدة من موقع كيور" />
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>الاسم *</label>
-                <input type="text" name="name" placeholder="اسمك" required />
-              </div>
-              <div class="form-group">
-                <label>رقم الهاتف</label>
-                <input type="tel" name="phone" placeholder="01xxxxxxxxx" />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label>البريد الإلكتروني *</label>
-              <input type="email" name="email" placeholder="email@example.com" required />
-            </div>
-
-            <div class="form-group">
-              <label>الرسالة *</label>
-              <textarea name="message" style="min-height: 110px;" placeholder="اكتب رسالتك هنا..." required></textarea>
-            </div>
-
-            <button type="submit" class="form-submit">
-              <i class="fas fa-paper-plane"></i> أرسل الرسالة
+              <i class="fas fa-paper-plane"></i> إرسال الرسالة
             </button>
           </form>
 
           <div class="form-success" id="contactSuccess">
             <div style="font-size: 48px; margin-bottom: 12px;">✅</div>
             <h3 style="font-family: var(--ff-head); font-size: 22px; font-weight: 800; color: var(--c-brand);">تم الإرسال بنجاح!</h3>
-            <p style="font-size: 14px; color: var(--c-muted);">شكراً لتواصلك معنا. سنرد عليك في أقرب وقت.</p>
+            <p style="font-size: 14px; color: var(--c-muted);">شكراً لتواصلك مع كيور. سيقوم فريق خدمة العملاء بالرد عليك فوراً.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA Banner Section -->
-  <section id="cta">
-    <div class="container">
-      <h2 style="font-family: var(--ff-head); font-size: clamp(28px, 4vw, 46px); font-weight: 900; margin-bottom: 16px;">
-        كن من الأوائل مع كيور
-      </h2>
-      <p style="font-size: 18px; max-width: 600px; margin: 0 auto 36px; line-height: 1.8;">
-        انضم الآن لتجربة رعاية صحية منزلية فائقة الأمان، أو انضم كعضو في فريق تمريض كيور.
-      </p>
-      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-        <a href="#join" class="btn-primary" style="background: #ffffff; color: var(--c-brand-deep) !important;">
-          <i class="fas fa-user-nurse"></i> انضم كممرض
-        </a>
-        <a href="#contact" class="btn-secondary" style="background: rgba(255, 255, 255, 0.15); color: #ffffff !important; border-color: rgba(255, 255, 255, 0.3);">
-          <i class="fas fa-envelope"></i> تواصل معنا
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER & REGIONAL DOMINANCE
+       ═══════════════════════════════════════════════════════════════ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        
         <div>
-          <div style="margin-bottom: 18px;">
-            <img src="assets/png/logo-cure-new.png" alt="كيور للتمريض المنزلي" style="height: 44px; width: auto;" />
+          <div class="footer-logo-row">
+            <img src="assets/images/icon.png" alt="شعار كيور" style="width: 42px; height: 42px; border-radius: 10px;" loading="lazy" />
+            <span style="font-family: var(--ff-head); font-weight: 900; font-size: 24px; color: #fff;">كيور<span style="color: var(--c-brand);">.</span></span>
           </div>
-          <p style="font-size: 14px; color: var(--c-muted); line-height: 1.8; max-width: 280px;">
-            أول منصة ذكية تربط المرضى بمقدمي خدمات التمريض المنزلي في مصر. نوفر الرعاية الصحية بجودة عالية وسعر عادل.
+          <p style="font-size: 14px; color: #a0a5c4; line-height: 1.8; max-width: 320px; margin-bottom: 20px;">
+            أول منظومة ذكية متخصصة لربط المرضى بنخبة من الممرضين المرخصين في مصر. نقدم التمريض المنزلي الآمن بجودة معتمدة وأسعار صريحة.
           </p>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" style="display: inline-flex;">
+            <i class="fab fa-google-play"></i>
+            <span>تنزيل تطبيق كيور (Google Play)</span>
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h4>التغطية بمراكز الفيوم</h4>
+          <ul>
+            <li><a href="tamreed-manzili-fayoum.html">تمريض منزلي بمدينة الفيوم</a></li>
+            <li><a href="tamreed-manzili-ebshaway.html">تمريض منزلي بإبشواي</a></li>
+            <li><a href="tamreed-manzili-senouris.html">تمريض منزلي بسنورس</a></li>
+            <li><a href="tamreed-manzili-tamiya.html">تمريض منزلي بطامية</a></li>
+            <li><a href="tamreed-manzili-atsa.html">تمريض منزلي بإطسا</a></li>
+            <li><a href="tamreed-manzili-youssef-elseddik.html">تمريض بيوسف الصديق</a></li>
+          </ul>
         </div>
 
         <div class="footer-col">
           <h4>روابط سريعة</h4>
           <ul>
             <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
-            <li><a href="#services">خدماتنا</a></li>
-            <li><a href="articles.html">المقالات الطبية</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>انضم إلينا</h4>
-          <ul>
-            <li><a href="#join">سجّل كممرض</a></li>
-            <li><a href="careers.html">الوظائف</a></li>
-            <li><a href="#how">كيف يعمل</a></li>
-            <li><a href="#contact">تواصل معنا</a></li>
+            <li><a href="#needs">ماذا تحتاج اليوم؟</a></li>
+            <li><a href="#services">الخدمات الـ 15</a></li>
+            <li><a href="pricing.html">جدول الأسعار الصريحة</a></li>
+            <li><a href="#comparison">معايير الأمان</a></li>
+            <li><a href="#faq">الأسئلة الشائعة</a></li>
+            <li><a href="articles.html">المقالات الطبية التثقيفية</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>تواصل وقانوني</h4>
           <ul>
-            <li><a href="tel:01070203636">01070203636</a></li>
-            <li><a href="mailto:eslam.hamada@cureztyx.com">eslam.hamada@cureztyx.com</a></li>
+            <li><a href="tel:01070203636"><i class="fas fa-phone-alt"></i> 01070203636</a></li>
+            <li><a href="https://wa.me/201070203636" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب فوري</a></li>
+            <li><a href="mailto:eslam.hamada@cureztyx.com"><i class="fas fa-envelope"></i> eslam.hamada@cureztyx.com</a></li>
+            <li><a href="careers.html">وظائف التمريض الشاغرة</a></li>
             <li><a href="privacy.html">سياسة الخصوصية</a></li>
-            <li><a href="terms.html">الشروط والأحكام</a></li>
+            <li><a href="terms.html">الشروط والأحكام الطبية</a></li>
           </ul>
         </div>
-
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 كيور — نظام الرعاية الصحية المنزلية المتكامل. جميع الحقوق محفوظة.</p>
-        <p>صُنع بـ <span style="color: var(--c-brand);">♥</span> في الفيوم، مصر</p>
+        <p>© 2026 كيور (CURE) — أول وأفضل منصة تمريض منزلي معتمدة في مصر. جميع الحقوق محفوظة.</p>
+        <p>صُنع بكل <span style="color: var(--c-secondary);">♥</span> لخدمة المجتمع الطبي وأهالينا في الفيوم ومصر</p>
       </div>
     </div>
   </footer>
 
+  <!-- ═══════════════════════════════════════════════════════════════
+       MOBILE QUICK ACTION BAR (STICKY BOTTOM)
+       ═══════════════════════════════════════════════════════════════ -->
+  <aside class="mobile-quick-bar" aria-label="أزرار الإجراء السريع للموبايل">
+    <div class="mobile-quick-inner">
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-quick-btn gp" title="حمّل التطبيق الآن">
+        <i class="fab fa-google-play"></i> حمّل التطبيق
+      </a>
+      <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز تمريض منزلي الآن" target="_blank" rel="noopener" class="mobile-quick-btn wa" title="واتساب">
+        <i class="fab fa-whatsapp"></i> واتساب
+      </a>
+      <a href="tel:01070203636" class="mobile-quick-btn call" title="اتصل الآن">
+        <i class="fas fa-phone-alt"></i> اتصل
+      </a>
+    </div>
+  </aside>
+
   <!-- WhatsApp Floating Action Button -->
-  <a href="https://wa.me/201070203636" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب">
+  <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز تمريض منزلي الآن من كيور" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب فوراً">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Google Translate element (hidden) -->
+  <!-- Google Translate Hidden Element -->
   <div id="google_translate_element" style="display:none;"></div>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script>
@@ -2156,53 +1637,7 @@
     }
   </script>
 
-  <!-- JavaScript Bundle -->
+  <!-- Optimized Main JavaScript Bundle -->
   <script src="assets/js/main.js"></script>
-
-  <script>
-    // Tab switcher logic
-    function switchTab(tabId, btn) {
-      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
-    }
-
-    // Form submission handler with feedback
-    function handleFormSubmit(event, formId, successId) {
-      event.preventDefault();
-      const form = document.getElementById(formId);
-      const successEl = document.getElementById(successId);
-      const submitBtn = form.querySelector('button[type="submit"]');
-
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> جاري الإرسال...';
-      }
-
-      fetch(form.action, {
-        method: form.method,
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          form.style.display = 'none';
-          successEl.classList.add('is-visible');
-        } else {
-          alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إعادة المحاولة';
-          }
-        }
-      }).catch(() => {
-        alert('حدث خطأ بالاتصال، يرجى المحاولة مرة أخرى.');
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إعادة المحاولة';
-        }
-      });
-    }
-  </script>
 </body>
 </html>
