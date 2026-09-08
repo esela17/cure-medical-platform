@@ -32,8 +32,12 @@ function getCookie(cname) {
    ───────────────────────────────────── */
 function dismissLoader() {
   const loader = document.getElementById('loader') || document.getElementById('page-loader');
-  if (loader && !loader.classList.contains('hidden')) {
+  if (loader) {
     loader.classList.add('hidden', 'is-hidden');
+    loader.style.opacity = '0';
+    loader.style.visibility = 'hidden';
+    loader.style.pointerEvents = 'none';
+    setTimeout(() => { loader.style.display = 'none'; }, 300);
   }
 }
 window.addEventListener('load', () => setTimeout(dismissLoader, 150));

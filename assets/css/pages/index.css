@@ -1607,6 +1607,46 @@
   box-shadow: var(--shadow-card);
 }
 
+
+/* ─── HERO STATS METRICS BAR ──────────────────────────────────────── */
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background: #ffffff;
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 22px 18px;
+  box-shadow: var(--shadow-card);
+  margin-top: 24px;
+}
+
+.stat-item {
+  text-align: center;
+  border-inline-end: 1px solid var(--c-border-light);
+  padding: 0 8px;
+}
+.stat-item:last-child {
+  border-inline-end: none;
+}
+
+.stat-num {
+  font-family: var(--ff-head);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  color: var(--c-brand);
+  line-height: 1.1;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.stat-lbl {
+  font-size: 13px;
+  color: var(--c-muted);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    RESPONSIVE BREAKPOINTS (ALL HOMEPAGE SECTIONS — BULLETPROOF MOBILE)
    ═══════════════════════════════════════════════════════════════════ */
@@ -1680,6 +1720,21 @@
   }
   .numbers-grid {
     grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    padding: 18px 14px !important;
+  }
+  .stat-item:nth-child(2) {
+    border-inline-end: none !important;
+  }
+  .stat-item:nth-child(1), .stat-item:nth-child(2) {
+    border-bottom: 1px solid var(--c-border-light);
+    padding-bottom: 12px;
+  }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) {
+    padding-top: 6px;
   }
   .testi-grid {
     grid-template-columns: 1fr !important;
