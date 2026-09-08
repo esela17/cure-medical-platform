@@ -1741,6 +1741,68 @@
   }
 }
 
+@media (max-width: 768px) {
+  .table-swipe-hint {
+    display: flex !important;
+  }
+  .app-cta-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+  .app-gp-btn, .app-wa-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .human-pledge-section {
+    padding: 50px 0 !important;
+  }
+  .pledge-visual-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 24px !important;
+  }
+  .pledge-image-showcase img {
+    max-height: 280px !important;
+  }
+  .pledge-floating-caption {
+    position: static !important;
+    background: var(--c-bg-soft) !important;
+    color: var(--c-body) !important;
+    border-radius: 0 0 var(--r-md) var(--r-md) !important;
+    padding: 14px 16px !important;
+  }
+  .pledge-floating-caption strong {
+    color: var(--c-heading) !important;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .pledge-floating-caption p {
+    color: var(--c-muted) !important;
+    font-size: 13px !important;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .pledge-card {
+    padding: 22px 18px !important;
+  }
+  .comparison-card {
+    border-radius: var(--r-md) !important;
+    margin-top: 10px !important;
+  }
+  .comparison-table {
+    min-width: 500px !important;
+    font-size: 13px !important;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 12px 10px !important;
+  }
+  .comparison-table th {
+    font-size: 13.5px !important;
+  }
+}
+
 @media (max-width: 640px) {
   #hero {
     padding-top: 110px !important;
@@ -1852,4 +1914,112 @@
   .contact-form {
     padding: 20px 14px !important;
   }
+}
+
+
+/* ─── APP SHOWCASE REFINED BUTTONS & BADGE ────────────────────────── */
+.app-badge {
+  background: rgba(174, 250, 124, 0.16) !important;
+  border: 1.5px solid var(--c-secondary) !important;
+  color: #aefa7c !important;
+  font-weight: 900 !important;
+  font-size: 13.5px !important;
+  box-shadow: 0 0 16px rgba(174, 250, 124, 0.25) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.app-badge i {
+  color: #aefa7c !important;
+}
+
+.app-cta-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.app-gp-btn {
+  background: var(--c-secondary);
+  color: #070617 !important;
+  border: 2px solid #ffffff;
+  border-radius: var(--r-md);
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px var(--c-secondary-glow);
+  transition: all 0.25s var(--ease-spring);
+  min-height: 58px;
+}
+.app-gp-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(174, 250, 124, 0.6);
+}
+.app-gp-btn i {
+  font-size: 28px;
+  color: #070617;
+}
+.app-gp-btn .hero-btn-sub {
+  font-size: 11px;
+  font-weight: 800;
+  color: #194005;
+  display: block;
+  line-height: 1.2;
+}
+.app-gp-btn .hero-btn-main {
+  font-family: var(--ff-head);
+  font-size: 19px;
+  font-weight: 900;
+  color: #070617;
+  display: block;
+  line-height: 1.2;
+}
+
+.app-wa-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  border-radius: var(--r-md);
+  padding: 14px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--ff-head);
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-spring);
+  min-height: 58px;
+}
+.app-wa-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+.app-wa-btn i {
+  font-size: 20px;
+  color: #25d366;
+}
+
+/* ─── TABLE SWIPE HINT ────────────────────────────────────────────── */
+.table-swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--c-brand-5);
+  border: 1px dashed var(--c-brand);
+  border-radius: var(--r-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--c-brand-deep);
+  margin-bottom: 14px;
+  text-align: center;
 }

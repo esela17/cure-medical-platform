@@ -49,10 +49,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Master Design System Stylesheet -->
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20260908" />
-  <link rel="stylesheet" href="assets/css/base.css?v=20260908" />
-  <link rel="stylesheet" href="assets/css/components.css?v=20260908" />
-  <link rel="stylesheet" href="assets/css/pages/index.css?v=20260908" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/base.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/components.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/pages/index.css?v=20260908_v2" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
@@ -936,6 +936,7 @@
         <p class="section-sub">مقارنة صريحة بين منظومة كيور الطبية المعتمدة وبين البحث عن تمريض عشوائي عبر المعارف</p>
       </div>
 
+      <div class="table-swipe-hint"><i class="fas fa-arrows-left-right"></i> <span>اسحب الجدول يميناً ويساراً لمشاهدة المقارنة الكاملة</span></div>
       <div class="comparison-card reveal">
         <table class="comparison-table">
           <thead>
@@ -1013,7 +1014,7 @@
     <div class="container">
       <div class="app-showcase-grid">
         <div class="reveal">
-          <span class="section-badge secondary"><i class="fab fa-google-play"></i> التطبيق الذكي الأول</span>
+          <span class="section-badge app-badge"><i class="fab fa-google-play"></i> التطبيق الذكي الأول</span>
           <h2 style="font-family: var(--ff-head); font-size: clamp(28px, 3.8vw, 44px); font-weight: 900; line-height: 1.25; margin-bottom: 18px;">
             تطبيق كيور — الرعاية الطبية<br />
             <span style="color: var(--c-secondary);">بين يديك بلمسة واحدة</span>
@@ -1037,16 +1038,17 @@
             </li>
           </ul>
 
-          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="hero-download-btn" style="background: var(--c-secondary); color: var(--c-secondary-text) !important; border-color: #ffffff;">
-              <i class="fab fa-google-play" style="color: var(--c-secondary-text);"></i>
+          <div class="app-cta-btns">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="app-gp-btn" title="تنزيل تطبيق كيور الرسمي">
+              <i class="fab fa-google-play"></i>
               <div class="hero-btn-lines">
-                <span class="hero-btn-sub" style="color: #194005;">تحميل فوري مجاني</span>
-                <span class="hero-btn-main" style="color: #0d2902;">Google Play</span>
+                <span class="hero-btn-sub">تحميل فوري مجاني</span>
+                <span class="hero-btn-main">Google Play</span>
               </div>
             </a>
-            <a href="https://wa.me/201070203636" class="btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff !important; border-color: rgba(255,255,255,0.25);" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp"></i> تواصل مع فريق المساعدة
+            <a href="https://wa.me/201070203636" class="app-wa-btn" target="_blank" rel="noopener" title="تواصل مع فريق المساعدة">
+              <i class="fab fa-whatsapp"></i>
+              <span>تواصل مع فريق المساعدة</span>
             </a>
           </div>
         </div>
@@ -1793,6 +1795,6 @@
   </script>
 
   <!-- Optimized Main JavaScript Bundle -->
-  <script src="assets/js/main.js?v=20260908"></script>
+  <script src="assets/js/main.js?v=20260908_v2"></script>
 </body>
 </html>
