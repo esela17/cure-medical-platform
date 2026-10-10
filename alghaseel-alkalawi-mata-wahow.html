@@ -131,10 +131,14 @@
     </div>
   </nav>
 
+<div id="readingProgress" style="position: fixed; top: 0; right: 0; left: 0; height: 3.5px; background: var(--c-secondary); width: 0%; z-index: 9999; transition: width 0.1s ease;"></div>
+
   <!-- Article Container -->
   <div class="article-container">
     <div class="article-hero">
-      <span class="badge">ثقافة طبية</span>
+      <span class="badge" style="background: var(--c-secondary-bg); color: var(--c-secondary); border: 1px solid rgba(5, 150, 105, 0.3); font-weight: 800; padding: 4px 14px; border-radius: var(--r-pill); display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fas fa-stethoscope"></i> دليل الرعاية الطبية المعتمدة بالمنزل
+        </span>
       <h1>الغسيل الكلوي — ما هو ومتى يحتاجه مريض الكلى؟</h1>
       <div class="meta-info">
         <span><i class="far fa-calendar-alt"></i> أبريل 2025</span>
@@ -145,6 +149,17 @@
 
     <div class="featured-image-container">
       <img src="assets/img/articles/article1.png" alt="الغسيل الكلوي — ما هو ومتى يحتاجه مريض الكلى؟" class="featured-image" loading="lazy" decoding="async">
+    </div>
+
+        <!-- Quick 30-Second Clinical Summary Box -->
+    <div style="background: var(--c-primary-surface); border: 1.5px solid var(--c-brand-15); border-right: 5px solid var(--c-brand); border-radius: var(--r-md); padding: 24px 26px; margin-bottom: 35px; box-shadow: var(--shadow-xs);">
+      <div style="display: flex; align-items: center; gap: 10px; font-family: var(--ff-head); font-weight: 800; color: var(--c-brand-deep); font-size: 18px; margin-bottom: 12px;">
+        <i class="fas fa-clipboard-check" style="color: var(--c-secondary); font-size: 22px;"></i>
+        <span>ملخص سريري سريع (في 30 ثانية فقط)</span>
+      </div>
+      <ul style="margin: 0; padding-right: 20px; color: var(--c-body); font-size: 15.5px; line-height: 1.85;">
+        <li><strong>متى يبدأ؟</strong> عند وصول القصور الكلوي للمرحلة النهائية (انخفاض معدل الفلترة GFR إلى أقل من 15).</li><li><strong>الرعاية بين الجلسات:</strong> حماية وصلة الغسيل (Fistula)، ضبط السوائل والأملاح، ومراقبة الضغط يومياً.</li><li><strong>الدعم المنزلي:</strong> متابعة سريرية متخصصة في المنزل بين جلسات الغسيل لضبط الأدوية وقياس العلامات الحيوية.</li>
+      </ul>
     </div>
 
     <article class="content">
@@ -163,19 +178,37 @@
 الغسيل نفسه غير مؤلم، لكن قد يشعر المريض ببعض الوخز عند تركيب الإبر في الغسيل الدموي.</p>
 <p><strong>هل يمكن السفر أثناء الغسيل؟</strong><br />
 نعم، يمكن التنسيق مع مراكز الغسيل في وجهة السفر لتلقي الجلسات هناك.</p>
+            <!-- Inline Emergency/Home Care Box -->
+        <div style="background: linear-gradient(135deg, var(--c-primary-surface) 0%, #ecfdf5 100%); border: 1.5px solid var(--c-secondary); border-radius: var(--r-md); padding: 24px; margin: 35px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <h3 style="font-family: var(--ff-head); font-size: 19px; font-weight: 900; color: var(--c-heading); margin: 0 0 6px;">هل تحتاج إلى رعاية تمريضية متخصصة في الفيوم؟</h3>
+            <p style="font-size: 14px; color: var(--c-muted); margin: 0;">ممرضون معتمدون ومفحوصون يصلون إلى باب بيتك خلال 15-25 دقيقة بحقيبة معقمة بالكامل.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="tel:01070203636" style="background: var(--c-brand); color: #fff; padding: 10px 20px; border-radius: var(--r-pill); font-weight: 800; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fas fa-phone-alt"></i> اتصل بالطوارئ
+            </a>
+            <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+في+الفيوم" target="_blank" rel="noopener" style="background: var(--c-secondary); color: #fff; padding: 10px 20px; border-radius: var(--r-pill); font-weight: 800; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fab fa-whatsapp"></i> حجز عبر واتساب
+            </a>
+          </div>
+        </div>
     </article>
 
     <div class="cta-card">
-      <h2>هل تحتاج إلى رعاية طبية في المنزل؟</h2>
-      <p>فريق كيور متاح على مدار 24 ساعة في الفيوم لتلبية جميع احتياجاتك الطبية والتمريضية بأسعار ثابتة ورعاية معتمدة.</p>
+      <h2>هل تحتاج إلى ممرض منزلي معتمد في الفيوم الآن؟</h2>
+      <p>فريق كيور الطبي متاح على مدار 24 ساعة في كافة مراكز محافظة الفيوم. رعاية طبية متكاملة حتى باب بيتك بأسعار معلنة وثابتة.</p>
       <div class="cta-btns">
-        <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي" class="btn-green-cta" target="_blank" rel="noopener">
-          <i class="fab fa-whatsapp"></i> احجز الآن عبر واتساب
+        <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+في+الفيوم" class="btn-green-cta" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> حجز سريع عبر واتساب
         </a>
-        <a href="index.html#services" class="btn-white-cta">استكشف خدماتنا</a>
+        <a href="tel:01070203636" class="btn-white-cta">
+          <i class="fas fa-phone-alt"></i> اتصال هاتفي مباشر
+        </a>
       </div>
     </div>
-  </div>
+</div>
+  
 
   <!-- Footer -->
   <footer class="footer">
@@ -269,5 +302,16 @@
       });
     }
   </script>
+<script>
+  // Reading Progress Bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const winScroll = doc.scrollTop || document.body.scrollTop;
+    const height = doc.scrollHeight - doc.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const bar = document.getElementById('readingProgress');
+    if (bar) bar.style.width = scrolled + '%';
+  });
+</script>
 </body>
 </html>

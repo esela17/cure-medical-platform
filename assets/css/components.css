@@ -122,23 +122,24 @@
 }
 
 .top-bar-gp-btn {
-  background: linear-gradient(135deg, var(--c-secondary) 0%, #00e676 100%);
-  color: #070617 !important;
+  background: var(--c-secondary);
+  color: #ffffff !important;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 800;
   padding: 4px 14px;
   border-radius: var(--r-pill);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  box-shadow: 0 3px 12px var(--c-secondary-glow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px var(--c-secondary-glow);
+  transition: all 0.2s;
 }
 
 .top-bar-gp-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(174, 250, 124, 0.6);
+  background: var(--c-secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px var(--c-secondary-glow);
 }
 
 .top-bar-contact {

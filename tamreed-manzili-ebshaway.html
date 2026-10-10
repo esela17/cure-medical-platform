@@ -214,10 +214,14 @@
     </div>
   </nav>
 
+<div id="readingProgress" style="position: fixed; top: 0; right: 0; left: 0; height: 3.5px; background: var(--c-secondary); width: 0%; z-index: 9999; transition: width 0.1s ease;"></div>
+
   <!-- Article Body -->
   <div class="article-container">
     <div class="article-hero">
-      <span class="badge"><i class="fas fa-map-marker-alt"></i> تغطية خاصة — مركز إبشواي</span>
+      <span class="badge" style="background: var(--c-secondary-bg); color: var(--c-secondary); border: 1px solid rgba(5, 150, 105, 0.3); font-weight: 800; padding: 4px 14px; border-radius: var(--r-pill); display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fas fa-stethoscope"></i> دليل الرعاية الطبية المعتمدة بالمنزل
+        </span>
       <h1>تمريض منزلي في إبشواي — ممرض معتمد يصلك في 15 دقيقة</h1>
       <div class="meta-info">
         <span><i class="fas fa-map-marker-alt"></i> إبشواي، الفيوم</span>
@@ -296,23 +300,38 @@
       <p><strong>هل تغطي خدمة كيور قرى مركز إبشواي؟</strong><br>نعم، تغطي كيور مدينة إبشواي والقرى التابعة لها مثل سنرو، شكشوك، العجميين، أبو كساه، طبهار وغيرها.</p>
       <p><strong>كم من الوقت يستغرق وصول الممرض في إبشواي؟</strong><br>يصل الممرض المعتمد خلال 15 إلى 30 دقيقة من تأكيد الحجز عبر التطبيق.</p>
       <p><strong>هل يتوفر ممرضون وممرضات سيدات؟</strong><br>نعم، توفر المنصة إمكانية طلب ممرضة سيدة لرعاية السيدات وكبار السن بكل خصوصية وأمان.</p>
+            <!-- Inline Emergency/Home Care Box -->
+        <div style="background: linear-gradient(135deg, var(--c-primary-surface) 0%, #ecfdf5 100%); border: 1.5px solid var(--c-secondary); border-radius: var(--r-md); padding: 24px; margin: 35px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <h3 style="font-family: var(--ff-head); font-size: 19px; font-weight: 900; color: var(--c-heading); margin: 0 0 6px;">هل تحتاج إلى رعاية تمريضية متخصصة في الفيوم؟</h3>
+            <p style="font-size: 14px; color: var(--c-muted); margin: 0;">ممرضون معتمدون ومفحوصون يصلون إلى باب بيتك خلال 15-25 دقيقة بحقيبة معقمة بالكامل.</p>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="tel:01070203636" style="background: var(--c-brand); color: #fff; padding: 10px 20px; border-radius: var(--r-pill); font-weight: 800; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fas fa-phone-alt"></i> اتصل بالطوارئ
+            </a>
+            <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+في+الفيوم" target="_blank" rel="noopener" style="background: var(--c-secondary); color: #fff; padding: 10px 20px; border-radius: var(--r-pill); font-weight: 800; font-size: 13.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fab fa-whatsapp"></i> حجز عبر واتساب
+            </a>
+          </div>
+        </div>
     </article>
 
     <div class="cta-card">
-      <h2>محتاج تمريض منزلي فوري في إبشواي؟</h2>
-      <p>لا تنتظر أو تتردد في حالات الطوارئ. حمّل تطبيق كيور أو تواصل معنا عبر الواتساب فوراً.</p>
+      <h2>هل تحتاج إلى ممرض منزلي معتمد في الفيوم الآن؟</h2>
+      <p>فريق كيور الطبي متاح على مدار 24 ساعة في كافة مراكز محافظة الفيوم. رعاية طبية متكاملة حتى باب بيتك بأسعار معلنة وثابتة.</p>
       <div class="cta-btns">
-        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="btn-white-cta">
-          <i class="fab fa-google-play"></i> احجز عبر التطبيق
+        <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+في+الفيوم" class="btn-green-cta" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> حجز سريع عبر واتساب
         </a>
-        <a href="https://wa.me/201070203636?text=مرحباً،+أحتاج+ممرض+منزلي+في+إبشواي" target="_blank" rel="noopener" class="btn-green-cta">
-          <i class="fab fa-whatsapp"></i> تواصل واتساب فوري
+        <a href="tel:01070203636" class="btn-white-cta">
+          <i class="fas fa-phone-alt"></i> اتصال هاتفي مباشر
         </a>
       </div>
     </div>
-  </div>
 
-  <!-- Unified Footer -->
+  </div>
+<!-- Unified Footer -->
   <footer class="footer-cure">
     <div class="container footer-inner">
       <div class="footer-brand-col">
@@ -399,5 +418,16 @@
       });
     }
   </script>
+<script>
+  // Reading Progress Bar
+  window.addEventListener('scroll', () => {
+    const doc = document.documentElement;
+    const winScroll = doc.scrollTop || document.body.scrollTop;
+    const height = doc.scrollHeight - doc.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const bar = document.getElementById('readingProgress');
+    if (bar) bar.style.width = scrolled + '%';
+  });
+</script>
 </body>
 </html>

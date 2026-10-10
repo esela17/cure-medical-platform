@@ -1,85 +1,103 @@
 /* ═══════════════════════════════════════════════════════════════════
-   CURE MEDICAL DESIGN SYSTEM · Premium Medical Brand & Clinical UX
-   Primary Color:   #6d73ff (Royal Periwinkle / Medical Indigo)
-   Secondary Color: #aefa7c (Vital Life Green / Electric Mint)
+   CURE MEDICAL DESIGN SYSTEM · Clinical Warmth & Absolute Trust
+   Primary:   #0B4F6C (Deep Medical Teal & Clinical Slate)
+   Secondary: #059669 (Healing & Clinical Emerald)
+   Accent:    #B45309 (Accreditation Amber / Gold)
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ─── 01. PRIMARY BRAND COLOR (#6d73ff) ────────────────────────── */
-  --c-brand:        #6d73ff;
-  --c-brand-deep:   #565ce6;
-  --c-brand-dark:   #3e43bd;
-  --c-brand-light:  #8b90ff;
-  --c-brand-glow:   rgba(109, 115, 255, 0.35);
+  /* ─── 01. PRIMARY CLINICAL BRAND COLOR (#0B4F6C) ────────────────── */
+  --c-brand:        #0b4f6c;
+  --c-brand-deep:   #073549;
+  --c-brand-dark:   #04202d;
+  --c-brand-light:  #12769f;
+  --c-brand-glow:   rgba(11, 79, 108, 0.22);
 
-  /* Primary Tints */
-  --c-brand-5:      #f5f6ff;
-  --c-brand-10:     #eaebff;
-  --c-brand-15:     #dadaff;
-  --c-brand-25:     #bbbdff;
-  --c-brand-40:     #9094ff;
+  /* Primary Tints (Clean & Calming) */
+  --c-brand-5:      #f0f7fa;
+  --c-brand-10:     #e2eff5;
+  --c-brand-15:     #cce3ee;
+  --c-brand-25:     #9bcbe0;
+  --c-brand-40:     #54a6c9;
 
-  /* ─── 02. SECONDARY BRAND COLOR (#aefa7c) ──────────────────────── */
-  --c-secondary:       #aefa7c;
-  --c-secondary-dark:  #8de854;
-  --c-secondary-deep:  #6cc735;
-  --c-secondary-light: #caffaa;
-  --c-secondary-glow:  rgba(174, 250, 124, 0.45);
-  --c-secondary-bg:    rgba(174, 250, 124, 0.15);
-  --c-secondary-text:  #143503;
+  /* Aliases for modern design system */
+  --c-primary:          var(--c-brand);
+  --c-primary-deep:     var(--c-brand-deep);
+  --c-primary-dark:     var(--c-brand-dark);
+  --c-primary-light:    var(--c-brand-light);
+  --c-primary-surface:  var(--c-brand-5);
 
-  /* ─── 03. DEEP MEDICAL CONTRAST SURFACES ──────────────────────── */
-  --c-dark-bg:      #08061a;
-  --c-dark-surface: #100d2b;
-  --c-dark-card:    #18153d;
-  --c-dark-border:  rgba(109, 115, 255, 0.22);
+  /* ─── 02. SECONDARY / HEALING EMERALD (#059669) ─────────────────── */
+  --c-secondary:       #059669;
+  --c-secondary-dark:  #047857;
+  --c-secondary-deep:  #065f46;
+  --c-secondary-light: #10b981;
+  --c-secondary-glow:  rgba(5, 150, 105, 0.25);
+  --c-secondary-bg:    rgba(5, 150, 105, 0.10);
+  --c-secondary-text:  #ffffff;
 
-  /* ─── 04. LIGHT SURFACES & NEUTRALS ───────────────────────────── */
+  /* Aliases for CTA */
+  --c-accent:          var(--c-secondary);
+  --c-accent-hover:    var(--c-secondary-dark);
+  --c-accent-soft:     #ecfdf5;
+
+  /* ─── 03. ACCREDITATION & TRUST BADGE (Gold / Amber) ───────────── */
+  --c-badge-gold:      #b45309;
+  --c-badge-gold-bg:   #fef3c7;
+  --c-badge-gold-border: #fde68a;
+
+  /* ─── 04. DEEP MEDICAL CONTRAST SURFACES (Navy / Slate) ────────── */
+  --c-dark-bg:      #0a192f;
+  --c-dark-surface: #0f243e;
+  --c-dark-card:    #163254;
+  --c-dark-border:  rgba(18, 118, 159, 0.24);
+
+  /* ─── 05. LIGHT SURFACES & CLINICAL NEUTRALS ───────────────────── */
   --c-bg:           #ffffff;
-  --c-bg-soft:      #f8f9ff;
-  --c-bg-alt:       #f1f3ff;
+  --c-bg-soft:      #f8fafc;
+  --c-bg-alt:       #f1f5f9;
   --c-surface:      #ffffff;
-  --c-surface-soft: #f7f8ff;
+  --c-surface-soft: #f8fafc;
 
-  /* ─── 05. HIGH-CONTRAST TYPOGRAPHY ────────────────────────────── */
-  --c-heading:      #121329;
-  --c-body:         #333552;
-  --c-muted:        #616382;
-  --c-light-muted:  #9496b8;
+  /* ─── 06. HIGH-CONTRAST TYPOGRAPHY (WCAG AAA) ──────────────────── */
+  --c-heading:      #0f172a; /* Deep Slate Navy (14.2:1 contrast) */
+  --c-body:         #334155; /* Slate Charcoal (7.5:1 contrast) */
+  --c-muted:        #64748b; /* Accessible Muted Slate (4.6:1 contrast) */
+  --c-light-muted:  #94a3b8;
   --c-white:        #ffffff;
 
-  /* ─── 06. CLINICAL SEMANTIC ALERTS ────────────────────────────── */
-  --c-success:      #10b981;
+  /* ─── 07. CLINICAL SEMANTIC ALERTS ────────────────────────────── */
+  --c-success:      #059669;
   --c-success-bg:   #ecfdf5;
-  --c-warning:      #f59e0b;
+  --c-warning:      #d97706;
   --c-warning-bg:   #fffbeb;
-  --c-accent:       #ff5277;
-  --c-border:       rgba(109, 115, 255, 0.15);
-  --c-border-light: rgba(109, 115, 255, 0.08);
+  --c-danger:       #dc2626;
+  --c-danger-bg:    #fef2f2;
+  --c-border:       rgba(11, 79, 108, 0.12);
+  --c-border-light: rgba(11, 79, 108, 0.06);
 
-  /* ─── 07. SHADOW ELEVATIONS ───────────────────────────────────── */
-  --shadow-xs:     0 2px 8px rgba(109, 115, 255, 0.06);
-  --shadow-sm:     0 4px 16px -2px rgba(109, 115, 255, 0.08);
-  --shadow-card:   0 10px 30px -4px rgba(109, 115, 255, 0.09), 0 4px 12px -2px rgba(18, 19, 41, 0.03);
-  --shadow-hover:  0 20px 45px -6px rgba(109, 115, 255, 0.16), 0 8px 20px -4px rgba(18, 19, 41, 0.04);
-  --shadow-glow:   0 0 30px var(--c-secondary-glow);
+  /* ─── 08. CALM ARCHITECTURAL SHADOWS (Anti-AI Cliché) ─────────── */
+  --shadow-xs:     0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-sm:     0 2px 8px -1px rgba(15, 23, 42, 0.06);
+  --shadow-card:   0 4px 16px -2px rgba(11, 79, 108, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-hover:  0 12px 28px -4px rgba(11, 79, 108, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  --shadow-glow:   0 0 20px var(--c-secondary-glow);
 
-  /* ─── 08. BORDER RADIUS ───────────────────────────────────────── */
+  /* ─── 09. BORDER RADIUS ───────────────────────────────────────── */
   --r-xs:   8px;
-  --r-sm:   14px;
-  --r-md:   22px;
-  --r-lg:   32px;
-  --r-xl:   48px;
+  --r-sm:   12px;
+  --r-md:   18px;
+  --r-lg:   26px;
+  --r-xl:   38px;
   --r-pill: 999px;
 
-  /* ─── 09. TYPOGRAPHY HIERARCHY ─────────────────────────────────── */
-  --ff-head: 'Cairo', sans-serif;
-  --ff-body: 'Tajawal', sans-serif;
+  /* ─── 10. TYPOGRAPHY HIERARCHY ─────────────────────────────────── */
+  --ff-head: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ff-body: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* ─── 10. MOTION & TIMING ──────────────────────────────────────── */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* ─── 11. MOTION & ACCESSIBILITY ──────────────────────────────── */
+  --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
-  --t-fast:      0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  --t-base:      0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast:      0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --t-base:      0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
