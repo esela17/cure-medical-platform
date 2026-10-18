@@ -73,245 +73,149 @@
     <p style="font-size: 13.5px; color: var(--c-muted); font-family: var(--ff-head); font-weight: 700;">أول منصة تمريض منزلي معتمدة وآمنة في مصر والفيوم</p>
   </div>
 
-  <!-- Unified Site Header (Fixed Top Bar + Modern Navbar) -->
-  <header id="site-header" class="site-header">
-    <!-- Top Announcement Bar (Direct Google Play Access) -->
-    <div class="top-bar">
-      <div class="top-bar-inner">
-        <div class="top-bar-cta">
-          <span class="top-bar-badge"><span class="pulse-dot"></span> حـمّـل التـطـبـيـق الآن</span>
-          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" id="topBarGpBtn" title="تحميل تطبيق كيور من متجر جوجل بلاي">
-            <i class="fab fa-google-play"></i>
-            <span>زر جوجل بلاي (Google Play)</span>
-          </a>
-        </div>
-        <div class="top-bar-contact">
-          <a href="tel:01070203636" class="top-contact-link"><i class="fas fa-phone-alt"></i> طوارئ التمريض: 01070203636</a>
-          <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز خدمة تمريض منزلي عاجلة" target="_blank" rel="noopener" class="top-contact-link wa"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
-        </div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       INDRIVE FLOATING HEADER (Logo Right + App/Lang/Menu Left)
+       ═══════════════════════════════════════════════════════════════ -->
+  <header id="site-header" class="id-header">
+    <div class="id-header-inner">
+      <!-- Right: Brand Logo -->
+      <a href="#hero" class="id-logo-link" title="منصة كيور للتمريض المنزلي">
+        <span class="id-logo-badge">C</span>
+        <span class="id-logo-text">CURE</span>
+      </a>
+
+      <!-- Left: Header Actions -->
+      <div class="id-header-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-get-app">
+          <i class="fab fa-google-play"></i>
+          <span>احصلوا على التطبيق</span>
+        </a>
+
+        <a href="tel:01070203636" class="id-lang-pill" title="طوارئ التمريض">
+          <i class="fas fa-phone-alt" style="color: #6D73FF;"></i>
+          <span>01070203636</span>
+        </a>
+
+        <button class="id-lang-pill" id="langToggleBtn" aria-label="تغيير اللغة">
+          <span>Ar</span>
+          <img src="https://flagcdn.com/w20/eg.png" alt="مصر" width="18" height="12" style="border-radius: 2px;" />
+        </button>
+
+        <button class="id-menu-trigger" id="idMenuBtn" aria-label="افتح القائمة">
+          <i class="fas fa-bars"></i>
+          <span>القائمة</span>
+        </button>
       </div>
     </div>
-
-    <!-- Navigation Bar -->
-    <nav id="navbar">
-      <div class="nav-inner">
-        <a href="#hero" class="nav-logo" title="كيور — تمريض منزلي آمن">
-          <img src="assets/images/icon.png" alt="شعار كيور للتمريض المنزلي" width="38" height="38" loading="eager" />
-          <span class="nav-logo-text">كيور<span>.</span></span>
-        </a>
-
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">من نحن</a></li>
-          <li><a href="#needs">احتياجاتك</a></li>
-          <li><a href="#services">خدماتنا</a></li>
-          <li><a href="#comparison">معايير الأمان</a></li>
-          <li><a href="#how">كيف يعمل</a></li>
-          <li><a href="pricing.html">الأسعار</a></li>
-          <li><a href="#faq">الأسئلة</a></li>
-          <li><a href="careers.html" style="color: var(--c-brand-deep);">وظائف</a></li>
-          <li>
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
-              <i class="fab fa-google-play" style="margin-left: 5px;"></i> حمّل التطبيق
-            </a>
-          </li>
-          <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
-        </ul>
-
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <button class="id-menu-trigger" id="idMenuBtn" aria-label="افتح القائمة الشاملة">
-            <i class="fas fa-bars"></i>
-            <span>القائمة</span>
-          </button>
-          <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة" style="display: none;">EN</button>
-          <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة">
-            <span></span><span></span><span></span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Dropdown Menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" style="background: var(--c-secondary); color: #ffffff !important; font-weight: 800; text-align: center; font-size: 15px; border-radius: var(--r-pill); box-shadow: 0 4px 14px var(--c-secondary-glow); padding: 12px 20px;">
-          <i class="fab fa-google-play"></i> حمّل التطبيق الآن (Google Play)
-        </a>
-        <a href="#services"><i class="fas fa-list-check"></i> خدماتنا وأسعارنا</a>
-        <a href="pricing.html"><i class="fas fa-file-invoice-dollar"></i> جدول الأسعار الكامل</a>
-        <a href="#safety"><i class="fas fa-shield-halved"></i> معايير الأمان والسلامة</a>
-        <a href="#about"><i class="fas fa-heartbeat"></i> عن كيور وفريق العمل</a>
-        <a href="#how"><i class="fas fa-tasks"></i> كيف يعمل التطبيق</a>
-        <a href="#faq"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</a>
-        <a href="careers.html" style="color: var(--c-brand)"><i class="fas fa-briefcase"></i> وظائف الممرضين</a>
-        <a href="#join"><i class="fas fa-user-nurse"></i> انضم كممرض معتمد</a>
-        <a href="tel:01070203636" style="background: var(--c-brand-5); color: var(--c-brand-deep); text-align: center; font-weight: 800;">
-          <i class="fas fa-phone-alt"></i> اتصل بالطوارئ: 01070203636
-        </a>
-      </div>
-    </nav>
   </header>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       INDRIVE MEGA MENU DRAWER (Slide-in)
+       INDRIVE FULL-SCREEN MEGA MENU (Matches Screenshots 200359 & 200423)
        ═══════════════════════════════════════════════════════════════ -->
-  <div class="id-mega-menu" id="idMegaMenu" aria-hidden="true">
-    <div class="id-mega-drawer">
-      <div class="id-drawer-header">
-        <div class="id-logo-link">
-          <img src="assets/images/icon.png" alt="شعار كيور" class="id-logo-img" />
-          <span class="id-logo-text">كيور<span>.</span></span>
-        </div>
-        <button class="id-drawer-close" id="idDrawerClose" aria-label="إغلاق القائمة">
+  <div class="id-mega-fullscreen" id="idMegaMenu" aria-hidden="true">
+    <div class="id-mega-topbar">
+      <a href="#hero" class="id-logo-link">
+        <span class="id-logo-badge">C</span>
+        <span class="id-logo-text" style="color: #121124;">CURE</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-get-app">
+          <span>احصلوا على التطبيق</span>
+        </a>
+        <button class="id-mega-close-btn" id="idDrawerClose">
+          <span>إغلاق</span>
           <i class="fas fa-times"></i>
         </button>
       </div>
+    </div>
 
-      <!-- Section: Services -->
-      <div class="id-menu-section">
-        <div class="id-menu-section-title"><i class="fas fa-stethoscope"></i> الخدمات التمريضية والتسعير</div>
-        <ul class="id-menu-links">
-          <li><a href="#services"><i class="fas fa-syringe"></i> إعطاء الحقن والمحاليل</a></li>
-          <li><a href="#services"><i class="fas fa-bandage"></i> غيار الجروح وقدم السكري</a></li>
-          <li><a href="#services"><i class="fas fa-toilet"></i> القسطرة البولية والرايل</a></li>
-          <li><a href="#services"><i class="fas fa-heart-pulse"></i> قياس السكر والضغط والحرارة</a></li>
-          <li><a href="pricing.html"><i class="fas fa-file-invoice-dollar"></i> جدول الأسعار الكامل والمعلن</a></li>
-          <li><a href="services-icons.html"><i class="fas fa-icons"></i> دليل الأيقونات الطبية</a></li>
-        </ul>
-      </div>
+    <div class="id-mega-body">
+      <ul class="id-mega-nav-list">
+        <li class="id-mega-nav-item"><a href="#services">خدمات عادلة ومسعّرة</a></li>
+        <li class="id-mega-nav-item"><a href="careers.html">اربحوا مع كيور (للتمريض)</a></li>
+        <li class="id-mega-nav-item"><a href="#safety">ميثاق السلامة والأمان</a></li>
+        <li class="id-mega-nav-item"><a href="#cities">مدن ومراكز التغطية</a></li>
+        <li class="id-mega-nav-item"><a href="pricing.html">جدول الأسعار المعتمدة</a></li>
+        <li class="id-mega-nav-item"><a href="#faq">الأسئلة الشائعة والدعم</a></li>
+      </ul>
 
-      <!-- Section: Safety & Quality -->
-      <div class="id-menu-section">
-        <div class="id-menu-section-title"><i class="fas fa-shield-halved"></i> معايير الأمان والثقة</div>
-        <ul class="id-menu-links">
-          <li><a href="#safety"><i class="fas fa-user-shield"></i> ميثاق السلامة غير القابل للتفاوض</a></li>
-          <li><a href="#comparison"><i class="fas fa-scale-balanced"></i> كيور مقابل التمريض العشوائي</a></li>
-          <li><a href="#how"><i class="fas fa-tasks"></i> كيف يعمل التطبيق</a></li>
-          <li><a href="#faq"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</a></li>
-        </ul>
-      </div>
-
-      <!-- Section: For Nurses & Partners -->
-      <div class="id-menu-section">
-        <div class="id-menu-section-title"><i class="fas fa-user-nurse"></i> للتمريض والأخصائيين</div>
-        <ul class="id-menu-links">
-          <li><a href="careers.html"><i class="fas fa-briefcase"></i> فرص العمل والتوظيف</a></li>
-          <li><a href="careers.html#requirements"><i class="fas fa-clipboard-check"></i> شروط القبول والترخيص</a></li>
-          <li><a href="#cities"><i class="fas fa-map-location-dot"></i> نطاق التغطية بمراكز الفيوم</a></li>
-          <li><a href="articles.html"><i class="fas fa-book-medical"></i> المقالات الطبية التثقيفية</a></li>
-        </ul>
-      </div>
-
-      <!-- Drawer Bottom CTA -->
-      <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(109, 115, 255, 0.15); display: flex; flex-direction: column; gap: 12px;">
-        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-app" style="justify-content: center; padding: 14px 20px;">
-          <i class="fab fa-google-play"></i> حمّل التطبيق الآن (Google Play)
-        </a>
-        <a href="tel:01070203636" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: var(--c-brand-5); color: var(--c-brand-deep); border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 15px;">
-          <i class="fas fa-phone-alt"></i> طوارئ التمريض: 01070203636
-        </a>
+      <div class="id-mega-art-col">
+        <div class="id-mega-giant-symbol">
+          <i class="fas fa-heart-pulse"></i>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       INDRIVE-STYLE PROGRESSIVE HERO SECTION
+       INDRIVE FULL-SCREEN HERO (Matches Screenshots 195941 & 200011)
        ═══════════════════════════════════════════════════════════════ -->
-  <section id="hero" class="id-hero-section">
-    <div class="id-hero-card">
-      <div class="id-hero-grid">
+  <section id="hero" class="id-full-hero">
+    <!-- Cinematic Full-Bleed Background Media -->
+    <div class="id-hero-bg-media">
+      <img src="assets/images/cure-nurse-home-care.jpg" alt="تمريض منزلي عادل في مصر والفيوم" loading="eager" />
+    </div>
+    <div class="id-hero-overlay"></div>
 
-        <!-- Right Side: Content & Dual-Action Hierarchy -->
-        <div class="reveal">
-          <div class="id-hero-tag">
-            <span class="pulse-dot"></span> تمريض منزلي عادل بأسعار صريحة · الفيوم ومصر
-          </div>
+    <!-- Main Text & CTA Content -->
+    <div class="id-hero-content-wrap">
+      <div class="id-hero-left-col reveal">
+        <h1 class="indrive-h1 id-hero-title">
+          <mark class="cure-marker">تمريض منزلي عادل</mark><br />
+          بالسعر الصريح وبممرضين تثق فيهم
+        </h1>
 
-          <h1 class="indrive-h1 id-hero-h1">
-            <mark class="indrive-marker">تمريض منزلي عادل</mark><br />
-            بأسعار صريحة وممرضين تثق فيهم
-          </h1>
+        <div class="id-hero-action-row">
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-hero-cta-btn">
+            <i class="fab fa-google-play"></i>
+            <span>قوموا بتنزيل التطبيق</span>
+          </a>
 
-          <p class="id-hero-sub">
-            لا داعي لمشقة الانتظار بالمستشفيات أو استغلال الطوارئ. منصة كيور تربطك بنخبة من <strong>الممرضين المرخصين والمفحوصين أمنياً</strong> لتقديم الرعاية الطبية الفورية خلال <strong>15 إلى 25 دقيقة</strong> في الفيوم — بحقيبة معقمة بالكامل، وبأسعار معلنة وثابتة مسبقاً بالتطبيق.
-          </p>
-
-          <!-- Fast-Track Action Buttons: Dual Audience (Patients & Nurses) -->
-          <div class="id-hero-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-hero-primary" id="heroGpBtn" title="تنزيل تطبيق كيور من Google Play">
-              <i class="fab fa-google-play"></i>
-              <span>احجز ممرضك عبر التطبيق</span>
-            </a>
-            <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+عاجلة+في+الفيوم" target="_blank" rel="noopener" class="id-btn-hero-secondary">
-              <i class="fab fa-whatsapp" style="font-size: 19px; color: #25d366;"></i>
-              <span>واتساب فوري</span>
-            </a>
-            <a href="careers.html" class="id-btn-hero-secondary" style="border-color: rgba(18, 17, 36, 0.15); color: #121124 !important;">
-              <i class="fas fa-user-nurse" style="color: var(--c-brand);"></i>
-              <span>انضم كممرض معتمد</span>
-            </a>
-          </div>
-
-          <!-- Proof Metrics Bar -->
-          <div class="hero-stats" style="margin-top: 36px; border-top: 1px solid rgba(109, 115, 255, 0.12); padding-top: 24px;">
-            <div class="stat-item">
-              <span class="stat-num" style="color: var(--c-brand);">13</span>
-              <span class="stat-lbl">خدمة طبية معتمدة</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num" style="color: var(--c-brand);">15 د</span>
-              <span class="stat-lbl">متوسط سرعة الاستجابة</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num" style="color: var(--c-brand);">100%</span>
-              <span class="stat-lbl">مرخص ومفحوص جنائياً</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-num" style="color: var(--c-brand);">24/7</span>
-              <span class="stat-lbl">جاهزية طوارئ مستمرة</span>
-            </div>
-          </div>
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+عاجلة+في+الفيوم" target="_blank" rel="noopener" class="id-hero-cta-wa">
+            <i class="fab fa-whatsapp" style="color: #25d366; font-size: 20px;"></i>
+            <span>حجز فوري عبر واتساب</span>
+          </a>
         </div>
+      </div>
 
-        <!-- Left Side: Centerpiece Nurse Model Visual (Ref: CURE-launch-hero) -->
-        <div class="hero-visual reveal reveal-delay-2">
-          <div class="hero-visual-frame">
-            <!-- 3D Floating Glass Badge: Top Right -->
-            <div class="hero-glass-badge glass-badge-top">
-              <img src="assets/images/cure-nurse-avatar.png" alt="ممرضة كيور" style="width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--c-secondary); object-fit: cover;" />
-              <div>
-                <div class="glass-badge-title">ممرضة منزلية</div>
-                <div class="glass-badge-sub"><span class="pulse-dot"></span> متاحة الآن <span style="color: #eab308;">★★★★★</span></div>
-              </div>
-            </div>
+      <!-- InDrive Style Slogan Stamp -->
+      <div class="id-feel-fairness-badge reveal reveal-delay-1">
+        <div>FEEL THE</div>
+        <span>FAIRNESS</span>
+      </div>
+    </div>
 
-            <!-- 3D Floating Glass Badge: Mid Left -->
-            <div class="hero-glass-badge glass-badge-mid">
-              <div class="glass-badge-icon pulse-icon"><i class="fas fa-location-dot"></i></div>
-              <div>
-                <div class="glass-badge-title">مراكز الفيوم ومصر</div>
-                <div class="glass-badge-sub">وصول في 15 دقيقة</div>
-              </div>
-            </div>
-
-            <!-- Main Image Wrapper -->
-            <div class="hero-img-wrapper">
-              <img src="assets/images/CURE-premium-launch-hero.png" alt="ممرضة كيور المعتمدة — الرعاية الطبية لحد باب بيتك" class="hero-visual-img" loading="eager" />
-            </div>
-
-            <!-- 3D Floating Glass Badge: Bottom -->
-            <div class="hero-glass-badge glass-badge-bottom">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div class="glass-badge-icon"><i class="fas fa-shield-heart"></i></div>
-                <div>
-                  <div class="glass-badge-title">رعاية طبية معتمدة ومفحوصة</div>
-                  <div class="glass-badge-sub"><span class="pulse-dot"></span> ترخيص نقابة ساري 100% · فيش وتشبيه</div>
-                </div>
-              </div>
-              <span style="font-family: var(--ff-head); font-weight: 900; color: var(--c-brand-deep); font-size: 13.5px; background: var(--c-brand-5); padding: 4px 12px; border-radius: var(--r-pill); border: 1px solid var(--c-brand-15);">
-                حجز آمن
-              </span>
-            </div>
+    <!-- inDrive 4-Section Bottom Progress Tabs -->
+    <div class="id-hero-tabs-bar">
+      <div class="id-tabs-grid">
+        <a href="#services" class="id-tab-item active" data-tab="0">
+          <div class="id-tab-progress-track">
+            <div class="id-tab-progress-fill"></div>
           </div>
-        </div>
+          <div class="id-tab-title">كانيولا ومحاليل وريدية</div>
+        </a>
 
+        <a href="#services" class="id-tab-item" data-tab="1">
+          <div class="id-tab-progress-track">
+            <div class="id-tab-progress-fill"></div>
+          </div>
+          <div class="id-tab-title">غيار جروح وقدم سكري</div>
+        </a>
+
+        <a href="#services" class="id-tab-item" data-tab="2">
+          <div class="id-tab-progress-track">
+            <div class="id-tab-progress-fill"></div>
+          </div>
+          <div class="id-tab-title">قسطرة بولية ورايل</div>
+        </a>
+
+        <a href="#services" class="id-tab-item" data-tab="3">
+          <div class="id-tab-progress-track">
+            <div class="id-tab-progress-fill"></div>
+          </div>
+          <div class="id-tab-title">فحص العلامات الحيوية</div>
+        </a>
       </div>
     </div>
   </section>
@@ -1074,42 +978,27 @@
        INDRIVE SAFETY PHILOSOPHY: "السلامة أمر غير قابل للتفاوض"
        ═══════════════════════════════════════════════════════════════ -->
   <section id="safety" class="id-safety-section">
-    <div class="id-safety-inner">
-      <span class="id-safety-badge"><i class="fas fa-shield-halved"></i> معايير الأمان القصوى</span>
-      <h2 class="indrive-h2 id-safety-h2">
-        السلامة أمر <mark class="indrive-marker" style="color: #ffffff; background: rgba(109, 115, 255, 0.45);">غير قابل للتفاوض</mark>
-      </h2>
-      <p class="id-safety-lead">
-        صحة أهلك وأمان منزلك أولويتنا المطلقة. لا نترك مجالاً للمصادفة أو العمل العشوائي؛ كل زيارة تمريضية تخضع لبروتوكول سلامة صارم من 4 طبقات يتفوق على أي نظام عشوائي.
-      </p>
+    <div class="id-safety-banner reveal">
+      <div class="id-safety-content">
+        <span class="id-badge-pill" style="background: rgba(255,255,255,0.18); color: #ffffff; border: 1px solid rgba(255,255,255,0.3);">
+          <i class="fas fa-shield-halved"></i> معايير الأمان الإلزامية
+        </span>
+        <h2 class="id-safety-title">
+          السلامة أمر<br />
+          <span style="text-decoration: underline; text-decoration-color: rgba(255,255,255,0.5);">غير قابل للتفاوض</span>
+        </h2>
+        <p class="id-safety-desc">
+          صحة أهلك وأمان منزلك أولويتنا المطلقة. كل ممرض يمر بفحص أمني وفيش جنائي وتوثيق لنقابة التمريض المصرية، مع مستلزمات طبية معقمة تُفتح أمامك وتتبع حي بالـ GPS.
+        </p>
+        <a href="#comparison" class="id-safety-btn">
+          <span>اكتشف معايير السلامة في كيور</span>
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
 
-      <div class="id-safety-grid">
-        <!-- Safety Pillar 1 -->
-        <div class="id-safety-card reveal">
-          <div class="id-safety-card-icon"><i class="fas fa-id-card-clip"></i></div>
-          <h3 class="id-safety-card-title">فحص جنائي وتحقق أمني 100%</h3>
-          <p class="id-safety-card-desc">لا يدخل بيتك مجهول. كل ممرض وممرضة يمرون بفحص هوية وطني وصحيفة حالة جنائية (فيش وتشبيه) حديثة ومعتمدة.</p>
-        </div>
-
-        <!-- Safety Pillar 2 -->
-        <div class="id-safety-card reveal reveal-delay-1">
-          <div class="id-safety-card-icon"><i class="fas fa-certificate"></i></div>
-          <h3 class="id-safety-card-title">ترخيص ساري من نقابة التمريض</h3>
-          <p class="id-safety-card-desc">نتحقق رسمياً من مزاولة المهنة والمؤهل الأكاديمي (بكالوريوس أو معهد تمريض). لا نقبل دخلاء المهنة إطلاقاً.</p>
-        </div>
-
-        <!-- Safety Pillar 3 -->
-        <div class="id-safety-card reveal reveal-delay-2">
-          <div class="id-safety-card-icon"><i class="fas fa-shield-virus"></i></div>
-          <h3 class="id-safety-card-title">حقيبة معقمة ذات استخدام فردي</h3>
-          <p class="id-safety-card-desc">حقيبة مستلزمات طبية معقمة تُفتح مباشرة أمام عينيك. قفازات، كانيولات، وسرنجات أحادية الاستخدام لمنع أي نقل للعدوى.</p>
-        </div>
-
-        <!-- Safety Pillar 4 -->
-        <div class="id-safety-card reveal reveal-delay-3">
-          <div class="id-safety-card-icon"><i class="fas fa-map-location-dot"></i></div>
-          <h3 class="id-safety-card-title">تتبع GPS حي وإشراف طبي 24/7</h3>
-          <p class="id-safety-card-desc">متابعة لحظية لمسار الممرض حتى وصوله، مع فريق إشراف طبي يوثق الإجراء ويبقى على تواصل معك حتى الاطمئنان التام.</p>
+      <div class="id-safety-visual">
+        <div class="id-safety-visual-inner">
+          <img src="assets/images/cure-nurse-home-care.jpg" alt="ممرضة كيور المعتمدة وأمان الرعاية الطبية المنزلية" loading="lazy" />
         </div>
       </div>
     </div>
@@ -1797,44 +1686,44 @@
        INDRIVE-STYLE CITIES & HUBS COVERAGE GRID
        ═══════════════════════════════════════════════════════════════ -->
   <section id="cities" class="id-cities-section">
-    <span class="id-section-badge"><i class="fas fa-map-location-dot"></i> التغطية الجغرافية</span>
-    <h2 class="indrive-h2" style="font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 12px;">
-      نصلك في كل مكان <mark class="indrive-marker">بالفيوم ومصر</mark>
+    <span class="id-badge-pill"><i class="fas fa-map-location-dot"></i> التغطية الجغرافية المعتمدة</span>
+    <h2 class="id-cities-h2">
+      متوفّر في كافة مراكز <mark class="cure-marker">الفيوم ومصر</mark>
     </h2>
-    <p style="font-size: 16.5px; color: #555e75; max-width: 680px; margin: 0 auto; line-height: 1.8;">
-      شبكة تمريض ذكية تغطي كافة مراكز وقرى محافظة الفيوم بمتوسط وصول من 15 إلى 25 دقيقة فقط، مع خطة توسع مستمرة في محافظات مصر.
+    <p style="font-size: 17px; color: #5c6275; max-width: 680px; margin: 0 auto 36px; line-height: 1.8;">
+      شبكة تمريض متصلة تغطي كافة مراكز وقرى محافظة الفيوم بمتوسط وصول من 15 إلى 25 دقيقة فقط، مع خطة توسع مستمرة في كافة المحافظات.
     </p>
 
-    <div class="id-cities-grid reveal">
-      <a href="tamreed-manzili-fayoum.html" class="id-city-pill">
+    <div class="id-cities-pills-row reveal">
+      <a href="tamreed-manzili-fayoum.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>مدينة الفيوم (المركز الرئيسي)</span>
       </a>
-      <a href="tamreed-manzili-senouris.html" class="id-city-pill">
+      <a href="tamreed-manzili-senouris.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>سنورس</span>
       </a>
-      <a href="tamreed-manzili-ebshaway.html" class="id-city-pill">
+      <a href="tamreed-manzili-ebshaway.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>إبشواي</span>
       </a>
-      <a href="tamreed-manzili-tamiya.html" class="id-city-pill">
+      <a href="tamreed-manzili-tamiya.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>طامية</span>
       </a>
-      <a href="tamreed-manzili-atsa.html" class="id-city-pill">
+      <a href="tamreed-manzili-atsa.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>إطسا</span>
       </a>
-      <a href="tamreed-manzili-youssef-elseddik.html" class="id-city-pill">
+      <a href="tamreed-manzili-youssef-elseddik.html" class="id-city-pill-solid">
         <i class="fas fa-location-dot"></i>
         <span>يوسف الصديق</span>
       </a>
-      <span class="id-city-pill" style="opacity: 0.85;">
+      <span class="id-city-pill-sub">
         <i class="fas fa-water"></i>
         <span>بحيرة قارون ووادي الريان</span>
       </span>
-      <span class="id-city-pill" style="border-style: dashed; background: rgba(109, 115, 255, 0.05); color: var(--c-brand-deep);">
+      <span class="id-city-pill-sub" style="border-style: dashed; opacity: 0.85;">
         <i class="fas fa-hourglass-half"></i>
         <span>قريباً: بني سويف والجيزة</span>
       </span>
@@ -1933,66 +1822,85 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       FOOTER & REGIONAL DOMINANCE
+       INDRIVE MINIMALIST KHAKI FOOTER (Screenshot 200323)
        ═══════════════════════════════════════════════════════════════ -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="id-khaki-footer">
+    <div class="id-footer-inner">
+      <div class="id-footer-grid">
         <div>
-          <div class="footer-logo-row">
-            <img src="assets/images/icon.png" alt="شعار كيور" style="width: 42px; height: 42px; border-radius: 10px;" loading="lazy" />
-            <span style="font-family: var(--ff-head); font-weight: 900; font-size: 24px; color: #fff;">كيور<span style="color: var(--c-brand);">.</span></span>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="id-logo-badge" style="width: 36px; height: 36px; font-size: 18px;">C</div>
+            <span class="id-footer-brand-title" style="margin: 0; color: #121124;">كيور<span style="color: #6D73FF;">.</span></span>
           </div>
-          <p style="font-size: 14px; color: #a0a5c4; line-height: 1.8; max-width: 320px; margin-bottom: 20px;">
-            أول منظومة ذكية متخصصة لربط المرضى بنخبة من الممرضين المرخصين في مصر. نقدم التمريض المنزلي الآمن بجودة معتمدة وأسعار صريحة.
+          <p class="id-footer-brand-desc">
+            أول منظومة تمريض منزلي ذكية معتمدة في مصر. رعاية سريرية فورية تحفظ كرامة المريض وأمان منزلك، بأسعار صريحة وبدون مساومات.
           </p>
-          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" style="display: inline-flex;">
-            <i class="fab fa-google-play"></i>
-            <span>تنزيل تطبيق كيور (Google Play)</span>
-          </a>
+          <div style="margin-top: 20px;">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-get-app" style="font-size: 14px; padding: 10px 22px;">
+              <i class="fab fa-google-play"></i>
+              <span>حمّل تطبيق كيور الآن</span>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h4>التغطية بمراكز الفيوم</h4>
-          <ul>
-            <li><a href="tamreed-manzili-fayoum.html">تمريض منزلي بمدينة الفيوم</a></li>
-            <li><a href="tamreed-manzili-ebshaway.html">تمريض منزلي بإبشواي</a></li>
-            <li><a href="tamreed-manzili-senouris.html">تمريض منزلي بسنورس</a></li>
-            <li><a href="tamreed-manzili-tamiya.html">تمريض منزلي بطامية</a></li>
-            <li><a href="tamreed-manzili-atsa.html">تمريض منزلي بإطسا</a></li>
-            <li><a href="tamreed-manzili-youssef-elseddik.html">تمريض بيوسف الصديق</a></li>
+        <div>
+          <div class="id-footer-col-title">التغطية بمراكز الفيوم</div>
+          <ul class="id-footer-links">
+            <li><a href="tamreed-manzili-fayoum.html">مدينة الفيوم (المركز الرئيسي)</a></li>
+            <li><a href="tamreed-manzili-senouris.html">مركز سنورس</a></li>
+            <li><a href="tamreed-manzili-ebshaway.html">مركز إبشواي</a></li>
+            <li><a href="tamreed-manzili-tamiya.html">مركز طامية</a></li>
+            <li><a href="tamreed-manzili-atsa.html">مركز إطسا</a></li>
+            <li><a href="tamreed-manzili-youssef-elseddik.html">مركز يوسف الصديق</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h4>روابط سريعة</h4>
-          <ul>
-            <li><a href="#hero">الرئيسية</a></li>
-            <li><a href="#needs">ماذا تحتاج اليوم؟</a></li>
-            <li><a href="#services">الخدمات الـ 15</a></li>
+        <div>
+          <div class="id-footer-col-title">الخدمات التمريضية</div>
+          <ul class="id-footer-links">
+            <li><a href="#services">كانيولا ومحاليل وريدية</a></li>
+            <li><a href="#services">غيار جروح وقدم سكري</a></li>
+            <li><a href="#services">رعاية كبار السن والشيفتات</a></li>
+            <li><a href="#services">قسطرة بولية ورايل معقم</a></li>
+            <li><a href="#services">جلسات نيبولايزر ورعاية تنفسية</a></li>
+            <li><a href="services-icons.html">معرض كافة الخدمات (22 خدمة)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="id-footer-col-title">عن المنظومة</div>
+          <ul class="id-footer-links">
+            <li><a href="about.html">عن منصة كيور</a></li>
             <li><a href="pricing.html">جدول الأسعار الصريحة</a></li>
-            <li><a href="#comparison">معايير الأمان</a></li>
+            <li><a href="#comparison">معايير الأمان الأربعة</a></li>
+            <li><a href="careers.html">انضم لفريق التمريض</a></li>
             <li><a href="#faq">الأسئلة الشائعة</a></li>
-            <li><a href="articles.html">المقالات الطبية التثقيفية</a></li>
+            <li><a href="articles.html">المقالات الطبية</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h4>تواصل وقانوني</h4>
-          <ul>
-            <li><a href="tel:01070203636"><i class="fas fa-phone-alt"></i> 01070203636</a></li>
-            <li><a href="https://wa.me/201070203636" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب فوري</a></li>
-            <li><a href="mailto:eslam.hamada@cureztyx.com"><i class="fas fa-envelope"></i> eslam.hamada@cureztyx.com</a></li>
-            <li><a href="careers.html">وظائف التمريض الشاغرة</a></li>
+        <div>
+          <div class="id-footer-col-title">الدعم والتواصل</div>
+          <ul class="id-footer-links">
+            <li><a href="tel:01070203636" dir="ltr">01070203636</a></li>
+            <li><a href="https://wa.me/201070203636" target="_blank" rel="noopener">واتساب الإشراف 24/7</a></li>
+            <li><a href="mailto:eslam.hamada@cureztyx.com">eslam.hamada@cureztyx.com</a></li>
             <li><a href="privacy.html">سياسة الخصوصية</a></li>
             <li><a href="terms.html">الشروط والأحكام الطبية</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 كيور (CURE) — أول وأفضل منصة تمريض منزلي معتمدة في مصر. جميع الحقوق محفوظة.</p>
-        <p>صُنع بكل <span style="color: var(--c-secondary);">♥</span> لخدمة المجتمع الطبي وأهالينا في الفيوم ومصر</p>
+      <div class="id-footer-bottom-row">
+        <div style="font-size: 14px; color: #76746e;">
+          © 2026 كيور (CURE) — الرعاية التمريضية العادلة في مصر. جميع الحقوق محفوظة.
+        </div>
+
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="https://facebook.com/cureapp" target="_blank" rel="noopener" class="id-social-circle" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/201070203636" target="_blank" rel="noopener" class="id-social-circle" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-social-circle" title="جوجل بلاي"><i class="fab fa-google-play"></i></a>
+        </div>
       </div>
     </div>
   </footer>
@@ -2032,9 +1940,22 @@
     }
   </script>
 
-  <!-- inDrive Mega Menu Drawer Script -->
+  <!-- inDrive Mega Menu Drawer & Hero Tabs Script -->
   <script>
     (function() {
+      // 1. Header scroll listener
+      const header = document.querySelector('.id-header');
+      if (header) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }, { passive: true });
+      }
+
+      // 2. Mega Menu Modal
       const menuBtn = document.getElementById('idMenuBtn');
       const megaMenu = document.getElementById('idMegaMenu');
       const drawerClose = document.getElementById('idDrawerClose');
@@ -2074,6 +1995,41 @@
           closeMenu();
         }
       });
+
+      // 3. Hero 4-Progress Tabs Rotator
+      const heroTabs = document.querySelectorAll('.id-tab-item');
+      if (heroTabs.length > 0) {
+        let activeTabIdx = 0;
+        let tabInterval = null;
+
+        function switchTab(index) {
+          heroTabs.forEach((tab, i) => {
+            if (i === index) {
+              tab.classList.add('active');
+            } else {
+              tab.classList.remove('active');
+            }
+          });
+          activeTabIdx = index;
+        }
+
+        function startTabRotator() {
+          if (tabInterval) clearInterval(tabInterval);
+          tabInterval = setInterval(() => {
+            let nextIdx = (activeTabIdx + 1) % heroTabs.length;
+            switchTab(nextIdx);
+          }, 6000);
+        }
+
+        heroTabs.forEach((tab, i) => {
+          tab.addEventListener('click', function(e) {
+            switchTab(i);
+            startTabRotator(); // reset timer on manual click
+          });
+        });
+
+        startTabRotator();
+      }
     })();
   </script>
 

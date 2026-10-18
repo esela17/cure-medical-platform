@@ -1,13 +1,16 @@
 /* ═══════════════════════════════════════════════════════════════════
-   CURE × inDrive Experience · Signature Royal Purple (#6D73FF)
+   CURE × inDrive Experience · Full-Scale Visual Clone (Purple Edition)
+   Signature Purple: #6D73FF / #555BF6 · Canvas: #FAF9F5 · Deep: #121124
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ─── 01. Typography & Global Enhancements ─── */
+/* ─── 01. Global Canvas & Typography ─── */
 body.indrive-theme {
-  background-color: var(--c-canvas-warm, #f8f9fe);
+  background-color: #FAF9F5;
   color: #121124;
   font-family: var(--ff-body, 'Tajawal', sans-serif);
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 .indrive-h1, .indrive-h2, .indrive-h3 {
@@ -17,83 +20,102 @@ body.indrive-theme {
   color: #121124;
 }
 
-/* Highlighter Effect (Marker) */
-.indrive-marker {
-  background: linear-gradient(120deg, rgba(109, 115, 255, 0.22) 0%, rgba(109, 115, 255, 0.35) 100%);
+/* InDrive-style Highlighter Marker */
+.cure-marker {
+  background: #6D73FF;
+  color: #FFFFFF !important;
+  padding: 2px 14px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 900;
+  box-shadow: 0 4px 14px rgba(109, 115, 255, 0.35);
+  transform: rotate(-1deg);
+}
+
+.cure-marker-outline {
+  border: 2.5px solid #6D73FF;
   padding: 2px 12px;
   border-radius: 8px;
   display: inline-block;
-  color: #2a2edb;
+  color: #6D73FF;
 }
 
-.indrive-marker-lime {
-  background: #c1f11d;
-  color: #121124;
-  padding: 2px 10px;
-  border-radius: 6px;
-  display: inline-block;
-  font-weight: 900;
-}
-
-/* ─── 02. inDrive Sticky Header & Navigation ─── */
+/* ─── 02. InDrive Floating Transparent Top Header ─── */
 .id-header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  background: rgba(248, 249, 254, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(109, 115, 255, 0.12);
+  background: transparent;
+  padding: 22px 0;
   transition: all 0.3s ease;
 }
 
+.id-header.scrolled {
+  position: fixed;
+  background: rgba(250, 249, 245, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(18, 17, 36, 0.08);
+  padding: 14px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
 .id-header-inner {
-  max-width: 1360px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 0 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
 }
 
 .id-logo-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
 }
 
-.id-logo-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(109, 115, 255, 0.3);
-}
-
 .id-logo-text {
   font-family: var(--ff-head);
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 900;
-  color: #121124;
-  letter-spacing: -0.03em;
+  color: #ffffff;
+  letter-spacing: -0.04em;
+  transition: color 0.3s ease;
 }
 
-.id-logo-text span {
-  color: var(--c-brand, #6d73ff);
+.id-header.scrolled .id-logo-text {
+  color: #121124;
+}
+
+.id-logo-badge {
+  background: #6D73FF;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(109, 115, 255, 0.4);
 }
 
 .id-header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
-.id-btn-app {
+.id-btn-get-app {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--c-brand, #6d73ff);
+  background: #6D73FF;
   color: #ffffff !important;
   padding: 10px 22px;
   border-radius: 999px;
@@ -103,10 +125,11 @@ body.indrive-theme {
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(109, 115, 255, 0.35);
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
 }
 
-.id-btn-app:hover {
-  background: var(--c-brand-deep, #5256eb);
+.id-btn-get-app:hover {
+  background: #5256eb;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(109, 115, 255, 0.45);
 }
@@ -117,569 +140,781 @@ body.indrive-theme {
   gap: 6px;
   padding: 8px 16px;
   background: #ffffff;
-  border: 1.5px solid rgba(109, 115, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   color: #121124;
   cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
   transition: all 0.2s ease;
-}
-
-.id-lang-pill:hover {
-  border-color: var(--c-brand);
-  background: var(--c-brand-5);
 }
 
 .id-menu-trigger {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 9px 20px;
   background: #ffffff;
-  border: 1.5px solid rgba(18, 17, 36, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 999px;
   font-family: var(--ff-head);
   font-size: 15px;
   font-weight: 800;
   color: #121124;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   transition: all 0.2s ease;
 }
 
 .id-menu-trigger:hover {
-  border-color: var(--c-brand);
-  color: var(--c-brand);
+  border-color: #6D73FF;
+  color: #6D73FF;
 }
 
-/* Mega Menu Drawer Overlay */
-.id-mega-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
+/* ─── 03. Full-Screen Cinematic Hero (100vh) with Tabs ─── */
+.id-full-hero {
+  position: relative;
   width: 100%;
   height: 100vh;
-  background: rgba(18, 17, 36, 0.65);
-  backdrop-filter: blur(8px);
-  z-index: 2000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.35s ease;
-}
-
-.id-mega-menu.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.id-mega-drawer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 680px;
-  height: 100%;
-  background: #ffffff;
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.25);
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow-y: auto;
-  padding: 36px 32px 60px;
+  min-height: 680px;
+  max-height: 960px;
   display: flex;
   flex-direction: column;
-}
-
-.id-mega-menu.active .id-mega-drawer {
-  transform: translateX(0);
-}
-
-.id-drawer-header {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(109, 115, 255, 0.15);
-}
-
-.id-drawer-close {
-  background: var(--c-brand-5);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  color: #121124;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.id-drawer-close:hover {
-  background: var(--c-brand-15);
-}
-
-.id-menu-section {
-  margin-bottom: 28px;
-}
-
-.id-menu-section-title {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--c-brand-deep);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.id-menu-links {
-  list-style: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.id-menu-links li a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  background: var(--c-brand-5);
-  border-radius: 14px;
-  text-decoration: none;
-  color: #121124;
-  font-weight: 700;
-  font-size: 15px;
-  transition: all 0.2s ease;
-}
-
-.id-menu-links li a:hover {
-  background: var(--c-brand);
-  color: #ffffff;
-  transform: translateX(-4px);
-}
-
-/* ─── 03. inDrive Progressive Hero Slider ─── */
-.id-hero-section {
-  padding: 60px 24px 80px;
-  max-width: 1360px;
-  margin: 0 auto;
-}
-
-.id-hero-card {
-  background: #ffffff;
-  border-radius: 36px;
-  border: 1px solid rgba(109, 115, 255, 0.18);
-  box-shadow: 0 20px 60px -15px rgba(109, 115, 255, 0.12);
-  padding: 56px 48px;
-  position: relative;
   overflow: hidden;
+  background-color: #0d0f24;
 }
 
-.id-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
+.id-hero-bg-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.id-hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 18px;
-  background: var(--c-brand-5);
-  border: 1px solid rgba(109, 115, 255, 0.3);
-  border-radius: 999px;
-  color: var(--c-brand-deep);
-  font-weight: 800;
-  font-size: 14px;
-  margin-bottom: 24px;
+.id-hero-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: brightness(0.65);
 }
 
-.id-hero-h1 {
-  font-size: clamp(34px, 4.5vw, 56px);
+.id-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(13, 15, 36, 0.45) 0%, rgba(13, 15, 36, 0.1) 40%, rgba(13, 15, 36, 0.8) 100%);
+  z-index: 2;
+}
+
+.id-hero-content-wrap {
+  position: relative;
+  z-index: 5;
+  max-width: 1380px;
+  width: 100%;
+  margin: auto auto 0;
+  padding: 0 28px 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.id-hero-left-col {
+  max-width: 680px;
+}
+
+.id-hero-title {
+  font-size: clamp(38px, 5.2vw, 68px);
+  color: #ffffff;
+  line-height: 1.18;
+  margin-bottom: 22px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.id-hero-title mark {
+  background: #6D73FF;
+  color: #ffffff;
+  padding: 0 16px;
+  border-radius: 12px;
+  display: inline-block;
   line-height: 1.25;
-  margin-bottom: 24px;
 }
 
-.id-hero-sub {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #4b5266;
-  margin-bottom: 36px;
-}
-
-.id-hero-actions {
+.id-hero-action-row {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
-.id-btn-hero-primary {
+.id-hero-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--c-brand, #6d73ff);
+  background: #6D73FF;
   color: #ffffff !important;
   padding: 16px 36px;
-  border-radius: 16px;
+  border-radius: 999px;
+  font-family: var(--ff-head);
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(109, 115, 255, 0.4);
+  transition: all 0.25s ease;
+}
+
+.id-hero-cta-btn:hover {
+  background: #5256eb;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(109, 115, 255, 0.55);
+}
+
+.id-hero-cta-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  padding: 15px 28px;
+  border-radius: 999px;
   font-family: var(--ff-head);
   font-size: 17px;
   font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 10px 24px rgba(109, 115, 255, 0.35);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
-.id-btn-hero-primary:hover {
-  background: var(--c-brand-deep, #5256eb);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(109, 115, 255, 0.45);
+.id-hero-cta-wa:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #ffffff;
 }
 
-.id-btn-hero-secondary {
+.id-feel-fairness-badge {
+  color: #ffffff;
+  font-family: var(--ff-head);
+  font-weight: 900;
+  font-size: 26px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+}
+
+.id-feel-fairness-badge span {
+  color: #6D73FF;
+}
+
+/* inDrive 4-Section Bottom Progress Tabs */
+.id-hero-tabs-bar {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 28px 24px;
+  box-sizing: border-box;
+}
+
+.id-tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.id-tab-item {
+  position: relative;
+  padding-top: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.id-tab-progress-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.id-tab-item.active .id-tab-progress-fill {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  animation: tabProgress 6s linear infinite;
+}
+
+@keyframes tabProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.id-tab-title {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 800;
+  transition: color 0.2s ease;
+}
+
+.id-tab-item:hover .id-tab-title,
+.id-tab-item.active .id-tab-title {
+  color: #ffffff;
+}
+
+/* ─── 04. InDrive Multi-Service Grid ("تطبيق واحد، العديد من الخدمات") ─── */
+.id-services-section {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 90px 28px;
+}
+
+.id-section-center-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.id-badge-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(109, 115, 255, 0.1);
+  border-radius: 999px;
+  color: #5256eb;
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.id-main-h2 {
+  font-size: clamp(32px, 4vw, 50px);
+  color: #121124;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.id-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.id-service-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(18, 17, 36, 0.04);
+  border: 1px solid rgba(18, 17, 36, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 240px;
+}
+
+.id-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(109, 115, 255, 0.14);
+  border-color: rgba(109, 115, 255, 0.3);
+}
+
+.id-card-body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.id-card-info {
+  flex: 1;
+}
+
+.id-card-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #121124;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.id-card-desc {
+  font-size: 15px;
+  color: #5c6275;
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.id-card-illustration {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #6D73FF;
+  box-shadow: 0 10px 24px rgba(109, 115, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.id-card-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.id-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(18, 17, 36, 0.06);
+  padding-top: 18px;
+}
+
+.id-action-link-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #121124;
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.id-action-link-main:hover {
+  color: #6D73FF;
+  transform: translateX(-4px);
+}
+
+.id-action-link-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #6D73FF;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.id-action-link-sub:hover {
+  transform: translateX(-4px);
+}
+
+/* ─── 05. InDrive Full Safety Banner ("السلامة أمر غير قابل للتفاوض") ─── */
+.id-safety-section {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 28px 100px;
+}
+
+.id-safety-banner {
+  background: #6D73FF;
+  border-radius: 36px;
+  padding: 64px 56px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 20px 60px rgba(109, 115, 255, 0.3);
+}
+
+.id-safety-banner::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.id-safety-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.id-safety-title {
+  font-size: clamp(34px, 4.5vw, 56px);
+  color: #ffffff;
+  margin: 0 0 20px;
+  line-height: 1.25;
+}
+
+.id-safety-desc {
+  font-size: 19px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 36px;
+  max-width: 580px;
+}
+
+.id-safety-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--c-brand-5);
-  color: var(--c-brand-deep) !important;
-  border: 1.5px solid rgba(109, 115, 255, 0.25);
-  padding: 16px 28px;
-  border-radius: 16px;
+  background: #121124;
+  color: #ffffff !important;
+  padding: 16px 36px;
+  border-radius: 999px;
   font-family: var(--ff-head);
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.id-safety-btn:hover {
+  background: #000000;
+  transform: translateY(-2px);
+}
+
+.id-safety-visual {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.id-safety-visual-inner {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.id-safety-visual-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─── 06. InDrive Cities Coverage Grid ("متوفّر في كافة مراكز الفيوم ومصر") ─── */
+.id-cities-section {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 20px 28px 100px;
+  text-align: center;
+}
+
+.id-cities-h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #121124;
+  margin: 0 0 36px;
+}
+
+.id-cities-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.id-city-pill-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #6D73FF;
+  color: #ffffff !important;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(109, 115, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.id-city-pill-solid:hover {
+  background: #5256eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(109, 115, 255, 0.35);
+}
+
+.id-city-pill-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #ffffff;
+  color: #121124 !important;
+  border: 1.5px solid rgba(109, 115, 255, 0.3);
+  border-radius: 999px;
   font-size: 16px;
   font-weight: 800;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.id-btn-hero-secondary:hover {
-  background: var(--c-brand-10);
-  border-color: var(--c-brand);
+.id-city-pill-sub:hover {
+  border-color: #6D73FF;
+  background: rgba(109, 115, 255, 0.08);
 }
 
-.id-hero-media {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.id-hero-preview-box {
+/* ─── 07. Full-Screen InDrive Mega Menu (Screen Overlay) ─── */
+.id-mega-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 440px;
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px -10px rgba(18, 17, 36, 0.25);
-  background: var(--c-dark-bg);
-}
-
-.id-hero-preview-box img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* ─── 04. inDrive Dual-Action Split Cards Section ─── */
-.id-services-section {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 40px 24px 100px;
-}
-
-.id-section-header {
-  margin-bottom: 48px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.id-section-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: var(--c-brand-5);
-  border: 1px solid rgba(109, 115, 255, 0.3);
-  border-radius: 999px;
-  color: var(--c-brand-deep);
-  font-weight: 800;
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-
-.id-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 28px;
-}
-
-.id-service-card {
-  background: #ffffff;
-  border: 1.5px solid rgba(109, 115, 255, 0.16);
-  border-radius: 28px;
-  padding: 24px;
+  height: 100vh;
+  background: #FAF9F5;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  box-shadow: 0 10px 28px -8px rgba(109, 115, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
 }
 
-.id-service-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--c-brand);
-  box-shadow: 0 18px 40px -10px rgba(109, 115, 255, 0.22);
+.id-mega-fullscreen.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.id-card-top {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.id-card-icon-wrap {
-  width: 90px;
-  height: 90px;
-  flex-shrink: 0;
-  border-radius: 22px;
-  overflow: hidden;
-  box-shadow: 0 8px 18px rgba(109, 115, 255, 0.25);
-  background: #6f72ff;
-}
-
-.id-card-icon-wrap img {
+.id-mega-topbar {
+  max-width: 1380px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.id-card-meta {
-  flex: 1;
-}
-
-.id-card-price-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: rgba(5, 150, 105, 0.12);
-  color: #059669;
-  font-weight: 800;
-  font-size: 13px;
-  padding: 3px 10px;
-  border-radius: 8px;
-  margin-bottom: 6px;
-}
-
-.id-card-title {
-  font-size: 20px;
-  font-weight: 900;
-  color: #121124;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.id-card-desc {
-  font-size: 14px;
-  color: #555e75;
-  line-height: 1.6;
-}
-
-/* Dual Actions (for Patients vs Nurses) */
-.id-dual-actions {
+  margin: 0 auto;
+  padding: 24px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(109, 115, 255, 0.12);
+  box-sizing: border-box;
 }
 
-.id-action-link-patient {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--c-brand-deep);
-  text-decoration: none;
-  transition: transform 0.2s ease;
-}
-
-.id-action-link-patient:hover {
-  transform: translateX(-4px);
-  color: var(--c-brand);
-}
-
-.id-action-link-nurse {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #707b99;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.id-action-link-nurse:hover {
-  color: #121124;
-}
-
-/* ─── 05. inDrive "Safety is Non-Negotiable" Dark Section ─── */
-.id-safety-section {
-  background: var(--c-dark-bg, #0d0f24);
-  color: #ffffff;
-  padding: 90px 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.id-safety-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.id-safety-badge {
-  display: inline-block;
-  padding: 6px 18px;
-  background: rgba(109, 115, 255, 0.2);
-  border: 1px solid rgba(109, 115, 255, 0.4);
-  border-radius: 999px;
-  color: #a4a9ff;
-  font-weight: 800;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-.id-safety-h2 {
-  font-size: clamp(30px, 4vw, 48px);
-  color: #ffffff;
-  line-height: 1.3;
-  margin-bottom: 20px;
-}
-
-.id-safety-lead {
-  font-size: 18px;
-  color: #b3bad1;
-  max-width: 780px;
-  line-height: 1.8;
-  margin-bottom: 50px;
-}
-
-.id-safety-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-}
-
-.id-safety-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  padding: 32px 24px;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
-}
-
-.id-safety-card:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--c-brand);
-  transform: translateY(-6px);
-}
-
-.id-safety-card-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: rgba(109, 115, 255, 0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: #a4a9ff;
-  margin-bottom: 20px;
-}
-
-.id-safety-card-title {
-  font-size: 20px;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 10px;
-}
-
-.id-safety-card-desc {
-  font-size: 15px;
-  color: #949cb8;
-  line-height: 1.7;
-}
-
-/* ─── 06. inDrive City & Centers Coverage Grid ─── */
-.id-cities-section {
-  padding: 80px 24px;
-  max-width: 1360px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.id-cities-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 960px;
-  margin: 32px auto 0;
-}
-
-.id-city-pill {
+.id-mega-close-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: #ffffff;
-  border: 1.5px solid rgba(109, 115, 255, 0.18);
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 700;
+  background: none;
+  border: none;
+  font-family: var(--ff-head);
+  font-size: 18px;
+  font-weight: 800;
   color: #121124;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(109, 115, 255, 0.05);
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 999px;
   transition: all 0.2s ease;
 }
 
-.id-city-pill i {
-  color: var(--c-brand);
+.id-mega-close-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.id-city-pill:hover {
-  border-color: var(--c-brand);
-  background: var(--c-brand-5);
+.id-mega-body {
+  max-width: 1380px;
+  width: 100%;
+  margin: auto auto;
+  padding: 40px 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+.id-mega-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.id-mega-nav-item a {
+  font-family: var(--ff-head);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: #121124;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.id-mega-nav-item a:hover {
+  color: #6D73FF;
+  transform: translateX(-10px);
+}
+
+.id-mega-art-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.id-mega-giant-symbol {
+  width: 320px;
+  height: 320px;
+  background: rgba(109, 115, 255, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6D73FF;
+  font-size: 160px;
+  box-shadow: 0 30px 80px rgba(109, 115, 255, 0.2);
+}
+
+/* ─── 08. InDrive Minimalist Khaki Footer ─── */
+.id-khaki-footer {
+  background-color: #ECEAE4;
+  color: #121124;
+  padding: 70px 0 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.id-footer-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.id-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.id-footer-brand-title {
+  font-family: var(--ff-head);
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0 0 14px;
+}
+
+.id-footer-brand-desc {
+  font-size: 14.5px;
+  line-height: 1.8;
+  color: #636159;
+  max-width: 320px;
+}
+
+.id-footer-col-title {
+  font-family: var(--ff-head);
+  font-size: 16px;
+  font-weight: 900;
+  color: #121124;
+  margin-bottom: 18px;
+}
+
+.id-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.id-footer-links a {
+  color: #636159;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.id-footer-links a:hover {
+  color: #121124;
+}
+
+.id-footer-bottom-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.id-social-circle {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #121124;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.id-social-circle:hover {
+  background: #6D73FF;
+  color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(109, 115, 255, 0.15);
 }
 
-/* Responsive Overrides */
-@media (max-width: 900px) {
-  .id-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .id-hero-card {
-    padding: 36px 24px;
-  }
+/* ─── Responsive Media Queries ─── */
+@media (max-width: 1024px) {
   .id-cards-grid {
     grid-template-columns: 1fr;
   }
-  .id-menu-links {
+  .id-safety-banner {
     grid-template-columns: 1fr;
+    padding: 44px 32px;
+  }
+  .id-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .id-tabs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .id-full-hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+  .id-hero-content-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+  .id-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .id-mega-body {
+    grid-template-columns: 1fr;
+  }
+  .id-mega-art-col {
+    display: none;
   }
 }
