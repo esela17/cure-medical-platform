@@ -49,10 +49,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Master Design System Stylesheet -->
-  <link rel="stylesheet" href="assets/css/tokens.css?v=20260908_v2" />
-  <link rel="stylesheet" href="assets/css/base.css?v=20260908_v2" />
-  <link rel="stylesheet" href="assets/css/components.css?v=20260908_v2" />
-  <link rel="stylesheet" href="assets/css/pages/index.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20261018" />
+  <link rel="stylesheet" href="assets/css/base.css?v=20261018" />
+  <link rel="stylesheet" href="assets/css/components.css?v=20261018" />
+  <link rel="stylesheet" href="assets/css/pages/index.css?v=20261018" />
+  <link rel="stylesheet" href="assets/css/pages/indrive-layout.css?v=20261018" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CUREZTYX26"></script>
@@ -63,7 +64,7 @@
     gtag('config', 'G-CUREZTYX26');
   </script>
 </head>
-<body>
+<body class="indrive-theme">
 
   <!-- Instant Loader Screen -->
   <div id="loader">
@@ -116,7 +117,11 @@
           <li><button class="lang-toggle-btn" id="langToggleDesktop" aria-label="تغيير اللغة">EN</button></li>
         </ul>
 
-        <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button class="id-menu-trigger" id="idMenuBtn" aria-label="افتح القائمة الشاملة">
+            <i class="fas fa-bars"></i>
+            <span>القائمة</span>
+          </button>
           <button class="lang-toggle-btn mobile-only" id="langToggleMobile" aria-label="تغيير اللغة" style="display: none;">EN</button>
           <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة">
             <span></span><span></span><span></span>
@@ -129,10 +134,9 @@
         <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" style="background: var(--c-secondary); color: #ffffff !important; font-weight: 800; text-align: center; font-size: 15px; border-radius: var(--r-pill); box-shadow: 0 4px 14px var(--c-secondary-glow); padding: 12px 20px;">
           <i class="fab fa-google-play"></i> حمّل التطبيق الآن (Google Play)
         </a>
-        <a href="#needs"><i class="fas fa-stethoscope"></i> ماذا تحتاج اليوم؟</a>
         <a href="#services"><i class="fas fa-list-check"></i> خدماتنا وأسعارنا</a>
         <a href="pricing.html"><i class="fas fa-file-invoice-dollar"></i> جدول الأسعار الكامل</a>
-        <a href="#comparison"><i class="fas fa-shield-halved"></i> معايير الأمان والمقارنة</a>
+        <a href="#safety"><i class="fas fa-shield-halved"></i> معايير الأمان والسلامة</a>
         <a href="#about"><i class="fas fa-heartbeat"></i> عن كيور وفريق العمل</a>
         <a href="#how"><i class="fas fa-tasks"></i> كيف يعمل التطبيق</a>
         <a href="#faq"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</a>
@@ -146,94 +150,127 @@
   </header>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       HERO SECTION — High-Conversion Patient Centerpiece
+       INDRIVE MEGA MENU DRAWER (Slide-in)
        ═══════════════════════════════════════════════════════════════ -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-layout">
+  <div class="id-mega-menu" id="idMegaMenu" aria-hidden="true">
+    <div class="id-mega-drawer">
+      <div class="id-drawer-header">
+        <div class="id-logo-link">
+          <img src="assets/images/icon.png" alt="شعار كيور" class="id-logo-img" />
+          <span class="id-logo-text">كيور<span>.</span></span>
+        </div>
+        <button class="id-drawer-close" id="idDrawerClose" aria-label="إغلاق القائمة">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
 
-        <!-- Right Side: Content & Action Hierarchy -->
-        <div class="hero-text reveal">
-          <div style="margin-bottom: 14px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-            <div class="hero-slogan-pill">
-              <span class="pulse-dot"></span> رعاية طبية متكاملة... حتى باب بيتك
-            </div>
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; background: var(--c-brand-5); border: 1.5px solid var(--c-brand-25); border-radius: 30px; padding: 4px 14px; text-decoration: none; color: var(--c-heading); font-size: 12.5px; font-weight: 800;">
-              <span>تطبيق كيور الرسمي</span>
-              <span style="background: var(--c-secondary); color: #fff; padding: 2px 10px; border-radius: 20px; font-size: 11px; display: inline-flex; align-items: center; gap: 5px;">
-                <i class="fab fa-google-play"></i> Google Play
-              </span>
-            </a>
+      <!-- Section: Services -->
+      <div class="id-menu-section">
+        <div class="id-menu-section-title"><i class="fas fa-stethoscope"></i> الخدمات التمريضية والتسعير</div>
+        <ul class="id-menu-links">
+          <li><a href="#services"><i class="fas fa-syringe"></i> إعطاء الحقن والمحاليل</a></li>
+          <li><a href="#services"><i class="fas fa-bandage"></i> غيار الجروح وقدم السكري</a></li>
+          <li><a href="#services"><i class="fas fa-toilet"></i> القسطرة البولية والرايل</a></li>
+          <li><a href="#services"><i class="fas fa-heart-pulse"></i> قياس السكر والضغط والحرارة</a></li>
+          <li><a href="pricing.html"><i class="fas fa-file-invoice-dollar"></i> جدول الأسعار الكامل والمعلن</a></li>
+          <li><a href="services-icons.html"><i class="fas fa-icons"></i> دليل الأيقونات الطبية</a></li>
+        </ul>
+      </div>
+
+      <!-- Section: Safety & Quality -->
+      <div class="id-menu-section">
+        <div class="id-menu-section-title"><i class="fas fa-shield-halved"></i> معايير الأمان والثقة</div>
+        <ul class="id-menu-links">
+          <li><a href="#safety"><i class="fas fa-user-shield"></i> ميثاق السلامة غير القابل للتفاوض</a></li>
+          <li><a href="#comparison"><i class="fas fa-scale-balanced"></i> كيور مقابل التمريض العشوائي</a></li>
+          <li><a href="#how"><i class="fas fa-tasks"></i> كيف يعمل التطبيق</a></li>
+          <li><a href="#faq"><i class="fas fa-circle-question"></i> الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+
+      <!-- Section: For Nurses & Partners -->
+      <div class="id-menu-section">
+        <div class="id-menu-section-title"><i class="fas fa-user-nurse"></i> للتمريض والأخصائيين</div>
+        <ul class="id-menu-links">
+          <li><a href="careers.html"><i class="fas fa-briefcase"></i> فرص العمل والتوظيف</a></li>
+          <li><a href="careers.html#requirements"><i class="fas fa-clipboard-check"></i> شروط القبول والترخيص</a></li>
+          <li><a href="#cities"><i class="fas fa-map-location-dot"></i> نطاق التغطية بمراكز الفيوم</a></li>
+          <li><a href="articles.html"><i class="fas fa-book-medical"></i> المقالات الطبية التثقيفية</a></li>
+        </ul>
+      </div>
+
+      <!-- Drawer Bottom CTA -->
+      <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(109, 115, 255, 0.15); display: flex; flex-direction: column; gap: 12px;">
+        <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-app" style="justify-content: center; padding: 14px 20px;">
+          <i class="fab fa-google-play"></i> حمّل التطبيق الآن (Google Play)
+        </a>
+        <a href="tel:01070203636" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: var(--c-brand-5); color: var(--c-brand-deep); border-radius: 999px; text-decoration: none; font-weight: 800; font-size: 15px;">
+          <i class="fas fa-phone-alt"></i> طوارئ التمريض: 01070203636
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       INDRIVE-STYLE PROGRESSIVE HERO SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="hero" class="id-hero-section">
+    <div class="id-hero-card">
+      <div class="id-hero-grid">
+
+        <!-- Right Side: Content & Dual-Action Hierarchy -->
+        <div class="reveal">
+          <div class="id-hero-tag">
+            <span class="pulse-dot"></span> تمريض منزلي عادل بأسعار صريحة · الفيوم ومصر
           </div>
 
-          <h1 class="hero-title">
-            راحة أهلك في بيتهم..<br />
-            <span class="highlight">تمريض منزلي آمن</span><br />
-            بأيدي ممرضين تثق فيهم
+          <h1 class="indrive-h1 id-hero-h1">
+            <mark class="indrive-marker">تمريض منزلي عادل</mark><br />
+            بأسعار صريحة وممرضين تثق فيهم
           </h1>
 
-          <p class="hero-sub">
-            لا داعي لمشقة الانتظار في المستشفيات. نصلك بنخبة من <strong>الممرضين المرخصين والمفحوصين أمنياً</strong> لتقديم الرعاية الطبية الفورية خلال <strong>15 إلى 25 دقيقة</strong> في الفيوم — بحقيبة معقمة بالكامل، وبأسعار معلنة وثابتة دون أي استغلال.
+          <p class="id-hero-sub">
+            لا داعي لمشقة الانتظار بالمستشفيات أو استغلال الطوارئ. منصة كيور تربطك بنخبة من <strong>الممرضين المرخصين والمفحوصين أمنياً</strong> لتقديم الرعاية الطبية الفورية خلال <strong>15 إلى 25 دقيقة</strong> في الفيوم — بحقيبة معقمة بالكامل، وبأسعار معلنة وثابتة مسبقاً بالتطبيق.
           </p>
 
-          <!-- The Centerpiece: Fast Booking Card (Clinical Navy & Emerald) -->
-          <div class="hero-download-card">
-            <div class="hero-download-info">
-              <img src="assets/images/icon.png" alt="أيقونة تطبيق كيور" class="hero-download-icon" />
-              <div>
-                <div class="hero-download-badge"><span class="pulse-dot"></span> جاهزية فورية على مدار 24 ساعة بالفيوم</div>
-                <h2 class="hero-download-heading">هل تحتاج ممرضاً الآن في منزلك؟</h2>
-                <div class="hero-download-sub">نصلك فوراً لتركيب المحاليل، الكانيولا، غيار الجروح، أو رعاية كبار السن</div>
-              </div>
-            </div>
-
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="hero-download-btn" id="heroGpBtn" title="تنزيل تطبيق كيور من Google Play">
+          <!-- Fast-Track Action Buttons: Dual Audience (Patients & Nurses) -->
+          <div class="id-hero-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="id-btn-hero-primary" id="heroGpBtn" title="تنزيل تطبيق كيور من Google Play">
               <i class="fab fa-google-play"></i>
-              <div class="hero-btn-lines">
-                <span class="hero-btn-sub">حجز ومتابعة سهلة</span>
-                <span class="hero-btn-main">Google Play</span>
-              </div>
+              <span>احجز ممرضك عبر التطبيق</span>
             </a>
-          </div>
-
-          <!-- Fast-Track Action Buttons: Emergency & Booking -->
-          <div class="hero-btns">
-            <a href="tel:01070203636" class="btn-cure-glow" title="اتصال طوارئ تمريض فوري">
-              <i class="fas fa-phone-volume"></i>
-              <span>طوارئ فورية: 01070203636</span>
+            <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+عاجلة+في+الفيوم" target="_blank" rel="noopener" class="id-btn-hero-secondary">
+              <i class="fab fa-whatsapp" style="font-size: 19px; color: #25d366;"></i>
+              <span>واتساب فوري</span>
             </a>
-            <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة+تمريض+منزلي+عاجلة+في+الفيوم" class="btn-secondary wa" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp" style="font-size: 19px;"></i>
-              حجز عبر الواتساب
-            </a>
-            <a href="pricing.html" class="btn-secondary">
-              <i class="fas fa-clipboard-check" style="color: var(--c-brand);"></i>
-              جدول الأسعار المعلنة
+            <a href="careers.html" class="id-btn-hero-secondary" style="border-color: rgba(18, 17, 36, 0.15); color: #121124 !important;">
+              <i class="fas fa-user-nurse" style="color: var(--c-brand);"></i>
+              <span>انضم كممرض معتمد</span>
             </a>
           </div>
 
           <!-- Proof Metrics Bar -->
-          <div class="hero-stats">
+          <div class="hero-stats" style="margin-top: 36px; border-top: 1px solid rgba(109, 115, 255, 0.12); padding-top: 24px;">
             <div class="stat-item">
-              <span class="stat-num">15+</span>
-              <span class="stat-lbl">خدمة طبية متخصصة</span>
+              <span class="stat-num" style="color: var(--c-brand);">13</span>
+              <span class="stat-lbl">خدمة طبية معتمدة</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">15-25د</span>
+              <span class="stat-num" style="color: var(--c-brand);">15 د</span>
               <span class="stat-lbl">متوسط سرعة الاستجابة</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">100%</span>
-              <span class="stat-lbl">ممرضون مرخصون ومفحوصون</span>
+              <span class="stat-num" style="color: var(--c-brand);">100%</span>
+              <span class="stat-lbl">مرخص ومفحوص جنائياً</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">24/7</span>
-              <span class="stat-lbl">جاهزية مستمرة وطوارئ ليلية</span>
+              <span class="stat-num" style="color: var(--c-brand);">24/7</span>
+              <span class="stat-lbl">جاهزية طوارئ مستمرة</span>
             </div>
           </div>
         </div>
 
-        <!-- Left Side: Centerpiece Nurse Model Visual (Ref: CURE-premium-launch-hero.png) -->
+        <!-- Left Side: Centerpiece Nurse Model Visual (Ref: CURE-launch-hero) -->
         <div class="hero-visual reveal reveal-delay-2">
           <div class="hero-visual-frame">
             <!-- 3D Floating Glass Badge: Top Right -->
@@ -249,7 +286,7 @@
             <div class="hero-glass-badge glass-badge-mid">
               <div class="glass-badge-icon pulse-icon"><i class="fas fa-location-dot"></i></div>
               <div>
-                <div class="glass-badge-title">نطاق الفيوم ومصر</div>
+                <div class="glass-badge-title">مراكز الفيوم ومصر</div>
                 <div class="glass-badge-sub">وصول في 15 دقيقة</div>
               </div>
             </div>
@@ -688,239 +725,392 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       15 SERVICES GRID WITH TRANSPARENT PRICING
+       INDRIVE-STYLE DUAL-ACTION SERVICES SECTION (13 Official Services)
        ═══════════════════════════════════════════════════════════════ -->
-  <section id="services" class="section" style="background: var(--c-bg-soft); border-top: 1px solid var(--c-border-light); border-bottom: 1px solid var(--c-border-light);">
-    <div class="container">
-      <div class="text-center reveal">
-        <span class="section-badge"><i class="fas fa-list-check"></i> خدمات شاملة</span>
-        <h2 class="section-title">15 خدمة طبية منزلية <span class="highlight">بتسعيرة رسمية معتمدة</span></h2>
-        <p class="section-sub">تسعيرة عادلة وموحدة مسبقاً بالتطبيق. لا مساومة، ولا زيادة في حالات الطوارئ، مع توثيق كامل للخدمة</p>
+  <section id="services" class="id-services-section">
+    <div class="id-section-header">
+      <div>
+        <span class="id-section-badge"><i class="fas fa-stethoscope"></i> الخدمات الرسمية المعتمدة</span>
+        <h2 class="indrive-h2" style="font-size: clamp(28px, 3.8vw, 44px); line-height: 1.25; margin-bottom: 12px;">
+          خدمات تمريضية صريحة <mark class="indrive-marker">بتسعيرة عادلة</mark>
+        </h2>
+        <p style="font-size: 17px; color: #555e75; max-width: 720px; line-height: 1.8;">
+          اختر الخدمة الطبية المطلوبة، وتعرّف على تفاصيلها وتسعيرتها الرسمية المعتمَدة في تطبيق كيور. لا عمولات مبهمة، ولا مساومات في أوقات الطوارئ.
+        </p>
       </div>
 
-      <!-- Services Visual Storytelling Banner -->
-      <div class="services-visual-banner reveal">
-        <div class="services-visual-banner-img">
-          <img src="assets/images/cure-sterile-kit.jpg" alt="حقيبة المستلزمات التمريضية المعقمة 100% وأجهزة التشخيص الخاصة بمنصة كيور" loading="lazy" />
-        </div>
+      <a href="pricing.html" class="id-btn-hero-secondary" style="margin-bottom: 8px;">
+        <i class="fas fa-file-invoice-dollar" style="color: var(--c-brand);"></i>
+        <span>جدول الأسعار الكامل بالتطبيق</span>
+      </a>
+    </div>
+
+    <!-- 13 Dual-Action Split Cards Grid -->
+    <div class="id-cards-grid">
+
+      <!-- 1. إعطاء حقنة (عضل / وريد) -->
+      <div class="id-service-card reveal">
         <div>
-          <span class="section-badge" style="margin-bottom: 12px;"><i class="fas fa-shield-virus"></i> أمان وسرعة</span>
-          <h3 style="font-family: var(--ff-head); font-size: 24px; font-weight: 900; color: var(--c-heading); margin-bottom: 12px;">
-            أدوات معقمة واستخدام فردي <span style="color: var(--c-brand);">100%</span>
-          </h3>
-          <p style="color: var(--c-body); font-size: 15px; line-height: 1.8; margin-bottom: 18px;">
-            يصلك ممرض كيور مجهزاً بحقيبة مستلزمات طبية معقمة تُفتح مباشرة أمام عينيك. السعر محدد بدقة داخل التطبيق قبل تأكيد الطلب شاملاً كل الإجراءات الطبية دون أي تكاليف خفية.
-          </p>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" style="display: inline-flex;">
-              <i class="fab fa-google-play"></i>
-              <span>احسب تكلفة الخدمة بالتطبيق</span>
-            </a>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/injection.png" alt="أيقونة إعطاء حقنة" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">إعطاء حقنة (عضل / وريد)</h3>
+              <p class="id-card-desc">إعطاء حقن عضل، بالوريد، وعمل اختبار الحساسية قبل المضادات الحيوية وفق أعلى اشتراطات الأمان والتعقيم لتجنب الألم والتورم.</p>
+            </div>
           </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+إعطاء+حقنة+(عضل/وريد)" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
         </div>
       </div>
 
-      <div class="services-grid">
-        <!-- Service 1 -->
-        <div class="service-card reveal">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-syringe"></i></div>
-            <h3 class="service-name">إعطاء الحقن (عضل / وريد)</h3>
-            <p class="service-desc">حقن عضل، تحت الجلد، أو بالوريد بأعلى معايير التعقيم لتجنب الألم والتورم.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: إعطاء حقنة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 2 -->
-        <div class="service-card reveal reveal-delay-1">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-flask-vial"></i></div>
-            <h3 class="service-name">تركيب كانيولا وريدية (IV)</h3>
-            <p class="service-desc">تثبيت كانيولا وريدية آمنة مناسبة لأوردة المريض بدون ألم متكرر أو تسريب.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب كانيولا وريدية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
+      <!-- 2. حقنة تحت الجلد -->
+      <div class="id-service-card reveal reveal-delay-1">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/subcutaneous_injection.png" alt="أيقونة حقنة تحت الجلد" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">حقنة تحت الجلد</h3>
+              <p class="id-card-desc">إعطاء جرعات الإنسولين وأدوية السيولة ومحفزات المناعة بسرنجات دقيقة وبدون أي كدمات مع تدريب أسرة المريض على الحقن الذاتي.</p>
+            </div>
           </div>
         </div>
-
-        <!-- Service 3 -->
-        <div class="service-card reveal reveal-delay-2">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-water"></i></div>
-            <h3 class="service-name">تركيب ومتابعة المحاليل الوريدية</h3>
-            <p class="service-desc">تعليق المحاليل الوريدية (جلوكوز، ملح، رينجر)، وضبط معدل التنقيط طوال الجلسة.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب محاليل وريدية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 4 -->
-        <div class="service-card reveal">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-bandage"></i></div>
-            <h3 class="service-name">غيار الجروح البسيطة والمعقمة</h3>
-            <p class="service-desc">تنظيف وتطهير الجروح السطحية والخدوش وتغيير الشاش المعقم لمنع أي تلوث.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: غيار جروح بسيطة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 5 -->
-        <div class="service-card reveal reveal-delay-1">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-socks"></i></div>
-            <h3 class="service-name">غيار العمليات وقدم السكري</h3>
-            <p class="service-desc">غيار جراحي متقدم للعمليات الكبرى وقدم السكري باستخدام ضمادات متطورة معقمة.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: غيار قدم السكري أو جروح عمليات" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="service-card reveal reveal-delay-2">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-bed"></i></div>
-            <h3 class="service-name">علاج ورعاية قرح الفراش</h3>
-            <p class="service-desc">تطهير وتفريغ القرح الجلدية للمرضى طريحي الفراش واستخدام مراهم التئام متخصصة.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: علاج قرح الفراش" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 7 -->
-        <div class="service-card reveal">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-heart-pulse"></i></div>
-            <h3 class="service-name">قياس السكر والضغط والحرارة</h3>
-            <p class="service-desc">متابعة دقيقة للعلامات الحيوية بأجهزة رقمية معايرة مع توثيق القراءات بالسجل الطبي.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: قياس سكر وضغط" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 8 -->
-        <div class="service-card reveal reveal-delay-1">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-toilet"></i></div>
-            <h3 class="service-name">تركيب وتغيير القسطرة البولية</h3>
-            <p class="service-desc">إدخال واستبدال القسطرة البولية المعقمة (Foley Catheter) وتفريغ كيس جمع البول بأمان.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب وتغيير قسطرة بولية" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 9 -->
-        <div class="service-card reveal reveal-delay-2">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-lungs"></i></div>
-            <h3 class="service-name">جلسات البخار والنيبولايزر</h3>
-            <p class="service-desc">جلسات استنشاق موسعات الشعب الهوائية ومذيبات البلغم لمرضى الربو وحساسية الصدر.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: جلسة نيبولايزر" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 10 -->
-        <div class="service-card reveal">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-head-side-mask"></i></div>
-            <h3 class="service-name">شفط البلغم المنزلي (Suction)</h3>
-            <p class="service-desc">تنظيف مجرى التنفس وشفط الإفرازات الصدرية للمرضى المصابين بصعوبة البلع والتنفس.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: شفط بلغم منزلي" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 11 -->
-        <div class="service-card reveal reveal-delay-1">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-stethoscope"></i></div>
-            <h3 class="service-name">تركيب أنبوبة التغذية الأنفية (Ryle)</h3>
-            <p class="service-desc">تركيب أنبوبة الرايل للتغذية وإعطاء الأدوية للمرضى غير القادرين على البلع بطريقة آمنة.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: تركيب أنبوبة رايل" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 12 -->
-        <div class="service-card reveal reveal-delay-2">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-vial"></i></div>
-            <h3 class="service-name">سحب عينات التحاليل المنزلية</h3>
-            <p class="service-desc">سحب عينات الدم والبول منزلياً وحفظها في أنابيب معقمة مخصصة للنقل للمعمل.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: سحب عينات تحاليل" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 13 -->
-        <div class="service-card reveal">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-user-clock"></i></div>
-            <h3 class="service-name">رعاية كبار السن (شيفت 6 ساعات)</h3>
-            <p class="service-desc">مرافقة تمريضية نصف يومية، مساعدة في الحركة، التغذية، ومتابعة الأدوية والعلامات الحيوية.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: شيفت رعاية 6 ساعات" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 14 -->
-        <div class="service-card reveal reveal-delay-1">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-clock"></i></div>
-            <h3 class="service-name">تمريض منزلي (شيفت 12 ساعة)</h3>
-            <p class="service-desc">رعاية تمريضية مكثفة نهارية أو ليلية تشمل كافة الإجراءات الطبية ومتابعة الطبيب المعالج.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: شيفت تمريض 12 ساعة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
-        </div>
-
-        <!-- Service 15 -->
-        <div class="service-card reveal reveal-delay-2">
-          <div>
-            <div class="service-icon-wrap"><i class="fas fa-hospital-user"></i></div>
-            <h3 class="service-name">إقامة تمريضية كاملة (24 ساعة)</h3>
-            <p class="service-desc">مرافقة تمريضية دائمة على مدار الساعة للحالات الحرجة وما بعد العمليات الدقيقة والعناية المركزة.</p>
-          </div>
-          <div class="service-meta-row">
-            <div class="service-badge-tag"><i class="fas fa-check-circle" style="color: #16a34a;"></i> تسعيرة معتمدة بالتطبيق</div>
-            <a href="https://wa.me/201070203636?text=حجز خدمة: تمريض كامل 24 ساعة" class="service-book-btn" target="_blank" rel="noopener">احجز الآن</a>
-          </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+حقنة+تحت+الجلد" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 48px;" class="reveal">
-        <a href="pricing.html" class="btn-primary" style="padding: 16px 38px; font-size: 17px;">
-          <i class="fas fa-table-list"></i> عرض دليل الخدمات والتسعير الشفاف بالتطبيق
-        </a>
+      <!-- 3. تركيب كانيولا وريدية -->
+      <div class="id-service-card reveal reveal-delay-2">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/cannula.png" alt="أيقونة تركيب كانيولا وريدية" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">تركيب كانيولا وريدية (IV)</h3>
+              <p class="id-card-desc">تثبيت كانيولا مناسبة لحجم الوريد بأيدي أخصائيين مهرة بدون ألم متكرر أو ارتشاح، مع بلاستر طبي عازل وتاريخ التركيب.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+تركيب+كانيولا+وريدية" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 4. تركيب ومتابعة محلول وريدي -->
+      <div class="id-service-card reveal">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/iv_infusion.png" alt="أيقونة تركيب محلول وريدي" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">تركيب ومتابعة محلول وريدي</h3>
+              <p class="id-card-desc">تعليق محاليل الجفاف والجلوكوز والرينجر والملح، مع ضبط دقيق لسرعة التنقيط ومرافقة تمريضية طوال فترة الجلسة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+تركيب+محلول+وريدي" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 5. إعطاء محلول الحديد بالوريد -->
+      <div class="id-service-card reveal reveal-delay-1">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/iron_infusion.png" alt="أيقونة محلول حديد بالوريد" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">إعطاء محلول الحديد بالوريد</h3>
+              <p class="id-card-desc">إعطاء حقن ومحاليل الحديد الوريدية بحذر فائق وجرعة اختبارية مع قياس متواصل للضغط والنبض للوقاية من أي صدمة تحسسية.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+إعطاء+محلول+الحديد+بالوريد" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 6. تركيب وتغيير القسطرة البولية -->
+      <div class="id-service-card reveal reveal-delay-2">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/catheter.png" alt="أيقونة قسطرة بولية" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">تركيب وتغيير القسطرة البولية</h3>
+              <p class="id-card-desc">تركيب واستبدال قسطرة فولي (Foley) المعقمة وتفريغ كيس جمع البول باحترافية تامة تحفظ راحة وكرامة المريض وتمنع التهابات المسالك.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+تركيب+أو+تغيير+قسطرة+بولية" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 7. تركيب رايل التغذية الأنفية -->
+      <div class="id-service-card reveal">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/ng_tube.png" alt="أيقونة رايل التغذية" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">تركيب رايل التغذية الأنفية (NG Tube)</h3>
+              <p class="id-card-desc">تركيب أنبوبة التغذية المعقمة والتأكد الطبي من استقرارها بالمعدة عبر الفحص بالسماعة، مع توجيه العائلة لإعطاء الوجبات والأدوية بأمان.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+تركيب+رايل+التغذية" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 8. شفط البلغم والإفرازات التنفسية -->
+      <div class="id-service-card reveal reveal-delay-1">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/respiratory_suction.png" alt="أيقونة شفط البلغم" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">شفط البلغم والإفرازات التنفسية</h3>
+              <p class="id-card-desc">تنظيف المجرى الهوائي الصدري بجهاز شفط معقم (Suction) وقساطر أحادية الاستخدام لإراحة المرضى المصابين بصعوبة البلع والتنفس والجلطات.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+شفط+البلغم+والإفرازات+التنفسية" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 9. غيار جروح معقم (جراحة / قرح) -->
+      <div class="id-service-card reveal reveal-delay-2">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/wound_care.png" alt="أيقونة غيار جروح معقم" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">غيار جروح معقم (جراحة / قرح)</h3>
+              <p class="id-card-desc">تطهير الجروح السطحية والعمليات الكبرى، إزالة الغرز الجراحية، وغيار قرح الفراش باستخدام شاش فازلين ومحاليل طبية معقمة 100%.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+غيار+جروح+معقم" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 10. غيار وعناية بالقدم السكري -->
+      <div class="id-service-card reveal">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/diabetic_foot.png" alt="أيقونة غيار القدم السكري" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">غيار وعناية بالقدم السكري</h3>
+              <p class="id-card-desc">تقييم سريري دقيق لعمق القرح وتدفق الدم، تنظيف الأنسجة الميتة بلطف، ووضع ضمادات هيدروجيل متطورة لحماية القدم ومنع المضاعفات الخطيرة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+غيار+القدم+السكري" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 11. قياس وفحص ضغط الدم -->
+      <div class="id-service-card reveal reveal-delay-1">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/blood_pressure.png" alt="أيقونة قياس ضغط الدم" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">قياس وفحص ضغط الدم</h3>
+              <p class="id-card-desc">فحص دقيق لضغط الدم الشرياني ومعدل النبض بجهاز معاير، مع تقييم الأعراض المصاحبة وتوثيق القراءة في كارت المتابعة الطبي للمريض.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+قياس+ضغط+الدم" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 12. قياس وتحليل سكر الدم -->
+      <div class="id-service-card reveal reveal-delay-2">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/blood_glucose.png" alt="أيقونة قياس سكر الدم" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">قياس وتحليل سكر الدم</h3>
+              <p class="id-card-desc">تحليل فوري دقيق للسكر العشوائي أو الصائم بشرائط جديدة ومعقمة، مع إرشادات سريرية عاجلة للتعامل مع نوبات الهبوط أو الارتفاع المفاجئ.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+قياس+سكر+الدم" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+      <!-- 13. فحص العلامات الحيوية الشامل -->
+      <div class="id-service-card reveal">
+        <div>
+          <div class="id-card-top">
+            <div class="id-card-icon-wrap">
+              <img src="assets/icons/services/vitals_check.png" alt="أيقونة فحص العلامات الحيوية" loading="lazy" />
+            </div>
+            <div class="id-card-meta">
+              <span class="id-card-price-badge"><i class="fas fa-check-circle"></i> تسعيرة معلنة وموحدة بالتطبيق</span>
+              <h3 class="id-card-title">فحص العلامات الحيوية الشامل</h3>
+              <p class="id-card-desc">فحص طبي رباعي يشمل قياس الحرارة ديجيتال، النبض، نسبة تشبع الأكسجين بالدم (Pulse Oximeter)، ومعدل التنفس للاطمئنان الكامل على الحالة العامة.</p>
+            </div>
+          </div>
+        </div>
+        <div class="id-dual-actions">
+          <a href="https://wa.me/201070203636?text=مرحباً،+أريد+حجز+خدمة:+فحص+العلامات+الحيوية+الشامل" target="_blank" rel="noopener" class="id-action-link-patient">
+            للمرضى والعائلات ←
+          </a>
+          <a href="careers.html#requirements" class="id-action-link-nurse">
+            للتمريض والأخصائيين ←
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Showcase Link -->
+    <div style="text-align: center; margin-top: 50px;" class="reveal">
+      <a href="services-icons.html" class="id-btn-hero-primary" style="padding: 16px 36px; font-size: 16.5px;">
+        <i class="fas fa-icons"></i> استكشف معرض أيقونات وخدمات كيور بالكامل (22 خدمة)
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       INDRIVE SAFETY PHILOSOPHY: "السلامة أمر غير قابل للتفاوض"
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="safety" class="id-safety-section">
+    <div class="id-safety-inner">
+      <span class="id-safety-badge"><i class="fas fa-shield-halved"></i> معايير الأمان القصوى</span>
+      <h2 class="indrive-h2 id-safety-h2">
+        السلامة أمر <mark class="indrive-marker" style="color: #ffffff; background: rgba(109, 115, 255, 0.45);">غير قابل للتفاوض</mark>
+      </h2>
+      <p class="id-safety-lead">
+        صحة أهلك وأمان منزلك أولويتنا المطلقة. لا نترك مجالاً للمصادفة أو العمل العشوائي؛ كل زيارة تمريضية تخضع لبروتوكول سلامة صارم من 4 طبقات يتفوق على أي نظام عشوائي.
+      </p>
+
+      <div class="id-safety-grid">
+        <!-- Safety Pillar 1 -->
+        <div class="id-safety-card reveal">
+          <div class="id-safety-card-icon"><i class="fas fa-id-card-clip"></i></div>
+          <h3 class="id-safety-card-title">فحص جنائي وتحقق أمني 100%</h3>
+          <p class="id-safety-card-desc">لا يدخل بيتك مجهول. كل ممرض وممرضة يمرون بفحص هوية وطني وصحيفة حالة جنائية (فيش وتشبيه) حديثة ومعتمدة.</p>
+        </div>
+
+        <!-- Safety Pillar 2 -->
+        <div class="id-safety-card reveal reveal-delay-1">
+          <div class="id-safety-card-icon"><i class="fas fa-certificate"></i></div>
+          <h3 class="id-safety-card-title">ترخيص ساري من نقابة التمريض</h3>
+          <p class="id-safety-card-desc">نتحقق رسمياً من مزاولة المهنة والمؤهل الأكاديمي (بكالوريوس أو معهد تمريض). لا نقبل دخلاء المهنة إطلاقاً.</p>
+        </div>
+
+        <!-- Safety Pillar 3 -->
+        <div class="id-safety-card reveal reveal-delay-2">
+          <div class="id-safety-card-icon"><i class="fas fa-shield-virus"></i></div>
+          <h3 class="id-safety-card-title">حقيبة معقمة ذات استخدام فردي</h3>
+          <p class="id-safety-card-desc">حقيبة مستلزمات طبية معقمة تُفتح مباشرة أمام عينيك. قفازات، كانيولات، وسرنجات أحادية الاستخدام لمنع أي نقل للعدوى.</p>
+        </div>
+
+        <!-- Safety Pillar 4 -->
+        <div class="id-safety-card reveal reveal-delay-3">
+          <div class="id-safety-card-icon"><i class="fas fa-map-location-dot"></i></div>
+          <h3 class="id-safety-card-title">تتبع GPS حي وإشراف طبي 24/7</h3>
+          <p class="id-safety-card-desc">متابعة لحظية لمسار الممرض حتى وصوله، مع فريق إشراف طبي يوثق الإجراء ويبقى على تواصل معك حتى الاطمئنان التام.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1604,6 +1794,54 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
+       INDRIVE-STYLE CITIES & HUBS COVERAGE GRID
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="cities" class="id-cities-section">
+    <span class="id-section-badge"><i class="fas fa-map-location-dot"></i> التغطية الجغرافية</span>
+    <h2 class="indrive-h2" style="font-size: clamp(26px, 3.5vw, 40px); margin-bottom: 12px;">
+      نصلك في كل مكان <mark class="indrive-marker">بالفيوم ومصر</mark>
+    </h2>
+    <p style="font-size: 16.5px; color: #555e75; max-width: 680px; margin: 0 auto; line-height: 1.8;">
+      شبكة تمريض ذكية تغطي كافة مراكز وقرى محافظة الفيوم بمتوسط وصول من 15 إلى 25 دقيقة فقط، مع خطة توسع مستمرة في محافظات مصر.
+    </p>
+
+    <div class="id-cities-grid reveal">
+      <a href="tamreed-manzili-fayoum.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>مدينة الفيوم (المركز الرئيسي)</span>
+      </a>
+      <a href="tamreed-manzili-senouris.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>سنورس</span>
+      </a>
+      <a href="tamreed-manzili-ebshaway.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>إبشواي</span>
+      </a>
+      <a href="tamreed-manzili-tamiya.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>طامية</span>
+      </a>
+      <a href="tamreed-manzili-atsa.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>إطسا</span>
+      </a>
+      <a href="tamreed-manzili-youssef-elseddik.html" class="id-city-pill">
+        <i class="fas fa-location-dot"></i>
+        <span>يوسف الصديق</span>
+      </a>
+      <span class="id-city-pill" style="opacity: 0.85;">
+        <i class="fas fa-water"></i>
+        <span>بحيرة قارون ووادي الريان</span>
+      </span>
+      <span class="id-city-pill" style="border-style: dashed; background: rgba(109, 115, 255, 0.05); color: var(--c-brand-deep);">
+        <i class="fas fa-hourglass-half"></i>
+        <span>قريباً: بني سويف والجيزة</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        CONTACT & EMERGENCY CENTER
        ═══════════════════════════════════════════════════════════════ -->
   <section id="contact" class="section">
@@ -1794,7 +2032,52 @@
     }
   </script>
 
+  <!-- inDrive Mega Menu Drawer Script -->
+  <script>
+    (function() {
+      const menuBtn = document.getElementById('idMenuBtn');
+      const megaMenu = document.getElementById('idMegaMenu');
+      const drawerClose = document.getElementById('idDrawerClose');
+
+      function openMenu() {
+        if (megaMenu) {
+          megaMenu.classList.add('active');
+          megaMenu.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeMenu() {
+        if (megaMenu) {
+          megaMenu.classList.remove('active');
+          megaMenu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (menuBtn) menuBtn.addEventListener('click', openMenu);
+      if (drawerClose) drawerClose.addEventListener('click', closeMenu);
+
+      if (megaMenu) {
+        megaMenu.addEventListener('click', function(e) {
+          if (e.target === megaMenu) closeMenu();
+        });
+
+        const links = megaMenu.querySelectorAll('a');
+        links.forEach(function(link) {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && megaMenu && megaMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+    })();
+  </script>
+
   <!-- Optimized Main JavaScript Bundle -->
-  <script src="assets/js/main.js?v=20260908_v2"></script>
+  <script src="assets/js/main.js?v=20261018"></script>
 </body>
 </html>

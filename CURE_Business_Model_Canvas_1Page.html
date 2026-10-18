@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CURE — Business Model Canvas | Executive Corporate Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* Corporate Light Theme Palette */
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f1f5f9;
+      --bg-vp: #f8faff;
+      --bg-cost: #fffbfa;
+      --bg-rev: #f6fdf9;
+
+      --border-light: #e2e8f0;
+      --border-card: #cbd5e1;
+      --border-vp: #93c5fd;
+      --border-cost: #fca5a5;
+      --border-rev: #86efac;
+
+      --corp-navy: #0f172a;
+      --corp-blue: #1e40af;
+      --corp-blue-light: #2563eb;
+      --corp-cyan: #0284c7;
+      --corp-emerald: #059669;
+      --corp-rose: #dc2626;
+      --corp-amber: #d97706;
+
+      --text-main: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-subtle: #94a3b8;
+
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-card: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.04);
+      --shadow-vp: 0 4px 12px -2px rgba(37, 99, 235, 0.08);
+
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.28;
+    }
+
+    /* 1-PAGE VIEWPORT WRAPPER */
+    .canvas-viewport {
+      width: 100%;
+      height: 100vh;
+      max-height: 100vh;
+      padding: 8px 12px 6px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 5px;
+      background: #f8fafc;
+    }
+
+    /* ============================================================
+       TOP HEADER
+       ============================================================ */
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--corp-navy);
+    }
+
+    .logo-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--corp-blue);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .platform-tagline {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border-light);
+      padding-left: 10px;
+    }
+
+    .platform-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--corp-navy);
+      letter-spacing: 0.3px;
+    }
+
+    .platform-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-pill {
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 2.5px 8px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .badge-seed {
+      background: #eff6ff;
+      color: var(--corp-blue);
+      border-color: #bfdbfe;
+    }
+
+    .badge-market {
+      background: #ecfdf5;
+      color: var(--corp-emerald);
+      border-color: #a7f3d0;
+    }
+
+    .badge-confidential {
+      background: #fffbeb;
+      color: var(--corp-amber);
+      border-color: #fde68a;
+    }
+
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: var(--corp-blue);
+      color: #ffffff;
+      font-size: 10.5px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(30, 64, 175, 0.25);
+      transition: background 0.2s;
+    }
+
+    .print-btn:hover {
+      background: #1e3a8a;
+    }
+
+    /* ============================================================
+       EXECUTIVE KPI METRICS RIBBON
+       ============================================================ */
+    .kpi-ribbon {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 4px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .kpi-label {
+      font-size: 8.8px;
+      color: var(--text-muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .kpi-val {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--corp-navy);
+    }
+
+    .val-blue { color: var(--corp-blue); }
+    .val-emerald { color: var(--corp-emerald); }
+    .val-cyan { color: var(--corp-cyan); }
+    .val-amber { color: var(--corp-amber); }
+
+    /* ============================================================
+       9-BOX BUSINESS MODEL CANVAS GRID
+       ============================================================ */
+    .bmc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.26fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 0.9fr;
+      gap: 5px;
+      flex-grow: 1;
+      min-height: 0;
+    }
+
+    .box-kp { grid-column: 1; grid-row: 1 / 3; }
+    .box-ka { grid-column: 2; grid-row: 1; }
+    .box-kr { grid-column: 2; grid-row: 2; }
+    .box-vp { grid-column: 3; grid-row: 1 / 3; }
+    .box-cr { grid-column: 4; grid-row: 1; }
+    .box-ch { grid-column: 4; grid-row: 2; }
+    .box-cs { grid-column: 5; grid-row: 1 / 3; }
+    .box-cost { grid-column: 1 / 3; grid-row: 3; }
+    .box-rev { grid-column: 3 / 6; grid-row: 3; }
+
+    .bmc-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 7px;
+      padding: 7px 9px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .box-vp {
+      background: var(--bg-vp);
+      border: 1.5px solid var(--border-vp);
+      box-shadow: var(--shadow-vp);
+    }
+
+    .box-cost {
+      background: var(--bg-cost);
+      border-color: var(--border-cost);
+    }
+
+    .box-rev {
+      background: var(--bg-rev);
+      border-color: var(--border-rev);
+    }
+
+    /* Box Header */
+    .box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 4px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid var(--border-light);
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .box-num {
+      font-family: var(--font-mono);
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #f1f5f9;
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+
+    .box-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--corp-navy);
+    }
+
+    .box-ar-title {
+      font-size: 9px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .box-icon {
+      font-size: 11px;
+      opacity: 0.85;
+    }
+
+    /* Box Items & Content */
+    .box-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 3px;
+    }
+
+    .bmc-item {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .item-head {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--corp-navy);
+      line-height: 1.25;
+    }
+
+    .item-bullet {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--corp-blue);
+      display: inline-block;
+      flex-shrink: 0;
+      transform: translateY(-2px);
+    }
+
+    .bullet-emerald { background: var(--corp-emerald); }
+    .bullet-rose { background: var(--corp-rose); }
+    .bullet-amber { background: var(--corp-amber); }
+    .bullet-cyan { background: var(--corp-cyan); }
+
+    .item-desc {
+      font-size: 8.6px;
+      color: var(--text-body);
+      line-height: 1.25;
+      padding-left: 8px;
+    }
+
+    .item-tag {
+      font-size: 7.5px;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      margin-left: 3px;
+      vertical-align: middle;
+    }
+
+    .tag-core { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+    .tag-live { background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .tag-p2 { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+
+    /* Value Proposition Sections */
+    .vp-section {
+      background: #ffffff;
+      border-radius: 5px;
+      padding: 3px 6px;
+      border: 1px solid #dbeafe;
+      border-left: 3px solid var(--corp-blue);
+    }
+
+    .vp-target {
+      font-size: 8.8px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--corp-blue);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .vp-target-nurse {
+      color: var(--corp-emerald);
+    }
+
+    .vp-section.nurse-vp {
+      border-left-color: var(--corp-emerald);
+      border-color: #d1fae5;
+    }
+
+    /* Dual Column Layout */
+    .two-col-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-content: space-around;
+    }
+
+    /* ============================================================
+       BOTTOM EXECUTIVE FOOTER STRIP
+       ============================================================ */
+    .bottom-strip {
+      display: grid;
+      grid-template-columns: 1.35fr 1.65fr 1fr;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 5px 12px;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      align-items: center;
+    }
+
+    .unit-metrics {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .unit-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .unit-val {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--corp-navy);
+    }
+
+    .unit-lbl {
+      font-size: 8px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .ask-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 1px solid var(--border-light);
+      border-right: 1px solid var(--border-light);
+      padding: 0 10px;
+    }
+
+    .ask-amount {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ask-val {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--corp-emerald);
+    }
+
+    .ask-sub {
+      font-size: 8.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .ask-allocation {
+      font-size: 8.8px;
+      color: var(--text-body);
+      line-height: 1.25;
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    .contact-brand {
+      font-size: 10.5px;
+      font-weight: 800;
+      color: var(--corp-navy);
+    }
+
+    .contact-meta {
+      font-size: 8.5px;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       PRINT MEDIA QUERIES (STRICT SINGLE-PAGE CORPORATE PDF)
+       ============================================================ */
+    @page {
+      size: A3 landscape;
+      margin: 4mm;
+    }
+
+    @media print {
+      html, body {
+        width: 100% !important;
+        height: 100vh !important;
+        max-height: 100vh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #f8fafc !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .canvas-viewport {
+        height: 100vh !important;
+        max-height: 100vh !important;
+        padding: 4px 6px !important;
+        gap: 4px !important;
+      }
+
+      .print-btn {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="canvas-viewport">
+    
+    <!-- 1. TOP HEADER -->
+    <header class="top-header">
+      <div class="brand-group">
+        <div class="logo-container">
+          <span class="logo-text">CURE</span>
+          <span class="logo-dot"></span>
+        </div>
+        <div class="platform-tagline">
+          <span class="platform-title">BUSINESS MODEL CANVAS &bull; INSTITUTIONAL BRIEF</span>
+          <span class="platform-sub">Egypt &amp; MENA's First Tech-Enabled On-Demand Licensed Home Nursing Platform</span>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <span class="badge-pill badge-seed">Stage: Seed &bull; Post-Launch</span>
+        <span class="badge-pill badge-market">Model: Two-Sided Marketplace</span>
+        <span class="badge-pill badge-confidential">Confidential &bull; VC Deck</span>
+      </div>
+
+      <button class="print-btn" onclick="window.print()">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        Print / PDF
+      </button>
+    </header>
+
+    <!-- 2. EXECUTIVE KPI RIBBON -->
+    <section class="kpi-ribbon">
+      <div class="kpi-card">
+        <span class="kpi-label">Market TAM (Egypt)</span>
+        <span class="kpi-val val-blue">$2.1 Billion</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Platform Take Rate</span>
+        <span class="kpi-val val-emerald">30% (EGP 120/ord)</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Avg. Dispatch Time</span>
+        <span class="kpi-val val-cyan">15 &ndash; 25 Mins</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Nurse Vetting Rate</span>
+        <span class="kpi-val val-emerald">100% Syndicate</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">LTV / CAC Ratio</span>
+        <span class="kpi-val val-blue">4.2x &rarr; 9.8x (Yr 1)</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-label">Target Breakeven</span>
+        <span class="kpi-val val-amber">1,500 Orders / Day</span>
+      </div>
+    </section>
+
+    <!-- 3. OSTERWALDER 9-BOX BMC GRID -->
+    <div class="bmc-grid">
+
+      <!-- BOX 1: KEY PARTNERS (Left Tall) -->
+      <section class="bmc-box box-kp">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">01</span>
+            <span class="box-title">Key Partners</span>
+          </div>
+          <span class="box-ar-title">الشركاء الرئيسيون</span>
+          <span class="box-icon">&#129309;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Egyptian Nursing Syndicate <span class="item-tag tag-core">Vital</span></div>
+            <p class="item-desc">Mandatory credentials, license checks &amp; clinical audit.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Payment Rails (Paymob &amp; Wallets) <span class="item-tag tag-live">Live</span></div>
+            <p class="item-desc">Online cards, Vodafone Cash, InstaPay &amp; automated nurse payouts.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Medical Supplies Distributors</div>
+            <p class="item-desc">Procurement of certified sealed single-use sterile procedure kits.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Pharmacies &amp; Diagnostic Labs <span class="item-tag tag-live">Active</span></div>
+            <p class="item-desc">Bi-directional referral: prescription refills &amp; in-home sampling.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Hospitals &amp; Surgeons Network</div>
+            <p class="item-desc">Discharge desk referrals for post-op wound care &amp; home recovery.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Insurance TPAs &amp; Corporates <span class="item-tag tag-p2">Phase 2</span></div>
+            <p class="item-desc">Home nursing claim coverage reducing expensive hospital bed-days.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 2: KEY ACTIVITIES (Top Mid-Left) -->
+      <section class="bmc-box box-ka">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">02</span>
+            <span class="box-title">Key Activities</span>
+          </div>
+          <span class="box-ar-title">الأنشطة الرئيسية</span>
+          <span class="box-icon">&#9889;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Proprietary Geospatial Dispatch</div>
+            <p class="item-desc">Multi-factor score (Dist 40%, Rating 30%, Accept 20%) &amp; auto-radius expand.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Rigid Nurse Vetting &amp; Clinical Audit</div>
+            <p class="item-desc">Background checks, syndicate ID check, SOP test &amp; CSAT monitoring.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Dual-Ledger Financial Clearing</div>
+            <p class="item-desc">ACID transaction logic reconciling COD cash, gateway splits &amp; debt caps.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Growth &amp; Retention Optimization</div>
+            <p class="item-desc">Performance marketing, doctor affiliates, 4-tier loyalty &amp; habit reminders.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 3: KEY RESOURCES (Bottom Mid-Left) -->
+      <section class="bmc-box box-kr">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">03</span>
+            <span class="box-title">Key Resources</span>
+          </div>
+          <span class="box-ar-title">الموارد الرئيسية</span>
+          <span class="box-icon">&#127959;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Verified Nurse Roster (Supply Moat)</div>
+            <p class="item-desc">100% syndicate-licensed, background-vetted nurses with local density.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Proprietary Tech Architecture</div>
+            <p class="item-desc">Flutter apps (50k+ LOC), Clean Architecture, Firebase &amp; ERP admin suite.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Standardized Medical Protocol IP</div>
+            <p class="item-desc">15+ clinical visit SOP checklists ensuring hospital sterility &amp; safety.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Healthcare Trust &amp; Brand Equity</div>
+            <p class="item-desc">4.8★ patient CSAT, domain authority (cureztyx.com) &amp; compliance moat.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 4: VALUE PROPOSITIONS (Center Stage - Prominent) -->
+      <section class="bmc-box box-vp">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num" style="background: #dbeafe; color: #1e40af;">04</span>
+            <span class="box-title" style="color: var(--corp-blue);">Value Propositions</span>
+          </div>
+          <span class="box-ar-title">عروض القيمة المقترحة</span>
+          <span class="box-icon">&#128142;</span>
+        </div>
+        <div class="box-content">
+          <div class="vp-section">
+            <div class="vp-target">
+              <span>For Patients &amp; Families</span>
+              <span class="item-tag tag-core">Demand Side</span>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet"></span>15&ndash;25 Min Hyper-Rapid Dispatch</div>
+              <p class="item-desc">Zero ER wait times; instant home IV drips, injections &amp; emergency care.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet"></span>100% Syndicate-Vetted Medical Safety</div>
+              <p class="item-desc">Sealed single-use sterile kits, verified credentials &amp; live GPS arrival.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet"></span>Zero Hidden Surge &amp; Family Hub</div>
+              <p class="item-desc">Transparent standard rates, multi-profile tracking &amp; medication alerts.</p>
+            </div>
+          </div>
+
+          <div class="vp-section nurse-vp">
+            <div class="vp-target vp-target-nurse">
+              <span>For Nurses &amp; Caregivers</span>
+              <span class="item-tag tag-live">Supply Side</span>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>2.5x Income &amp; Instant Cash Flow</div>
+              <p class="item-desc">70% direct GMV payout with fast wallet withdrawals &amp; bonus milestones.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>Autonomous Flexibility &amp; Safety</div>
+              <p class="item-desc">Work on-demand, localized route radius &amp; verified patient profiles.</p>
+            </div>
+          </div>
+
+          <div class="bmc-item" style="padding-top: 1px;">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Ecosystem Win: 60% Lower Cost vs. Inpatient</div>
+            <p class="item-desc">Relieves overloaded hospital ERs while providing chronic &amp; elderly care.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 5: CUSTOMER RELATIONSHIPS (Top Mid-Right) -->
+      <section class="bmc-box box-cr">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">05</span>
+            <span class="box-title">Customer Relations</span>
+          </div>
+          <span class="box-ar-title">علاقات العملاء</span>
+          <span class="box-icon">&#128150;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-amber"></span>Frictionless Self-Service App</div>
+            <p class="item-desc">3-tap booking, transparent nurse profile, live GPS &amp; in-app chat.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-amber"></span>24/7 Human Medical Hotline</div>
+            <p class="item-desc">Direct hotline &amp; WhatsApp triage for emergency cases &amp; doctor coordination.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-amber"></span>4-Tier Loyalty &amp; Gamification</div>
+            <p class="item-desc">Bronze &rarr; Silver &rarr; Gold &rarr; Platinum tiers with cashback perks.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-amber"></span>Daily Engagement Habit Loop</div>
+            <p class="item-desc">Medication reminder notifications with overdose safeguard mechanisms.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 6: CHANNELS (Bottom Mid-Right) -->
+      <section class="bmc-box box-ch">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">06</span>
+            <span class="box-title">Channels</span>
+          </div>
+          <span class="box-ar-title">قنوات التوزيع</span>
+          <span class="box-icon">&#128225;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>CURE Mobile Apps (iOS &amp; Android) <span class="item-tag tag-live">Live</span></div>
+            <p class="item-desc">Native Flutter app with push notifications, GPS dispatch &amp; Paymob.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>WhatsApp Business &amp; Hotline <span class="item-tag tag-live">Live</span></div>
+            <p class="item-desc">Assisted booking channel capturing older non-tech demographic.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Physician &amp; Hospital Affiliates</div>
+            <p class="item-desc">Doctor referral network for discharged post-surgical wound/cannula cases.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet"></span>Pharmacy QR Flyers &amp; Meta Ads</div>
+            <p class="item-desc">Neighborhood point-of-sale branding + localized digital campaigns.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 7: CUSTOMER SEGMENTS (Right Tall) -->
+      <section class="bmc-box box-cs">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num">07</span>
+            <span class="box-title">Customer Segments</span>
+          </div>
+          <span class="box-ar-title">شرائح العملاء</span>
+          <span class="box-icon">&#128101;</span>
+        </div>
+        <div class="box-content">
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>"The Caring Child" (28&ndash;50y) <span class="item-tag tag-core">Primary</span></div>
+            <p class="item-desc">Working adults funding verified nursing care for aging parents at home.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Post-Surgical Acute Patients</div>
+            <p class="item-desc">Discharged patients needing sterile dressings, stitches removal, IV lines.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Chronic Disease Households</div>
+            <p class="item-desc">Diabetics &amp; cardiovascular cases needing regular monitoring &amp; insulin.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>Long-Term Bedside Elderly Care</div>
+            <p class="item-desc">12h &amp; 24h companion shifts for stroke, Alzheimer's &amp; palliative support.</p>
+          </div>
+          <div class="bmc-item">
+            <div class="item-head"><span class="item-bullet bullet-cyan"></span>B2B: Insurers &amp; Corporates <span class="item-tag tag-p2">Phase 2</span></div>
+            <p class="item-desc">Managed home health contracts &amp; TPA insurance policy reimbursement.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 8: COST STRUCTURE (Bottom Row - Wide Left) -->
+      <section class="bmc-box box-cost">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num" style="background: #fee2e2; color: #b91c1c;">08</span>
+            <span class="box-title" style="color: var(--corp-rose);">Cost Structure</span>
+          </div>
+          <span class="box-ar-title">هيكل التكاليف</span>
+          <span class="box-icon">&#128176;</span>
+        </div>
+        <div class="box-content two-col-content">
+          <div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-rose"></span>Nurse GMV Share (~70% Payout)</div>
+              <p class="item-desc">Direct provider payout after 30% platform take retention.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-rose"></span>Sterile Kit Supplies (5&ndash;7% GMV)</div>
+              <p class="item-desc">Standardized single-use sealed medical kits per visit.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-rose"></span>Customer Acquisition (CAC: EGP 85)</div>
+              <p class="item-desc">Digital Meta/Google campaigns &amp; doctor affiliate fees.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-rose"></span>Cloud &amp; Payment Gateway Infra</div>
+              <p class="item-desc">Firebase, Google Maps APIs, Paymob fees (2.5% + fixed).</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-rose"></span>Engineering &amp; Operations Overhead</div>
+              <p class="item-desc">Flutter engineering, nurse background audit &amp; 24/7 hotline.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOX 9: REVENUE STREAMS (Bottom Row - Wide Right) -->
+      <section class="bmc-box box-rev">
+        <div class="box-header">
+          <div class="header-left">
+            <span class="box-num" style="background: #d1fae5; color: #047857;">09</span>
+            <span class="box-title" style="color: var(--corp-emerald);">Revenue Streams</span>
+          </div>
+          <span class="box-ar-title">مصادر الإيرادات</span>
+          <span class="box-icon">&#128200;</span>
+        </div>
+        <div class="box-content two-col-content">
+          <div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>On-Demand Commission (30% Take) <span class="item-tag tag-live">Core</span></div>
+              <p class="item-desc">EGP 120 net take on average EGP 400 visit across 15+ services.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>Long-Term Shift Margin (20&ndash;25% Take)</div>
+              <p class="item-desc">High-ticket 12h/24h shifts (EGP 1,200 &ndash; 3,500 booking).</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>Cancellation &amp; Penalty Fees <span class="item-tag tag-core">Built</span></div>
+              <p class="item-desc">10%&ndash;50% cancellation fee &amp; nurse no-show penalties.</p>
+            </div>
+          </div>
+          <div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>In-App Ecosystem Ads &amp; Sponsors <span class="item-tag tag-core">Built</span></div>
+              <p class="item-desc">Sponsored placement for accredited lab chains &amp; pharmacies.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>B2B Insurance &amp; Corporate <span class="item-tag tag-p2">Phase 2</span></div>
+              <p class="item-desc">Managed home care SLA contracts &amp; TPA insurance copays.</p>
+            </div>
+            <div class="bmc-item">
+              <div class="item-head"><span class="item-bullet bullet-emerald"></span>Family Plans &amp; Wallet Yield <span class="item-tag tag-p2">Phase 2</span></div>
+              <p class="item-desc">Priority booking subscriptions &amp; float on pre-loaded balances.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 4. BOTTOM EXECUTIVE FOOTER STRIP -->
+    <footer class="bottom-strip">
+      <div class="unit-metrics">
+        <div class="unit-item">
+          <span class="unit-val">EGP 400</span>
+          <span class="unit-lbl">Average Order Value</span>
+        </div>
+        <div class="unit-item">
+          <span class="unit-val" style="color: var(--corp-emerald);">EGP 120</span>
+          <span class="unit-lbl">Net Take (30%)</span>
+        </div>
+        <div class="unit-item">
+          <span class="unit-val">EGP 85</span>
+          <span class="unit-lbl">Blended CAC</span>
+        </div>
+        <div class="unit-item">
+          <span class="unit-val" style="color: var(--corp-blue);">EGP 840</span>
+          <span class="unit-lbl">Annual LTV (7 Visits)</span>
+        </div>
+        <div class="unit-item">
+          <span class="unit-val" style="color: var(--corp-cyan);">9.8x</span>
+          <span class="unit-lbl">1-Yr LTV / CAC</span>
+        </div>
+      </div>
+
+      <div class="ask-box">
+        <div class="ask-amount">
+          <span class="ask-val">$250,000 USD</span>
+          <span class="ask-sub">Seed Round Ask</span>
+        </div>
+        <div class="ask-allocation">
+          <strong>18-Month Runway to Breakeven (1,500 Orders/Day):</strong><br/>
+          45% Supply Acquisition &amp; Greater Cairo Expansion &bull; 30% Growth &amp; Doctor Affiliates &bull; 25% Core AI Tech &amp; ERP
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <span class="contact-brand">CURE Medical Platform Ltd.</span>
+        <span class="contact-meta">cureztyx.com &bull; Cairo &amp; Fayoum, Egypt</span>
+        <span class="contact-meta" style="color: var(--corp-blue); font-weight: 700;">VC &amp; Incubator Investor Briefing &bull; 2026</span>
+      </div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

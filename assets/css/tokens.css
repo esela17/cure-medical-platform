@@ -1,24 +1,30 @@
 /* ═══════════════════════════════════════════════════════════════════
-   CURE MEDICAL DESIGN SYSTEM · Clinical Warmth & Absolute Trust
-   Primary:   #0B4F6C (Deep Medical Teal & Clinical Slate)
+   CURE MEDICAL DESIGN SYSTEM · inDrive Bold Energy & Royal Iris Purple
+   Primary:   #6D73FF (Electric Iris Violet & Cure Brand Purple)
    Secondary: #059669 (Healing & Clinical Emerald)
-   Accent:    #B45309 (Accreditation Amber / Gold)
+   Accent:    #FFB703 (Accreditation Gold / Amber)
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ─── 01. PRIMARY CLINICAL BRAND COLOR (#0B4F6C) ────────────────── */
-  --c-brand:        #0b4f6c;
-  --c-brand-deep:   #073549;
-  --c-brand-dark:   #04202d;
-  --c-brand-light:  #12769f;
-  --c-brand-glow:   rgba(11, 79, 108, 0.22);
+  /* ─── 01. PRIMARY CLINICAL BRAND COLOR (#6D73FF) ────────────────── */
+  --c-brand:        #6d73ff;
+  --c-brand-deep:   #5256eb;
+  --c-brand-dark:   #3b3fda;
+  --c-brand-light:  #8b90ff;
+  --c-brand-glow:   rgba(109, 115, 255, 0.28);
 
   /* Primary Tints (Clean & Calming) */
-  --c-brand-5:      #f0f7fa;
-  --c-brand-10:     #e2eff5;
-  --c-brand-15:     #cce3ee;
-  --c-brand-25:     #9bcbe0;
-  --c-brand-40:     #54a6c9;
+  --c-brand-5:      #f5f6ff;
+  --c-brand-10:     #ebedfe;
+  --c-brand-15:     #dfe2fd;
+  --c-brand-25:     #c5caff;
+  --c-brand-40:     #9ea5ff;
+
+  /* inDrive-inspired High-Energy Markers */
+  --c-canvas-warm:    #f8f9fe;
+  --c-highlight-bg:   rgba(109, 115, 255, 0.18);
+  --c-highlight-text: #2f34d8;
+  --c-highlight-lime: #c1f11d;
 
   /* Aliases for modern design system */
   --c-primary:          var(--c-brand);
@@ -46,18 +52,18 @@
   --c-badge-gold-bg:   #fef3c7;
   --c-badge-gold-border: #fde68a;
 
-  /* ─── 04. DEEP MEDICAL CONTRAST SURFACES (Navy / Slate) ────────── */
-  --c-dark-bg:      #0a192f;
-  --c-dark-surface: #0f243e;
-  --c-dark-card:    #163254;
-  --c-dark-border:  rgba(18, 118, 159, 0.24);
+  /* ─── 04. DEEP MEDICAL CONTRAST SURFACES (Midnight Violet / Navy) ─ */
+  --c-dark-bg:      #0d0f24;
+  --c-dark-surface: #141738;
+  --c-dark-card:    #1c204d;
+  --c-dark-border:  rgba(109, 115, 255, 0.24);
 
   /* ─── 05. LIGHT SURFACES & CLINICAL NEUTRALS ───────────────────── */
   --c-bg:           #ffffff;
-  --c-bg-soft:      #f8fafc;
-  --c-bg-alt:       #f1f5f9;
+  --c-bg-soft:      #f8f9fe;
+  --c-bg-alt:       #f1f3fd;
   --c-surface:      #ffffff;
-  --c-surface-soft: #f8fafc;
+  --c-surface-soft: #f8f9fe;
 
   /* ─── 06. HIGH-CONTRAST TYPOGRAPHY (WCAG AAA) ──────────────────── */
   --c-heading:      #0f172a; /* Deep Slate Navy (14.2:1 contrast) */
