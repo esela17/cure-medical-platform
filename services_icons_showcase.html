@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض أيقونات خدمات كيور CURE — Glassmorphism Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #0D0F24;
+      color: #FFFFFF;
+      padding: 40px 24px;
+      min-height: 100vh;
+    }
+    .header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 48px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(111, 114, 255, 0.2);
+      border: 1px solid rgba(111, 114, 255, 0.4);
+      color: #9AA0FF;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #A5B4FC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      color: #94A3B8;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(12px);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(111, 114, 255, 0.4);
+      box-shadow: 0 16px 32px -8px rgba(111, 114, 255, 0.25);
+      background: rgba(255, 255, 255, 0.07);
+    }
+    .icon-wrapper {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 16px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.4);
+    }
+    .icon-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .title-ar {
+      font-size: 16px;
+      font-weight: 800;
+      color: #F8FAFC;
+      margin-bottom: 4px;
+    }
+    .title-en {
+      font-size: 12px;
+      font-weight: 600;
+      color: #64748B;
+      direction: ltr;
+      margin-bottom: 12px;
+    }
+    .file-tag {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 11px;
+      background: rgba(111, 114, 255, 0.15);
+      color: #A5B4FC;
+      padding: 4px 10px;
+      border-radius: 6px;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">CURE BRAND IDENTITY • 2026</span>
+    <h1>باقة أيقونات خدمات كيور الموحدة (Minimal Glassy)</h1>
+    <p>تم تصميم وتوليد جميع الأيقونات بدقة عالية 512×512 وبنفس الثيم الزجاجي المعتمد، ومحفوظة بالاسمين العربي والإنجليزي داخل مشروعي الويب والتطبيق.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/blood_glucose.png" alt="قياس سكر الدم"></div>
+      <div class="title-ar">قياس سكر الدم</div>
+      <div class="title-en">blood_glucose.png</div>
+      <span class="file-tag">قياس_سكر_الدم.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/injection.png" alt="إعطاء حقنة"></div>
+      <div class="title-ar">إعطاء حقنة</div>
+      <div class="title-en">injection.png</div>
+      <span class="file-tag">إعطاء_حقنة.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/cannula.png" alt="تركيب كانيولا"></div>
+      <div class="title-ar">تركيب كانيولا</div>
+      <div class="title-en">cannula.png</div>
+      <span class="file-tag">تركيب_كانيولا.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/catheter.png" alt="تركيب قسطرة بولية"></div>
+      <div class="title-ar">تركيب قسطرة بولية</div>
+      <div class="title-en">catheter.png</div>
+      <span class="file-tag">تركيب_قسطرة_بولية.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/ng_tube.png" alt="تركيب رايل تغذية"></div>
+      <div class="title-ar">تركيب رايل تغذية</div>
+      <div class="title-en">ng_tube.png</div>
+      <span class="file-tag">تركيب_رايل_تغذية.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/blood_pressure.png" alt="قياس ضغط الدم"></div>
+      <div class="title-ar">قياس ضغط الدم</div>
+      <div class="title-en">blood_pressure.png</div>
+      <span class="file-tag">قياس_ضغط_الدم.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/wound_care.png" alt="غيار جراحي"></div>
+      <div class="title-ar">غيار جراحي</div>
+      <div class="title-en">wound_care.png</div>
+      <span class="file-tag">غيار_جراحي.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/lab_sampling.png" alt="سحب عينات تحاليل"></div>
+      <div class="title-ar">سحب عينات تحاليل</div>
+      <div class="title-en">lab_sampling.png</div>
+      <span class="file-tag">سحب_عينات_تحاليل.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/ecg_home.png" alt="رسم قلب منزلي"></div>
+      <div class="title-ar">رسم قلب منزلي</div>
+      <div class="title-en">ecg_home.png</div>
+      <span class="file-tag">رسم_قلب_منزلي.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/echo_cardiogram.png" alt="إيكو متنقل للقلب"></div>
+      <div class="title-ar">إيكو متنقل للقلب</div>
+      <div class="title-en">echo_cardiogram.png</div>
+      <span class="file-tag">إيكو_القلب.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/shift_nursing.png" alt="شفت تمريض منزلي"></div>
+      <div class="title-ar">شفت تمريض منزلي</div>
+      <div class="title-en">shift_nursing.png</div>
+      <span class="file-tag">شفت_تمريض.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/home_icu_24h.png" alt="رعاية مركزة منزلية"></div>
+      <div class="title-ar">رعاية مركزة منزلية</div>
+      <div class="title-en">home_icu_24h.png</div>
+      <span class="file-tag">رعاية_مركزة_منزلية.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/physiotherapy.png" alt="جلسة علاج طبيعي"></div>
+      <div class="title-ar">جلسة علاج طبيعي</div>
+      <div class="title-en">physiotherapy.png</div>
+      <span class="file-tag">علاج_طبيعي.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/doctor_visit.png" alt="كشف وزيارة طبيب"></div>
+      <div class="title-ar">كشف وزيارة طبيب</div>
+      <div class="title-en">doctor_visit.png</div>
+      <span class="file-tag">كشف_طبيب_منزلي.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/rent_o2_concentrator.png" alt="مولد أكسجين منزلي"></div>
+      <div class="title-ar">مولد أكسجين منزلي</div>
+      <div class="title-en">rent_o2_concentrator.png</div>
+      <span class="file-tag">مولد_أكسجين.png</span>
+    </div>
+
+    <div class="card">
+      <div class="icon-wrapper"><img src="assets/icons/services/rent_patient_monitor.png" alt="مونيتور مراقبة"></div>
+      <div class="title-ar">مونيتور مراقبة</div>
+      <div class="title-en">rent_patient_monitor.png</div>
+      <span class="file-tag">مونيتور_مراقبة.png</span>
+    </div>
+  </div>
+
+</body>
+</html>

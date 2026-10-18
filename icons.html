@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>معرض أيقونات خدمات كيور CURE — Glassmorphism Edition 2026</title>
+  <meta name="description" content="المعرض الرسمي لأيقونات خدمات منصة كيور الطبية للتمريض المنزلي. تصميم زجاجي عصري موحد (Minimal Glassy) بدقة 512×512." />
+  <link rel="canonical" href="https://cureztyx.com/services-icons.html" />
+
+  <!-- App Icon & Favicons -->
+  <link rel="icon" type="image/png" href="assets/images/icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/images/icon.png" />
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Master Design System Stylesheet -->
+  <link rel="stylesheet" href="assets/css/tokens.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/base.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/components.css?v=20260908_v2" />
+  <link rel="stylesheet" href="assets/css/pages/index.css?v=20260908_v2" />
+
+  <style>
+    .icons-hero {
+      padding: 120px 20px 60px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(111, 114, 255, 0.15) 0%, transparent 70%);
+    }
+    .icons-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: rgba(111, 114, 255, 0.12);
+      border: 1px solid rgba(111, 114, 255, 0.35);
+      border-radius: 50px;
+      color: var(--c-brand-deep);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .icons-hero h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      color: var(--c-text-main);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .icons-hero p {
+      font-size: 16px;
+      color: var(--c-text-muted);
+      max-width: 760px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+    .icons-grid-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px 100px;
+    }
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .icon-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(111, 114, 255, 0.15);
+      border-radius: 28px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px -10px rgba(111, 114, 255, 0.12);
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .icon-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(111, 114, 255, 0.45);
+      box-shadow: 0 20px 40px -10px rgba(111, 114, 255, 0.25);
+    }
+    .icon-img-wrap {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 20px;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 14px 28px -6px rgba(18, 20, 85, 0.22);
+      background: #6F72FF;
+      transition: transform 0.3s ease;
+    }
+    .icon-card:hover .icon-img-wrap {
+      transform: scale(1.05);
+    }
+    .icon-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .icon-title-ar {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--c-text-main);
+      margin-bottom: 6px;
+    }
+    .icon-title-en {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--c-text-muted);
+      direction: ltr;
+      margin-bottom: 16px;
+      font-family: monospace;
+    }
+    .icon-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .btn-download-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--c-brand-deep);
+      color: #FFFFFF;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-download-icon:hover {
+      background: #5054EB;
+      color: #FFFFFF;
+      box-shadow: 0 6px 14px rgba(111, 114, 255, 0.35);
+    }
+    .btn-view-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      background: rgba(111, 114, 255, 0.08);
+      color: var(--c-brand-deep);
+      border: 1px solid rgba(111, 114, 255, 0.2);
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-view-icon:hover {
+      background: rgba(111, 114, 255, 0.16);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Unified Site Header -->
+  <header id="site-header" class="site-header">
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-bar-cta">
+          <span class="top-bar-badge"><span class="pulse-dot"></span> حـمّـل التـطـبـيـق الآن</span>
+          <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="top-bar-gp-btn" id="topBarGpBtn" title="تحميل تطبيق كيور من متجر جوجل بلاي">
+            <i class="fab fa-google-play"></i>
+            <span>زر جوجل بلاي (Google Play)</span>
+          </a>
+        </div>
+        <div class="top-bar-contact">
+          <a href="tel:01070203636" class="top-contact-link"><i class="fas fa-phone-alt"></i> طوارئ التمريض: 01070203636</a>
+          <a href="https://wa.me/201070203636?text=مرحباً، أستفسر عن خدمات التمريض المنزلي" target="_blank" rel="noopener" class="top-contact-link wa"><i class="fab fa-whatsapp"></i> واتساب فوري</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" title="كيور — تمريض منزلي آمن">
+          <img src="assets/images/icon.png" alt="شعار كيور للتمريض المنزلي" width="38" height="38" loading="eager" />
+          <span class="nav-logo-text">كيور<span>.</span></span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#needs">احتياجاتك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="pricing.html">الأسعار</a></li>
+          <li><a href="services-icons.html" style="color: var(--c-brand-deep); font-weight: 900;">الأيقونات</a></li>
+          <li><a href="faq.html">الأسئلة</a></li>
+          <li><a href="articles.html">المقالات</a></li>
+          <li><a href="careers.html">وظائف</a></li>
+          <li>
+            <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" class="nav-cta" target="_blank" rel="noopener">
+              <i class="fab fa-google-play" style="margin-left: 5px;"></i> حمّل التطبيق
+            </a>
+          </li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="افتح القائمة">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="icons-hero">
+    <div class="icons-badge">
+      <i class="fas fa-layer-group"></i> CURE DESIGN SYSTEM • GLASSMORPHISM 2026
+    </div>
+    <h1>أيقونات خدمات منصة كيور الطبية</h1>
+    <p>باقة أيقونات الخدمات الرسمية المعتمدة بتقنية التصميم الزجاجي العصري (Minimal Glassy) بدقة فائقة 512×512 بكسل وبنفس الهوية البصرية الموحدة لعلامة كيور.</p>
+  </section>
+
+  <!-- Icons Showcase Grid -->
+  <main class="icons-grid-section">
+    <div class="icons-grid">
+
+      <!-- 1. قياس سكر الدم -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/blood_glucose.png" alt="قياس سكر الدم" loading="lazy">
+        </div>
+        <div class="icon-title-ar">قياس سكر الدم</div>
+        <div class="icon-title-en">blood_glucose.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/blood_glucose.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/blood_glucose.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 2. إعطاء حقنة -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/injection.png" alt="إعطاء حقنة" loading="lazy">
+        </div>
+        <div class="icon-title-ar">إعطاء حقنة</div>
+        <div class="icon-title-en">injection.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/injection.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/injection.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 3. تركيب كانيولا -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/cannula.png" alt="تركيب كانيولا" loading="lazy">
+        </div>
+        <div class="icon-title-ar">تركيب كانيولا</div>
+        <div class="icon-title-en">cannula.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/cannula.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/cannula.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 4. تركيب قسطرة بولية -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/catheter.png" alt="تركيب قسطرة بولية" loading="lazy">
+        </div>
+        <div class="icon-title-ar">تركيب قسطرة بولية</div>
+        <div class="icon-title-en">catheter.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/catheter.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/catheter.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 5. تركيب رايل تغذية -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/ng_tube.png" alt="تركيب رايل تغذية" loading="lazy">
+        </div>
+        <div class="icon-title-ar">تركيب رايل تغذية</div>
+        <div class="icon-title-en">ng_tube.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/ng_tube.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/ng_tube.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 6. قياس ضغط الدم -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/blood_pressure.png" alt="قياس ضغط الدم" loading="lazy">
+        </div>
+        <div class="icon-title-ar">قياس ضغط الدم</div>
+        <div class="icon-title-en">blood_pressure.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/blood_pressure.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/blood_pressure.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 7. غيار جراحي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/wound_care.png" alt="غيار جراحي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">غيار جراحي</div>
+        <div class="icon-title-en">wound_care.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/wound_care.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/wound_care.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 8. سحب عينات تحاليل -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/lab_sampling.png" alt="سحب عينات تحاليل" loading="lazy">
+        </div>
+        <div class="icon-title-ar">سحب عينات تحاليل</div>
+        <div class="icon-title-en">lab_sampling.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/lab_sampling.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/lab_sampling.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 9. رسم قلب رقمي منزلي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/ecg_home.png" alt="رسم قلب منزلي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">رسم قلب منزلي</div>
+        <div class="icon-title-en">ecg_home.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/ecg_home.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/ecg_home.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 10. إيكو متنقل للقلب -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/echo_cardiogram.png" alt="إيكو متنقل للقلب" loading="lazy">
+        </div>
+        <div class="icon-title-ar">إيكو متنقل للقلب</div>
+        <div class="icon-title-en">echo_cardiogram.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/echo_cardiogram.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/echo_cardiogram.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 11. شفت تمريض منزلي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/shift_nursing.png" alt="شفت تمريض منزلي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">شفت تمريض منزلي</div>
+        <div class="icon-title-en">shift_nursing.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/shift_nursing.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/shift_nursing.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 12. رعاية مركزة منزلية -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/home_icu_24h.png" alt="رعاية مركزة منزلية" loading="lazy">
+        </div>
+        <div class="icon-title-ar">رعاية مركزة منزلية</div>
+        <div class="icon-title-en">home_icu_24h.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/home_icu_24h.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/home_icu_24h.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 13. جلسة علاج طبيعي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/physiotherapy.png" alt="جلسة علاج طبيعي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">جلسة علاج طبيعي</div>
+        <div class="icon-title-en">physiotherapy.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/physiotherapy.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/physiotherapy.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 14. كشف وزيارة طبيب منزلي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/doctor_visit.png" alt="كشف وزيارة طبيب منزلي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">كشف وزيارة طبيب</div>
+        <div class="icon-title-en">doctor_visit.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/doctor_visit.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/doctor_visit.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 15. إيجار مولد أكسجين منزلي -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/rent_o2_concentrator.png" alt="مولد أكسجين منزلي" loading="lazy">
+        </div>
+        <div class="icon-title-ar">مولد أكسجين منزلي</div>
+        <div class="icon-title-en">rent_o2_concentrator.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/rent_o2_concentrator.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/rent_o2_concentrator.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+      <!-- 16. إيجار مونيتور مراقبة -->
+      <div class="icon-card">
+        <div class="icon-img-wrap">
+          <img src="assets/icons/services/rent_patient_monitor.png" alt="مونيتور مراقبة العلامات الحيوية" loading="lazy">
+        </div>
+        <div class="icon-title-ar">مونيتور مراقبة</div>
+        <div class="icon-title-en">rent_patient_monitor.png</div>
+        <div class="icon-actions">
+          <a href="assets/icons/services/rent_patient_monitor.png" download class="btn-download-icon"><i class="fas fa-download"></i> تحميل PNG</a>
+          <a href="assets/icons/services/rent_patient_monitor.png" target="_blank" class="btn-view-icon"><i class="fas fa-expand"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Unified Site Footer -->
+  <footer id="footer" class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/images/icon.png" alt="شعار منصة كيور للتمريض المنزلي" width="44" height="44" loading="lazy" />
+            <span class="footer-logo-text">كيور<span>.</span></span>
+          </a>
+          <p class="footer-desc">
+            المنصة الأولى المعتمدة لتقديم خدمات التمريض المنزلي والرعاية السريرية الآمنة، بكوادر تمريضية مرخصة وأسعار شفافة 100%.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#services">خدماتنا</a></li>
+            <li><a href="pricing.html">جدول الأسعار</a></li>
+            <li><a href="services-icons.html">أيقونات الخدمات</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="articles.html">المقالات الطبية</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>تواصل وقانوني</h4>
+          <ul>
+            <li><a href="tel:01070203636"><i class="fas fa-phone-alt"></i> 01070203636</a></li>
+            <li><a href="https://wa.me/201070203636" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب فوري</a></li>
+            <li><a href="mailto:eslam.hamada@cureztyx.com"><i class="fas fa-envelope"></i> eslam.hamada@cureztyx.com</a></li>
+            <li><a href="careers.html">وظائف التمريض</a></li>
+            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+            <li><a href="terms.html">الشروط والأحكام</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 كيور (CURE) — أول وأفضل منصة تمريض منزلي معتمدة في مصر. جميع الحقوق محفوظة.</p>
+        <p>صُنع بكل <span style="color: var(--c-secondary);">♥</span> لخدمة المجتمع الطبي وأهالينا في الفيوم ومصر</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Quick Action Bar -->
+  <aside class="mobile-quick-bar" aria-label="أزرار الإجراء السريع للموبايل">
+    <div class="mobile-quick-inner">
+      <a href="https://play.google.com/store/apps/details?id=com.cureztyx.app" target="_blank" rel="noopener" class="mobile-quick-btn gp" title="حمّل التطبيق الآن">
+        <i class="fab fa-google-play"></i> حمّل التطبيق
+      </a>
+      <a href="https://wa.me/201070203636?text=مرحباً، أريد حجز تمريض منزلي" target="_blank" rel="noopener" class="mobile-quick-btn wa" title="واتساب">
+        <i class="fab fa-whatsapp"></i> واتساب
+      </a>
+      <a href="tel:01070203636" class="mobile-quick-btn call" title="اتصل الآن">
+        <i class="fas fa-phone-alt"></i> اتصل
+      </a>
+    </div>
+  </aside>
+
+  <!-- JavaScript Bundle -->
+  <script src="assets/js/main.js?v=20260908_v2"></script>
+</body>
+</html>
