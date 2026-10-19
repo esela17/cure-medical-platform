@@ -9,4 +9,14 @@
 old_index_styles.css
 7cfcd51_styles.css
 extracted_sections.css
+scratch/
+*.backup.*
+*.pyc
+__pycache__/
+generate_*.py
+FILE.md
+ref/
+ref_gallery.html
+
+
 

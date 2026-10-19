@@ -51,12 +51,59 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 60
   const nav = document.getElementById('navbar');
   const btn = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
+  const idMenuBtn = document.getElementById('idMenuBtn');
+  const idMegaMenu = document.getElementById('idMegaMenu');
+  const idDrawerClose = document.getElementById('idDrawerClose');
 
   window.addEventListener('scroll', () => {
     const isScrolled = window.scrollY > 30;
     if (header) header.classList.toggle('scrolled', isScrolled);
     if (nav) nav.classList.toggle('scrolled', isScrolled);
   }, { passive: true });
+
+  // InDrive Full-Screen Mega Menu Global Support
+  if (idMenuBtn && idMegaMenu) {
+    const openMegaMenu = () => {
+      idMegaMenu.classList.add('active', 'open');
+      idMegaMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMegaMenu = () => {
+      idMegaMenu.classList.remove('active', 'open');
+      idMegaMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    idMenuBtn.addEventListener('click', openMegaMenu);
+    if (idDrawerClose) idDrawerClose.addEventListener('click', closeMegaMenu);
+
+    idMegaMenu.addEventListener('click', (e) => {
+      if (e.target === idMegaMenu) closeMegaMenu();
+    });
+
+    idMegaMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMegaMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && idMegaMenu.classList.contains('active')) closeMegaMenu();
+    });
+
+    // Category Tabs Switcher
+    const megaTabs = idMegaMenu.querySelectorAll('.id-mega-tab-btn');
+    const megaPanels = idMegaMenu.querySelectorAll('.id-mega-panel');
+    megaTabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        megaTabs.forEach(t => t.classList.remove('active'));
+        megaPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.getAttribute('data-cat');
+        const panel = document.getElementById('mega-panel-' + cat);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  }
 
   if (btn && menu) {
     const toggleMenu = () => {
@@ -78,45 +125,96 @@ document.addEventListener('DOMContentLoaded', () => setTimeout(dismissLoader, 60
 }());
 
 /* ─────────────────────────────────────
-   4. LANGUAGE TOGGLE (Google Translate)
+   4. PROFESSIONAL BILINGUAL TRANSLATION (Arabic RTL <-> English LTR)
    ───────────────────────────────────── */
-function toggleLanguage() {
-  const currentLang = getCookie('googtrans');
-  if (currentLang && currentLang.includes('/en')) {
-    // Revert to Arabic
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
-    location.reload();
-  } else {
-    // Translate to English
-    setCookie("googtrans", "/ar/en", 30);
-    location.reload();
-  }
-}
+window.currentLang = 'ar';
 
-// Global init for language UI
-window.addEventListener("DOMContentLoaded", () => {
-  const lang = getCookie("googtrans");
-  const toggleBtns = document.querySelectorAll(".lang-toggle-btn");
-  if (lang && lang.includes("/en")) {
-    toggleBtns.forEach(btn => btn.textContent = "AR");
-    document.documentElement.dir = "ltr";
-  } else {
-    toggleBtns.forEach(btn => btn.textContent = "EN");
-  }
-
-  // Bind buttons
-  ['langToggleDesktop', 'langToggleMobile'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('click', toggleLanguage);
+window.setLanguage = function(lang) {
+  window.currentLang = lang;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'en' ? 'ltr' : 'rtl');
+  document.body.classList.toggle('lang-en', lang === 'en');
+  
+  // Update toggle buttons text (preserves globe icon)
+  document.querySelectorAll('.lang-toggle-btn, #langToggleBtn').forEach(btn => {
+    const lbl = btn.querySelector('.lang-toggle-label') || btn.querySelector('span');
+    if (lbl) {
+      lbl.textContent = (lang === 'en' ? 'العربية' : 'EN');
+    } else {
+      btn.textContent = (lang === 'en' ? 'العربية' : 'EN');
+    }
+    btn.setAttribute('aria-label', lang === 'en' ? 'التبديل إلى العربية' : 'Switch to English');
   });
+
+  // Apply translations dictionary
+  if (window.CURE_I18N && window.CURE_I18N[lang]) {
+    const dict = window.CURE_I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.placeholder = dict[key];
+      }
+    });
+  }
+
+  // Update Hero dynamic title if rotator exists
+  if (window.updateHeroLanguageTitle) {
+    window.updateHeroLanguageTitle();
+  }
+
+  // Update matcher selects if function exists
+  if (window.updateSmartMatcher) {
+    window.updateSmartMatcher();
+  }
+
+  // Persist preference
+  try {
+    localStorage.setItem('cure_lang', lang);
+  } catch (e) {}
+
+  window.dispatchEvent(new CustomEvent('cure_language_switched', { detail: { lang } }));
+};
+
+window.toggleLanguage = function() {
+  const current = window.currentLang || localStorage.getItem('cure_lang') || 'ar';
+  const target = (current === 'ar' ? 'en' : 'ar');
+  window.setLanguage(target);
+};
+
+// Global language init on DOM load
+window.addEventListener('DOMContentLoaded', () => {
+  let savedLang = 'ar';
+  try {
+    savedLang = localStorage.getItem('cure_lang') || 'ar';
+  } catch (e) {}
+
+  ['langToggleBtn', 'langToggleDesktop', 'langToggleMobile', 'idMegaLangToggle'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.toggleLanguage();
+    });
+  });
+
+  if (savedLang === 'en') {
+    window.setLanguage('en');
+  } else {
+    document.querySelectorAll('.lang-toggle-label').forEach(lbl => lbl.textContent = 'EN');
+  }
 });
 
 /* ─────────────────────────────────────
    5. SCROLL REVEAL & COUNTERS
    ───────────────────────────────────── */
 (function initPremiumEffects() {
-  const counterMap = { '150+': [150, '+'], '87%': [87, '%'], '91%': [91, '%'] };
+  const counterMap = { '6': [6, ''], '87%': [87, '%'], '91%': [91, '%'] };
 
   const animate = (el, target, suffix) => {
     const duration = 2000;
@@ -148,7 +246,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.reveal, .num-val').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .num-val').forEach(el => io.observe(el));
 }());
 
 /* ─────────────────────────────────────
@@ -317,14 +415,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const priceText = selectedServiceOpt.getAttribute('data-price') || 'حسب التقييم';
 
     const areaName = selectedAreaOpt.text.split('(')[0].trim();
-    const timeText = selectedAreaOpt.getAttribute('data-time') || '15 دقيقة';
+    const timeText = selectedAreaOpt.getAttribute('data-time') || 'استجابة فورية فائقة';
     const nurseName = selectedAreaOpt.getAttribute('data-nurse') || 'ممرض معتمد';
     const specialty = selectedAreaOpt.getAttribute('data-specialty') || 'أخصائي تمريض منزلي';
 
-    if (priceEl) priceEl.innerHTML = `<span style="font-size: 15px; color: var(--c-secondary); font-weight: 800;"><i class="fas fa-certificate"></i> مسعّرة ومحددة بالتطبيق</span>`;
+    if (priceEl) priceEl.innerHTML = `<span style="font-size: 15px; color: #5256eb; font-weight: 800;"><i class="fas fa-certificate"></i> مسعّرة ومحددة بالتطبيق</span>`;
     if (etaEl) etaEl.textContent = timeText;
     if (nurseNameEl) {
-      nurseNameEl.innerHTML = `${nurseName} <span style="font-size: 11px; background: rgba(174, 250, 124, 0.18); color: var(--c-secondary); border: 1px solid var(--c-secondary); padding: 2px 8px; border-radius: 12px; font-weight: 800;"><i class="fas fa-certificate"></i> ترخيص ساري</span>`;
+      nurseNameEl.innerHTML = `${nurseName} <span style="font-size: 11px; background: rgba(109, 115, 255, 0.12); color: #5256eb; border: 1px solid rgba(109, 115, 255, 0.3); padding: 2px 8px; border-radius: 12px; font-weight: 800;"><i class="fas fa-certificate"></i> ترخيص ساري</span>`;
     }
     if (specialtyEl) specialtyEl.textContent = `${specialty} · نطاق ${areaName}`;
 
@@ -339,10 +437,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (resultBox) {
       resultBox.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
       resultBox.style.transform = 'scale(1.01)';
-      resultBox.style.boxShadow = '0 0 25px rgba(174, 250, 124, 0.35)';
+      resultBox.style.boxShadow = '0 0 25px rgba(109, 115, 255, 0.25)';
       setTimeout(() => {
         resultBox.style.transform = 'scale(1)';
-        resultBox.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3)';
+        resultBox.style.boxShadow = '0 10px 28px rgba(109, 115, 255, 0.08)';
       }, 200);
     }
   }
@@ -353,3 +451,161 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSmartMatcher(); // Initialize on page load
   }
 });
+
+
+/* ─────────────────────────────────────
+   12. HERO 4-VALUES SYNCHRONIZED ROTATOR
+   ───────────────────────────────────── */
+(function initHeroRotator() {
+  const slides = document.querySelectorAll('.id-hero-slide');
+  const tabs = document.querySelectorAll('.id-tab-item');
+  const titleEl = document.getElementById('heroDynamicTitle');
+  if (!slides.length || !tabs.length) return;
+
+  const heroSlidesContent = {
+    ar: [
+      { title: '<mark class="cure-marker">تمريض منزلي</mark><br/>بالسعر العادل<br/>ورعاية تطمنك' },
+      { title: '<mark class="cure-marker">أمان واطمئنان</mark><br/>ممرض مرخص ومعتمد<br/>حتى باب بيتك' },
+      { title: '<mark class="cure-marker">سرعة في الاستجابة</mark><br/>نصلك في منزلك<br/>بأسرع وقت قياسي' },
+      { title: '<mark class="cure-marker">أسعار معلنة</mark><br/>تفاصيل واضحة ومحددة<br/>دون أي مساومات' }
+    ],
+    en: [
+      { title: '<mark class="cure-marker">Home Nursing</mark><br/>At Fair Rates<br/>Care You Trust' },
+      { title: '<mark class="cure-marker">Safety & Peace</mark><br/>Licensed & Verified Nurse<br/>To Your Doorstep' },
+      { title: '<mark class="cure-marker">Lightning Fast</mark><br/>Reaching Your Home<br/>In Record Time' },
+      { title: '<mark class="cure-marker">Clear Pricing</mark><br/>Transparent Rates<br/>Zero Haggling' }
+    ]
+  };
+
+  let activeIdx = 0;
+  let progressAnimFrame = null;
+  let progressStartTime = null;
+  const SLIDE_DURATION = 6000;
+
+  function updateProgress(timestamp) {
+    if (!progressStartTime) progressStartTime = timestamp;
+    const elapsed = timestamp - progressStartTime;
+    const progressPercent = Math.min((elapsed / SLIDE_DURATION) * 100, 100);
+
+    tabs.forEach((tab, i) => {
+      const fill = tab.querySelector('.id-tab-progress-fill');
+      if (fill) {
+        if (i === activeIdx) {
+          fill.style.width = progressPercent + '%';
+        } else if (i < activeIdx) {
+          fill.style.width = '100%';
+        } else {
+          fill.style.width = '0%';
+        }
+      }
+    });
+
+    if (elapsed < SLIDE_DURATION) {
+      progressAnimFrame = requestAnimationFrame(updateProgress);
+    } else {
+      goToSlide((activeIdx + 1) % slides.length);
+    }
+  }
+
+  function goToSlide(index) {
+    if (progressAnimFrame) cancelAnimationFrame(progressAnimFrame);
+    progressStartTime = null;
+    activeIdx = index;
+    window.currentHeroSlideIndex = index;
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('active', i === index);
+      const fill = tab.querySelector('.id-tab-progress-fill');
+      if (fill) fill.style.width = (i < index ? '100%' : '0%');
+    });
+
+    if (titleEl) {
+      titleEl.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      titleEl.style.opacity = '0';
+      titleEl.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        const lang = window.currentLang === 'en' ? 'en' : 'ar';
+        const slideData = heroSlidesContent[lang] && heroSlidesContent[lang][index];
+        if (slideData) titleEl.innerHTML = slideData.title;
+        titleEl.style.opacity = '1';
+        titleEl.style.transform = 'translateY(0)';
+      }, 250);
+    }
+
+    progressAnimFrame = requestAnimationFrame(updateProgress);
+  }
+
+  window.goToHeroSlide = goToSlide;
+
+  window.updateHeroLanguageTitle = function() {
+    const lang = window.currentLang === 'en' ? 'en' : 'ar';
+    const slideData = heroSlidesContent[lang] && heroSlidesContent[lang][activeIdx];
+    if (titleEl && slideData) {
+      titleEl.innerHTML = slideData.title;
+    }
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToSlide(i);
+    });
+  });
+
+  // Start progress
+  progressAnimFrame = requestAnimationFrame(updateProgress);
+}());
+
+/* ─────────────────────────────────────
+   13. OFFICIAL YOUTUBE VIDEO STORY MODAL
+   ───────────────────────────────────── */
+window.openVideoModal = function() {
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoIframe');
+  if (modal && iframe) {
+    iframe.src = "https://www.youtube-nocookie.com/embed/kPL6iRweoBs?autoplay=1";
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+};
+
+window.closeVideoModal = function(e) {
+  if (e && e.target && e.target.closest('.video-modal-content') && !e.target.classList.contains('video-modal-close')) {
+    return;
+  }
+  const modal = document.getElementById('videoModal');
+  const iframe = document.getElementById('videoIframe');
+  if (modal && iframe) {
+    iframe.src = "";
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+};
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('videoModal');
+    if (modal && modal.classList.contains('open')) window.closeVideoModal();
+  }
+});
+
+/* ─────────────────────────────────────
+   14. INTERACTIVE RADAR MAP HUB SELECTOR
+   ───────────────────────────────────── */
+window.highlightHub = function(cardId) {
+  const card = document.getElementById(cardId);
+  if (!card) return;
+
+  document.querySelectorAll('.radar-hub-card').forEach(c => c.classList.remove('highlighted'));
+  card.classList.add('highlighted');
+
+  card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  setTimeout(() => {
+    card.classList.remove('highlighted');
+  }, 3500);
+};

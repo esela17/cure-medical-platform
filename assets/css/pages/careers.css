@@ -401,9 +401,9 @@
       box-shadow: 0 0 12px rgba(109, 115, 255, 0.4);
     }
     .prog-step.done .prog-circle {
-      background: #22c55e;
+      background: #5256eb;
       color: #fff;
-      border-color: #22c55e;
+      border-color: #5256eb;
     }
     .prog-label {
       font-size: 11px;
@@ -548,7 +548,8 @@
       box-shadow: 0 4px 14px rgba(109, 115, 255, 0.3);
     }
     .btn-submit {
-      background: #16a34a;
+      background: linear-gradient(135deg, #6d73ff 0%, #5256eb 100%);
+      box-shadow: 0 6px 20px rgba(109, 115, 255, 0.35);
     }
     .success-state {
       display: none;

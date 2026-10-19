@@ -1,107 +1,113 @@
 /* ═══════════════════════════════════════════════════════════════════
    CURE MEDICAL DESIGN SYSTEM · inDrive Bold Energy & Royal Iris Purple
    Primary:   #6D73FF (Electric Iris Violet & Cure Brand Purple)
-   Secondary: #059669 (Healing & Clinical Emerald)
-   Accent:    #FFB703 (Accreditation Gold / Amber)
+   Secondary: #5256eb (Signature Royal Iris Purple)
+   Accent:    #C1F11D (inDrive Cyber Lime Highlighter)
+   Canvas:    #F9F9FE (Warm Iris Canvas)
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ─── 01. PRIMARY CLINICAL BRAND COLOR (#6D73FF) ────────────────── */
-  --c-brand:        #6d73ff;
+  /* ─── PHASE 0: T0.1 DESIGN TOKENS (CURE CORPORATE) ───────────────── */
+  --primary:        #6D73FF;
+  --primary-50:     color-mix(in srgb, var(--primary) 6%,  #fff);
+  --primary-100:    color-mix(in srgb, var(--primary) 12%, #fff);
+  --primary-200:    color-mix(in srgb, var(--primary) 25%, #fff);
+  --primary-300:    color-mix(in srgb, var(--primary) 45%, #fff);
+  --primary-700:    color-mix(in srgb, var(--primary) 70%, #000);
+  --primary-900:    #121128;
+
+  --ink:            #14142B;
+  --body:           #4A4A68;
+  --muted:          #6B6B85;
+  --success:        #1E9E6A;
+  --danger:         #D64550;
+
+  --radius-sm:      12px;
+  --radius-md:      20px;
+  --radius-lg:      32px;
+
+  --shadow-card:    0 1px 2px rgba(20,20,43,.04), 0 12px 32px rgba(20,20,43,.08);
+  --shadow-lift:    0 2px 4px rgba(20,20,43,.06), 0 24px 48px rgba(20,20,43,.14);
+  --container:      1200px;
+  --section-y:      clamp(72px, 9vw, 128px);
+
+  /* ─── COMPATIBILITY ALIASES ─────────────────────────────────────── */
+  --c-brand:        var(--primary);
   --c-brand-deep:   #5256eb;
   --c-brand-dark:   #3b3fda;
   --c-brand-light:  #8b90ff;
   --c-brand-glow:   rgba(109, 115, 255, 0.28);
+  --c-brand-5:      var(--primary-50);
+  --c-brand-10:     var(--primary-100);
+  --c-brand-15:     color-mix(in srgb, var(--primary) 18%, #fff);
+  --c-brand-25:     var(--primary-200);
+  --c-brand-40:     var(--primary-300);
 
-  /* Primary Tints (Clean & Calming) */
-  --c-brand-5:      #f5f6ff;
-  --c-brand-10:     #ebedfe;
-  --c-brand-15:     #dfe2fd;
-  --c-brand-25:     #c5caff;
-  --c-brand-40:     #9ea5ff;
+  --c-primary:          var(--primary);
+  --c-primary-deep:     #5256eb;
+  --c-primary-dark:     #3b3fda;
+  --c-primary-light:    #8b90ff;
+  --c-primary-surface:  var(--primary-50);
 
-  /* inDrive-inspired High-Energy Markers */
-  --c-canvas-warm:    #f8f9fe;
-  --c-highlight-bg:   rgba(109, 115, 255, 0.18);
-  --c-highlight-text: #2f34d8;
-  --c-highlight-lime: #c1f11d;
-
-  /* Aliases for modern design system */
-  --c-primary:          var(--c-brand);
-  --c-primary-deep:     var(--c-brand-deep);
-  --c-primary-dark:     var(--c-brand-dark);
-  --c-primary-light:    var(--c-brand-light);
-  --c-primary-surface:  var(--c-brand-5);
-
-  /* ─── 02. SECONDARY / HEALING EMERALD (#059669) ─────────────────── */
-  --c-secondary:       #059669;
-  --c-secondary-dark:  #047857;
-  --c-secondary-deep:  #065f46;
-  --c-secondary-light: #10b981;
-  --c-secondary-glow:  rgba(5, 150, 105, 0.25);
-  --c-secondary-bg:    rgba(5, 150, 105, 0.10);
+  --c-secondary:       #5256eb;
+  --c-secondary-dark:  #4338ca;
+  --c-secondary-deep:  #3730a3;
+  --c-secondary-light: #8b90ff;
+  --c-secondary-glow:  rgba(109, 115, 255, 0.28);
+  --c-secondary-bg:    rgba(109, 115, 255, 0.10);
   --c-secondary-text:  #ffffff;
 
-  /* Aliases for CTA */
-  --c-accent:          var(--c-secondary);
-  --c-accent-hover:    var(--c-secondary-dark);
-  --c-accent-soft:     #ecfdf5;
+  --c-accent:          var(--primary);
+  --c-accent-hover:    #5256eb;
+  --c-accent-soft:     var(--primary-50);
 
-  /* ─── 03. ACCREDITATION & TRUST BADGE (Gold / Amber) ───────────── */
   --c-badge-gold:      #b45309;
   --c-badge-gold-bg:   #fef3c7;
   --c-badge-gold-border: #fde68a;
 
-  /* ─── 04. DEEP MEDICAL CONTRAST SURFACES (Midnight Violet / Navy) ─ */
-  --c-dark-bg:      #0d0f24;
-  --c-dark-surface: #141738;
-  --c-dark-card:    #1c204d;
-  --c-dark-border:  rgba(109, 115, 255, 0.24);
+  --c-dark-bg:      var(--primary-900);
+  --c-dark-surface: #ffffff;
+  --c-dark-card:    var(--primary-50);
+  --c-dark-border:  rgba(109, 115, 255, 0.18);
 
-  /* ─── 05. LIGHT SURFACES & CLINICAL NEUTRALS ───────────────────── */
   --c-bg:           #ffffff;
-  --c-bg-soft:      #f8f9fe;
-  --c-bg-alt:       #f1f3fd;
+  --c-bg-soft:      #faf9fe;
+  --c-bg-alt:       var(--primary-50);
   --c-surface:      #ffffff;
-  --c-surface-soft: #f8f9fe;
+  --c-surface-soft: #fbfbfe;
 
-  /* ─── 06. HIGH-CONTRAST TYPOGRAPHY (WCAG AAA) ──────────────────── */
-  --c-heading:      #0f172a; /* Deep Slate Navy (14.2:1 contrast) */
-  --c-body:         #334155; /* Slate Charcoal (7.5:1 contrast) */
-  --c-muted:        #64748b; /* Accessible Muted Slate (4.6:1 contrast) */
-  --c-light-muted:  #94a3b8;
+  --c-heading:      var(--ink);
+  --c-body:         var(--body);
+  --c-muted:        var(--muted);
+  --c-light-muted:  #8b95a5;
   --c-white:        #ffffff;
 
-  /* ─── 07. CLINICAL SEMANTIC ALERTS ────────────────────────────── */
-  --c-success:      #059669;
+  --c-success:      var(--success);
   --c-success-bg:   #ecfdf5;
   --c-warning:      #d97706;
   --c-warning-bg:   #fffbeb;
-  --c-danger:       #dc2626;
+  --c-danger:       var(--danger);
   --c-danger-bg:    #fef2f2;
-  --c-border:       rgba(11, 79, 108, 0.12);
-  --c-border-light: rgba(11, 79, 108, 0.06);
+  --c-border:       rgba(109, 115, 255, 0.14);
+  --c-border-light: rgba(109, 115, 255, 0.08);
 
-  /* ─── 08. CALM ARCHITECTURAL SHADOWS (Anti-AI Cliché) ─────────── */
-  --shadow-xs:     0 1px 3px rgba(15, 23, 42, 0.05);
-  --shadow-sm:     0 2px 8px -1px rgba(15, 23, 42, 0.06);
-  --shadow-card:   0 4px 16px -2px rgba(11, 79, 108, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-  --shadow-hover:  0 12px 28px -4px rgba(11, 79, 108, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
-  --shadow-glow:   0 0 20px var(--c-secondary-glow);
+  --shadow-xs:     0 1px 3px rgba(18, 17, 36, 0.04);
+  --shadow-sm:     0 2px 8px -1px rgba(18, 17, 36, 0.05);
+  --shadow-hover:  var(--shadow-lift);
+  --shadow-glow:   0 0 24px var(--c-brand-glow);
 
-  /* ─── 09. BORDER RADIUS ───────────────────────────────────────── */
   --r-xs:   8px;
-  --r-sm:   12px;
-  --r-md:   18px;
-  --r-lg:   26px;
+  --r-sm:   var(--radius-sm);
+  --r-md:   var(--radius-md);
+  --r-lg:   var(--radius-lg);
   --r-xl:   38px;
   --r-pill: 999px;
 
-  /* ─── 10. TYPOGRAPHY HIERARCHY ─────────────────────────────────── */
-  --ff-head: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --ff-body: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* ─── T0.2 CORPORATE TYPOGRAPHY (ARSENICA ARABIC ANTIQUA) ── */
+  --ff-head: 'Arsenica Arabic Antiqua', 'Arsenica Antiqua', 'Arsenica Arabic', 'Arsenica', 'Noto Serif Arabic', 'Amiri', serif;
+  --ff-body: 'Arsenica Arabic Antiqua', 'Arsenica Antiqua', 'Arsenica Arabic', 'Arsenica', 'Noto Serif Arabic', 'Amiri', serif;
 
-  /* ─── 11. MOTION & ACCESSIBILITY ──────────────────────────────── */
+  /* ─── MOTION & TRANSITIONS ─────────────────────────────────────── */
   --ease-spring: cubic-bezier(0.34, 1.3, 0.64, 1);
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --t-fast:      0.18s cubic-bezier(0.16, 1, 0.3, 1);
