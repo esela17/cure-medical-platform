@@ -10,12 +10,15 @@
 ## 1. ملخص ما تم إنجازه (Completed Tasks)
 
 ### أ) توحيد الخطوط وهوية التايبوغرافي (Typography)
-- ✅ **اعتماد خط Arsenica Arabic Antiqua بالكامل:**
-  - تم تعيين الخط الأساسي للواجهة والعناوين والنصوص بكافة الأوزان (Regular, Medium, Bold, ExtraBold) كخط موحد:
-    `font-family: 'Arsenica Arabic Antiqua', 'Arsenica Antiqua', 'Arsenica Arabic', 'Arsenica', 'Noto Serif Arabic', 'Amiri', serif !important;`
+- ✅ **اعتماد خط Hail Elastic الأصلي بالكامل (SakkType / Saif Abomar):**
+  - تم تضمين ملفات الخط الأصلية بدقة عالية (TTF, WOFF2, WOFF):
+    `assets/fonts/HailElastic-Light.woff2` (بحجم خفيف 32KB فائق السرعة) و `HailElastic-Light.ttf`.
+  - تم التحقق من ترويسة وميتاداتا الخط الأصلية (Designer: saifabomar, Manufacturer: SakkType, Trademark: Hail Elastic).
+  - تم تعيين الخط الأساسي للواجهة والعناوين والنصوص بكافة الأوزان:
+    `font-family: 'Hail Elastic', 'Hail Elastic Light', sans-serif !important;`
   - تم تحديث ملف متغيرات التصميم `assets/css/tokens.css` لضبط `--ff-head` و`--ff-body`.
-  - تم تحديث ملف الأنماط العامة `assets/css/base.css` بقواعد `@font-face` المحلية وإلزام المحدد الشامل `*`.
-  - تم تحديث كافة صفحات الموقع (45 صفحة HTML) لضمان توحيد الخط في المدونة، صفحات المراكز، صفحات الخدمات، والصفحات القانونية.
+  - تم تحديث ملف الأنماط العامة `assets/css/base.css` بقواعد `@font-face` المحلية ومسارات الملفات.
+  - تم تحديث كافة صفحات الموقع (46 صفحة HTML) لضمان توحيد الخط الحقيقي بدون أي بدائل.
 
 ### ب) توحيد الشعار والأيقونات (Brand Assets & Logo)
 - ✅ **استبدال شعار "حرف C" القديم:**

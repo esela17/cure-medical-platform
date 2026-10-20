@@ -1,19 +1,29 @@
 /* ─────────────────────────────────────────────────────────────────
    CURE CORPORATE TYPOGRAPHY & BASE RESET
-   ARSENICA ARABIC ANTIQUA UNIVERSAL TYPOGRAPHY
+   HAIL ELASTIC UNIVERSAL TYPOGRAPHY
    ───────────────────────────────────────────────────────────────── */
 @font-face {
-  font-family: 'Arsenica Arabic Antiqua';
-  src: local('Arsenica Arabic Antiqua'), local('Arsenica Antiqua'), local('Arsenica Arabic'), local('ArsenicaArabic-Regular'), local('Arsenica');
-  font-weight: normal;
+  font-family: 'Hail Elastic';
+  src: local('Hail Elastic Light'),
+       local('HailElastic-Light'),
+       local('Hail Elastic'),
+       url('../fonts/HailElastic-Light.woff2') format('woff2'),
+       url('../fonts/HailElastic-Light.woff') format('woff'),
+       url('../fonts/HailElastic-Light.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Arsenica Arabic Antiqua';
-  src: local('Arsenica Arabic Antiqua Bold'), local('Arsenica Antiqua Bold'), local('Arsenica Arabic Bold'), local('ArsenicaArabic-Bold'), local('Arsenica-Bold');
-  font-weight: bold;
+  font-family: 'Hail Elastic Light';
+  src: local('Hail Elastic Light'),
+       local('HailElastic-Light'),
+       local('Hail Elastic'),
+       url('../fonts/HailElastic-Light.woff2') format('woff2'),
+       url('../fonts/HailElastic-Light.woff') format('woff'),
+       url('../fonts/HailElastic-Light.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -44,7 +54,7 @@ html, body {
 
 html, body, button, input, select, textarea,
 h1, h2, h3, h4, h5, h6, p, span, a, label, strong, b, div, li, td, th {
-  font-family: 'Arsenica Arabic Antiqua', 'Cairo', 'Tajawal', -apple-system, sans-serif !important;
+  font-family: 'Hail Elastic', 'Hail Elastic Light', -apple-system, sans-serif !important;
 }
 
 

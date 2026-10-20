@@ -3759,8 +3759,10 @@ body.is-scrolled .whatsapp-float {
 }
 
 /* T1.3 Solid Corporate Purple Sections */
-.section-solid-purple {
-  background: linear-gradient(135deg, var(--primary, #6D73FF) 0%, #3d42df 50%, var(--primary-700, #3730a3) 100%) !important;
+.section-solid-purple,
+.app-showcase-section {
+  background-color: #262ba8 !important;
+  background: linear-gradient(135deg, #262ba8 0%, #3d42df 50%, var(--primary, #6D73FF) 100%) !important;
   color: #ffffff !important;
   position: relative;
   overflow: hidden;
@@ -3772,7 +3774,11 @@ body.is-scrolled .whatsapp-float {
 .section-solid-purple p,
 .section-solid-purple .section-title,
 .section-solid-purple .section-sub,
-.section-solid-purple .id-cities-h2 {
+.section-solid-purple .id-cities-h2,
+.app-showcase-section h1,
+.app-showcase-section h2,
+.app-showcase-section h3,
+.app-showcase-section p {
   color: #ffffff !important;
 }
 
@@ -4167,8 +4173,10 @@ body.is-scrolled .whatsapp-float {
 }
 
 /* T1.3 Solid Corporate Purple Sections */
-.section-solid-purple {
-  background: linear-gradient(135deg, var(--primary, #6D73FF) 0%, #3d42df 50%, var(--primary-700, #3730a3) 100%) !important;
+.section-solid-purple,
+.app-showcase-section {
+  background-color: #262ba8 !important;
+  background: linear-gradient(135deg, #262ba8 0%, #3d42df 50%, var(--primary, #6D73FF) 100%) !important;
   color: #ffffff !important;
   position: relative;
   overflow: hidden;
@@ -4180,7 +4188,11 @@ body.is-scrolled .whatsapp-float {
 .section-solid-purple p,
 .section-solid-purple .section-title,
 .section-solid-purple .section-sub,
-.section-solid-purple .id-cities-h2 {
+.section-solid-purple .id-cities-h2,
+.app-showcase-section h1,
+.app-showcase-section h2,
+.app-showcase-section h3,
+.app-showcase-section p {
   color: #ffffff !important;
 }
 

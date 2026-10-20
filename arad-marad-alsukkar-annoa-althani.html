@@ -18,29 +18,42 @@
     <meta property="og:image" content="https://cureztyx.com/assets/img/articles/article2.png" />
     
     
-      <!-- Arsenica Arabic Antiqua Typography & Serif Fallbacks -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+Arabic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+        <!-- Hail Elastic Typography (Authentic SakkType / Saif Abomar Typeface) -->
   <style>
     @font-face {
-      font-family: 'Arsenica Arabic Antiqua';
-      src: local('Arsenica Arabic Antiqua'), local('Arsenica Antiqua'), local('Arsenica Arabic'), local('ArsenicaArabic-Regular'), local('Arsenica');
-      font-weight: normal;
+      font-family: 'Hail Elastic';
+      src: local('Hail Elastic Light'),
+           local('HailElastic-Light'),
+           local('Hail Elastic'),
+           url('./assets/fonts/HailElastic-Light.woff2') format('woff2'),
+           url('./assets/fonts/HailElastic-Light.woff') format('woff'),
+           url('./assets/fonts/HailElastic-Light.ttf') format('truetype');
+      font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
-      font-family: 'Arsenica Arabic Antiqua';
-      src: local('Arsenica Arabic Antiqua Bold'), local('Arsenica Antiqua Bold'), local('Arsenica Arabic Bold'), local('ArsenicaArabic-Bold'), local('Arsenica-Bold');
-      font-weight: bold;
+      font-family: 'Hail Elastic Light';
+      src: local('Hail Elastic Light'),
+           local('HailElastic-Light'),
+           local('Hail Elastic'),
+           url('./assets/fonts/HailElastic-Light.woff2') format('woff2'),
+           url('./assets/fonts/HailElastic-Light.woff') format('woff'),
+           url('./assets/fonts/HailElastic-Light.ttf') format('truetype');
+      font-weight: 100 900;
       font-style: normal;
       font-display: swap;
     }
     *, *::before, *::after,
     html, body, button, input, select, textarea,
     h1, h2, h3, h4, h5, h6, p, span, a, label, strong, b, div, li, td, th {
-      font-family: 'Arsenica Arabic Antiqua', 'Arsenica Antiqua', 'Arsenica Arabic', 'Arsenica', 'Noto Serif Arabic', 'Amiri', serif !important;
+      font-family: 'Hail Elastic', 'Hail Elastic Light', sans-serif !important;
+    }
+    .fa, .fas, .fa-solid, .far, .fa-regular, .fab, .fa-brands, [class*="fa-"], [class*="fa-"]::before, i[class*="fa-"] {
+      font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+    }
+    .fab, .fa-brands, [class*="fa-google"]::before, [class*="fa-whatsapp"]::before, [class*="fa-facebook"]::before, [class*="fa-twitter"]::before, [class*="fa-linkedin"]::before, [class*="fa-instagram"]::before, [class*="fa-apple"]::before {
+      font-family: "Font Awesome 6 Brands" !important;
     }
   </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
